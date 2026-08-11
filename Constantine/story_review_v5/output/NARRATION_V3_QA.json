@@ -1,0 +1,37 @@
+{
+  "base_review_cues": 23,
+  "added_comedic_beats": 4,
+  "final_review_cues": 27,
+  "movie_dialogue_cues": 310,
+  "combined_cues": 337,
+  "collisions": 0,
+  "meta_or_formal_style_hits": 0,
+  "protected_emotional_or_action_scenes_used": 0,
+  "voice_generation": "OFF_READY_FOR_TTS",
+  "comedic_beats": [
+    {
+      "start": 20.5,
+      "end": 26.5,
+      "text": "박물관에 갈 유물도 아니고, 주운 사람부터 바꿔놓는 성질 급한 물건이죠.",
+      "intent": "도입의 불길함을 물건의 성격처럼 비트는 과소진술"
+    },
+    {
+      "start": 57.0,
+      "end": 63.0,
+      "text": "기도부터 할 법도 한데, 수상할 정도로 침착하게 방부터 훑어보고,",
+      "intent": "콘스탄틴의 노련함을 건조한 직업 농담으로 전환"
+    },
+    {
+      "start": 562.1,
+      "end": 568.1,
+      "text": "성수도 아니고 수돗물, 성물도 아니고 고양이라니. 꽤 생활형인 지옥행이죠.",
+      "intent": "의식 도구의 의외성을 생활형 비유로 완화"
+    },
+    {
+      "start": 1048.3,
+      "end": 1054.3,
+      "text": "쓸모없는 환각 취급받던 감각은, 이제 악마 전용 내비게이션이 되고,",
+      "intent": "안젤라의 능력 변화를 기능적인 비유로 연결"
+    }
+  ]
+}

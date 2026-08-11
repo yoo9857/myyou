@@ -1,0 +1,28 @@
+{
+  "video": "Constantine.2005.2160p.4K.BluRay.x265.10bit.AAC5.1-[YTS.MX].mkv",
+  "subtitle": "Constantine.2005.2160p.4K.BluRay.x265.10bit.AAC5.1-[YTS.MX].ko.srt",
+  "duration": 7247.2,
+  "cue_count": 945,
+  "story_packet_count": 41,
+  "narration_gap_count": 305,
+  "contact_sheet_interval_sec": 30,
+  "contact_sheet_grid": {
+    "columns": 5,
+    "rows": 4
+  },
+  "contact_sheets": [
+    "sheet_001.jpg",
+    "sheet_002.jpg",
+    "sheet_003.jpg",
+    "sheet_004.jpg",
+    "sheet_005.jpg",
+    "sheet_006.jpg",
+    "sheet_007.jpg",
+    "sheet_008.jpg",
+    "sheet_009.jpg",
+    "sheet_010.jpg",
+    "sheet_011.jpg",
+    "sheet_012.jpg",
+    "sheet_013.jpg"
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "voice": "Nayva",
+  "voice_id": "cfc7wVYq4gw4OpcEEAom",
+  "model": "eleven_v3",
+  "delivery": "restrained, intimate, neutral American English",
+  "emotion_tag": null,
+  "pace": 0.96,
+  "text": "He should be praying. Instead, Constantine studies the room with the calm of a man who's seen this far too many times.",
+  "duration_sec": 7.784,
+  "file": "C:\\cineyoutube\\Constantine\\story_review_v5\\output\\voice_samples\\nayva_restrained_review_v2.mp3"
+}

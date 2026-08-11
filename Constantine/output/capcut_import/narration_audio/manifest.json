@@ -1,0 +1,27 @@
+[
+  {
+    "order": 1,
+    "file": "clip_001.mp3",
+    "tts_en": "They have not yet seen their true enemy."
+  },
+  {
+    "order": 2,
+    "file": "clip_002.mp3",
+    "tts_en": "A buried object returns to the surface."
+  },
+  {
+    "order": 21,
+    "file": "clip_021.mp3",
+    "tts_en": "He seeks out Midnite for the answers he needs."
+  },
+  {
+    "order": 35,
+    "file": "clip_035.mp3",
+    "tts_en": "Isabel's hidden code appears across the window."
+  },
+  {
+    "order": 61,
+    "file": "clip_061.mp3",
+    "tts_en": "But this confrontation is not over yet."
+  }
+]

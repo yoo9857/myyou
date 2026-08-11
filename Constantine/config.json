@@ -1,0 +1,33 @@
+{
+  "project_title": "Constantine (2005) YouTube Movie Review",
+  "video": "Constantine.2005.2160p.4K.BluRay.x265.10bit.AAC5.1-[YTS.MX].mkv",
+  "subtitle": "Constantine.2005.2160p.4K.BluRay.x265.10bit.AAC5.1-[YTS.MX].ko.srt",
+  "target_duration_sec": 1320,
+  "review_language": "ko",
+  "style": "19-25분 한국어 영화 리뷰. 원작 대사 중심, 짧고 호기심을 높이는 내레이션, 결말과 최종 해결은 숨긴다.",
+  "spoilers": false,
+  "generate_movie_captions": false,
+  "contact_sheet_interval_sec": 30,
+  "contact_sheet_columns": 5,
+  "contact_sheet_rows": 4,
+  "render_width": 1920,
+  "render_height": 1080,
+  "render_fps": 30,
+  "output_video": "constantine_review_rough_cut.mp4",
+  "clips_dir": "clips",
+  "narration_chars_per_sec": 5.2,
+  "narration_min_sec": 2.6,
+  "narration_max_sec": 6.0,
+  "caption_resume_gap_sec": 0.12,
+  "post_narration_audio_level": 0.96,
+  "narration_max_chars_ko": 32,
+  "narration_max_words_en": 14,
+  "narration_question_limit": 2,
+  "spoiler_cutoff_source_sec": 6500,
+  "narration_tts_language": "en-US",
+  "elevenlabs_voice_name": "Nayva",
+  "elevenlabs_voice_id": "cfc7wVYq4gw4OpcEEAom",
+  "elevenlabs_model": "eleven_v3"
+  ,"hook_caption_ko": "두 사람은 아직, 진짜 적을 보지 못했다."
+  ,"hook_tts_en": "They have not yet seen their true enemy."
+}

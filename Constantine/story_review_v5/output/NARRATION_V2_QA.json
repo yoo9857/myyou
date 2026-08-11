@@ -1,0 +1,112 @@
+{
+  "base_narration_cues": 9,
+  "added_review_cues": 14,
+  "final_narration_cues": 23,
+  "movie_dialogue_cues": 310,
+  "combined_cues": 333,
+  "movie_collisions": 0,
+  "narration_overlaps": 0,
+  "voice_generation": "OFF_READY_FOR_TTS",
+  "formal_hamnida_count": 0,
+  "meta_viewpoint_count": 0,
+  "additions": [
+    {
+      "start": 14.8,
+      "end": 20.2,
+      "text": "그 순간부터, 평범했던 인간의 시간이 조용히 뒤틀리기 시작하죠.",
+      "role": "reflection",
+      "evidence": "창의 영향이 화면에 나타난 뒤 분위기를 확장"
+    },
+    {
+      "start": 50.6,
+      "end": 56.4,
+      "text": "기도부터 할 거란 예상과 달리, 그는 방에 남은 징후부터 읽어가고,",
+      "role": "character_subtext",
+      "evidence": "퇴마사의 관찰 방식을 현재 행동으로 해설"
+    },
+    {
+      "start": 233.0,
+      "end": 238.5,
+      "text": "이사벨은 분명 몸을 던졌지만, 안젤라는 그 선택부터 받아들이지 못하죠.",
+      "role": "character_subtext",
+      "evidence": "이미 본 추락과 이미 드러난 안젤라의 부정을 연결"
+    },
+    {
+      "start": 274.1,
+      "end": 278.8,
+      "text": "그가 궁금한 건 악령의 이름보다, 대체 왜 규칙이 깨졌느냐는 것.",
+      "role": "causal_bridge",
+      "evidence": "첫 퇴마의 이상과 비먼 방문의 목적을 정리"
+    },
+    {
+      "start": 394.3,
+      "end": 400.3,
+      "text": "이곳은 천국과 지옥이 잠시 싸움을 멈추는, 유일한 중립지대였죠.",
+      "role": "rule_clarify",
+      "evidence": "미드나이트의 공간과 현재 분위기를 설명"
+    },
+    {
+      "start": 556.0,
+      "end": 561.8,
+      "text": "이제 수사는 증거를 찾는 단계를 넘어, 죽은 자의 행선지를 향하고,",
+      "role": "stakes",
+      "evidence": "지옥 확인 의식으로 바뀐 수사의 성격을 정리"
+    },
+    {
+      "start": 601.0,
+      "end": 606.0,
+      "text": "그렇게 건너간 지옥은, 현실 위에 겹쳐진 폐허에 가까웠죠.",
+      "role": "reflection",
+      "evidence": "이미 보이는 지옥의 시각적 성격을 해설"
+    },
+    {
+      "start": 930.3,
+      "end": 936.2,
+      "text": "안젤라가 원한 건 능력이 아니었죠. 늦게라도 동생에게 닿고 싶었던 건데요.",
+      "role": "character_subtext",
+      "evidence": "죄책감 고백 뒤 선택의 감정적 목적을 해설"
+    },
+    {
+      "start": 986.0,
+      "end": 991.5,
+      "text": "하지만 진실을 보는 순간, 그 진실도 안젤라를 바라보게 되고,",
+      "role": "stakes",
+      "evidence": "앞서 설명된 영적 감각의 대가를 환기"
+    },
+    {
+      "start": 1042.0,
+      "end": 1048.0,
+      "text": "이제 그녀는 보호받는 의뢰인이 아니라, 악마를 찾아내는 눈이 된 거죠.",
+      "role": "character_subtext",
+      "evidence": "각성 뒤 역할 변화를 현재 추적 행동과 연결"
+    },
+    {
+      "start": 1196.0,
+      "end": 1202.5,
+      "text": "문제는 되찾은 감각이, 안젤라를 단서이자 표적으로 만들었다는 것.",
+      "role": "stakes",
+      "evidence": "발사자르가 표적을 밝힌 뒤 의미를 정리"
+    },
+    {
+      "start": 1257.0,
+      "end": 1262.5,
+      "text": "처음엔 원칙이던 중립도, 이 순간엔 움직이지 않을 변명처럼 들리죠.",
+      "role": "reflection",
+      "evidence": "미드나이트의 거절과 콘스탄틴의 호소가 드러난 뒤 해석"
+    },
+    {
+      "start": 1414.0,
+      "end": 1420.0,
+      "text": "적의 숫자는 줄었지만, 강림을 막을 시간도 함께 사라져 가고,",
+      "role": "stakes",
+      "evidence": "혼혈종 전투 뒤 이미 확립된 시간 압박을 강화"
+    },
+    {
+      "start": 1470.0,
+      "end": 1476.0,
+      "text": "결국 마몬의 강림은, 예언이 아닌 눈앞의 현실이 돼버렸죠.",
+      "role": "stakes",
+      "evidence": "안젤라가 꺼내달라고 한 뒤 현재 위기를 정리"
+    }
+  ]
+}

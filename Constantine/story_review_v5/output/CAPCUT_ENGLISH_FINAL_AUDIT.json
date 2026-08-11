@@ -1,0 +1,75 @@
+{
+  "movie_dialogue": 287,
+  "review_narration": 29,
+  "hangul_remaining": 0,
+  "html_tags_remaining": 0,
+  "cue12_text": "To trace Isabel, Constantine\ngathers her things—and a cat.",
+  "cue12_style_ranges": [
+    {
+      "range": [
+        0,
+        9
+      ],
+      "fill": [
+        0.9764705882352941,
+        0.9058823529411765,
+        0.8980392156862745
+      ]
+    },
+    {
+      "range": [
+        9,
+        15
+      ],
+      "fill": [
+        1,
+        0.1411764705882353,
+        0.10980392156862745
+      ]
+    },
+    {
+      "range": [
+        15,
+        58
+      ],
+      "fill": [
+        0.9764705882352941,
+        0.9058823529411765,
+        0.8980392156862745
+      ]
+    }
+  ],
+  "expected_isabel_range": [
+    9,
+    15
+  ],
+  "mirror_count": 3,
+  "mirrors_identical": true,
+  "hashes": [
+    {
+      "file": "C:\\Users\\hanbi\\AppData\\Local\\CapCut\\User Data\\Projects\\com.lveditor.draft\\CONSTANTINE_STORY_REVIEW_V5\\draft_content.json",
+      "sha256": "bd1580ef382bb9fdf697386c3d92d1fbdea58493d6e7ab4b9d23a876c89cb93a"
+    },
+    {
+      "file": "C:\\Users\\hanbi\\AppData\\Local\\CapCut\\User Data\\Projects\\com.lveditor.draft\\CONSTANTINE_STORY_REVIEW_V5\\Timelines\\2B0D9201-EBBD-4D8F-9FC3-9664DC515EDB\\draft_content.json",
+      "sha256": "bd1580ef382bb9fdf697386c3d92d1fbdea58493d6e7ab4b9d23a876c89cb93a"
+    },
+    {
+      "file": "C:\\Users\\hanbi\\AppData\\Local\\CapCut\\User Data\\Projects\\com.lveditor.draft\\CONSTANTINE_STORY_REVIEW_V5\\Timelines\\2B0D9201-EBBD-4D8F-9FC3-9664DC515EDB\\template-2.tmp",
+      "sha256": "bd1580ef382bb9fdf697386c3d92d1fbdea58493d6e7ab4b9d23a876c89cb93a"
+    }
+  ],
+  "native_animation_materials": 29,
+  "review_segments_with_keyframes": 29,
+  "movie_segments_with_animation_refs": 0,
+  "font_families": [
+    "Pretendard Medium",
+    "Roboto Condensed",
+    "Cormorant Garamond",
+    "Archivo Black"
+  ],
+  "missing_font_files": [],
+  "oversized_materials": 0,
+  "review_materials_with_top_level_bold_flag": 29,
+  "review_materials_with_top_level_italic_flag": 29
+}

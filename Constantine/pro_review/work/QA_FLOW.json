@@ -1,0 +1,20 @@
+{
+  "voice_generation": "OFF",
+  "final_duration_seconds": 1205.207,
+  "segment_count": 119,
+  "narrated_segment_count": 79,
+  "movie_caption_count": 153,
+  "combined_caption_count": 232,
+  "caption_overlaps": 0,
+  "narration_text_window_percent": 41.0,
+  "narration_gap_median_seconds": 11.1,
+  "narration_gap_p90_seconds": 15.33,
+  "narration_gap_max_seconds": 16.83,
+  "clip_length_min_seconds": 7.63,
+  "clip_length_median_seconds": 9.84,
+  "clip_length_max_seconds": 14.0,
+  "main_sequence_source_monotonic": true,
+  "main_sequence_last_source_second": 5483.983,
+  "rendered_clip_count": 119,
+  "zero_byte_clip_count": 0
+}

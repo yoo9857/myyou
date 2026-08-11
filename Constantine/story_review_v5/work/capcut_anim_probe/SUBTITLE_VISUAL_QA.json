@@ -1,0 +1,494 @@
+{
+  "schema_version": 1,
+  "project": "C:\\cineyoutube\\Constantine\\story_review_v5\\work\\capcut_anim_probe",
+  "dry_run": false,
+  "counts": {
+    "dialogue": 310,
+    "review": 29,
+    "twoTone": 66,
+    "dialogueTension": 35,
+    "reviewTension": 12,
+    "reviewOccult": 4,
+    "reviewComic": 6,
+    "outro": 2,
+    "animated": 47,
+    "animatedMovie": 18
+  },
+  "safe_area": {
+    "dialogue_y": -0.78,
+    "review_y": -0.6,
+    "dialogue_max_width": 0.78,
+    "review_max_width": 0.7,
+    "adaptive_font_size": true,
+    "max_highlight_size": 6.15
+  },
+  "palette": {
+    "dialogue": "#F7F7F5",
+    "review": "#FFF0C2",
+    "tension": "#FF5A4F",
+    "occult": "#70D7FF",
+    "comic": "#FFC857",
+    "outro": "#E8C66A"
+  },
+  "animation_plan": [
+    {
+      "cue": 1,
+      "segment_id": "FB7D16EF-D59C-4749-8579-8FE845AF9DEF",
+      "track": "REVIEW_NARRATION",
+      "intro": "fade-in",
+      "intro_ms": 360,
+      "outro": "fade-out",
+      "outro_ms": 220,
+      "style": "REVIEW_IVORY"
+    },
+    {
+      "cue": 2,
+      "segment_id": "51D87981-1780-4AAA-87C3-A9C0CAC3247F",
+      "track": "REVIEW_NARRATION",
+      "intro": "fade-in",
+      "intro_ms": 360,
+      "outro": "fade-out",
+      "outro_ms": 220,
+      "style": "REVIEW_IVORY"
+    },
+    {
+      "cue": 3,
+      "segment_id": "77FA7C1B-5878-4B16-8822-2AAB502EFA94",
+      "track": "REVIEW_NARRATION",
+      "intro": "pop-up",
+      "intro_ms": 280,
+      "outro": "fade-out",
+      "outro_ms": 180,
+      "style": "REVIEW_DRY_COMIC"
+    },
+    {
+      "cue": 4,
+      "segment_id": "D217F98D-3F88-4B3B-AF98-151DA29560AF",
+      "track": "REVIEW_NARRATION",
+      "intro": "blur",
+      "intro_ms": 460,
+      "outro": "fade-out",
+      "outro_ms": 250,
+      "style": "REVIEW_TENSION"
+    },
+    {
+      "cue": 5,
+      "segment_id": "4CFCF5B8-EFBD-424B-A8B5-08741001AD65",
+      "track": "REVIEW_NARRATION",
+      "intro": "dissolve",
+      "intro_ms": 430,
+      "outro": "fade-out",
+      "outro_ms": 220,
+      "style": "REVIEW_OCCULT"
+    },
+    {
+      "cue": 6,
+      "segment_id": "EF1375AB-072A-44EF-BCAE-2520EEBD2A2D",
+      "track": "REVIEW_NARRATION",
+      "intro": "pop-up",
+      "intro_ms": 280,
+      "outro": "fade-out",
+      "outro_ms": 180,
+      "style": "REVIEW_DRY_COMIC"
+    },
+    {
+      "cue": 7,
+      "segment_id": "686300EE-73FF-41FA-8319-B86A7C74CFD5",
+      "track": "REVIEW_NARRATION",
+      "intro": "fade-in",
+      "intro_ms": 360,
+      "outro": "fade-out",
+      "outro_ms": 220,
+      "style": "REVIEW_IVORY"
+    },
+    {
+      "cue": 8,
+      "segment_id": "C344C082-18B7-40D1-A19B-A4385E552EBD",
+      "track": "REVIEW_NARRATION",
+      "intro": "dissolve",
+      "intro_ms": 430,
+      "outro": "fade-out",
+      "outro_ms": 220,
+      "style": "REVIEW_OCCULT"
+    },
+    {
+      "cue": 9,
+      "segment_id": "E5B47C66-457F-4360-A0A8-C8580E282196",
+      "track": "REVIEW_NARRATION",
+      "intro": "blur",
+      "intro_ms": 460,
+      "outro": "fade-out",
+      "outro_ms": 250,
+      "style": "REVIEW_TENSION"
+    },
+    {
+      "cue": 10,
+      "segment_id": "F41EF9A0-FD5D-4A24-9121-4EE05DEAA6AF",
+      "track": "REVIEW_NARRATION",
+      "intro": "blur",
+      "intro_ms": 460,
+      "outro": "fade-out",
+      "outro_ms": 250,
+      "style": "REVIEW_TENSION"
+    },
+    {
+      "cue": 11,
+      "segment_id": "418172C8-374E-46D0-8FC1-38F83FB206F9",
+      "track": "REVIEW_NARRATION",
+      "intro": "blur",
+      "intro_ms": 460,
+      "outro": "fade-out",
+      "outro_ms": 250,
+      "style": "REVIEW_TENSION"
+    },
+    {
+      "cue": 12,
+      "segment_id": "DFE8C17B-7C75-4CAA-B337-A7018ED825F2",
+      "track": "REVIEW_NARRATION",
+      "intro": "pop-up",
+      "intro_ms": 280,
+      "outro": "fade-out",
+      "outro_ms": 180,
+      "style": "REVIEW_DRY_COMIC"
+    },
+    {
+      "cue": 13,
+      "segment_id": "BE6BFA0C-51A9-4468-B933-1F4AC5922D01",
+      "track": "REVIEW_NARRATION",
+      "intro": "blur",
+      "intro_ms": 460,
+      "outro": "fade-out",
+      "outro_ms": 250,
+      "style": "REVIEW_TENSION"
+    },
+    {
+      "cue": 14,
+      "segment_id": "8D389BD4-0C38-43C6-8715-703E8D69A8EF",
+      "track": "REVIEW_NARRATION",
+      "intro": "pop-up",
+      "intro_ms": 280,
+      "outro": "fade-out",
+      "outro_ms": 180,
+      "style": "REVIEW_DRY_COMIC"
+    },
+    {
+      "cue": 15,
+      "segment_id": "10E96AA4-36DB-43F5-84A8-3D3F5B7E1609",
+      "track": "REVIEW_NARRATION",
+      "intro": "blur",
+      "intro_ms": 460,
+      "outro": "fade-out",
+      "outro_ms": 250,
+      "style": "REVIEW_TENSION"
+    },
+    {
+      "cue": 16,
+      "segment_id": "C85E7338-15AA-4414-B898-3EE54DE82276",
+      "track": "REVIEW_NARRATION",
+      "intro": "fade-in",
+      "intro_ms": 360,
+      "outro": "fade-out",
+      "outro_ms": 220,
+      "style": "REVIEW_IVORY"
+    },
+    {
+      "cue": 17,
+      "segment_id": "710CC7D0-F351-45E7-B34C-796245E1D994",
+      "track": "REVIEW_NARRATION",
+      "intro": "fade-in",
+      "intro_ms": 360,
+      "outro": "fade-out",
+      "outro_ms": 220,
+      "style": "REVIEW_IVORY"
+    },
+    {
+      "cue": 18,
+      "segment_id": "4BACFD40-284A-4E0B-8032-09657045A331",
+      "track": "REVIEW_NARRATION",
+      "intro": "dissolve",
+      "intro_ms": 430,
+      "outro": "fade-out",
+      "outro_ms": 220,
+      "style": "REVIEW_OCCULT"
+    },
+    {
+      "cue": 19,
+      "segment_id": "8C098BBC-5479-4F3A-B078-130EA043D209",
+      "track": "REVIEW_NARRATION",
+      "intro": "blur",
+      "intro_ms": 460,
+      "outro": "fade-out",
+      "outro_ms": 250,
+      "style": "REVIEW_TENSION"
+    },
+    {
+      "cue": 20,
+      "segment_id": "7FA77873-9D1E-45AC-BB5E-A77716601DFF",
+      "track": "REVIEW_NARRATION",
+      "intro": "blur",
+      "intro_ms": 460,
+      "outro": "fade-out",
+      "outro_ms": 250,
+      "style": "REVIEW_TENSION"
+    },
+    {
+      "cue": 21,
+      "segment_id": "A8B922A7-6BC0-4B71-900D-E5D739733B64",
+      "track": "REVIEW_NARRATION",
+      "intro": "pop-up",
+      "intro_ms": 280,
+      "outro": "fade-out",
+      "outro_ms": 180,
+      "style": "REVIEW_DRY_COMIC"
+    },
+    {
+      "cue": 22,
+      "segment_id": "6549CDFE-EB1C-460F-97ED-14BFE838FB8A",
+      "track": "REVIEW_NARRATION",
+      "intro": "dissolve",
+      "intro_ms": 430,
+      "outro": "fade-out",
+      "outro_ms": 220,
+      "style": "REVIEW_OCCULT"
+    },
+    {
+      "cue": 23,
+      "segment_id": "EB02E6E9-F9F9-48F8-932A-0F596EB497B7",
+      "track": "REVIEW_NARRATION",
+      "intro": "blur",
+      "intro_ms": 460,
+      "outro": "fade-out",
+      "outro_ms": 250,
+      "style": "REVIEW_TENSION"
+    },
+    {
+      "cue": 24,
+      "segment_id": "DBE9160E-2069-42DB-8E8F-18468515CFCC",
+      "track": "REVIEW_NARRATION",
+      "intro": "pop-up",
+      "intro_ms": 280,
+      "outro": "fade-out",
+      "outro_ms": 180,
+      "style": "REVIEW_DRY_COMIC"
+    },
+    {
+      "cue": 25,
+      "segment_id": "A87C4AD5-A770-42E6-B49C-C9DD88931FD5",
+      "track": "REVIEW_NARRATION",
+      "intro": "blur",
+      "intro_ms": 460,
+      "outro": "fade-out",
+      "outro_ms": 250,
+      "style": "REVIEW_TENSION"
+    },
+    {
+      "cue": 26,
+      "segment_id": "238530F8-65E5-4E5B-9AA0-E8DC2EDEFCBE",
+      "track": "REVIEW_NARRATION",
+      "intro": "blur",
+      "intro_ms": 460,
+      "outro": "fade-out",
+      "outro_ms": 250,
+      "style": "REVIEW_TENSION"
+    },
+    {
+      "cue": 27,
+      "segment_id": "FA4A3CBF-8009-4366-A0BA-C90DEB5B7A21",
+      "track": "REVIEW_NARRATION",
+      "intro": "blur",
+      "intro_ms": 460,
+      "outro": "fade-out",
+      "outro_ms": 250,
+      "style": "REVIEW_TENSION"
+    },
+    {
+      "cue": 28,
+      "segment_id": "329E8B01-58B7-4D90-9999-AACDDCFA811B",
+      "track": "REVIEW_NARRATION",
+      "intro": "typewriter",
+      "intro_ms": 650,
+      "outro": "fade-out",
+      "outro_ms": 250,
+      "style": "REVIEW_OUTRO"
+    },
+    {
+      "cue": 29,
+      "segment_id": "2759F56D-9BD5-4FF7-B74B-9B9835EA4A2E",
+      "track": "REVIEW_NARRATION",
+      "intro": "fade-in",
+      "intro_ms": 420,
+      "outro": "fade-out",
+      "outro_ms": 350,
+      "style": "REVIEW_OUTRO"
+    },
+    {
+      "segment_id": "60C05376-30B3-48E1-B248-D1B2DD4062D2",
+      "track": "MOVIE_DIALOGUE",
+      "intro": "dissolve",
+      "intro_ms": 260,
+      "outro": "fade-out",
+      "outro_ms": 160,
+      "style": "DIALOGUE_TENSION"
+    },
+    {
+      "segment_id": "D956D108-1355-4366-AFE8-F7F170E582D0",
+      "track": "MOVIE_DIALOGUE",
+      "intro": "dissolve",
+      "intro_ms": 260,
+      "outro": "fade-out",
+      "outro_ms": 160,
+      "style": "DIALOGUE_TENSION"
+    },
+    {
+      "segment_id": "9B36888B-4445-45AA-93FE-A4061A19BC8B",
+      "track": "MOVIE_DIALOGUE",
+      "intro": "dissolve",
+      "intro_ms": 260,
+      "outro": "fade-out",
+      "outro_ms": 160,
+      "style": "DIALOGUE_TENSION"
+    },
+    {
+      "segment_id": "B9FB16EC-2E2A-49EB-855E-426623AB9B25",
+      "track": "MOVIE_DIALOGUE",
+      "intro": "dissolve",
+      "intro_ms": 260,
+      "outro": "fade-out",
+      "outro_ms": 160,
+      "style": "DIALOGUE_TENSION"
+    },
+    {
+      "segment_id": "7EF5F37D-1B53-4010-AA3C-2140961786A0",
+      "track": "MOVIE_DIALOGUE",
+      "intro": "dissolve",
+      "intro_ms": 260,
+      "outro": "fade-out",
+      "outro_ms": 160,
+      "style": "DIALOGUE_TENSION"
+    },
+    {
+      "segment_id": "CCF99A53-E593-4FE2-B656-C9C377BD0EAC",
+      "track": "MOVIE_DIALOGUE",
+      "intro": "dissolve",
+      "intro_ms": 260,
+      "outro": "fade-out",
+      "outro_ms": 160,
+      "style": "DIALOGUE_TENSION"
+    },
+    {
+      "segment_id": "78EEADEE-5DDA-4CF8-9197-A7A5A3841777",
+      "track": "MOVIE_DIALOGUE",
+      "intro": "dissolve",
+      "intro_ms": 260,
+      "outro": "fade-out",
+      "outro_ms": 160,
+      "style": "DIALOGUE_TENSION"
+    },
+    {
+      "segment_id": "7B178339-8AEE-47E5-B403-3635F9A572FA",
+      "track": "MOVIE_DIALOGUE",
+      "intro": "dissolve",
+      "intro_ms": 260,
+      "outro": "fade-out",
+      "outro_ms": 160,
+      "style": "DIALOGUE_TENSION"
+    },
+    {
+      "segment_id": "C8CE8CE0-87D3-409C-B24F-2E4F697182EB",
+      "track": "MOVIE_DIALOGUE",
+      "intro": "dissolve",
+      "intro_ms": 260,
+      "outro": "fade-out",
+      "outro_ms": 160,
+      "style": "DIALOGUE_TENSION"
+    },
+    {
+      "segment_id": "8E14C74E-E074-406D-9788-E7A24CC17839",
+      "track": "MOVIE_DIALOGUE",
+      "intro": "dissolve",
+      "intro_ms": 260,
+      "outro": "fade-out",
+      "outro_ms": 160,
+      "style": "DIALOGUE_TENSION"
+    },
+    {
+      "segment_id": "BBAB4B21-5185-4EC0-A680-C90992DD4D34",
+      "track": "MOVIE_DIALOGUE",
+      "intro": "dissolve",
+      "intro_ms": 260,
+      "outro": "fade-out",
+      "outro_ms": 160,
+      "style": "DIALOGUE_TENSION"
+    },
+    {
+      "segment_id": "1233A970-0550-4D93-B2FD-67778AB24ECB",
+      "track": "MOVIE_DIALOGUE",
+      "intro": "dissolve",
+      "intro_ms": 260,
+      "outro": "fade-out",
+      "outro_ms": 160,
+      "style": "DIALOGUE_TENSION"
+    },
+    {
+      "segment_id": "317E32EC-FBED-4BE8-8304-2C4CFA2F87E1",
+      "track": "MOVIE_DIALOGUE",
+      "intro": "dissolve",
+      "intro_ms": 260,
+      "outro": "fade-out",
+      "outro_ms": 160,
+      "style": "DIALOGUE_TENSION"
+    },
+    {
+      "segment_id": "DD0C86DC-8A5B-41DF-9B62-07F02793D852",
+      "track": "MOVIE_DIALOGUE",
+      "intro": "dissolve",
+      "intro_ms": 260,
+      "outro": "fade-out",
+      "outro_ms": 160,
+      "style": "DIALOGUE_TENSION"
+    },
+    {
+      "segment_id": "6976616E-4133-4E30-96C0-7117E27B5F37",
+      "track": "MOVIE_DIALOGUE",
+      "intro": "dissolve",
+      "intro_ms": 260,
+      "outro": "fade-out",
+      "outro_ms": 160,
+      "style": "DIALOGUE_TENSION"
+    },
+    {
+      "segment_id": "67D4527D-E045-453A-AE35-E102B323091A",
+      "track": "MOVIE_DIALOGUE",
+      "intro": "dissolve",
+      "intro_ms": 260,
+      "outro": "fade-out",
+      "outro_ms": 160,
+      "style": "DIALOGUE_TENSION"
+    },
+    {
+      "segment_id": "89C1A223-D327-4084-85EA-B8EC032E375F",
+      "track": "MOVIE_DIALOGUE",
+      "intro": "dissolve",
+      "intro_ms": 260,
+      "outro": "fade-out",
+      "outro_ms": 160,
+      "style": "DIALOGUE_TENSION"
+    },
+    {
+      "segment_id": "F4246272-A404-4F4F-B907-1C98F00603BE",
+      "track": "MOVIE_DIALOGUE",
+      "intro": "dissolve",
+      "intro_ms": 260,
+      "outro": "fade-out",
+      "outro_ms": 160,
+      "style": "DIALOGUE_TENSION"
+    }
+  ],
+  "overflow_checks": {
+    "fixed_width_disabled": true,
+    "fixed_height_disabled": true,
+    "auto_adapt_canvas": true,
+    "force_line_max_width": true,
+    "oversized_materials": 0
+  }
+}

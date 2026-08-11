@@ -6,11 +6,13 @@
 
 # The movie source is transferred separately by the owner.
 COLONY.2026.1080p.FHD.H264.AAC-iMBC.mp4
+Constantine/*.mkv
 
 # Machine-local state
 __pycache__/
 *.py[cod]
 *.log
+*.part
 
 # Third-party checkout and dependencies (recreated by setup script)
 tools/capcut-cli/

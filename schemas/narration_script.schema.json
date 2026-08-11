@@ -16,7 +16,7 @@
         "properties": {
           "order": {"type": "integer", "minimum": 1},
           "use_narration": {"type": "boolean"},
-          "role": {"type": "string", "enum": ["hook", "setup", "bridge", "escalation", "choice", "misdirection", "button"]},
+          "role": {"type": "string", "enum": ["hook", "orient", "causal_bridge", "rule_clarify", "character_subtext", "stakes", "reflection", "setup", "bridge", "escalation", "choice", "misdirection", "button"]},
           "caption_ko": {"type": "string"},
           "tts_en": {"type": "string"},
           "delivery": {"type": "string", "enum": ["intimate", "intrigued", "urgent", "somber", "neutral"]},

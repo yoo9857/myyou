@@ -1,0 +1,31 @@
+﻿order,timeline_start,timeline_end,source_start,source_end,kind,story_beat,audio_level,narration,purpose,clip
+1,0.0,52.042,98,150,narration,setup,0.18,"폐허를 뒤지던 남자의 손에, 땅속 깊이 묻혀 있던 낡은 창 하나가 걸립니다.","폐허를 뒤지던 남자의 손에, 땅속 깊이 묻혀 있던 낡은 창 하나가 걸립니다.",clips\clip_001_narration.mp4
+2,52.042,74.083,269,291,narration,setup,0.18,"한편, 퇴마사 콘스탄틴은 악령에게 붙잡힌 소녀의 방으로 들어섭니다.","한편, 퇴마사 콘스탄틴은 악령에게 붙잡힌 소녀의 방으로 들어섭니다.",clips\clip_002_narration.mp4
+3,74.083,109.042,368.119,403,movie_dialogue,setup,0.96,,연속된 원대사와 반응으로 사건의 원인과 결과를 보여준다.,clips\clip_003_movie_dialogue.mp4
+4,109.042,175.375,439,505.298,movie_dialogue,setup,0.96,,연속된 원대사와 반응으로 사건의 원인과 결과를 보여준다.,clips\clip_004_movie_dialogue.mp4
+5,175.375,210.042,879,913.66,narration,inciting_incident,0.18,"이번엔, 콘스탄틴 자신의 검사 결과입니다.","이번엔, 콘스탄틴 자신의 검사 결과입니다.",clips\clip_005_narration.mp4
+6,210.042,253.333,938.857,982.108,movie_dialogue,inciting_incident,0.96,,연속된 원대사와 반응으로 사건의 원인과 결과를 보여준다.,clips\clip_006_movie_dialogue.mp4
+7,253.333,280.458,1009.761,1036.829,movie_dialogue,inciting_incident,0.96,,연속된 원대사와 반응으로 사건의 원인과 결과를 보여준다.,clips\clip_007_movie_dialogue.mp4
+8,280.458,342.208,1131.554,1193.272,narration,rising_action,0.18,"콘스탄틴이 모아 온 무기와 성물을 관리하는 사람은, 오랜 친구 비먼입니다.","콘스탄틴이 모아 온 무기와 성물을 관리하는 사람은, 오랜 친구 비먼입니다.",clips\clip_008_narration.mp4
+9,342.208,389.75,1293.378,1340.878,movie_dialogue,rising_action,0.96,,연속된 원대사와 반응으로 사건의 원인과 결과를 보여준다.,clips\clip_009_movie_dialogue.mp4
+10,389.75,458.167,1837.719,1906.11,narration,rising_action,0.18,"답을 찾지 못한 콘스탄틴은 천사와 악마가 함께 드나드는 중립지대, 미드나이트의 클럽으로 향합니다.","답을 찾지 못한 콘스탄틴은 천사와 악마가 함께 드나드는 중립지대, 미드나이트의 클럽으로 향합니다.",clips\clip_010_narration.mp4
+11,458.167,488.375,2186.855,2217.01,movie_dialogue,rising_action,0.96,,연속된 원대사와 반응으로 사건의 원인과 결과를 보여준다.,clips\clip_011_movie_dialogue.mp4
+12,488.375,546.75,2378.343,2436.683,narration,rising_action,0.18,"날갯소리를 들은 콘스탄틴은, 복도에 있어서는 안 될 무언가가 왔음을 직감합니다.","날갯소리를 들은 콘스탄틴은, 복도에 있어서는 안 될 무언가가 왔음을 직감합니다.",clips\clip_012_narration.mp4
+13,546.75,601.792,2480,2535,narration,rising_action,0.18,"콘스탄틴은 안젤라의 집으로 자리를 옮겨, 이사벨을 찾을 의식을 준비합니다.","콘스탄틴은 안젤라의 집으로 자리를 옮겨, 이사벨을 찾을 의식을 준비합니다.",clips\clip_013_narration.mp4
+14,601.792,640.083,2742,2780.234,narration,rising_action,0.18,"의식이 시작되자, 콘스탄틴은 지옥으로 건너갑니다.","의식이 시작되자, 콘스탄틴은 지옥으로 건너갑니다.",clips\clip_014_narration.mp4
+15,640.083,705.792,3060.854,3126.544,movie_dialogue,rising_action,0.96,,연속된 원대사와 반응으로 사건의 원인과 결과를 보여준다.,clips\clip_015_movie_dialogue.mp4
+16,705.792,732.25,3460.258,3486.7,narration,reversal,0.18,"안젤라는 어린 시절, 자매끼리 메시지를 남기던 방법을 떠올립니다.","안젤라는 어린 시절, 자매끼리 메시지를 남기던 방법을 떠올립니다.",clips\clip_016_narration.mp4
+17,732.25,802.958,3486.821,3557.47,movie_dialogue,reversal,0.96,,연속된 원대사와 반응으로 사건의 원인과 결과를 보여준다.,clips\clip_017_movie_dialogue.mp4
+18,802.958,876.0,3640,3713,narration,rising_action,0.18,"통화가 끊긴 직후, 콘스탄틴과 안젤라는 비먼의 은신처에 도착합니다.","통화가 끊긴 직후, 콘스탄틴과 안젤라는 비먼의 은신처에 도착합니다.",clips\clip_018_narration.mp4
+19,876.0,905.667,3907.372,3937,movie_dialogue,rising_action,0.96,,연속된 원대사와 반응으로 사건의 원인과 결과를 보여준다.,clips\clip_019_movie_dialogue.mp4
+20,905.667,953.708,4190,4238,narration,reversal,0.18,안젤라는 비먼이 죽기 전 본 마지막 장면을 천천히 더듬기 시작합니다.,안젤라는 비먼이 죽기 전 본 마지막 장면을 천천히 더듬기 시작합니다.,clips\clip_020_narration.mp4
+21,953.708,1035.75,4340,4422,narration,reversal,0.18,"흔적을 따라온 콘스탄틴은, 안젤라를 차에 남깁니다.","흔적을 따라온 콘스탄틴은, 안젤라를 차에 남깁니다.",clips\clip_021_narration.mp4
+22,1035.75,1098.167,4449.367,4511.763,movie_dialogue,reversal,0.96,,연속된 원대사와 반응으로 사건의 원인과 결과를 보여준다.,clips\clip_022_movie_dialogue.mp4
+23,1098.167,1158.0,4559.811,4619.621,movie_dialogue,reversal,0.96,,연속된 원대사와 반응으로 사건의 원인과 결과를 보여준다.,clips\clip_023_movie_dialogue.mp4
+24,1158.0,1228.042,4690,4760,narration,crisis,0.18,"안젤라가 사라진 직후, 콘스탄틴은 미드나이트의 클럽으로 달려갑니다.","안젤라가 사라진 직후, 콘스탄틴은 미드나이트의 클럽으로 달려갑니다.",clips\clip_024_narration.mp4
+25,1228.042,1297.542,4800,4869.454,movie_dialogue,crisis,0.96,,연속된 원대사와 반응으로 사건의 원인과 결과를 보여준다.,clips\clip_025_movie_dialogue.mp4
+26,1297.542,1325.583,5080,5108,narration,crisis,0.18,"안젤라의 위치를 알아낸 콘스탄틴과 채즈는, 곧바로 병원으로 향합니다.","안젤라의 위치를 알아낸 콘스탄틴과 채즈는, 곧바로 병원으로 향합니다.",clips\clip_026_narration.mp4
+27,1325.583,1368.583,5217,5260,narration,crisis,0.18,"병원에 도착한 두 사람은, 안젤라를 찾아 안으로 들어갑니다.","병원에 도착한 두 사람은, 안젤라를 찾아 안으로 들어갑니다.",clips\clip_027_narration.mp4
+28,1368.583,1399.625,5320,5351,movie_dialogue,crisis,0.96,,연속된 원대사와 반응으로 사건의 원인과 결과를 보여준다.,clips\clip_028_movie_dialogue.mp4
+29,1399.625,1460.917,5408.743,5470,movie_dialogue,crisis,0.96,,연속된 원대사와 반응으로 사건의 원인과 결과를 보여준다.,clips\clip_029_movie_dialogue.mp4
+30,1460.917,1496.958,5520,5556,ending,climax,0.96,,연속된 원대사와 반응으로 사건의 원인과 결과를 보여준다.,clips\clip_030_ending.mp4

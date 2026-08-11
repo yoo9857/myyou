@@ -1,0 +1,69 @@
+{
+  "ok": true,
+  "project_dir": "<project>",
+  "canonical": "template-2.tmp",
+  "version": "9.1.0",
+  "modern_storage": true,
+  "diverged": false,
+  "layout": "content-primary",
+  "nested_timelines": [
+    "Timelines/project.json",
+    "Timelines/2B0D9201-EBBD-4D8F-9FC3-9664DC515EDB/draft_content.json"
+  ],
+  "write_guard": "ok",
+  "editor_running": [],
+  "candidates": [
+    {
+      "file": "draft_content.json",
+      "exists": true,
+      "size": 1813860,
+      "mtime": "2026-08-11T15:43:01.223Z",
+      "sha256": "ee152d799e59130e770c4494ba2176608cf9801294d1d920b17976d766735459",
+      "parseable_timeline": true,
+      "envelope": "root",
+      "timeline_hash": "ee152d799e59130e770c4494ba2176608cf9801294d1d920b17976d766735459",
+      "tracks": 3,
+      "segments": 340,
+      "app_version": "9.1.0"
+    },
+    {
+      "file": "draft_info.json",
+      "exists": false,
+      "size": 0,
+      "mtime": null,
+      "sha256": null,
+      "parseable_timeline": false,
+      "envelope": "root",
+      "timeline_hash": null,
+      "app_version": null
+    },
+    {
+      "file": "draft_meta_info.json",
+      "exists": true,
+      "size": 2448,
+      "mtime": "2026-08-11T15:31:06.690Z",
+      "sha256": "06c8250a78f28529699a7263c1e329129827368b54a50d0978504bb877a7a3ce",
+      "parseable_timeline": false,
+      "envelope": "root",
+      "timeline_hash": null,
+      "app_version": null,
+      "error": "JSON file does not contain a recognizable timeline"
+    },
+    {
+      "file": "template-2.tmp",
+      "exists": true,
+      "size": 1813860,
+      "mtime": "2026-08-11T15:43:01.238Z",
+      "sha256": "ee152d799e59130e770c4494ba2176608cf9801294d1d920b17976d766735459",
+      "parseable_timeline": true,
+      "envelope": "root",
+      "timeline_hash": "ee152d799e59130e770c4494ba2176608cf9801294d1d920b17976d766735459",
+      "tracks": 3,
+      "segments": 340,
+      "app_version": "9.1.0"
+    }
+  ],
+  "next_actions": [
+    "Storage targets are readable and agree. A normal CLI write will synchronize them."
+  ]
+}

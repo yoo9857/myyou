@@ -1,0 +1,364 @@
+{
+  "schema_version": 1,
+  "project": "C:\\Users\\hanbi\\AppData\\Local\\CapCut\\User Data\\Projects\\com.lveditor.draft\\CONSTANTINE_STORY_REVIEW_V5",
+  "dry_run": true,
+  "reference_images": [
+    "C:\\cineyoutube\\나레이션.png",
+    "C:\\cineyoutube\\이름강조나레이션.png",
+    "C:\\cineyoutube\\상황나레이션.png",
+    "C:\\cineyoutube\\자막.png"
+  ],
+  "counts": {
+    "dialogue": 287,
+    "review": 29,
+    "main_narration": 6,
+    "name_emphasis": 9,
+    "situation_narration": 14,
+    "two_tone": 16,
+    "animated_review": 29,
+    "animated_dialogue": 0
+  },
+  "safe_area": {
+    "dialogue_y": -0.79,
+    "review_y_range": [
+      -0.625,
+      -0.595
+    ],
+    "dialogue_max_width": 0.74,
+    "review_max_width_range": [
+      0.7,
+      0.72
+    ],
+    "adaptive_font_size": true,
+    "max_font_size": 5.55
+  },
+  "palette": {
+    "dialogue": "#F2F3F5",
+    "narration": "#F7F3EA",
+    "name_base": "#F7F3EA",
+    "name_accent": "#FF4D3D",
+    "situation": "#F7F3EA",
+    "situation_accent": "#FFD166"
+  },
+  "line_layout": {
+    "explicit_two_line_materials": 238,
+    "max_display_line_chars": 40
+  },
+  "motion_detail": {
+    "native_animation_materials": 29,
+    "keyframed_review_segments": 29,
+    "patterns": [
+      "micro-rise",
+      "fade-in",
+      "fade-out"
+    ],
+    "restrained_motion": true,
+    "movie_dialogue_animated": false
+  },
+  "typography": {
+    "family": "Pretendard",
+    "dialogue_weight": "Medium",
+    "review_weight": "SemiBold",
+    "emphasis_weight": "ExtraBold",
+    "italic_disabled": true
+  },
+  "overflow_checks": {
+    "fixed_width_disabled": true,
+    "fixed_height_disabled": true,
+    "auto_adapt_canvas": true,
+    "force_line_max_width": true,
+    "oversized_materials": 0
+  },
+  "animation_plan": [
+    {
+      "cue": 1,
+      "track": "REVIEW_NARRATION",
+      "segment_id": "F11D7C2A-02D1-44E5-861B-59AE56426B92",
+      "style": "EDITORIAL_NAME_V3",
+      "intro": "fade-in",
+      "intro_ms": 190,
+      "outro": "fade-out",
+      "outro_ms": 150
+    },
+    {
+      "cue": 2,
+      "track": "REVIEW_NARRATION",
+      "segment_id": "92043080-5F49-411B-8993-3A67045F26C2",
+      "style": "EDITORIAL_CONTEXT_V3",
+      "intro": "fade-in",
+      "intro_ms": 190,
+      "outro": "fade-out",
+      "outro_ms": 150
+    },
+    {
+      "cue": 3,
+      "track": "REVIEW_NARRATION",
+      "segment_id": "CE2816C3-3BDB-4B5E-8876-29D6A4A7A2BA",
+      "style": "EDITORIAL_REVIEW_V3",
+      "intro": "fade-in",
+      "intro_ms": 190,
+      "outro": "fade-out",
+      "outro_ms": 150
+    },
+    {
+      "cue": 4,
+      "track": "REVIEW_NARRATION",
+      "segment_id": "7BCDFD5E-865B-4CDE-93CF-D1F415B5CD4C",
+      "style": "EDITORIAL_NAME_V3",
+      "intro": "fade-in",
+      "intro_ms": 150,
+      "outro": "fade-out",
+      "outro_ms": 150
+    },
+    {
+      "cue": 5,
+      "track": "REVIEW_NARRATION",
+      "segment_id": "2BCF3364-0339-4069-96E7-F3B8A3F31088",
+      "style": "EDITORIAL_CONTEXT_V3",
+      "intro": "fade-in",
+      "intro_ms": 190,
+      "outro": "fade-out",
+      "outro_ms": 150
+    },
+    {
+      "cue": 6,
+      "track": "REVIEW_NARRATION",
+      "segment_id": "6B0E67FD-CB81-4337-B99C-CDD527D46494",
+      "style": "EDITORIAL_REVIEW_V3",
+      "intro": "fade-in",
+      "intro_ms": 190,
+      "outro": "fade-out",
+      "outro_ms": 150
+    },
+    {
+      "cue": 7,
+      "track": "REVIEW_NARRATION",
+      "segment_id": "332C57BD-AF75-410C-8BCB-B25AC504ABC2",
+      "style": "EDITORIAL_CONTEXT_V3",
+      "intro": "fade-in",
+      "intro_ms": 190,
+      "outro": "fade-out",
+      "outro_ms": 150
+    },
+    {
+      "cue": 8,
+      "track": "REVIEW_NARRATION",
+      "segment_id": "6143FF1E-2E5C-48B4-8435-1D15AA65A82D",
+      "style": "EDITORIAL_NAME_V3",
+      "intro": "fade-in",
+      "intro_ms": 190,
+      "outro": "fade-out",
+      "outro_ms": 150
+    },
+    {
+      "cue": 9,
+      "track": "REVIEW_NARRATION",
+      "segment_id": "688A7495-B390-43E8-99DA-67CBF2058F09",
+      "style": "EDITORIAL_CONTEXT_V3",
+      "intro": "fade-in",
+      "intro_ms": 190,
+      "outro": "fade-out",
+      "outro_ms": 150
+    },
+    {
+      "cue": 10,
+      "track": "REVIEW_NARRATION",
+      "segment_id": "EA43A194-9352-4A81-AD00-273E9DEE8780",
+      "style": "EDITORIAL_REVIEW_V3",
+      "intro": "fade-in",
+      "intro_ms": 150,
+      "outro": "fade-out",
+      "outro_ms": 150
+    },
+    {
+      "cue": 11,
+      "track": "REVIEW_NARRATION",
+      "segment_id": "D02EF7A2-9435-4D3F-B5CF-B9A47FF44E62",
+      "style": "EDITORIAL_CONTEXT_V3",
+      "intro": "fade-in",
+      "intro_ms": 190,
+      "outro": "fade-out",
+      "outro_ms": 150
+    },
+    {
+      "cue": 12,
+      "track": "REVIEW_NARRATION",
+      "segment_id": "D2083AEA-7711-4CD8-BD2C-66F3BEE48C8B",
+      "style": "EDITORIAL_NAME_V3",
+      "intro": "fade-in",
+      "intro_ms": 190,
+      "outro": "fade-out",
+      "outro_ms": 150
+    },
+    {
+      "cue": 13,
+      "track": "REVIEW_NARRATION",
+      "segment_id": "D6CECC8C-DB48-46D1-8702-F29BA772034C",
+      "style": "EDITORIAL_CONTEXT_V3",
+      "intro": "fade-in",
+      "intro_ms": 190,
+      "outro": "fade-out",
+      "outro_ms": 150
+    },
+    {
+      "cue": 14,
+      "track": "REVIEW_NARRATION",
+      "segment_id": "E40EBF4D-FA92-43C3-ABB1-AE9C7455A8D1",
+      "style": "EDITORIAL_REVIEW_V3",
+      "intro": "fade-in",
+      "intro_ms": 190,
+      "outro": "fade-out",
+      "outro_ms": 150
+    },
+    {
+      "cue": 15,
+      "track": "REVIEW_NARRATION",
+      "segment_id": "AD006231-CC11-4D4D-9887-1D6F08FD7137",
+      "style": "EDITORIAL_CONTEXT_V3",
+      "intro": "fade-in",
+      "intro_ms": 150,
+      "outro": "fade-out",
+      "outro_ms": 150
+    },
+    {
+      "cue": 16,
+      "track": "REVIEW_NARRATION",
+      "segment_id": "946A84F6-DC5B-4C4A-8974-2F256912E610",
+      "style": "EDITORIAL_NAME_V3",
+      "intro": "fade-in",
+      "intro_ms": 190,
+      "outro": "fade-out",
+      "outro_ms": 150
+    },
+    {
+      "cue": 17,
+      "track": "REVIEW_NARRATION",
+      "segment_id": "E289D8ED-72E2-4A0B-B114-DA90A75323C5",
+      "style": "EDITORIAL_CONTEXT_V3",
+      "intro": "fade-in",
+      "intro_ms": 190,
+      "outro": "fade-out",
+      "outro_ms": 150
+    },
+    {
+      "cue": 18,
+      "track": "REVIEW_NARRATION",
+      "segment_id": "87B30D72-02DF-4ABB-9A88-CD116FEA2400",
+      "style": "EDITORIAL_CONTEXT_V3",
+      "intro": "fade-in",
+      "intro_ms": 190,
+      "outro": "fade-out",
+      "outro_ms": 150
+    },
+    {
+      "cue": 19,
+      "track": "REVIEW_NARRATION",
+      "segment_id": "0A8CBF59-BF7C-425B-824C-FBD347260F56",
+      "style": "EDITORIAL_NAME_V3",
+      "intro": "fade-in",
+      "intro_ms": 150,
+      "outro": "fade-out",
+      "outro_ms": 150
+    },
+    {
+      "cue": 20,
+      "track": "REVIEW_NARRATION",
+      "segment_id": "145352BE-A4EF-4177-912E-ADFF4644ABA4",
+      "style": "EDITORIAL_CONTEXT_V3",
+      "intro": "fade-in",
+      "intro_ms": 190,
+      "outro": "fade-out",
+      "outro_ms": 150
+    },
+    {
+      "cue": 21,
+      "track": "REVIEW_NARRATION",
+      "segment_id": "CA936B72-F2E6-47D3-88B7-E98B7CE70E60",
+      "style": "EDITORIAL_REVIEW_V3",
+      "intro": "fade-in",
+      "intro_ms": 190,
+      "outro": "fade-out",
+      "outro_ms": 150
+    },
+    {
+      "cue": 22,
+      "track": "REVIEW_NARRATION",
+      "segment_id": "4EDA72B3-E0B4-4350-87A2-EA9ED756DF3D",
+      "style": "EDITORIAL_CONTEXT_V3",
+      "intro": "fade-in",
+      "intro_ms": 190,
+      "outro": "fade-out",
+      "outro_ms": 150
+    },
+    {
+      "cue": 23,
+      "track": "REVIEW_NARRATION",
+      "segment_id": "7F1F2A98-5AF7-4EA8-81DB-D2AE126FB79A",
+      "style": "EDITORIAL_NAME_V3",
+      "intro": "fade-in",
+      "intro_ms": 190,
+      "outro": "fade-out",
+      "outro_ms": 150
+    },
+    {
+      "cue": 24,
+      "track": "REVIEW_NARRATION",
+      "segment_id": "C04A3D22-A2A2-461A-900C-0FE00E8EB713",
+      "style": "EDITORIAL_CONTEXT_V3",
+      "intro": "fade-in",
+      "intro_ms": 190,
+      "outro": "fade-out",
+      "outro_ms": 150
+    },
+    {
+      "cue": 25,
+      "track": "REVIEW_NARRATION",
+      "segment_id": "99FEDD05-342E-4065-A7EA-EE95B9789A7E",
+      "style": "EDITORIAL_NAME_V3",
+      "intro": "fade-in",
+      "intro_ms": 150,
+      "outro": "fade-out",
+      "outro_ms": 150
+    },
+    {
+      "cue": 26,
+      "track": "REVIEW_NARRATION",
+      "segment_id": "FD963F69-4722-4CE6-9C89-289D00761AD2",
+      "style": "EDITORIAL_CONTEXT_V3",
+      "intro": "fade-in",
+      "intro_ms": 190,
+      "outro": "fade-out",
+      "outro_ms": 150
+    },
+    {
+      "cue": 27,
+      "track": "REVIEW_NARRATION",
+      "segment_id": "402FCF48-B1A9-4D13-A2ED-25DFB58BCCAB",
+      "style": "EDITORIAL_CONTEXT_V3",
+      "intro": "fade-in",
+      "intro_ms": 150,
+      "outro": "fade-out",
+      "outro_ms": 150
+    },
+    {
+      "cue": 28,
+      "track": "REVIEW_NARRATION",
+      "segment_id": "5E912EE9-A096-41DB-9A28-884683FFA566",
+      "style": "EDITORIAL_NAME_V3",
+      "intro": "fade-in",
+      "intro_ms": 190,
+      "outro": "fade-out",
+      "outro_ms": 150
+    },
+    {
+      "cue": 29,
+      "track": "REVIEW_NARRATION",
+      "segment_id": "FF995293-6A44-4430-BE48-CB167DB3E688",
+      "style": "EDITORIAL_REVIEW_V3",
+      "intro": "fade-in",
+      "intro_ms": 190,
+      "outro": "fade-out",
+      "outro_ms": 240
+    }
+  ]
+}

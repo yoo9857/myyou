@@ -1,0 +1,13 @@
+{
+  "main_boundary_sec": 1487.0,
+  "final_duration_sec": 1501.021321,
+  "base_review_cues": 27,
+  "outro_review_cues": 2,
+  "final_review_cues": 29,
+  "movie_audio_muted_in_outro": true,
+  "movie_captions_suppressed_in_outro": true,
+  "music_speech_gain": 0.05,
+  "music_post_speech_gain": 0.18,
+  "voice_generation": "OFF",
+  "runtime_deviation": "25:01.021; retained full approved main cut and minimum 14-second outro"
+}

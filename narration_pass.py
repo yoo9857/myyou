@@ -4,10 +4,11 @@ import argparse
 import json
 import re
 import shutil
+import sys
 from pathlib import Path
 from typing import Any
 
-from pipeline import ROOT, OUTPUT, ANALYSIS, codex_exec, load_config, parse_srt
+from pipeline import CODE_ROOT, ROOT, OUTPUT, ANALYSIS, codex_exec, load_config, parse_srt, story_map_path, validate_story_map_gate
 
 
 DEFAULT_SOURCE = OUTPUT / "edit_plan_v4_curiosity_hook.json"
@@ -28,7 +29,7 @@ def build_candidates(plan: dict[str, Any], config: dict[str, Any]) -> list[dict[
     candidates: list[dict[str, Any]] = []
     for index, segment in enumerate(segments):
         draft = str(segment.get("narration", "")).strip()
-        if not draft:
+        if not draft and int(segment["order"]) != 1:
             continue
         source_start = float(segment["source_start"])
         source_end = float(segment["source_end"])
@@ -63,17 +64,19 @@ def visible_korean_chars(text: str) -> int:
     return len(re.sub(r"[\s,.!?·…'\"“”‘’]", "", text))
 
 
-def normalize_script(script: dict[str, Any]) -> None:
+def normalize_script(script: dict[str, Any], config: dict[str, Any] | None = None) -> None:
     """Keep user-approved anchor copy stable across model regenerations."""
     for item in script.get("items", []):
-        if int(item.get("order", 0)) == 1:
+        item["caption_ko"] = str(item.get("caption_ko", "")).strip()
+        item["tts_en"] = str(item.get("tts_en", "")).strip()
+        if config and int(item.get("order", 0)) == 1 and config.get("hook_caption_ko"):
             item["use_narration"] = True
             item["role"] = "hook"
-            item["caption_ko"] = "여기, 모두를 살릴 유일한 남자가 있습니다."
-            item["tts_en"] = "There is only one man who can save them all."
-            item["delivery"] = "intrigued"
+            item["caption_ko"] = str(config["hook_caption_ko"]).strip()
+            item["tts_en"] = str(config["hook_tts_en"]).strip()
+            item["delivery"] = "urgent"
             item["handoff"] = "next_dialogue"
-            break
+            item["spoiler_risk"] = "low"
 
 
 def validate_script(script: dict[str, Any], candidate_orders: set[int], config: dict[str, Any]) -> None:
@@ -113,11 +116,11 @@ def validate_script(script: dict[str, Any], candidate_orders: set[int], config: 
 
 def write_markdown(script: dict[str, Any]) -> None:
     lines = [
-        "# COLONY 나레이션 대본 V5",
+        f"# {load_config().get('project_title', 'Movie Review')} 나레이션 대본",
         "",
         script.get("summary", ""),
         "",
-        "| # | 사용 | 역할 | 한국어 자막 | Clara 영어 TTS | 톤 | 인계 |",
+        "| # | 사용 | 역할 | 한국어 자막 | Nayva 영어 TTS | 톤 | 인계 |",
         "|---:|:---:|---|---|---|---|---|",
     ]
     for item in script["items"]:
@@ -132,30 +135,30 @@ def write_markdown(script: dict[str, Any]) -> None:
 
 def generate(source: Path) -> None:
     config = load_config()
+    validate_story_map_gate(config, require_render_ready=True)
     plan = json.loads(source.read_text(encoding="utf-8"))
     candidates = build_candidates(plan, config)
     if not candidates:
         raise ValueError("나레이션 후보가 없습니다.")
     outline = json.loads((ANALYSIS / "story_outline.json").read_text(encoding="utf-8"))
-    prompt = (ROOT / "prompts" / "narration_pass.md").read_text(encoding="utf-8")
+    prompt = (CODE_ROOT / "prompts" / "narration_pass.md").read_text(encoding="utf-8")
+    story_path = story_map_path(config)
+    story_map = json.loads(story_path.read_text(encoding="utf-8")) if story_path and story_path.exists() else {}
     prompt += (
-        "\n\n이 프로젝트는 최종 반전 공개 직전까지만 사용한다. "
-        "아래 후보의 source_start/source_end와 목적을 벗어나는 미래 사실을 쓰지 마라. "
-        "order 1의 caption_ko는 정확히 '여기, 모두를 살릴 유일한 남자가 있습니다.'로 유지하고 "
-        "tts_en은 같은 범위의 짧은 자연스러운 영어로 작성하라.\n\n"
-        "STORY_CONTEXT:\n" + json.dumps({
+        "\n\nSTORY_CONTEXT:\n" + json.dumps({
             "title": outline.get("title"),
             "premise": outline.get("premise"),
-            "spoiler_cutoff_source_sec": config.get("spoiler_cutoff_source_sec", 6113.5),
+            "spoiler_cutoff_source_sec": config.get("spoiler_cutoff_source_sec"),
+            "causal_story_map": story_map,
         }, ensure_ascii=False, indent=2)
         + "\n\nCANDIDATES:\n" + json.dumps(candidates, ensure_ascii=False, indent=2)
     )
     codex = shutil.which("codex.cmd") or shutil.which("codex")
     if not codex:
         raise RuntimeError("codex CLI를 찾을 수 없습니다.")
-    codex_exec(codex, ROOT / "schemas" / "narration_script.schema.json", SCRIPT_JSON, prompt)
+    codex_exec(codex, CODE_ROOT / "schemas" / "narration_script.schema.json", SCRIPT_JSON, prompt)
     script = json.loads(SCRIPT_JSON.read_text(encoding="utf-8"))
-    normalize_script(script)
+    normalize_script(script, config)
     validate_script(script, {item["order"] for item in candidates}, config)
     SCRIPT_JSON.write_text(json.dumps(script, ensure_ascii=False, indent=2), encoding="utf-8")
     write_markdown(script)
@@ -164,10 +167,15 @@ def generate(source: Path) -> None:
 
 def apply(source: Path, make_current: bool) -> None:
     config = load_config()
+    validate_story_map_gate(config, require_render_ready=True)
     plan = json.loads(source.read_text(encoding="utf-8"))
     script = json.loads(SCRIPT_JSON.read_text(encoding="utf-8"))
-    normalize_script(script)
-    candidate_orders = {int(seg["order"]) for seg in plan["segments"] if str(seg.get("narration", "")).strip()}
+    normalize_script(script, config)
+    candidate_orders = {
+        int(seg["order"])
+        for seg in plan["segments"]
+        if str(seg.get("narration", "")).strip() or int(seg["order"]) == 1
+    }
     validate_script(script, candidate_orders, config)
     SCRIPT_JSON.write_text(json.dumps(script, ensure_ascii=False, indent=2), encoding="utf-8")
     items = {int(item["order"]): item for item in script["items"]}
@@ -190,8 +198,8 @@ def apply(source: Path, make_current: bool) -> None:
     plan["narration_voice"] = {
         "provider": "ElevenLabs",
         "model": "eleven_v3",
-        "voice_name": "Clara - Whispery & Intimate",
-        "voice_id": "wNvqdMNs9MLd1PG6uWuY",
+        "voice_name": "Nayva",
+        "voice_id": config.get("elevenlabs_voice_id", "cfc7wVYq4gw4OpcEEAom"),
     }
     TARGET_PLAN.write_text(json.dumps(plan, ensure_ascii=False, indent=2), encoding="utf-8")
     if make_current:
@@ -214,4 +222,8 @@ def main() -> None:
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except Exception as exc:
+        print(f"오류: {exc}", file=sys.stderr)
+        raise SystemExit(1)

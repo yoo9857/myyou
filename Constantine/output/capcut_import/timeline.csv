@@ -1,0 +1,62 @@
+﻿order,timeline_start,timeline_end,source_start,source_end,kind,story_beat,audio_level,narration,purpose,clip
+1,0.0,15.033,5200,5215,hook,cold_open,0.96,"두 사람은 아직, 진짜 적을 보지 못했다.",결전에 들어선 두 사람과 다가오는 적을 먼저 보여주며 즉각적인 긴장을 만든다.,clips\clip_001_hook.mp4
+2,15.033,37.1,200,222,narration,setup,0.18,땅속에 묻혀 있던 물건이 다시 모습을 드러낸다.,위험한 물건이 세상에 다시 나타났음을 소개한다.,clips\clip_002_narration.mp4
+3,37.1,59.133,260,282,montage,setup,0.9,,숙명의 창을 발견한 인물과 불길한 변화를 보여준다.,clips\clip_003_montage.mp4
+4,59.133,81.167,340,362,movie_dialogue,setup,0.94,,로스앤젤레스의 빙의 현장과 콘스탄틴의 등장을 연결한다.,clips\clip_004_movie_dialogue.mp4
+5,81.167,103.2,380,402,movie_dialogue,setup,0.98,,콘스탄틴이 악령에게 정체를 드러내라고 압박한다.,clips\clip_005_movie_dialogue.mp4
+6,103.2,125.233,430,452,montage,setup,0.92,,거울을 이용한 퇴마의 위험성과 콘스탄틴의 숙련도를 보여준다.,clips\clip_006_montage.mp4
+7,125.233,147.267,500,522,movie_dialogue,setup,0.96,,퇴마가 예상과 달리 흘러가고 있음을 강조한다.,clips\clip_007_movie_dialogue.mp4
+8,147.267,169.333,570,592,montage,setup,0.9,,악령이 인간의 몸을 통로로 삼으려 했다는 이상 징후를 남긴다.,clips\clip_008_montage.mp4
+9,169.333,191.4,660,682,narration,setup,0.2,,성공한 퇴마 뒤에도 규칙이 어긋났다는 의문을 정리한다.,clips\clip_009_narration.mp4
+10,191.4,213.467,740,762,narration,inciting_incident,0.18,,콘스탄틴에게 남은 시간이 짧다는 사실을 제시한다.,clips\clip_010_narration.mp4
+11,213.467,235.5,800,822,movie_dialogue,inciting_incident,0.97,,폐암 진단과 콘스탄틴의 냉소적인 반응을 살린다.,clips\clip_011_movie_dialogue.mp4
+12,235.5,257.567,870,892,montage,inciting_incident,0.9,,죽음을 피할 수 없는 현실과 그의 불안을 보여준다.,clips\clip_012_montage.mp4
+13,257.567,279.6,930,952,movie_dialogue,inciting_incident,0.96,,안젤라가 이사벨의 시신을 확인하는 순간을 제시한다.,clips\clip_013_movie_dialogue.mp4
+14,279.6,301.633,1010,1032,movie_dialogue,inciting_incident,0.98,,안젤라가 자살이라는 공식 결론을 거부하게 한다.,clips\clip_014_movie_dialogue.mp4
+15,301.633,323.667,1090,1112,narration,rising_action,0.19,,빙의 사건과 이사벨 사건이 같은 불안 속에서 움직이기 시작했음을 연결한다.,clips\clip_015_narration.mp4
+16,323.667,345.7,1170,1192,movie_dialogue,rising_action,0.97,,악령이 직접 이승으로 나오려 했다는 증언을 강조한다.,clips\clip_016_movie_dialogue.mp4
+17,345.7,367.733,1260,1282,movie_dialogue,rising_action,0.96,,콘스탄틴이 가브리엘에게 구원과 수명 연장을 요구한다.,clips\clip_017_movie_dialogue.mp4
+18,367.733,389.8,1330,1352,movie_dialogue,rising_action,0.98,,퇴마의 동기가 타인이 아닌 자신이었다는 비판을 들려준다.,clips\clip_018_movie_dialogue.mp4
+19,389.8,411.833,1430,1452,montage,rising_action,0.9,,구원의 길이 막힌 콘스탄틴의 고립감을 유지한다.,clips\clip_019_montage.mp4
+20,411.833,433.9,1540,1562,movie_dialogue,rising_action,0.96,,안젤라가 콘스탄틴에게 이사벨 사건을 의뢰하도록 두 서사를 합친다.,clips\clip_020_movie_dialogue.mp4
+21,433.9,455.933,1640,1662,narration,rising_action,0.18,답을 얻기 위해 그는 미드나잇을 찾아간다.,콘스탄틴이 중립지대에서 답을 구하려 함을 설명한다.,clips\clip_021_narration.mp4
+22,455.933,478.0,1740,1762,montage,rising_action,0.91,,천국과 지옥의 혼혈종이 모이는 클럽을 소개한다.,clips\clip_022_montage.mp4
+23,478.0,500.033,1840,1862,movie_dialogue,rising_action,0.98,,악마가 직접 이승에 들어왔다는 콘스탄틴의 경고를 전달한다.,clips\clip_023_movie_dialogue.mp4
+24,500.033,522.067,1940,1962,movie_dialogue,rising_action,0.97,,미드나잇이 휴전 규칙을 이유로 경고를 부정하게 한다.,clips\clip_024_movie_dialogue.mp4
+25,522.067,544.133,2040,2062,movie_dialogue,rising_action,0.96,,발사자르의 도발로 악마들이 콘스탄틴을 두려워하지 않음을 보여준다.,clips\clip_025_movie_dialogue.mp4
+26,544.133,566.2,2120,2142,movie_dialogue,rising_action,0.98,,안젤라가 동생이 살해됐다고 주장하며 사건의 연결을 강화한다.,clips\clip_026_movie_dialogue.mp4
+27,566.2,588.267,2530,2552,narration,rising_action,0.2,,콘스탄틴이 이사벨의 죽음을 직접 확인하려 함을 설명한다.,clips\clip_027_narration.mp4
+28,588.267,610.333,2620,2642,montage,rising_action,0.9,,고양이를 매개로 경계를 넘는 의식의 기괴함을 보여준다.,clips\clip_028_montage.mp4
+29,610.333,632.4,2740,2762,movie_dialogue,rising_action,0.98,,콘스탄틴이 이사벨의 자살이 사실이라고 알린다.,clips\clip_029_movie_dialogue.mp4
+30,632.4,654.433,2880,2902,movie_dialogue,rising_action,0.97,,콘스탄틴이 자신도 자살로 지옥을 경험했다고 고백한다.,clips\clip_030_movie_dialogue.mp4
+31,654.433,676.5,2960,2982,movie_dialogue,rising_action,0.98,,그가 죽은 뒤 갈 곳을 두려워한다는 내적 동기를 드러낸다.,clips\clip_031_movie_dialogue.mp4
+32,676.5,698.533,3060,3082,movie_dialogue,rising_action,0.97,,이사벨이 안젤라만 이해할 단서를 남겼다는 추론을 제시한다.,clips\clip_032_movie_dialogue.mp4
+33,698.533,720.567,3140,3162,montage,rising_action,0.9,,쌍둥이의 기억과 병실 흔적을 따라가는 조사를 압축한다.,clips\clip_033_montage.mp4
+34,720.567,742.633,3210,3232,movie_dialogue,rising_action,0.96,,경찰이 찾지 못한 단서를 안젤라가 발견하도록 긴장을 끌어올린다.,clips\clip_034_movie_dialogue.mp4
+35,742.633,764.7,3250,3272,narration,reversal,0.19,유리창에 이사벨이 남긴 암호가 떠오른다.,쌍둥이만의 방식으로 숨겨진 성경 암호가 나타났음을 정리한다.,clips\clip_035_narration.mp4
+36,764.7,786.733,3320,3342,movie_dialogue,reversal,0.97,,존재하지 않는 고린도전서 17장이라는 수수께끼를 제시한다.,clips\clip_036_movie_dialogue.mp4
+37,786.733,808.767,3390,3412,movie_dialogue,reversal,0.98,,비먼이 지옥 성경과 마몬의 예언을 해독한다.,clips\clip_037_movie_dialogue.mp4
+38,808.767,830.8,3470,3492,montage,reversal,0.92,,비먼에게 닥친 공격으로 적이 단서를 지우고 있음을 보여준다.,clips\clip_038_montage.mp4
+39,830.8,852.833,3560,3582,movie_dialogue,reversal,0.98,,안젤라도 이사벨과 같은 존재들을 봤다는 고백으로 영매 가능성을 드러낸다.,clips\clip_039_movie_dialogue.mp4
+40,852.833,874.867,3610,3632,narration,rising_action,0.18,,안젤라가 외면했던 능력을 되찾기로 선택했음을 연결한다.,clips\clip_040_narration.mp4
+41,874.867,896.9,3690,3712,movie_dialogue,rising_action,0.98,,동생을 혼자 버려뒀다는 안젤라의 죄책감을 살린다.,clips\clip_041_movie_dialogue.mp4
+42,896.9,918.933,3780,3802,montage,rising_action,0.91,,물 의식으로 안젤라의 감각이 열리는 과정을 보여준다.,clips\clip_042_montage.mp4
+43,918.933,940.967,3880,3902,movie_dialogue,rising_action,0.98,,안젤라가 악마를 보는 능력을 알고 있었다고 인정한다.,clips\clip_043_movie_dialogue.mp4
+44,940.967,963.033,3990,4012,montage,rising_action,0.92,,각성한 감각으로 주변의 악한 흔적을 포착한다.,clips\clip_044_montage.mp4
+45,963.033,985.067,4100,4122,movie_dialogue,rising_action,0.96,,살해된 동료들의 흔적이 발사자르에게 이어지도록 추적을 전환한다.,clips\clip_045_movie_dialogue.mp4
+46,985.067,1007.1,4150,4172,narration,reversal,0.19,,콘스탄틴이 발사자르를 붙잡아 강림 조건을 캐내려 함을 설명한다.,clips\clip_046_narration.mp4
+47,1007.1,1029.133,4240,4262,movie_dialogue,reversal,0.98,,천국행을 위협으로 바꾸는 콘스탄틴의 심문을 보여준다.,clips\clip_047_movie_dialogue.mp4
+48,1029.133,1051.2,4330,4352,movie_dialogue,reversal,0.98,,숙명의 창과 강력한 영매가 강림 조건임을 폭로한다.,clips\clip_048_movie_dialogue.mp4
+49,1051.2,1073.267,4420,4442,movie_dialogue,reversal,0.98,,안젤라가 처음부터 적의 표적이었다는 반전을 전달한다.,clips\clip_049_movie_dialogue.mp4
+50,1073.267,1095.3,4510,4532,movie_dialogue,reversal,0.97,,콘스탄틴의 의식이 안젤라를 완전한 영매로 만들었다는 실수를 드러낸다.,clips\clip_050_movie_dialogue.mp4
+51,1095.3,1117.333,4590,4612,montage,reversal,0.93,,안젤라의 납치와 콘스탄틴의 다급한 추격을 압축한다.,clips\clip_051_montage.mp4
+52,1117.333,1139.367,4650,4672,movie_dialogue,reversal,0.98,,콘스탄틴이 희생자가 늘어나는 현실로 미드나잇의 중립을 압박한다.,clips\clip_052_movie_dialogue.mp4
+53,1139.367,1161.433,5040,5062,narration,crisis,0.2,,미드나잇의 도움으로 위치를 찾고 결전에 도착했음을 알린다.,clips\clip_053_narration.mp4
+54,1161.433,1183.5,5080,5102,movie_dialogue,crisis,0.97,,채즈가 견습생으로 결전에 함께하겠다는 의지를 보여준다.,clips\clip_054_movie_dialogue.mp4
+55,1183.5,1205.567,5120,5142,movie_dialogue,crisis,0.98,,책과 현실은 다르다는 경고로 전투의 위험을 강조한다.,clips\clip_055_movie_dialogue.mp4
+56,1205.567,1227.633,5160,5182,montage,crisis,0.94,,결전 준비와 성수 장치를 빠르게 보여주며 속도를 높인다.,clips\clip_056_montage.mp4
+57,1227.633,1249.667,5215,5237,movie_dialogue,crisis,0.99,,콘스탄틴이 혼혈종들이 균형의 규칙을 깼다고 선언한다.,clips\clip_057_movie_dialogue.mp4
+58,1249.667,1271.7,5270,5292,montage,crisis,0.95,,성수 공격과 혼혈종들의 돌진을 교차해 결전 규모를 보여준다.,clips\clip_058_montage.mp4
+59,1271.7,1293.733,5350,5372,narration,crisis,0.2,,전투의 목적이 안젤라에게 도달하는 일임을 다시 집중시킨다.,clips\clip_059_narration.mp4
+60,1293.733,1315.767,5440,5462,movie_dialogue,crisis,0.99,,안젤라가 자신 안의 존재를 꺼내 달라고 호소하게 한다.,clips\clip_060_movie_dialogue.mp4
+61,1315.767,1322.8,5565,5572,ending,climax,0.18,그러나 이 결전은 아직 끝나지 않았다.,정체불명의 더 강한 존재가 개입하기 직전 멈춰 결정적 해결과 반전을 숨긴다.,clips\clip_061_ending.mp4

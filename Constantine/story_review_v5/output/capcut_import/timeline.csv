@@ -1,0 +1,52 @@
+﻿order,timeline_start,timeline_end,source_start,source_end,kind,story_beat,audio_level,narration,purpose,clip
+1,0.0,30.333,108.0,138.306,narration,opening_wounds,0.18,"멕시코의 폐허에서, 마누엘은 땅속에 묻힌 낡은 창을 발견합니다.",불길한 원인을 현재 화면의 발견 행동으로만 제시한다.,clips\clip_001_narration.mp4
+2,30.333,66.375,255.005,291.0,narration,opening_wounds,0.18,"그 시각 로스앤젤레스, 퇴마사 존 콘스탄틴이 한 소녀의 방으로 들어섭니다.",주인공과 현재 장소를 소개한 뒤 원대사로 넘긴다.,clips\clip_002_narration.mp4
+3,66.375,80.792,387.639,402.0,movie_dialogue,opening_wounds,0.96,,거울을 요구하며 퇴마 방식이 구체화된다.,clips\clip_003_movie_dialogue.mp4
+4,80.792,110.333,475.81,505.298,movie_dialogue,opening_wounds,0.96,,거울 속 악령과 마지막 대사를 온전히 보여준다.,clips\clip_004_movie_dialogue.mp4
+5,110.333,151.333,732.614,773.566,movie_dialogue,opening_wounds,0.96,,안젤라가 자신의 비정상적으로 정확한 감각을 두려워한다.,clips\clip_005_movie_dialogue.mp4
+6,151.333,191.375,800.0,840.0,movie_dialogue,opening_wounds,0.96,,이사벨의 망설임과 추락을 설명 없이 체험시킨다.,clips\clip_006_movie_dialogue.mp4
+7,191.375,222.875,889.891,921.339,movie_dialogue,opening_wounds,0.96,,폐암과 남은 시간이 의사의 대사로 공개된다.,clips\clip_007_movie_dialogue.mp4
+8,222.875,255.667,991.284,1024.025,movie_dialogue,opening_wounds,0.96,,안젤라는 이사벨의 자살을 완강하게 부정한다.,clips\clip_008_movie_dialogue.mp4
+9,255.667,279.042,1080.0,1103.354,narration,opening_wounds,0.18,"첫 퇴마의 이상을 확인하려, 콘스탄틴은 오랜 동료 비먼을 찾아갑니다.",완료된 퇴마와 현재 방문의 인과를 연결한다.,clips\clip_009_narration.mp4
+10,279.042,302.208,1167.252,1190.4,movie_dialogue,opening_wounds,0.96,,악령이 인간을 통로로 삼은 전례가 없다는 규칙을 보존한다.,clips\clip_010_movie_dialogue.mp4
+11,302.208,349.833,1357.233,1404.781,movie_dialogue,paths_converge,0.96,,가브리엘은 그의 퇴마가 자기 구원을 위한 거래였다고 지적한다.,clips\clip_011_movie_dialogue.mp4
+12,349.833,388.125,1686.855,1725.101,movie_dialogue,paths_converge,0.96,,거리의 악마가 직접 공격하며 경고가 현실이 된다.,clips\clip_012_movie_dialogue.mp4
+13,388.125,401.625,1849.934,1863.406,narration,paths_converge,0.18,"직접 공격까지 받은 콘스탄틴은, 중립을 지키는 미드나이트에게 경고하러 갑니다.",완료된 공격과 현재 목적지를 잇는다.,clips\clip_013_narration.mp4
+14,401.625,446.458,1926.01,1970.805,movie_dialogue,paths_converge,0.96,,악마의 직접 진입과 휴전 규칙이 충돌한다.,clips\clip_014_movie_dialogue.mp4
+15,446.458,467.25,2145.813,2166.543,movie_dialogue,paths_converge,0.96,,안젤라가 동생 사건을 의뢰한다.,clips\clip_015_movie_dialogue.mp4
+16,467.25,492.042,2183.059,2207.792,movie_dialogue,paths_converge,0.96,,이사벨의 악마 환상과 타살 의심이 두 사건을 합친다.,clips\clip_016_movie_dialogue.mp4
+17,492.042,530.792,2361.821,2400.485,movie_dialogue,paths_converge,0.96,,정전과 날갯소리가 설명보다 먼저 위험을 체감시킨다.,clips\clip_017_movie_dialogue.mp4
+18,530.792,549.25,2423.007,2441.442,movie_dialogue,paths_converge,0.96,,공격 뒤 남은 유황 냄새가 악마의 직접 개입을 증명한다.,clips\clip_018_movie_dialogue.mp4
+19,549.25,600.208,2474.1,2525.026,narration,hell_verification,0.18,"이사벨의 마지막 행선지를 확인하기 위해, 콘스탄틴은 그녀의 물건과 고양이를 준비합니다.",이미 제기된 지옥 가능성과 현재 의식 준비를 연결한다.,clips\clip_019_narration.mp4
+20,600.208,641.958,2745.0,2786.704,movie_dialogue,hell_verification,0.96,,지옥에서 돌아온 뒤 이사벨의 선택이 원대사로 공개된다.,clips\clip_020_movie_dialogue.mp4
+21,641.958,648.125,2799.676,2805.807,movie_dialogue,hell_verification,0.96,,현실에 가져온 증거가 체험의 진실성을 확정한다.,clips\clip_021_movie_dialogue.mp4
+22,648.125,699.417,3075.285,3126.544,movie_dialogue,hell_verification,0.96,,"자살 시도와 지옥 체험, 두 세계의 규칙을 고백한다.",clips\clip_022_movie_dialogue.mp4
+23,699.417,730.792,3151.277,3182.6,movie_dialogue,hell_verification,0.96,,퇴마의 동기가 구원 욕망이었음이 드러난다.,clips\clip_023_movie_dialogue.mp4
+24,730.792,764.125,3374.417,3407.7,movie_dialogue,mammon_message,0.96,,경찰이 못 찾는 쌍둥이만의 단서를 요구한다.,clips\clip_024_movie_dialogue.mp4
+25,764.125,790.458,3460.378,3486.654,movie_dialogue,mammon_message,0.96,,유리창 메시지에서 지옥 성경의 좌표를 발견한다.,clips\clip_025_movie_dialogue.mp4
+26,790.458,813.667,3521.606,3544.796,movie_dialogue,mammon_message,0.96,,사탄의 아들 마몬이라는 적이 처음 공개된다.,clips\clip_026_movie_dialogue.mp4
+27,813.667,840.167,3573.992,3600.435,movie_dialogue,mammon_message,0.96,,강력한 영매와 신의 도움이 강림 조건임을 밝힌다.,clips\clip_027_movie_dialogue.mp4
+28,840.167,863.708,3611.196,3634.719,movie_dialogue,mammon_message,0.96,,비먼의 마지막 경고가 통화 도중 끊긴다.,clips\clip_028_movie_dialogue.mp4
+29,863.708,879.917,3634.719,3650.902,narration,mammon_message,0.18,"통화가 끊기자, 두 사람은 비먼에게 달려갑니다.",현재 이동만 설명하고 그의 상태는 먼저 말하지 않는다.,clips\clip_029_narration.mp4
+30,879.917,892.958,3650.902,3663.915,movie_dialogue,mammon_message,0.96,,도착한 두 사람이 비먼의 죽음을 직접 확인한다.,clips\clip_030_movie_dialogue.mp4
+31,892.958,941.417,3790.667,3839.09,movie_dialogue,angela_choice,0.96,,안젤라는 능력을 숨겨 동생을 혼자 남겼다는 죄책감을 고백한다.,clips\clip_031_movie_dialogue.mp4
+32,941.417,957.25,3845.138,3860.904,movie_dialogue,angela_choice,0.96,,진실을 보면 악마도 자신을 본다는 대가를 받아들인다.,clips\clip_032_movie_dialogue.mp4
+33,957.25,997.917,3960.086,4000.71,movie_dialogue,angela_choice,0.96,,물 의식의 규칙과 선택을 원대사로 보여준다.,clips\clip_033_movie_dialogue.mp4
+34,997.917,1032.625,4103.188,4137.846,movie_dialogue,angela_choice,0.96,,돌아온 안젤라가 자신의 감각을 인정한다.,clips\clip_034_movie_dialogue.mp4
+35,1032.625,1078.125,4148.358,4193.82,narration,angela_choice,0.18,"각성한 안젤라는, 방 안에 남은 악마의 흔적을 더듬기 시작합니다.",현재 행동과 방금 획득한 능력만 연결한다.,clips\clip_035_narration.mp4
+36,1078.125,1080.458,4226.644,4228.897,movie_dialogue,angela_choice,0.96,,흔적의 주인이 발사자르임을 직접 확인한다.,clips\clip_036_movie_dialogue.mp4
+37,1080.458,1109.583,4363.865,4392.936,movie_dialogue,trap_revealed,0.96,,발사자르와 맞붙어 심문할 기회를 만든다.,clips\clip_037_movie_dialogue.mp4
+38,1109.583,1156.917,4449.367,4496.664,movie_dialogue,trap_revealed,0.96,,천국행을 역으로 위협해 악마의 입을 연다.,clips\clip_038_movie_dialogue.mp4
+39,1156.917,1171.833,4538.998,4553.847,movie_dialogue,trap_revealed,0.96,,예수의 피가 묻은 숙명의 창이 강림 도구임을 밝힌다.,clips\clip_039_movie_dialogue.mp4
+40,1171.833,1185.917,4569.821,4583.877,movie_dialogue,trap_revealed,0.96,,발사자르가 진짜 표적은 안젤라였다고 조롱한다.,clips\clip_040_movie_dialogue.mp4
+41,1185.917,1215.25,4590.341,4619.621,movie_dialogue,trap_revealed,0.96,,창과 영매의 연결이 안젤라에게 수렴한다.,clips\clip_041_movie_dialogue.mp4
+42,1215.25,1244.75,4641.768,4671.214,movie_dialogue,trap_revealed,0.96,,강림 조건이 완성됐음을 깨닫는 순간 안젤라가 위험해진다.,clips\clip_042_movie_dialogue.mp4
+43,1244.75,1254.125,4712.797,4722.14,narration,neutrality_breaks,0.18,"안젤라가 사라지자, 콘스탄틴은 다시 미드나이트를 찾아갑니다.",납치가 드러난 뒤 현재 목적지만 연결한다.,clips\clip_043_narration.mp4
+44,1254.125,1291.792,4755.423,4793.044,movie_dialogue,neutrality_breaks,0.96,,죽어가는 사람들을 외면할 거냐며 중립을 흔든다.,clips\clip_044_movie_dialogue.mp4
+45,1291.792,1306.042,4960.712,4974.934,movie_dialogue,neutrality_breaks,0.96,,추적 의식 끝에 안젤라의 위치를 찾아낸다.,clips\clip_045_movie_dialogue.mp4
+46,1306.042,1331.25,5015.266,5040.458,movie_dialogue,neutrality_breaks,0.96,,채즈가 지식과 장비로 결전에 합류한다.,clips\clip_046_movie_dialogue.mp4
+47,1331.25,1351.25,5050.051,5070.0,narration,neutrality_breaks,0.18,"위치를 확인한 콘스탄틴과 채즈는, 안젤라가 붙잡힌 병원으로 향합니다.",확인된 위치와 현재 이동만 설명한다.,clips\clip_047_narration.mp4
+48,1351.25,1375.167,5122.749,5146.648,movie_dialogue,neutrality_breaks,0.96,,책과 현실은 다르다는 경고로 결전의 위험을 세운다.,clips\clip_048_movie_dialogue.mp4
+49,1375.167,1410.958,5260.845,5296.548,movie_dialogue,pre_resolution_crisis,0.96,,규칙을 깬 혼혈종들에게 최후통첩하고 성수를 사용한다.,clips\clip_049_movie_dialogue.mp4
+50,1410.958,1458.083,5374.209,5421.297,movie_dialogue,pre_resolution_crisis,0.96,,전투 뒤 안젤라를 찾아 강림을 막기 시작한다.,clips\clip_050_movie_dialogue.mp4
+51,1458.083,1486.958,5513.806,5542.585,ending,pre_resolution_crisis,0.96,,안젤라 안의 존재가 나오려는 위기에서 멈춘다.,clips\clip_051_ending.mp4

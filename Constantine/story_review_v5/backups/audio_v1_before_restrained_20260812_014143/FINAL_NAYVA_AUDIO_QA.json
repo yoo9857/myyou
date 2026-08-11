@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "final_video": "C:\\cineyoutube\\Constantine\\story_review_v5\\output\\constantine_story_review_v5_nayva_final.mp4",
+  "source_video": "C:\\cineyoutube\\Constantine\\story_review_v5\\output\\constantine_story_review_v5_with_outro.mp4",
+  "voice": "Nayva",
+  "voice_model": "eleven_v3",
+  "voice_cues": 29,
+  "voice_stem": "C:\\cineyoutube\\Constantine\\story_review_v5\\output\\constantine_nayva_voice_stem.wav",
+  "movie_bed_video": "C:\\cineyoutube\\Constantine\\story_review_v5\\output\\constantine_story_review_v5_ducked_bed.mp4",
+  "movie_duck": {
+    "threshold": 0.008,
+    "ratio": 14,
+    "attack_ms": 140,
+    "release_ms": 650
+  },
+  "outro_music": "C:\\cineyoutube\\The Final Resolve.mp3",
+  "outro_music_stem": "C:\\cineyoutube\\Constantine\\story_review_v5\\output\\constantine_outro_music_stem.wav",
+  "outro_start_sec": 1487.0,
+  "music_source_start_sec": 15.0,
+  "music_speech_gain": 0.1,
+  "music_post_speech_gain": 0.32,
+  "music_rise_relative_sec": 12.1,
+  "music_fade_relative_sec": 13.1,
+  "source_duration_sec": 1501.021321,
+  "voice_stem_duration_sec": 1501.021313,
+  "music_stem_duration_sec": 14.021313,
+  "final_duration_sec": 1501.021321
+}

@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "duration_sec": 14.0,
+  "source_start": 1938.0,
+  "source_end": 1952.0,
+  "spoiler_cutoff_source_sec": 5580.0,
+  "spoiler_safe": true,
+  "movie_audio_muted": true,
+  "movie_captions_suppressed": true,
+  "review_cue": {
+    "start": 2.0,
+    "end": 7.5,
+    "text": "답을 얻지 못한 콘스탄틴은, 결국 자기 방식대로 밀어붙이는데…"
+  },
+  "cta_cue": {
+    "start": 8.6,
+    "end": 12.1,
+    "text": "그 마지막 선택만큼은, 직접 확인해 보시죠."
+  },
+  "music": {
+    "path": "C:\\cineyoutube\\The Final Resolve.mp3",
+    "start": 0.0,
+    "speech_gain": 0.05,
+    "post_speech_gain": 0.18,
+    "rise_start": 12.1,
+    "fade_out_start": 13.1,
+    "end": 14.0
+  },
+  "video_fade_out_sec": 0.9,
+  "audio_fade_out_sec": 0.9
+}

@@ -1,0 +1,926 @@
+{
+  "schema_version": 1,
+  "project_title": "Constantine Story-First Review V5",
+  "timeline_mode": "chronological",
+  "spoiler_cutoff_source_sec": 5580,
+  "sections": [
+    {
+      "id": "opening_wounds",
+      "status": "approved",
+      "audience_question": "두 주인공과 이사벨의 상처는 어떻게 시작되는가?",
+      "exit_answer": "창, 규칙 위반, 이사벨의 죽음, 콘스탄틴의 시한이 각각 제시된다.",
+      "next_question": "서로 떨어진 사건들은 어떻게 하나가 되는가?",
+      "events": [
+        {
+          "id": "spear_found",
+          "source_start": 108.0,
+          "source_end": 138.306,
+          "summary": "마누엘이 땅속에서 숙명의 창을 발견한다.",
+          "cause_ids": [],
+          "entry_point": true,
+          "characters": [],
+          "visible_action": "폐허 속 남자가 낡은 창을 집어 든다.",
+          "emotional_stake": "정체를 모르는 물건이 앞으로의 재앙을 연다.",
+          "question_opened": "이 창은 무엇을 불러올까?",
+          "question_answered": null,
+          "reveal_time": 108.0,
+          "must_show": true,
+          "selected_intervals": [
+            [
+              108.0,
+              138.306
+            ]
+          ],
+          "narration_role": "orient",
+          "transition_in": "opening",
+          "needs_visual_review": false,
+          "narration_start_time": 108.0,
+          "narration_evidence_time": 108.0
+        },
+        {
+          "id": "first_exorcism",
+          "source_start": 255.005,
+          "source_end": 505.298,
+          "summary": "콘스탄틴이 소녀에게 붙은 악령을 거울에 가둔다.",
+          "cause_ids": [],
+          "entry_point": true,
+          "characters": [],
+          "visible_action": "거울을 이용한 퇴마가 성공하지만 악령은 이승으로 나오려 한다.",
+          "emotional_stake": "숙련된 퇴마사조차 규칙의 이상을 감지한다.",
+          "question_opened": "왜 악령이 규칙을 깨고 나오려 했을까?",
+          "question_answered": null,
+          "reveal_time": 255.005,
+          "must_show": true,
+          "selected_intervals": [
+            [
+              255.005,
+              291.0
+            ],
+            [
+              387.639,
+              402.0
+            ],
+            [
+              475.81,
+              505.298
+            ]
+          ],
+          "narration_role": "orient",
+          "transition_in": "parallel_thread",
+          "needs_visual_review": false,
+          "narration_start_time": 255.005,
+          "narration_evidence_time": 255.005
+        },
+        {
+          "id": "angela_confession",
+          "source_start": 732.614,
+          "source_end": 773.566,
+          "summary": "형사 안젤라는 남들이 못 보는 것을 감지하는 자신을 두려워한다.",
+          "cause_ids": [],
+          "entry_point": true,
+          "characters": [],
+          "visible_action": "고해소에서 지나치게 정확한 감각을 고백한다.",
+          "emotional_stake": "이사벨을 외면한 과거와 연결될 내적 상처가 드러난다.",
+          "question_opened": "안젤라는 무엇을 외면하고 있나?",
+          "question_answered": null,
+          "reveal_time": 734.0,
+          "must_show": true,
+          "selected_intervals": [
+            [
+              732.614,
+              773.566
+            ]
+          ],
+          "narration_role": "none",
+          "transition_in": "parallel_thread",
+          "needs_visual_review": false
+        },
+        {
+          "id": "isabel_fall",
+          "source_start": 800.0,
+          "source_end": 840.0,
+          "summary": "이사벨이 병원 옥상에서 망설이다 추락한다.",
+          "cause_ids": [
+            "angela_confession"
+          ],
+          "entry_point": false,
+          "characters": [],
+          "visible_action": "이사벨이 옥상 끝에 서서 망설인 뒤 떨어진다.",
+          "emotional_stake": "안젤라가 진실을 추적할 감정적 원인이 생긴다.",
+          "question_opened": "이사벨은 왜 죽음을 택했나?",
+          "question_answered": "안젤라의 불안이 현실의 상실로 이어진다.",
+          "reveal_time": 840.0,
+          "must_show": true,
+          "selected_intervals": [
+            [
+              800.0,
+              840.0
+            ]
+          ],
+          "narration_role": "none",
+          "transition_in": "continuous",
+          "needs_visual_review": false
+        },
+        {
+          "id": "constantine_diagnosis",
+          "source_start": 889.891,
+          "source_end": 921.339,
+          "summary": "콘스탄틴은 폐암과 짧은 시한을 통보받는다.",
+          "cause_ids": [
+            "first_exorcism"
+          ],
+          "entry_point": false,
+          "characters": [],
+          "visible_action": "의사가 검사 결과와 남은 시간을 설명한다.",
+          "emotional_stake": "세상을 구하는 남자에게 자기 시간을 구할 길은 없다.",
+          "question_opened": "그는 죽기 전에 무엇을 바꿀 수 있을까?",
+          "question_answered": "콘스탄틴에게 시간이 거의 남지 않았다.",
+          "reveal_time": 903.238,
+          "must_show": true,
+          "selected_intervals": [
+            [
+              889.891,
+              921.339
+            ]
+          ],
+          "narration_role": "none",
+          "transition_in": "parallel_thread",
+          "needs_visual_review": false
+        },
+        {
+          "id": "angela_denial",
+          "source_start": 991.284,
+          "source_end": 1024.025,
+          "summary": "안젤라는 이사벨이 자살했다는 결론을 거부한다.",
+          "cause_ids": [
+            "isabel_fall"
+          ],
+          "entry_point": false,
+          "characters": [],
+          "visible_action": "시신 앞에서 자살이 아니라고 반복한다.",
+          "emotional_stake": "관객이 본 추락과 언니의 확신이 충돌한다.",
+          "question_opened": "자살처럼 보이는 죽음 뒤에 무엇이 있나?",
+          "question_answered": null,
+          "reveal_time": 1009.761,
+          "must_show": true,
+          "selected_intervals": [
+            [
+              991.284,
+              1024.025
+            ]
+          ],
+          "narration_role": "none",
+          "transition_in": "parallel_thread",
+          "needs_visual_review": false
+        },
+        {
+          "id": "beeman_rule_break",
+          "source_start": 1080.0,
+          "source_end": 1190.4,
+          "summary": "비먼이 악령의 직접 진입은 전례가 없다고 확인한다.",
+          "cause_ids": [
+            "first_exorcism"
+          ],
+          "entry_point": false,
+          "characters": [],
+          "visible_action": "콘스탄틴이 퇴마의 이상을 설명하고 비먼이 규칙을 말한다.",
+          "emotional_stake": "한 번의 퇴마가 세계 질서의 균열로 커진다.",
+          "question_opened": "누가 균형의 규칙을 깨고 있나?",
+          "question_answered": "악령은 원래 인간을 통로로 이승에 오지 못한다.",
+          "reveal_time": 1181.432,
+          "must_show": true,
+          "selected_intervals": [
+            [
+              1080.0,
+              1103.354
+            ],
+            [
+              1167.252,
+              1190.4
+            ]
+          ],
+          "narration_role": "causal_bridge",
+          "transition_in": "bridge",
+          "needs_visual_review": false,
+          "narration_start_time": 1080.0,
+          "narration_evidence_time": 1080.0
+        }
+      ]
+    },
+    {
+      "id": "paths_converge",
+      "status": "approved",
+      "audience_question": "서로 떨어진 사건들은 어떻게 하나가 되는가?",
+      "exit_answer": "안젤라의 의뢰와 직접 공격이 이사벨의 죽음을 규칙 붕괴와 연결한다.",
+      "next_question": "이사벨은 무엇을 알았기에 죽음을 택했는가?",
+      "events": [
+        {
+          "id": "gabriel_refusal",
+          "source_start": 1357.233,
+          "source_end": 1404.781,
+          "summary": "가브리엘은 콘스탄틴의 구원 거래를 거절한다.",
+          "cause_ids": [
+            "constantine_diagnosis",
+            "beeman_rule_break"
+          ],
+          "entry_point": false,
+          "characters": [],
+          "visible_action": "가브리엘이 그의 이기적 동기를 지적한다.",
+          "emotional_stake": "외적 사건과 별개로 주인공의 결핍이 선명해진다.",
+          "question_opened": "구원은 거래로 얻을 수 있는가?",
+          "question_answered": "콘스탄틴의 퇴마는 자신을 위한 일이었다.",
+          "reveal_time": 1391.559,
+          "must_show": true,
+          "selected_intervals": [
+            [
+              1357.233,
+              1404.781
+            ]
+          ],
+          "narration_role": "none",
+          "transition_in": "bridge",
+          "needs_visual_review": false
+        },
+        {
+          "id": "street_attack",
+          "source_start": 1686.855,
+          "source_end": 1725.101,
+          "summary": "거리의 악마가 콘스탄틴을 직접 공격한다.",
+          "cause_ids": [
+            "beeman_rule_break"
+          ],
+          "entry_point": false,
+          "characters": [],
+          "visible_action": "낯선 남자의 몸이 벌레 무리로 무너지며 덮친다.",
+          "emotional_stake": "규칙 위반은 조사 대상이 아니라 즉각적인 위협이 된다.",
+          "question_opened": "경고를 믿어줄 세력은 누구인가?",
+          "question_answered": "악마의 직접 개입이 현실에서 확인된다.",
+          "reveal_time": 1725.101,
+          "must_show": true,
+          "selected_intervals": [
+            [
+              1686.855,
+              1725.101
+            ]
+          ],
+          "narration_role": "none",
+          "transition_in": "bridge",
+          "needs_visual_review": false
+        },
+        {
+          "id": "midnite_warning",
+          "source_start": 1849.934,
+          "source_end": 1970.805,
+          "summary": "콘스탄틴이 미드나이트에게 규칙 붕괴를 경고한다.",
+          "cause_ids": [
+            "street_attack"
+          ],
+          "entry_point": false,
+          "characters": [],
+          "visible_action": "중립지대에서 악마의 직접 진입을 주장한다.",
+          "emotional_stake": "도움을 줄 수 있는 인물은 중립을 이유로 움직이지 않는다.",
+          "question_opened": "미드나이트의 중립은 언제 깨질까?",
+          "question_answered": "천국과 지옥은 휴전 중이며 그는 중립을 지킨다.",
+          "reveal_time": 1970.805,
+          "must_show": true,
+          "selected_intervals": [
+            [
+              1849.934,
+              1863.406
+            ],
+            [
+              1926.01,
+              1970.805
+            ]
+          ],
+          "narration_role": "causal_bridge",
+          "transition_in": "bridge",
+          "needs_visual_review": false,
+          "narration_start_time": 1849.934,
+          "narration_evidence_time": 1849.934
+        },
+        {
+          "id": "angela_request",
+          "source_start": 2145.813,
+          "source_end": 2207.792,
+          "summary": "안젤라가 콘스탄틴에게 이사벨 사건을 의뢰한다.",
+          "cause_ids": [
+            "angela_denial",
+            "midnite_warning"
+          ],
+          "entry_point": false,
+          "characters": [],
+          "visible_action": "동생의 환상과 타살 의심을 설명한다.",
+          "emotional_stake": "두 주인공의 상처와 외부 사건이 하나로 합쳐진다.",
+          "question_opened": "이사벨이 보던 존재는 실제였나?",
+          "question_answered": "안젤라는 초자연적 원인을 의심해 콘스탄틴을 찾았다.",
+          "reveal_time": 2207.792,
+          "must_show": true,
+          "selected_intervals": [
+            [
+              2145.813,
+              2166.543
+            ],
+            [
+              2183.059,
+              2207.792
+            ]
+          ],
+          "narration_role": "none",
+          "transition_in": "bridge",
+          "needs_visual_review": false
+        },
+        {
+          "id": "direct_attack",
+          "source_start": 2361.821,
+          "source_end": 2441.442,
+          "summary": "보이지 않는 존재가 두 사람을 직접 공격한다.",
+          "cause_ids": [
+            "angela_request",
+            "street_attack"
+          ],
+          "entry_point": false,
+          "characters": [],
+          "visible_action": "정전, 날갯소리, 충격 뒤 유황 냄새가 남는다.",
+          "emotional_stake": "안젤라는 부정하던 세계를 몸으로 경험한다.",
+          "question_opened": "이사벨은 죽기 전에 무엇을 보았나?",
+          "question_answered": "공격자는 지옥의 존재와 연결돼 있다.",
+          "reveal_time": 2436.813,
+          "must_show": true,
+          "selected_intervals": [
+            [
+              2361.821,
+              2400.485
+            ],
+            [
+              2423.007,
+              2441.442
+            ]
+          ],
+          "narration_role": "none",
+          "transition_in": "continuous",
+          "needs_visual_review": false
+        }
+      ]
+    },
+    {
+      "id": "hell_verification",
+      "status": "approved",
+      "audience_question": "이사벨은 무엇을 알았기에 죽음을 택했는가?",
+      "exit_answer": "지옥에서 자살을 확인하고 그녀가 남긴 경고를 찾아야 함을 안다.",
+      "next_question": "콘스탄틴과 안젤라는 그 경고를 읽을 수 있는가?",
+      "events": [
+        {
+          "id": "hell_ritual",
+          "source_start": 2474.1,
+          "source_end": 2525.026,
+          "summary": "콘스탄틴이 이사벨의 행선지를 확인할 의식을 준비한다.",
+          "cause_ids": [
+            "angela_request",
+            "direct_attack"
+          ],
+          "entry_point": false,
+          "characters": [],
+          "visible_action": "이사벨의 물건과 고양이, 물을 이용해 경계를 연다.",
+          "emotional_stake": "수사는 증거 수집에서 지옥을 직접 확인하는 단계로 넘어간다.",
+          "question_opened": "이사벨은 정말 지옥에 있는가?",
+          "question_answered": null,
+          "reveal_time": 2525.026,
+          "must_show": true,
+          "selected_intervals": [
+            [
+              2474.1,
+              2525.026
+            ]
+          ],
+          "narration_role": "causal_bridge",
+          "transition_in": "bridge",
+          "needs_visual_review": false,
+          "narration_start_time": 2474.1,
+          "narration_evidence_time": 2474.1
+        },
+        {
+          "id": "isabel_truth",
+          "source_start": 2745.0,
+          "source_end": 2805.807,
+          "summary": "콘스탄틴이 이사벨의 자살과 지옥행을 확인한다.",
+          "cause_ids": [
+            "hell_ritual"
+          ],
+          "entry_point": false,
+          "characters": [],
+          "visible_action": "지옥에서 이사벨을 보고 현실에 증거를 가져온다.",
+          "emotional_stake": "죽음의 방식보다 그 선택의 이유가 새 미스터리가 된다.",
+          "question_opened": "그녀는 무엇을 알리기 위해 목숨을 버렸나?",
+          "question_answered": "이사벨은 스스로 뛰어내렸고 지옥에 있다.",
+          "reveal_time": 2780.281,
+          "must_show": true,
+          "selected_intervals": [
+            [
+              2745.0,
+              2786.704
+            ],
+            [
+              2799.676,
+              2805.807
+            ]
+          ],
+          "narration_role": "none",
+          "transition_in": "continuous",
+          "needs_visual_review": false
+        },
+        {
+          "id": "constantine_past",
+          "source_start": 3075.285,
+          "source_end": 3182.6,
+          "summary": "콘스탄틴이 자신의 자살과 지옥 경험을 고백한다.",
+          "cause_ids": [
+            "isabel_truth",
+            "gabriel_refusal"
+          ],
+          "entry_point": false,
+          "characters": [],
+          "visible_action": "죽음의 경계와 균형의 규칙을 안젤라에게 설명한다.",
+          "emotional_stake": "그의 냉소가 지옥의 공포와 구원 욕망에서 비롯됐음이 보인다.",
+          "question_opened": "두 사람은 이사벨의 경고를 찾을 수 있을까?",
+          "question_answered": "콘스탄틴은 자기 구원을 위해 규칙 위반자를 사냥해 왔다.",
+          "reveal_time": 3171.756,
+          "must_show": true,
+          "selected_intervals": [
+            [
+              3075.285,
+              3126.544
+            ],
+            [
+              3151.277,
+              3182.6
+            ]
+          ],
+          "narration_role": "none",
+          "transition_in": "continuous",
+          "needs_visual_review": false
+        }
+      ]
+    },
+    {
+      "id": "mammon_message",
+      "status": "approved",
+      "audience_question": "콘스탄틴과 안젤라는 그 경고를 읽을 수 있는가?",
+      "exit_answer": "쌍둥이의 메시지가 마몬 강림 예언을 가리킨다.",
+      "next_question": "안젤라는 외면한 능력을 받아들일 수 있는가?",
+      "events": [
+        {
+          "id": "isabel_clue",
+          "source_start": 3374.417,
+          "source_end": 3486.654,
+          "summary": "안젤라가 쌍둥이만 아는 유리창 메시지를 찾아낸다.",
+          "cause_ids": [
+            "isabel_truth",
+            "constantine_past"
+          ],
+          "entry_point": false,
+          "characters": [],
+          "visible_action": "기억을 따라 입김으로 숨은 성경 좌표를 드러낸다.",
+          "emotional_stake": "안젤라가 외면했던 자매의 연결이 수사의 열쇠가 된다.",
+          "question_opened": "지옥 성경의 구절은 무엇을 예고하나?",
+          "question_answered": "이사벨은 고린도전서 17장 1절을 남겼다.",
+          "reveal_time": 3483.735,
+          "must_show": true,
+          "selected_intervals": [
+            [
+              3374.417,
+              3407.7
+            ],
+            [
+              3460.378,
+              3486.654
+            ]
+          ],
+          "narration_role": "none",
+          "transition_in": "continuous",
+          "needs_visual_review": false
+        },
+        {
+          "id": "mammon_prophecy",
+          "source_start": 3521.606,
+          "source_end": 3600.435,
+          "summary": "비먼이 마몬 강림의 조건을 해독한다.",
+          "cause_ids": [
+            "isabel_clue",
+            "beeman_rule_break"
+          ],
+          "entry_point": false,
+          "characters": [],
+          "visible_action": "지옥 성경에서 마몬, 영매, 신의 도움을 읽는다.",
+          "emotional_stake": "개별 악마 사건이 인간 세계 전체의 위기로 확대된다.",
+          "question_opened": "마몬은 누구의 몸과 어떤 신의 도움을 노리나?",
+          "question_answered": "마몬은 강력한 영매와 신의 도움을 필요로 한다.",
+          "reveal_time": 3600.435,
+          "must_show": true,
+          "selected_intervals": [
+            [
+              3521.606,
+              3544.796
+            ],
+            [
+              3573.992,
+              3600.435
+            ]
+          ],
+          "narration_role": "none",
+          "transition_in": "continuous",
+          "needs_visual_review": false
+        },
+        {
+          "id": "beeman_death",
+          "source_start": 3611.196,
+          "source_end": 3663.915,
+          "summary": "비먼의 경고가 끊기고 두 사람이 그의 죽음을 확인한다.",
+          "cause_ids": [
+            "mammon_prophecy"
+          ],
+          "entry_point": false,
+          "characters": [],
+          "visible_action": "통화가 끊긴 뒤 은신처로 달려가 시신을 발견한다.",
+          "emotional_stake": "정보를 얻을수록 콘스탄틴의 동료가 사라진다.",
+          "question_opened": "안젤라는 더 깊이 들어갈 각오가 되었나?",
+          "question_answered": "마몬의 편은 단서를 없애며 추적자를 살해한다.",
+          "reveal_time": 3663.915,
+          "must_show": true,
+          "selected_intervals": [
+            [
+              3611.196,
+              3634.719
+            ],
+            [
+              3634.719,
+              3650.902
+            ],
+            [
+              3650.902,
+              3663.915
+            ]
+          ],
+          "narration_role": "causal_bridge",
+          "transition_in": "bridge",
+          "needs_visual_review": false,
+          "narration_start_time": 3634.719,
+          "narration_evidence_time": 3634.719
+        }
+      ]
+    },
+    {
+      "id": "angela_choice",
+      "status": "approved",
+      "audience_question": "안젤라는 외면한 능력을 받아들일 수 있는가?",
+      "exit_answer": "죄책감을 고백한 안젤라가 위험을 감수하고 능력을 되찾는다.",
+      "next_question": "각성한 감각은 적의 계획을 어디로 이끄는가?",
+      "events": [
+        {
+          "id": "angela_guilt",
+          "source_start": 3790.667,
+          "source_end": 3860.904,
+          "summary": "안젤라는 능력을 숨겨 이사벨을 혼자 남겼다고 고백한다.",
+          "cause_ids": [
+            "beeman_death",
+            "constantine_past"
+          ],
+          "entry_point": false,
+          "characters": [],
+          "visible_action": "어린 시절의 거짓말과 죄책감을 털어놓고 의식을 청한다.",
+          "emotional_stake": "진실 추적은 동생을 버렸다는 죄책감에 대한 속죄가 된다.",
+          "question_opened": "그녀가 능력을 되찾으면 무엇을 보게 될까?",
+          "question_answered": "안젤라는 위험을 알면서도 진실을 보기로 선택한다.",
+          "reveal_time": 3860.904,
+          "must_show": true,
+          "selected_intervals": [
+            [
+              3790.667,
+              3839.09
+            ],
+            [
+              3845.138,
+              3860.904
+            ]
+          ],
+          "narration_role": "none",
+          "transition_in": "continuous",
+          "needs_visual_review": false
+        },
+        {
+          "id": "angela_awaken",
+          "source_start": 3960.086,
+          "source_end": 4137.846,
+          "summary": "물 의식으로 안젤라의 영적 감각이 깨어난다.",
+          "cause_ids": [
+            "angela_guilt"
+          ],
+          "entry_point": false,
+          "characters": [],
+          "visible_action": "물속에서 경계를 보고 돌아와 자신의 능력을 인정한다.",
+          "emotional_stake": "억눌렀던 감각은 단서이자 적에게 보이는 표식이 된다.",
+          "question_opened": "새 감각은 살인자의 흔적을 찾을 수 있을까?",
+          "question_answered": "안젤라는 이사벨과 같은 존재들을 볼 수 있다.",
+          "reveal_time": 4129.171,
+          "must_show": true,
+          "selected_intervals": [
+            [
+              3960.086,
+              4000.71
+            ],
+            [
+              4103.188,
+              4137.846
+            ]
+          ],
+          "narration_role": "none",
+          "transition_in": "continuous",
+          "needs_visual_review": false
+        },
+        {
+          "id": "balthazar_trace",
+          "source_start": 4148.358,
+          "source_end": 4228.897,
+          "summary": "안젤라가 남은 감각으로 발사자르의 흔적을 찾는다.",
+          "cause_ids": [
+            "angela_awaken",
+            "beeman_death"
+          ],
+          "entry_point": false,
+          "characters": [],
+          "visible_action": "방 안의 잔상을 더듬어 빛나는 흔적과 이름을 말한다.",
+          "emotional_stake": "수동적인 목격자였던 안젤라가 추적의 주체가 된다.",
+          "question_opened": "발사자르는 강림에 무엇을 제공했나?",
+          "question_answered": "살인자의 흔적은 발사자르에게 이어진다.",
+          "reveal_time": 4228.897,
+          "must_show": true,
+          "selected_intervals": [
+            [
+              4148.358,
+              4193.82
+            ],
+            [
+              4226.644,
+              4228.897
+            ]
+          ],
+          "narration_role": "character_subtext",
+          "transition_in": "continuous",
+          "needs_visual_review": false,
+          "narration_start_time": 4148.358,
+          "narration_evidence_time": 4148.358
+        }
+      ]
+    },
+    {
+      "id": "trap_revealed",
+      "status": "approved",
+      "audience_question": "각성한 감각은 적의 계획을 어디로 이끄는가?",
+      "exit_answer": "숙명의 창과 영매라는 조건이 안젤라를 표적으로 가리킨다.",
+      "next_question": "납치된 안젤라를 어디서 찾을 수 있는가?",
+      "events": [
+        {
+          "id": "balthazar_interrogation",
+          "source_start": 4363.865,
+          "source_end": 4496.664,
+          "summary": "콘스탄틴이 발사자르를 붙잡아 천국행으로 위협한다.",
+          "cause_ids": [
+            "balthazar_trace"
+          ],
+          "entry_point": false,
+          "characters": [],
+          "visible_action": "격투 뒤 축복을 준비하며 강림 방법을 묻는다.",
+          "emotional_stake": "자신이 갈 수 없는 천국을 악마에게 가장 무서운 형벌로 사용한다.",
+          "question_opened": "발사자르가 숨긴 마지막 조건은 무엇인가?",
+          "question_answered": "발사자르는 죽음보다 천국행을 두려워한다.",
+          "reveal_time": 4496.664,
+          "must_show": true,
+          "selected_intervals": [
+            [
+              4363.865,
+              4392.936
+            ],
+            [
+              4449.367,
+              4496.664
+            ]
+          ],
+          "narration_role": "none",
+          "transition_in": "bridge",
+          "needs_visual_review": false
+        },
+        {
+          "id": "balthazar_reveal",
+          "source_start": 4538.998,
+          "source_end": 4553.847,
+          "summary": "발사자르가 숙명의 창과 예수의 피를 폭로한다.",
+          "cause_ids": [
+            "balthazar_interrogation",
+            "mammon_prophecy"
+          ],
+          "entry_point": false,
+          "characters": [],
+          "visible_action": "창이 마몬 탄생의 도구라고 말한다.",
+          "emotional_stake": "도입의 창이 마침내 현재의 음모와 연결된다.",
+          "question_opened": "강력한 영매는 누구인가?",
+          "question_answered": "신의 도움은 숙명의 창에 묻은 예수의 피였다.",
+          "reveal_time": 4553.847,
+          "must_show": true,
+          "selected_intervals": [
+            [
+              4538.998,
+              4553.847
+            ]
+          ],
+          "narration_role": "none",
+          "transition_in": "continuous",
+          "needs_visual_review": false
+        },
+        {
+          "id": "angela_target",
+          "source_start": 4569.821,
+          "source_end": 4671.214,
+          "summary": "진짜 표적이 안젤라였음이 드러나고 그녀가 납치된다.",
+          "cause_ids": [
+            "balthazar_reveal",
+            "angela_awaken"
+          ],
+          "entry_point": false,
+          "characters": [],
+          "visible_action": "발사자르의 조롱과 강림 조건이 안젤라에게 수렴한다.",
+          "emotional_stake": "콘스탄틴의 도움으로 얻은 각성이 적의 마지막 조건을 완성했다.",
+          "question_opened": "안젤라가 숙주가 되기 전에 찾을 수 있을까?",
+          "question_answered": "안젤라는 마몬에게 필요한 강력한 영매다.",
+          "reveal_time": 4671.214,
+          "must_show": true,
+          "selected_intervals": [
+            [
+              4569.821,
+              4583.877
+            ],
+            [
+              4590.341,
+              4619.621
+            ],
+            [
+              4641.768,
+              4671.214
+            ]
+          ],
+          "narration_role": "none",
+          "transition_in": "continuous",
+          "needs_visual_review": false
+        }
+      ]
+    },
+    {
+      "id": "neutrality_breaks",
+      "status": "approved",
+      "audience_question": "납치된 안젤라를 어디서 찾을 수 있는가?",
+      "exit_answer": "미드나이트가 중립을 깨고 병원의 위치를 찾아준다.",
+      "next_question": "병원의 방어선을 뚫고 강림을 막을 수 있는가?",
+      "events": [
+        {
+          "id": "midnite_tracking",
+          "source_start": 4712.797,
+          "source_end": 4974.934,
+          "summary": "콘스탄틴이 미드나이트의 중립을 깨고 위치를 찾아낸다.",
+          "cause_ids": [
+            "angela_target",
+            "midnite_warning"
+          ],
+          "entry_point": false,
+          "characters": [],
+          "visible_action": "친구들의 죽음을 들이밀고 추적 의식의 도움을 얻는다.",
+          "emotional_stake": "중립은 균형을 지키는 원칙에서 방관의 핑계로 바뀌었다.",
+          "question_opened": "병원에 도착하기 전에 강림을 막을 수 있을까?",
+          "question_answered": "미드나이트가 움직여 안젤라의 위치를 찾는다.",
+          "reveal_time": 4974.934,
+          "must_show": true,
+          "selected_intervals": [
+            [
+              4712.797,
+              4722.14
+            ],
+            [
+              4755.423,
+              4793.044
+            ],
+            [
+              4960.712,
+              4974.934
+            ]
+          ],
+          "narration_role": "causal_bridge",
+          "transition_in": "bridge",
+          "needs_visual_review": false,
+          "narration_start_time": 4712.797,
+          "narration_evidence_time": 4712.797
+        },
+        {
+          "id": "hospital_approach",
+          "source_start": 5015.266,
+          "source_end": 5146.648,
+          "summary": "콘스탄틴과 채즈가 병원 결전에 들어간다.",
+          "cause_ids": [
+            "midnite_tracking"
+          ],
+          "entry_point": false,
+          "characters": [],
+          "visible_action": "채즈가 장비를 챙기고 두 사람이 병원으로 향한다.",
+          "emotional_stake": "견습생이 관찰자에서 동료로 나선다.",
+          "question_opened": "두 사람은 혼혈종의 방어선을 뚫을 수 있을까?",
+          "question_answered": "안젤라는 병원에 붙잡혀 있다.",
+          "reveal_time": 5146.648,
+          "must_show": true,
+          "selected_intervals": [
+            [
+              5015.266,
+              5040.458
+            ],
+            [
+              5050.051,
+              5070.0
+            ],
+            [
+              5122.749,
+              5146.648
+            ]
+          ],
+          "narration_role": "causal_bridge",
+          "transition_in": "bridge",
+          "needs_visual_review": false,
+          "narration_start_time": 5050.051,
+          "narration_evidence_time": 5050.051
+        }
+      ]
+    },
+    {
+      "id": "pre_resolution_crisis",
+      "status": "approved",
+      "audience_question": "병원의 방어선을 뚫고 강림을 막을 수 있는가?",
+      "exit_answer": "혼혈종을 밀어내지만 마몬은 이미 안젤라 안에서 나오려 한다.",
+      "next_question": "빛을 부르면 나타날 진짜 배후는 누구인가?",
+      "events": [
+        {
+          "id": "hybrid_battle",
+          "source_start": 5260.845,
+          "source_end": 5296.548,
+          "summary": "콘스탄틴이 규칙을 깬 혼혈종들을 성수로 몰아낸다.",
+          "cause_ids": [
+            "hospital_approach",
+            "beeman_rule_break"
+          ],
+          "entry_point": false,
+          "characters": [],
+          "visible_action": "최후통첩 뒤 성수 장치를 작동시킨다.",
+          "emotional_stake": "초반부터 흔들리던 균형의 규칙이 공개적인 전쟁으로 무너진다.",
+          "question_opened": "방어선 너머의 안젤라는 어떤 상태인가?",
+          "question_answered": "혼혈종들은 이미 휴전의 균형을 깼다.",
+          "reveal_time": 5296.548,
+          "must_show": true,
+          "selected_intervals": [
+            [
+              5260.845,
+              5296.548
+            ]
+          ],
+          "narration_role": "none",
+          "transition_in": "continuous",
+          "needs_visual_review": false
+        },
+        {
+          "id": "angela_possession",
+          "source_start": 5374.209,
+          "source_end": 5542.585,
+          "summary": "안젤라의 몸에서 마몬이 나오려 한다.",
+          "cause_ids": [
+            "hybrid_battle",
+            "angela_target"
+          ],
+          "entry_point": false,
+          "characters": [],
+          "visible_action": "콘스탄틴이 안젤라를 붙잡고 몸속 존재를 막으려 한다.",
+          "emotional_stake": "모든 단서가 한 사람의 몸과 한 번의 선택으로 좁혀진다.",
+          "question_opened": "빛을 부르면 모습을 드러낼 진짜 배후는 누구인가?",
+          "question_answered": "안젤라가 마몬의 강림 통로가 되고 있다.",
+          "reveal_time": 5542.585,
+          "must_show": true,
+          "selected_intervals": [
+            [
+              5374.209,
+              5421.297
+            ],
+            [
+              5513.806,
+              5542.585
+            ]
+          ],
+          "narration_role": "none",
+          "transition_in": "continuous",
+          "needs_visual_review": false
+        }
+      ]
+    }
+  ]
+}

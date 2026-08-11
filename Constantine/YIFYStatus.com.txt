@@ -1,0 +1,21 @@
+YTS / YIFY Torrents Site
+-------------------------
+
+--> Visit us at https://YTS.MX
+
+- If you have trouble accessing the domain above,
+please always check:
+
+    --> https://YIFYStatus.com
+    --> https://YTSProxies.com
+    --> ytsyifyupcmxftncrnqd4bmwxvhlibhdat74w6xnmn33njxts4eeaiqd.onion
+        (accessible only using TOR Browser)
+
+    for the updated list of official proxies and
+    domains of YTS / YIFY site.
+
+    # Twitter: https://x.com/ytsyify
+    # Telegram: https://t.me/s/ytsmx_updates
+    # Mastodon: https://mastodon.social/@ytsyify
+
+Current official domains: YTS.MX, YTS.LT, YTS.AM, YTS.AG

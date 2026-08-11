@@ -14,7 +14,8 @@ from pathlib import Path
 from typing import Any
 
 
-ROOT = Path(__file__).resolve().parent
+CODE_ROOT = Path(__file__).resolve().parent
+ROOT = Path(os.environ.get("MOVIE_REVIEW_ROOT", CODE_ROOT)).resolve()
 WORK = ROOT / "work"
 ANALYSIS = WORK / "analysis"
 SHEETS = WORK / "contact_sheets"
@@ -49,6 +50,50 @@ def run(cmd: list[str], *, capture: bool = False, input_text: str | None = None)
         stdout=subprocess.PIPE if capture else None,
     )
     return result.stdout if capture else ""
+
+
+def validate_story_map_gate(
+    config: dict[str, Any], *, require_render_ready: bool, project_root: Path | None = None
+) -> None:
+    """Validate the causal story map before plan/render stages when enabled."""
+    story_value = config.get("story_map")
+    required = bool(config.get("require_story_map", False))
+    if not story_value:
+        if required:
+            raise FileNotFoundError("require_story_map=true 이지만 config.json에 story_map이 없습니다.")
+        return
+    base_root = project_root or ROOT
+    story_map = Path(str(story_value))
+    if not story_map.is_absolute():
+        story_map = base_root / story_map
+    if not story_map.exists():
+        raise FileNotFoundError(f"스토리맵을 찾을 수 없습니다: {story_map}")
+
+    default_validator = Path.home() / ".codex" / "skills" / "edit-movie-review" / "scripts" / "validate_story_map.py"
+    validator = Path(str(config.get("story_validator") or os.environ.get("MOVIE_REVIEW_STORY_VALIDATOR") or default_validator))
+    if not validator.exists():
+        raise FileNotFoundError(f"스토리맵 검사기를 찾을 수 없습니다: {validator}")
+    command = [sys.executable, str(validator), str(story_map)]
+    if require_render_ready:
+        command.append("--require-render-ready")
+    print(f"> {subprocess.list2cmdline(command)}", flush=True)
+    result = subprocess.run(
+        command, cwd=base_root, capture_output=True, text=True,
+        encoding="utf-8", errors="replace",
+    )
+    if result.returncode:
+        detail = result.stderr.strip() or result.stdout.strip() or f"exit={result.returncode}"
+        raise ValueError("STORY_MAP_GATE_BLOCKED:\n" + detail)
+    if result.stdout.strip():
+        print(result.stdout.strip(), flush=True)
+
+
+def story_map_path(config: dict[str, Any]) -> Path | None:
+    value = config.get("story_map")
+    if not value:
+        return None
+    path = Path(str(value))
+    return path if path.is_absolute() else ROOT / path
 
 
 def ffprobe(video: Path) -> dict[str, Any]:
@@ -186,6 +231,7 @@ def codex_exec(codex: str, schema: Path, output: Path, prompt: str) -> None:
 
 
 def build_plan(config: dict[str, Any]) -> None:
+    validate_story_map_gate(config, require_render_ready=True)
     if not (ANALYSIS / "manifest.json").exists():
         build_analysis(config)
     OUTPUT.mkdir(parents=True, exist_ok=True)
@@ -206,34 +252,40 @@ def build_plan(config: dict[str, Any]) -> None:
             if chunk_output.exists():
                 continue
             prompt = (
-                "당신은 한국 영화 리뷰의 스토리 에디터다. 아래는 영화의 한 구간에 포함된 "
-                "3분 단위 한국어 대사 전문이다. 파일을 열거나 도구를 사용하지 말고 제공된 대사만 분석하라. "
-                "인물, 사건, 갈등 변화, 반전, 다음 구간으로 이어지는 의문을 시간순으로 정리하라. "
-                "events의 start/end는 제공된 구간 안의 초 단위 원본 시간이다. key_dialogue는 실제 제공된 대사를 "
-                "짧게 옮기고 대략적인 해당 3분 범위 안 시간으로 지정하라. JSON 스키마만 만족하라.\n\n"
+                "You are a story editor for a Korean-language YouTube movie review. "
+                "Analyze only the supplied three-minute subtitle packets. Identify characters, events, "
+                "conflict changes, reversals, and causal links. Use exact source seconds for event start/end, "
+                "and quote only dialogue present in the packets. Return only JSON matching the schema.\n\n"
                 + "\n\n".join(selected)
             )
-            codex_exec(codex, ROOT / "schemas" / "chunk_outline.schema.json", chunk_output, prompt)
+            codex_exec(codex, CODE_ROOT / "schemas" / "chunk_outline.schema.json", chunk_output, prompt)
         merged_chunks = "\n\n".join(path.read_text(encoding="utf-8") for path in chunk_outputs)
         merge_prompt = (
-            "당신은 한국 영화 리뷰의 수석 스토리 에디터다. 아래 세 구간 분석을 하나의 정확한 영화 이야기 지도로 "
-            "합쳐라. 파일이나 도구는 사용하지 마라. 중복 사건을 합치고 설정, 촉발 사건, 상승, 중반 전환, 반전, "
-            "위기, 클라이맥스, 해결이 드러나는 8~20개 비트를 만든다. key_dialogues는 제공된 실제 대사만 사용한다. "
-            "sheet_numbers는 시간 0~599초=1, 600~1199초=2처럼 계산한다. JSON만 출력하라.\n\n"
-            + merged_chunks
+            "Merge the supplied chronological analyses into one accurate story outline for a Korean YouTube "
+            "movie review. Produce 8-20 beats covering setup, inciting incident, escalation, midpoint reversal, "
+            "rising danger, climax, and resolution. Preserve exact source seconds and quote only supplied dialogue. "
+            "For sheet_numbers, sheet 1 covers 0-599 seconds, sheet 2 covers 600-1199 seconds, and so on. "
+            "Return only JSON matching the schema.\n\n" + merged_chunks
         )
-        codex_exec(codex, ROOT / "schemas" / "story_outline.schema.json", outline, merge_prompt)
-    plan_prompt_template = (ROOT / "prompts" / "edit_plan.md").read_text(encoding="utf-8")
+        codex_exec(codex, CODE_ROOT / "schemas" / "story_outline.schema.json", outline, merge_prompt)
+    plan_prompt_template = (CODE_ROOT / "prompts" / "edit_plan.md").read_text(encoding="utf-8")
+    story_path = story_map_path(config)
+    story_context = story_path.read_text(encoding="utf-8") if story_path and story_path.exists() else "{}"
     plan_prompt = (
         plan_prompt_template
-        + "\n\n이번 호출에서는 파일이나 도구를 사용하지 마라. 아래 제공된 config와 story_outline만으로 편집표를 작성하라. "
-        "각 비트의 시간 범위 안에서 서로 겹치지 않는 원본 클립을 배분하고, 전체 클립 길이 합계를 1,260~1,380초로 맞춰라. "
-        "콜드 오픈 외에는 source_start 오름차순을 지킨다. 실제 대사 후보 주변은 movie_dialogue로, 나머지는 narration으로 구성한다.\n\n"
+        + "\n\nUse only the supplied config and story outline. Allocate non-overlapping source clips within each beat. "
+        f"Target {max(1140, int(float(config.get('target_duration_sec', 1320)) - 60))}-"
+        f"{min(1500, int(float(config.get('target_duration_sec', 1320)) + 60))} seconds total, "
+        "use natural scene blocks whose lengths follow dramatic function, and keep source order unless the story map explicitly uses audience-reveal order. "
+        "Preserve strong dialogue, discoveries, grief, comedy, and action payoffs. Use sparse 2-5 second narration only for orientation, "
+        "causal bridges, demonstrated rules, supported character subtext, or established stakes. Never narrate a result before it appears. "
+        "End before the decisive solution, final reveal, survivor outcome, and aftermath. Return only schema-valid JSON.\n\n"
         "CONFIG:\n" + json.dumps(config, ensure_ascii=False, indent=2)
         + "\n\nSTORY_OUTLINE:\n" + outline.read_text(encoding="utf-8")
+        + "\n\nCAUSAL_STORY_MAP:\n" + story_context
     )
     codex_exec(
-        codex, ROOT / "schemas" / "edit_plan.schema.json", OUTPUT / "edit_plan.json",
+        codex, CODE_ROOT / "schemas" / "edit_plan.schema.json", OUTPUT / "edit_plan.json",
         plan_prompt,
     )
     validate_plan(
@@ -243,11 +295,44 @@ def build_plan(config: dict[str, Any]) -> None:
     )
 
 
+def validate_story_coverage(plan: dict[str, Any], config: dict[str, Any]) -> None:
+    path = story_map_path(config)
+    if not path or not path.exists():
+        return
+    story = json.loads(path.read_text(encoding="utf-8"))
+    sections = story.get("sections", [])
+    if not sections or any(section.get("status") != "approved" for section in sections):
+        return
+    segments = plan.get("segments", [])
+    threshold = float(config.get("must_show_min_coverage_ratio", 0.85))
+    omissions: list[str] = []
+    for section in sections:
+        for event in section.get("events", []):
+            if not event.get("must_show"):
+                continue
+            for interval in event.get("selected_intervals", []):
+                required_start, required_end = map(float, interval)
+                required_duration = required_end - required_start
+                covered = sum(
+                    max(0.0, min(float(seg["source_end"]), required_end) - max(float(seg["source_start"]), required_start))
+                    for seg in segments
+                )
+                ratio = covered / max(required_duration, 0.001)
+                if ratio + 1e-9 < threshold:
+                    omissions.append(f"{event['id']} {required_start:.2f}-{required_end:.2f} ({ratio:.0%})")
+    if omissions:
+        raise ValueError("STORY_EVENT_OMITTED: " + "; ".join(omissions))
+
+
 def validate_plan(path: Path, source_duration: float, target_duration: float = 1320) -> dict[str, Any]:
     plan = json.loads(path.read_text(encoding="utf-8"))
     segments = plan.get("segments", [])
-    if not 45 <= len(segments) <= 140:
-        raise ValueError("편집표 segments 수가 45~140 범위가 아닙니다.")
+    validator_config = load_config() if (ROOT / "config.json").exists() else {}
+    min_segments = int(validator_config.get("plan_min_segments", 45))
+    max_segments = int(validator_config.get("plan_max_segments", 140))
+    max_clip_seconds = float(validator_config.get("plan_max_clip_seconds", 30))
+    if not min_segments <= len(segments) <= max_segments:
+        raise ValueError(f"편집표 segments 수가 {min_segments}~{max_segments} 범위가 아닙니다.")
     expected = 1
     total = 0.0
     used: list[tuple[float, float]] = []
@@ -257,8 +342,8 @@ def validate_plan(path: Path, source_duration: float, target_duration: float = 1
         start, end = float(seg["source_start"]), float(seg["source_end"])
         if not (0 <= start < end <= source_duration + 0.1):
             raise ValueError(f"잘못된 소스 구간: {start}~{end}")
-        if end - start > 30:
-            raise ValueError(f"30초를 넘는 클립: {start}~{end}")
+        if end - start > max_clip_seconds:
+            raise ValueError(f"{max_clip_seconds:g}초를 넘는 클립: {start}~{end}")
         if any(max(start, a) < min(end, b) - 0.5 for a, b in used):
             raise ValueError(f"중복된 소스 구간: {start}~{end}")
         used.append((start, end))
@@ -268,6 +353,7 @@ def validate_plan(path: Path, source_duration: float, target_duration: float = 1
     maximum = min(1500.0, target_duration + 180.0)
     if not minimum <= total <= maximum:
         raise ValueError(f"실제 클립 합계 {total:.1f}초가 허용 범위({minimum:.0f}~{maximum:.0f}초)를 벗어났습니다.")
+    validate_story_coverage(plan, validator_config)
     return plan
 
 
@@ -300,6 +386,36 @@ def narration_duration(text: str, content_duration: float, config: dict[str, Any
     return min(content_duration, max(minimum, min(maximum, estimated)))
 
 
+def narration_audio_path(order: int) -> Path:
+    return CAPCUT / "narration_audio" / f"clip_{order:03d}.mp3"
+
+
+def segment_narration_duration(seg: dict[str, Any], content_duration: float, config: dict[str, Any]) -> float:
+    text = str(seg.get("narration", "")).strip()
+    if not text:
+        return 0.0
+    audio = narration_audio_path(int(seg["order"]))
+    if audio.exists():
+        return min(content_duration, media_duration(audio) + 0.15)
+    return narration_duration(text, content_duration, config)
+
+
+def split_narration_cues(start: float, duration: float, text: str) -> list[tuple[float, float, str]]:
+    """Keep a narration block continuous while showing one short sentence at a time."""
+    sentences = [part.strip() for part in re.split(r"(?<=[.!?])\s+", text.strip()) if part.strip()]
+    if len(sentences) <= 1:
+        return [(start, start + duration, text)]
+    weights = [max(1, len(re.sub(r"\s+", "", sentence))) for sentence in sentences]
+    total_weight = sum(weights)
+    cues: list[tuple[float, float, str]] = []
+    cursor = start
+    for index, (sentence, weight) in enumerate(zip(sentences, weights)):
+        end = start + duration if index == len(sentences) - 1 else cursor + duration * weight / total_weight
+        cues.append((cursor, end, sentence))
+        cursor = end
+    return cues
+
+
 def build_caption_tracks(config: dict[str, Any], plan: dict[str, Any]) -> None:
     """Remap the existing movie SRT onto the rendered cut timeline.
 
@@ -318,12 +434,12 @@ def build_caption_tracks(config: dict[str, Any], plan: dict[str, Any]) -> None:
     csv_rows: list[dict[str, Any]] = []
     timeline = 0.0
 
-    for seg in plan["segments"]:
+    segments = plan["segments"]
+    for seg_index, seg in enumerate(segments):
         order = int(seg["order"])
-        matches = sorted(clips_dir.glob(f"clip_{order:03d}_*.mp4"))
-        if len(matches) != 1:
-            raise FileNotFoundError(f"clip_{order:03d} 파일을 하나만 찾을 수 있어야 합니다.")
-        clip = matches[0]
+        clip = clips_dir / f"clip_{order:03d}_{seg['kind']}.mp4"
+        if not clip.exists():
+            raise FileNotFoundError(f"편집표의 정확한 클립을 찾을 수 없습니다: {clip.name}")
         encoded_duration = media_duration(clip)
         content_duration = min(encoded_duration, float(seg["source_end"]) - float(seg["source_start"]))
         timeline_end = timeline + encoded_duration
@@ -333,10 +449,10 @@ def build_caption_tracks(config: dict[str, Any], plan: dict[str, Any]) -> None:
         source_end = float(seg["source_end"])
         narration_end_source = source_start
         if text:
-            narration_len = narration_duration(text, content_duration, config)
-            entry = (timeline, timeline + narration_len, text)
-            narration_entries.append(entry)
-            combined_entries.append(entry)
+            narration_len = segment_narration_duration(seg, content_duration, config)
+            entries = split_narration_cues(timeline, narration_len, text)
+            narration_entries.extend(entries)
+            combined_entries.extend(entries)
             narration_end_source = source_start + narration_len + float(config.get("caption_resume_gap_sec", 0.12))
 
         if bool(seg.get("keep_original_audio")) or text:
@@ -388,6 +504,7 @@ def build_caption_tracks(config: dict[str, Any], plan: dict[str, Any]) -> None:
 
 
 def render(config: dict[str, Any]) -> None:
+    validate_story_map_gate(config, require_render_ready=True)
     video = ROOT / config["video"]
     source_duration = float(ffprobe(video)["format"]["duration"])
     plan = validate_plan(OUTPUT / "edit_plan.json", source_duration, float(config.get("target_duration_sec", 1320)))
@@ -399,36 +516,90 @@ def render(config: dict[str, Any]) -> None:
     width = int(config.get("render_width", 1920))
     height = int(config.get("render_height", 1080))
     fps = int(config.get("render_fps", 30))
+    video_preset = str(config.get("render_preset", "veryfast"))
+    video_crf = str(config.get("render_crf", 20))
+    video_codec = str(config.get("render_video_codec", "libx264"))
+    input_options = ["-hwaccel", str(config["render_hwaccel"])] if config.get("render_hwaccel") else []
+    if video_codec == "h264_nvenc":
+        video_encode_options = ["-c:v", video_codec, "-preset", video_preset, "-cq", video_crf, "-b:v", "0"]
+    else:
+        video_encode_options = ["-c:v", video_codec, "-preset", video_preset, "-crf", video_crf]
     concat_lines: list[str] = []
     narration: list[tuple[float, float, str]] = []
     timeline = 0.0
     csv_rows: list[dict[str, Any]] = []
 
-    for seg in plan["segments"]:
+    transition_fade = float(config.get("transition_fade_sec", 0.0))
+    transition_gap_threshold = float(config.get("transition_gap_threshold_sec", 120.0))
+    segments = plan["segments"]
+    for seg_index, seg in enumerate(segments):
         order = int(seg["order"])
         start, end = float(seg["source_start"]), float(seg["source_end"])
         duration = end - start
         clip = clips_dir / f"clip_{order:03d}_{seg['kind']}.mp4"
-        vf = f"scale={width}:{height}:force_original_aspect_ratio=decrease,pad={width}:{height}:(ow-iw)/2:(oh-ih)/2,fps={fps},format=yuv420p"
+        previous_gap = start - float(segments[seg_index - 1]["source_end"]) if seg_index else 0.0
+        next_gap = float(segments[seg_index + 1]["source_start"]) - end if seg_index + 1 < len(segments) else 0.0
+        fade_in = transition_fade > 0 and seg_index > 0 and previous_gap >= transition_gap_threshold
+        fade_out = transition_fade > 0 and seg_index + 1 < len(segments) and next_gap >= transition_gap_threshold
+        video_filters = [
+            f"scale={width}:{height}:force_original_aspect_ratio=decrease",
+            f"pad={width}:{height}:(ow-iw)/2:(oh-ih)/2",
+            f"fps={fps}",
+            "format=yuv420p",
+        ]
+        audio_fades: list[str] = []
+        if fade_in:
+            video_filters.append(f"fade=t=in:st=0:d={transition_fade:.3f}")
+            audio_fades.append(f"afade=t=in:st=0:d={transition_fade:.3f}")
+        if fade_out:
+            fade_start = max(0.0, duration - transition_fade)
+            video_filters.append(f"fade=t=out:st={fade_start:.3f}:d={transition_fade:.3f}")
+            audio_fades.append(f"afade=t=out:st={fade_start:.3f}:d={transition_fade:.3f}")
+        vf = ",".join(video_filters)
         level = float(seg["audio_level"])
         text = str(seg.get("narration", "")).strip()
-        narration_len = narration_duration(text, duration, config) if text else 0.0
-        if text:
+        narration_len = segment_narration_duration(seg, duration, config) if text else 0.0
+        tts_audio = narration_audio_path(order)
+        duck_without_voice = bool(config.get("preview_duck_without_voice", False))
+        should_duck = bool(text and (tts_audio.exists() or duck_without_voice))
+        if should_duck:
             normal_level = float(config.get("post_narration_audio_level", 0.96))
-            duck_factor = level / max(normal_level, 0.001)
+            attack = min(float(config.get("audio_duck_attack_sec", 0.35)), narration_len / 3)
+            release = min(float(config.get("audio_duck_release_sec", 0.55)), narration_len / 3)
+            release_start = max(attack, narration_len - release)
+            volume_curve = (
+                f"if(lt(t,{attack:.3f}),"
+                f"{normal_level:.4f}+({level:.4f}-{normal_level:.4f})*(t/{attack:.3f}),"
+                f"if(lt(t,{release_start:.3f}),{level:.4f},"
+                f"if(lt(t,{narration_len:.3f}),"
+                f"{level:.4f}+({normal_level:.4f}-{level:.4f})*((t-{release_start:.3f})/{release:.3f}),"
+                f"{normal_level:.4f})))"
+            )
             audio_filter = (
-                f"volume={normal_level:.3f},"
-                f"volume={duck_factor:.4f}:enable='between(t,0,{narration_len:.3f})',"
+                f"volume='{volume_curve}':eval=frame,"
                 "aresample=48000"
             )
         else:
-            audio_filter = f"volume={level:.3f},aresample=48000"
-        run([
-            "ffmpeg", "-hide_banner", "-loglevel", "error", "-ss", f"{start:.3f}", "-t", f"{duration:.3f}",
-            "-i", str(video), "-map", "0:v:0", "-map", "0:a:0", "-vf", vf,
-            "-af", audio_filter, "-c:v", "libx264", "-preset", "veryfast", "-crf", "20",
-            "-c:a", "aac", "-b:a", "192k", "-ar", "48000", "-ac", "2", "-movflags", "+faststart", "-y", str(clip),
-        ])
+            unducked_level = float(config.get("post_narration_audio_level", 0.96)) if text else level
+            audio_filter = f"volume={unducked_level:.3f},aresample=48000"
+        audio_fade_filter = ("," + ",".join(audio_fades)) if audio_fades else ""
+        if text and tts_audio.exists():
+            run([
+                "ffmpeg", "-hide_banner", "-loglevel", "error", *input_options, "-ss", f"{start:.3f}", "-t", f"{duration:.3f}",
+                "-i", str(video), "-i", str(tts_audio),
+                "-filter_complex",
+                f"[0:v:0]{vf}[v];[0:a:0]{audio_filter}[bed];[1:a:0]aresample=48000,volume=1.0[vo];"
+                f"[bed][vo]amix=inputs=2:duration=first:dropout_transition=0{audio_fade_filter}[a]",
+                "-map", "[v]", "-map", "[a]", *video_encode_options,
+                "-c:a", "aac", "-b:a", "192k", "-ar", "48000", "-ac", "2", "-movflags", "+faststart", "-y", str(clip),
+            ])
+        else:
+            run([
+                "ffmpeg", "-hide_banner", "-loglevel", "error", *input_options, "-ss", f"{start:.3f}", "-t", f"{duration:.3f}",
+                "-i", str(video), "-map", "0:v:0", "-map", "0:a:0", "-vf", vf,
+                "-af", audio_filter + audio_fade_filter, *video_encode_options,
+                "-c:a", "aac", "-b:a", "192k", "-ar", "48000", "-ac", "2", "-movflags", "+faststart", "-y", str(clip),
+            ])
         concat_lines.append(f"file '{clip.as_posix()}'")
         if text:
             narration.append((timeline, timeline + narration_len, text))
@@ -468,6 +639,7 @@ def main() -> int:
     if args.stage in ("render", "all"):
         render(config)
     if args.stage == "captions":
+        validate_story_map_gate(config, require_render_ready=False)
         source_duration = float(ffprobe(ROOT / config["video"])["format"]["duration"])
         plan = validate_plan(OUTPUT / "edit_plan.json", source_duration, float(config.get("target_duration_sec", 1320)))
         build_caption_tracks(config, plan)

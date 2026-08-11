@@ -1,0 +1,15 @@
+{
+  "segments": 51,
+  "events": 28,
+  "sections": 8,
+  "narration_blocks": 9,
+  "duration_seconds": 1484.651,
+  "clip_min": 2.253,
+  "clip_median": 29.28,
+  "clip_max": 51.259,
+  "clip_stdev": 12.245,
+  "source_monotonic": true,
+  "dialogue_boundary_violations": [],
+  "future_leak_checks": "validator plus manual line-by-line evidence audit",
+  "spoiler_cutoff_source_sec": 5580
+}

@@ -1,5 +1,7 @@
 # Movie Review Auto Pipeline
 
+Current approved narration and audio-mix rules: `docs/NARRATION_AUDIO_WORKFLOW.md`.
+
 영화 원본, SRT, FFmpeg, 로그인된 Codex CLI를 이용해 19~25분 한국어 영화 리뷰의 분석 자료, 편집표, 러프컷, CapCut 가져오기 묶음을 생성합니다. 영화 원본과 API 키만 별도로 전달하며, SRT·음원·렌더·분석 자료·CapCut 인계본은 Git LFS를 포함한 이 저장소에서 받습니다.
 
 현재 진행 상태와 확정된 편집 결정을 이어서 작업하려면 `docs/PROJECT_STATE.md`를 먼저 확인합니다. 다른 영화에 같은 방식을 적용할 때는 전역 Codex 스킬 `$edit-movie-review`를 사용합니다.
