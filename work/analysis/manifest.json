@@ -1,0 +1,28 @@
+{
+  "video": "COLONY.2026.1080p.FHD.H264.AAC-iMBC.mp4",
+  "subtitle": "COLONY.2026.1080p.FHD.H264.AAC-iMBC.srt",
+  "duration": 7351.427416,
+  "cue_count": 1335,
+  "story_packet_count": 41,
+  "narration_gap_count": 325,
+  "contact_sheet_interval_sec": 30,
+  "contact_sheet_grid": {
+    "columns": 5,
+    "rows": 4
+  },
+  "contact_sheets": [
+    "sheet_001.jpg",
+    "sheet_002.jpg",
+    "sheet_003.jpg",
+    "sheet_004.jpg",
+    "sheet_005.jpg",
+    "sheet_006.jpg",
+    "sheet_007.jpg",
+    "sheet_008.jpg",
+    "sheet_009.jpg",
+    "sheet_010.jpg",
+    "sheet_011.jpg",
+    "sheet_012.jpg",
+    "sheet_013.jpg"
+  ]
+}

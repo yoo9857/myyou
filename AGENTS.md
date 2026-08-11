@@ -2,6 +2,10 @@
 
 Read `docs/HANDOFF.md`, `docs/PROJECT_STATE.md`, and `docs/WORKFLOW.md` before changing the pipeline.
 
+## One-line trigger
+
+Treat `유튜브 영화 리뷰, [영화 파일명] 이걸로 만들어줘` and equivalent short requests as authorization to run the complete bundled workflow with its defaults. Do not ask the user to restate the established editing rules unless a required movie or subtitle file is missing.
+
 Use the bundled `edit-movie-review` skill under `skills/edit-movie-review/` for movie-review work. Preserve these fixed rules:
 
 - Target 19–25 minutes, normally about 22 minutes.
@@ -12,6 +16,6 @@ Use the bundled `edit-movie-review` skill under `skills/edit-movie-review/` for 
 - Use short anticipation-building narration; do not recite the plot.
 - Default ElevenLabs voice is Nayva (`cfc7wVYq4gw4OpcEEAom`) with `eleven_v3`.
 - Never print, commit, or embed API keys.
-- Never commit source movies, subtitle files, generated media, CapCut drafts, or licensed music to this public repository.
+- Never commit API keys or the separately transferred source movie. Existing subtitles, generated media, analysis data, approved music, and CapCut handoff drafts are intentional project deliverables.
 
 Preserve user media and existing outputs. Back up a CapCut project and close CapCut before modifying its JSON.

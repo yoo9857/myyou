@@ -4,28 +4,13 @@
 *.key
 *.pem
 
-# Licensed/copyrighted media and subtitles
-*.mp4
-*.mkv
-*.mov
-*.avi
-*.mp3
-*.wav
-*.aac
-*.m4a
-*.srt
-*.ass
-*.vtt
+# The movie source is transferred separately by the owner.
+COLONY.2026.1080p.FHD.H264.AAC-iMBC.mp4
 
-# Generated and machine-local state
-output/
-work/
-backups/
+# Machine-local state
 __pycache__/
 *.py[cod]
 *.log
-*.bak
-*.tmp
 
 # Third-party checkout and dependencies (recreated by setup script)
 tools/capcut-cli/

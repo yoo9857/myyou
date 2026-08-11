@@ -7,6 +7,7 @@
 ```powershell
 git clone https://github.com/yoo9857/myyou.git
 cd myyou
+git lfs pull
 powershell -ExecutionPolicy Bypass -File .\scripts\setup_tools.ps1
 ```
 
@@ -26,27 +27,24 @@ powershell -ExecutionPolicy Bypass -File .\scripts\setup_tools.ps1
 - 재사용 가능한 Codex `edit-movie-review` 스킬
 - CapCut CLI `0.18.0` 고정 버전에 적용할 로컬 패치
 - 현재 프로젝트 상태와 품질 검증 규칙
+- 원본 SRT, 승인된 엔딩 음악, 기존 렌더와 분석 자료
+- `output/`, `work/`, `backups/` 전체
+- `handoff/capcut_projects/0811 (5)/` CapCut 초안 사본
 
-## Git에 포함되지 않은 로컬 자산
+## 별도로 전달할 자산
 
-이 저장소는 공개 저장소이므로 다음 파일은 별도로 안전하게 전달해야 한다.
+다음 항목만 GitHub에 포함하지 않는다.
 
 - 사용 권한이 있는 영화 원본 MP4
-- 원본 영화 SRT
-- `The Final Resolve.mp3` 및 기타 라이선스 음원
-- `output/`, `work/`, `backups/` 전체
-- CapCut 프로젝트 `0811 (5)` 폴더
 - ElevenLabs/OpenAI/GitHub API 키
 
-COLONY 작업을 정확히 이어가려면 기존 PC에서 다음을 복사한다.
+COLONY 작업을 이어가려면 영화 원본을 저장소 루트에 별도로 복사한다.
 
 ```text
 C:\cineyoutube\COLONY.2026.1080p.FHD.H264.AAC-iMBC.mp4
-C:\cineyoutube\COLONY.2026.1080p.FHD.H264.AAC-iMBC.srt
-C:\cineyoutube\The Final Resolve.mp3
-C:\cineyoutube\output\
-C:\Users\<USER>\AppData\Local\CapCut\User Data\Projects\com.lveditor.draft\0811 (5)\
 ```
+
+필요하면 `handoff/capcut_projects/0811 (5)/`를 새 PC의 `%LOCALAPPDATA%\CapCut\User Data\Projects\com.lveditor.draft\0811 (5)\`로 복사한다. CapCut이 닫힌 상태에서 복사한다.
 
 새 영화로 시작한다면 영화 MP4와 해당 SRT만 준비하고 `config.json`의 파일명·스포일러 경계를 바꾼다.
 
@@ -68,6 +66,7 @@ C:\Users\<USER>\AppData\Local\CapCut\User Data\Projects\com.lveditor.draft\0811 
 - Windows 10/11
 - Python 3.11 권장(파이프라인은 표준 라이브러리 사용)
 - FFmpeg/ffprobe
+- Git LFS
 - Node.js 18 이상
 - Codex CLI 로그인
 - CapCut Desktop
@@ -78,4 +77,4 @@ C:\Users\<USER>\AppData\Local\CapCut\User Data\Projects\com.lveditor.draft\0811 
 - 키를 채팅, JSON, 코드, 로그에 붙이지 않는다.
 - `set_elevenlabs_key.ps1`로 사용자 환경 변수에만 저장한다.
 - 공개 GitHub 이슈에 CapCut 프로젝트를 그대로 첨부하지 않는다.
-- 영화 파일과 전체 자막은 Git LFS에도 올리지 않는다.
+- 영화 원본은 사용자가 별도로 전달한다. 저장소의 승인된 산출물과 음원은 Git LFS로 내려받는다.
