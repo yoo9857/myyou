@@ -1,0 +1,101 @@
+diff --git a/src/index.ts b/src/index.ts
+index 5c4e96a..2b31768 100644
+--- a/src/index.ts
++++ b/src/index.ts
+@@ -52,9 +52,11 @@ import {
+ } from "./draft.js";
+ import type { Category, Namespace } from "./enums.js";
+ import type { AddAudioOptions, AddTextOptions, AddVideoOptions, CropRect, CutOptions } from "./factory.js";
++import { removeSegment } from "./factory.js";
+ import type { ImportPlan } from "./interchange.js";
+ import type { LintOptions } from "./lint.js";
+ import type { TextStylePreset } from "./preset.js";
++import { applyTextPreset, loadPresetFile } from "./preset.js";
+ import type { SegmentCue } from "./srt.js";
+ import {
+   defaultDraftsDir,
+@@ -3192,6 +3194,9 @@ interface BatchOp {
+   start?: string;
+   duration?: string;
+   track?: string;
++  keepTrack?: boolean;
++  keepMaterials?: boolean;
++  preset?: string;
+ }
+
+ function execBatchOp(draft: Draft, filePath: string, op: BatchOp, flags: Flags): void {
+@@ -3225,6 +3230,17 @@ function execBatchOp(draft: Draft, filePath: string, op: BatchOp, flags: Flags):
+       if (!op.id || !op.start || !op.duration) die(`batch trim requires id, start, duration`);
+       cmdTrim(draft, filePath, op.id, op.start, op.duration, silent, false);
+       break;
++    case "remove":
++      if (!op.id) die(`batch remove requires id`);
++      removeSegment(draft, op.id, {
++        keepTrack: op.keepTrack,
++        keepMaterials: op.keepMaterials,
++      });
++      break;
++    case "text-style":
++      if (!op.id || !op.preset) die(`batch text-style requires id and preset`);
++      applyTextPreset(draft, op.id, loadPresetFile(op.preset));
++      break;
+     default:
+       die(`Unknown batch command: ${op.cmd}`);
+   }
+diff --git a/test/batch-transaction.test.mjs b/test/batch-transaction.test.mjs
+index 99293a0..df7b322 100644
+--- a/test/batch-transaction.test.mjs
++++ b/test/batch-transaction.test.mjs
+@@ -1,5 +1,5 @@
+ import assert from "node:assert/strict";
+-import { existsSync, readFileSync } from "node:fs";
++import { existsSync, readFileSync, writeFileSync } from "node:fs";
+ import { after, describe, it } from "node:test";
+ import { spawnCli } from "./helpers/spawn-cli.mjs";
+ import { tmpDraft } from "./helpers/tmp-draft.mjs";
+@@ -11,6 +11,45 @@ function firstText(path) {
+ }
+
+ describe("transactional batch", () => {
++  it("removes text segments in one transaction", () => {
++    const fix = tmpDraft();
++    after(fix.cleanup);
++    const removedId = firstText(fix.path);
++    const input = JSON.stringify({ cmd: "remove", id: removedId });
++    const result = spawnCli(["batch", fix.path, "--force-write"], { input });
++    assert.equal(result.status, 0, result.stderr);
++    assert.equal(result.json.succeeded, 1);
++    const draft = JSON.parse(readFileSync(fix.path, "utf-8"));
++    assert.equal(
++      draft.tracks.some((item) => item.segments.some((segment) => segment.id === removedId)),
++      false,
++    );
++  });
++
++  it("applies a text preset in one transaction", () => {
++    const fix = tmpDraft();
++    after(fix.cleanup);
++    const presetPath = `${fix.path}.preset.json`;
++    writeFileSync(
++      presetPath,
++      JSON.stringify({
++        capcutCliPreset: 1,
++        style: { font_size: 6, text_color: "#FFF0C2", bold: true },
++        transform: { x: 0, y: -0.64 },
++      }),
++    );
++    const id = firstText(fix.path);
++    const input = JSON.stringify({ cmd: "text-style", id, preset: presetPath });
++    const result = spawnCli(["batch", fix.path, "--force-write"], { input });
++    assert.equal(result.status, 0, result.stderr);
++    const draft = JSON.parse(readFileSync(fix.path, "utf-8"));
++    const segment = draft.tracks.flatMap((track) => track.segments).find((item) => item.id === id);
++    const material = draft.materials.texts.find((item) => item.id === segment.material_id);
++    assert.equal(material.font_size, 6);
++    assert.equal(material.text_color, "#FFF0C2");
++    assert.equal(segment.clip.transform.y, -0.64);
++  });
++
+   it("writes nothing when any operation fails", () => {
+     const fix = tmpDraft();
+     after(fix.cleanup);

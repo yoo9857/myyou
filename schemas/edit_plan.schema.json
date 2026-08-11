@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["project_title", "summary", "target_duration_sec", "style_notes", "segments"],
+  "properties": {
+    "project_title": {"type": "string"},
+    "summary": {"type": "string"},
+    "target_duration_sec": {"type": "number", "minimum": 1140, "maximum": 1500},
+    "style_notes": {"type": "array", "items": {"type": "string"}},
+    "segments": {
+      "type": "array",
+      "minItems": 45,
+      "maxItems": 140,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["order", "source_start", "source_end", "kind", "story_beat", "purpose", "narration", "keep_original_audio", "audio_level", "transition"],
+        "properties": {
+          "order": {"type": "integer", "minimum": 1},
+          "source_start": {"type": "number", "minimum": 0},
+          "source_end": {"type": "number", "minimum": 0},
+          "kind": {"type": "string", "enum": ["hook", "movie_dialogue", "narration", "montage", "climax", "ending"]},
+          "story_beat": {"type": "string", "enum": ["cold_open", "setup", "inciting_incident", "rising_action", "reversal", "crisis", "climax", "resolution"]},
+          "purpose": {"type": "string"},
+          "narration": {"type": "string"},
+          "keep_original_audio": {"type": "boolean"},
+          "audio_level": {"type": "number", "minimum": 0, "maximum": 1},
+          "transition": {"type": "string", "enum": ["cut", "fade", "dip_to_black"]}
+        }
+      }
+    }
+  }
+}

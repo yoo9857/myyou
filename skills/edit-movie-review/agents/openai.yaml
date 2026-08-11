@@ -1,0 +1,4 @@
+interface:
+  display_name: "Movie Review Auto Editor"
+  short_description: "Build spoiler-safe movie reviews and CapCut handoffs"
+  default_prompt: "Use $edit-movie-review to turn this movie and its subtitle file into a spoiler-safe 19-25 minute review package for CapCut."

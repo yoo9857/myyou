@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["title", "premise", "characters", "beats"],
+  "properties": {
+    "title": {"type": "string"},
+    "premise": {"type": "string"},
+    "characters": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name", "role"],
+        "properties": {"name": {"type": "string"}, "role": {"type": "string"}}
+      }
+    },
+    "beats": {
+      "type": "array",
+      "minItems": 8,
+      "maxItems": 20,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["story_beat", "start", "end", "summary", "stakes", "key_dialogues", "sheet_numbers"],
+        "properties": {
+          "story_beat": {"type": "string", "enum": ["cold_open", "setup", "inciting_incident", "rising_action", "reversal", "crisis", "climax", "resolution"]},
+          "start": {"type": "number", "minimum": 0},
+          "end": {"type": "number", "minimum": 0},
+          "summary": {"type": "string"},
+          "stakes": {"type": "string"},
+          "key_dialogues": {
+            "type": "array",
+            "maxItems": 5,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["start", "end", "text", "reason"],
+              "properties": {
+                "start": {"type": "number"}, "end": {"type": "number"},
+                "text": {"type": "string"}, "reason": {"type": "string"}
+              }
+            }
+          },
+          "sheet_numbers": {"type": "array", "items": {"type": "integer", "minimum": 1, "maximum": 13}}
+        }
+      }
+    }
+  }
+}
