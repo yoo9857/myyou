@@ -1,8 +1,8 @@
-# COLONY 나레이션 대본 V5
+# Movie Review 나레이션 대본
 
 37개 후보 중 17개만 유지했습니다. 원음이나 행동이 이미 충분한 20개는 제거했으며, 결말·백신의 정체·제거 및 생존 결과는 공개하지 않았습니다.
 
-| # | 사용 | 역할 | 한국어 자막 | Clara 영어 TTS | 톤 | 인계 |
+| # | 사용 | 역할 | 한국어 자막 | Nayva 영어 TTS | 톤 | 인계 |
 |---:|:---:|---|---|---|---|---|
 | 1 | Y | hook | 여기, 모두를 살릴 유일한 남자가 있습니다. | There is only one man who can save them all. | intrigued | next_dialogue |
 | 2 | Y | setup | 평범한 모임이 곧 실험장으로 변합니다. | This ordinary gathering is about to become a human experiment. | somber | visual_reveal |

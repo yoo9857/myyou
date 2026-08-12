@@ -37,9 +37,12 @@
    - FFmpeg로 클립, 러프컷, 원음 덕킹, 타임라인을 만든다.
 6. ElevenLabs TTS
    - 모델: `eleven_v3`
-   - 음성: Nayva
-   - Voice ID: `cfc7wVYq4gw4OpcEEAom`
-   - 출력: 44.1kHz MP3
+   - 승인 프로필: `voice_profiles/colony_original_normal.json`
+   - Voice ID: `Vuo6zmtjWmlDbzqgIDos`
+   - 보이스 설정: 공급자 기본값(별도 안정성·스타일·속도 지시 금지)
+   - 출력: 승인 샘플과 같은 무음 제거·음량 보정 후 48kHz mono 192kbps MP3
+   - 전체 생성 전 한 줄을 먼저 승인받고, 문장이 같은 승인 샘플은 재생성하지 않고 그대로 복사한다.
+   - manifest의 문장과 음성 프로필 SHA-256이 일치하지 않는 기존 MP3는 재사용하지 않는다.
 7. CapCut
    - 러프컷, 영화 자막, 나레이션 오디오/자막을 가져온다.
    - 효과, 음악, 자막 디자인, 미세 컷 조정을 마무리한다.
@@ -79,7 +82,7 @@
 - 사용자 전역 Codex 스킬: `%USERPROFILE%\.codex\skills\edit-movie-review`
 - 새 영화 리뷰 요청 시 `$edit-movie-review`를 사용하면 이 프로젝트에서 확정한 전체 흐름과 품질 기준을 다시 불러온다.
 - 영화별로 바꾸는 값은 원본 파일, SRT, 스포일러 경계, 장면 선택, 대본, 제목뿐이다.
-- 19~25분 구성, 결말 보호, 짧은 Nayva 나레이션, 정확한 자막 재매핑, CapCut 인계, 짧은 엔딩 구조는 기본값으로 유지한다.
+- 19~25분 구성, 결말 보호, 승인 프로필 기반의 짧은 나레이션, 정확한 자막 재매핑, CapCut 인계, 짧은 엔딩 구조는 기본값으로 유지한다.
 
 ## 보안 및 운영
 

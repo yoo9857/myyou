@@ -1,0 +1,28 @@
+{
+  "status": "pass",
+  "voice_id": "Vuo6zmtjWmlDbzqgIDos",
+  "voice_model": "eleven_v3",
+  "voice_settings": "provider defaults; no style/accent override",
+  "duration_sec": 1196.533,
+  "duration_in_target_window": true,
+  "video": {
+    "codec": "h264",
+    "width": 1920,
+    "height": 1080
+  },
+  "audio": {
+    "codec": "aac",
+    "sample_rate": 48000,
+    "channels": 2
+  },
+  "movie_caption_count": 320,
+  "narration_caption_count": 17,
+  "narration_audio_count": 17,
+  "movie_narration_overlap_count": 0,
+  "overlaps": [],
+  "caption_style": {
+    "movie": "clean white, lower safe area, no box",
+    "narration": "warm ivory, raised above movie captions, no box"
+  },
+  "final_video": "C:\\cineyoutube\\output\\rough_cut_v5_selected_voice_cinema_captions.mp4"
+}

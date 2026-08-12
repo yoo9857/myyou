@@ -198,8 +198,9 @@ def apply(source: Path, make_current: bool) -> None:
     plan["narration_voice"] = {
         "provider": "ElevenLabs",
         "model": "eleven_v3",
-        "voice_name": "Nayva",
+        "voice_name": "User-selected Voice Library voice",
         "voice_id": config.get("elevenlabs_voice_id", "cfc7wVYq4gw4OpcEEAom"),
+        "voice_settings": "voice defaults (no request override)",
     }
     TARGET_PLAN.write_text(json.dumps(plan, ensure_ascii=False, indent=2), encoding="utf-8")
     if make_current:

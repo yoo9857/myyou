@@ -1,0 +1,25 @@
+{
+  "profile_id": "colony-vuo-original-normal-v1",
+  "voice_id": "Vuo6zmtjWmlDbzqgIDos",
+  "model_id": "eleven_v3",
+  "language_code": "en",
+  "voice_settings": null,
+  "request_policy": "Do not send a voice_settings override; use provider defaults.",
+  "postprocess": {
+    "ffmpeg_filter": "silenceremove=start_periods=1:start_duration=0.04:start_threshold=-50dB,areverse,silenceremove=start_periods=1:start_duration=0.08:start_threshold=-50dB,areverse,loudnorm=I=-16.5:TP=-1.5:LRA=7",
+    "sample_rate": 48000,
+    "channels": 1,
+    "codec": "libmp3lame",
+    "bitrate": "192k"
+  },
+  "approved_text_assets": [
+    {
+      "text": "There is only one man who can save them all.",
+      "file": "output/narration_samples/linked_voice_Vuo6zmtjWmlDbzqgIDos/colony_hook_original_normal.mp3"
+    },
+    {
+      "text": "This ordinary gathering is about to become a human experiment.",
+      "file": "output/narration_samples/linked_voice_Vuo6zmtjWmlDbzqgIDos/colony_v5_line_02_original_normal.mp3"
+    }
+  ]
+}

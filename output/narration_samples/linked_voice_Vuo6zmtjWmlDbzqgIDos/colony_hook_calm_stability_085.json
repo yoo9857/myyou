@@ -1,0 +1,15 @@
+{
+  "voice_id": "Vuo6zmtjWmlDbzqgIDos",
+  "model": "eleven_v3",
+  "text": "There is only one man who can save them all.",
+  "korean_caption": "여기, 모두를 살릴 유일한 남자가 있습니다.",
+  "settings": {
+    "stability": 0.85,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "speaker_boost": false,
+    "speed": 1.02
+  },
+  "duration_sec": 2.385,
+  "file": "C:\\cineyoutube\\output\\narration_samples\\linked_voice_Vuo6zmtjWmlDbzqgIDos\\colony_hook_calm_stability_085.mp3"
+}

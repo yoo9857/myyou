@@ -937,7 +937,8 @@
   "narration_voice": {
     "provider": "ElevenLabs",
     "model": "eleven_v3",
-    "voice_name": "Clara - Whispery & Intimate",
-    "voice_id": "wNvqdMNs9MLd1PG6uWuY"
+    "voice_name": "User-selected Voice Library voice",
+    "voice_id": "Vuo6zmtjWmlDbzqgIDos",
+    "voice_settings": "voice defaults (no request override)"
   }
 }

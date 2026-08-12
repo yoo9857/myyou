@@ -1,0 +1,95 @@
+{
+  "status": "pass",
+  "date": "2026-08-13",
+  "supersedes": "output/COLONY_SELECTED_VOICE_VIDEO_QA.json",
+  "voice_id": "Vuo6zmtjWmlDbzqgIDos",
+  "voice_model": "eleven_v3",
+  "voice_settings": "voice defaults (no request override)",
+  "voice_profile": "voice_profiles/colony_original_normal.json",
+  "voice_profile_id": "colony-vuo-original-normal-v1",
+  "voice_profile_sha256": "95c8237230996ee8f2886670fdabc21fbc218c7e995080b83469faf9fd90715e",
+  "voice_profile_uniform_across_clips": true,
+  "duration_sec": 1196.533,
+  "duration_in_target_window": true,
+  "video": {
+    "codec": "h264",
+    "width": 1920,
+    "height": 1080,
+    "source": "stream-copied from output/rough_cut_v5_selected_voice_cinema_captions.mp4"
+  },
+  "audio": {
+    "codec": "aac",
+    "sample_rate": 48000,
+    "channels": 2,
+    "bitrate": "192k",
+    "limiter": "alimiter=limit=0.891251"
+  },
+  "narration": {
+    "clip_count": 17,
+    "all_within_max_seconds": true,
+    "over_limit_count": 0,
+    "audio_dir": "output/capcut_import/narration_audio/",
+    "postprocess_filter": "silenceremove(head 0.04s/-50dB) + silenceremove(tail 0.08s/-50dB) + loudnorm=I=-16.5:TP=-1.5:LRA=7"
+  },
+  "audio_rebuild": {
+    "script": "rebuild_colony_approved_voice.py",
+    "base_video": "output/rough_cut_v4_curiosity_hook.mp4",
+    "clean_movie_audio": "work/audio/movie_audio_16k_mono.mp3",
+    "old_narration_intervals_removed": 37,
+    "clean_replacement_intervals": 37,
+    "movie_audio_duck_under_narration": 0.2,
+    "movie_audio_level_elsewhere": 0.96
+  },
+  "captions": {
+    "movie_caption_count": 320,
+    "narration_caption_count": 17,
+    "movie_narration_overlap_count": 0,
+    "movie_style": "clean white, lower safe area, no box",
+    "narration_style": "warm ivory, raised above movie captions, no box",
+    "unchanged_from_previous_render": true
+  },
+  "measured_mean_volume_db": {
+    "note": "narration windows carry voice in both renders; non-narration windows match, so movie audio is preserved",
+    "narration_windows": {
+      "clip_01_at_0.000s": { "approved": -18.7, "previous": -16.3 },
+      "clip_06_at_278.497s": { "approved": -19.5, "previous": -17.5 },
+      "clip_11_at_609.294s": { "approved": -19.0, "previous": -17.9 },
+      "clip_17_at_1190.488s": { "approved": -20.5, "previous": -18.0 }
+    },
+    "non_narration_windows": {
+      "at_150.000s": { "approved": -30.1, "previous": -30.5 },
+      "at_700.000s": { "approved": -30.3, "previous": -30.8 }
+    },
+    "observation": "approved-voice narration sits about 2 dB lower than the previous render; raise narration gain in rebuild_colony_approved_voice.py if a louder voice is wanted"
+  },
+  "voice_replacement_proof": {
+    "method": "decode both renders to 16 kHz mono, lag-compensated normalized cross-correlation of each approved clip against the render (search window +/-600 ms)",
+    "approved_clips_found_in_new_render": "17 / 17",
+    "approved_clips_found_in_previous_render": "0 / 17",
+    "mean_abs_correlation": { "approved_render": 0.994, "previous_render": 0.15 },
+    "placement_lag_ms": {
+      "value": 5.0,
+      "uniform_across_all_17_clips": true,
+      "note": "constant AAC encode/decode priming offset, not timing drift; well under one video frame"
+    },
+    "old_narration_windows_now_clean": {
+      "window_count": 20,
+      "mean_abs_correlation_vs_source_movie_audio": 0.959,
+      "windows_at_or_above_0.90": "17 / 20",
+      "note": "the three lower windows are loud music/effect passages where 16 kHz mono lossy comparison degrades; no voice residue"
+    },
+    "phase_inversion_attempt": "inconclusive and discarded: -ss fast seek plus mp3 decoder delay prevents sample-accurate alignment, so null-test residuals are meaningless here"
+  },
+  "fix_applied": {
+    "issue": "ffmpeg 9.0 removed -filter_complex_script, which aborted the 2026-08-12 rebuild before any output was written",
+    "resolution": "rebuild_colony_approved_voice.py now passes -/filter_complex <file>"
+  },
+  "outputs": {
+    "audio_replaced_video": "C:\\cineyoutube\\output\\rough_cut_v5_approved_voice_clean_audio.mp4",
+    "final_video": "C:\\cineyoutube\\output\\rough_cut_v5_approved_voice_cinema_captions.mp4"
+  },
+  "preserved_for_comparison": [
+    "output/rough_cut_v5_selected_voice_cinema_captions.mp4",
+    "output/rough_cut_v5_selected_voice.mp4"
+  ]
+}

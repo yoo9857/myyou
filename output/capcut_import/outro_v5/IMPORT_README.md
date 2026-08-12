@@ -1,9 +1,9 @@
 # CapCut 아웃트로 V5 가져오기
 
-1. `colony_outro_v5.mp4`를 본편 마지막 컷 뒤에 배치합니다.
+1. `colony_outro_v5_selected_voice.mp4`를 본편 마지막 컷 뒤에 배치합니다.
 2. CapCut의 로컬 자막 가져오기에서 `outro_captions_ko.srt`를 선택합니다.
 3. 자막 트랙의 시작점을 아웃트로 영상 시작점과 정확히 맞춥니다.
-4. 영상에는 Nayva 영어 나레이션과 `The Final Resolve` 음악이 이미 믹싱되어 있습니다.
+4. 영상에는 선택 보이스(`Vuo6zmtjWmlDbzqgIDos`) 영어 나레이션과 `The Final Resolve` 음악이 이미 믹싱되어 있습니다.
 5. 영화 원음은 완전히 제거되어 있으므로 별도의 음소거 작업은 필요 없습니다.
 
 ## 사용 구간
@@ -15,9 +15,11 @@
 
 ## 파일 역할
 
-- `colony_outro_v5.mp4`: 바로 붙이는 완성 아웃트로
+- `colony_outro_v5_selected_voice.mp4`: 현재 선택 보이스가 적용된 완성 아웃트로
+- `colony_outro_v5.mp4`: 이전 Nayva 버전(비교 및 복구용)
 - `outro_captions_ko.srt`: CapCut 수정용 한국어 자막
-- `outro_nayva_en.mp3`: 나레이션을 다시 믹싱할 때 사용하는 분리 음원
+- `outro_selected_voice_en.mp3`: 현재 선택 보이스의 분리 음원
+- `outro_nayva_en.mp3`: 이전 Nayva 분리 음원(비교 및 복구용)
 - `outro_script.md`: 영어 음성 대사와 한국어 자막 원고
 
 기본 사용 시에는 완성 MP4와 SRT만 가져오면 됩니다.

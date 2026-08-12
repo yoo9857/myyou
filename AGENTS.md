@@ -14,7 +14,7 @@ Use the bundled `edit-movie-review` skill under `skills/edit-movie-review/` for 
 - Keep movie dialogue and reviewer narration in separate CapCut tracks and style presets.
 - Ensure movie captions resume after every narration interval.
 - Use short anticipation-building narration; do not recite the plot.
-- Default ElevenLabs voice is Nayva (`cfc7wVYq4gw4OpcEEAom`) with `eleven_v3`.
+- For COLONY and future reviews using the approved house voice, load `voice_profiles/colony_original_normal.json`: Voice ID `Vuo6zmtjWmlDbzqgIDos`, `eleven_v3`, provider defaults, and the recorded post-processing chain. Never substitute Nayva or reuse an unverified cached MP3.
 - Never print, commit, or embed API keys.
 - Never commit API keys or the separately transferred source movie. Existing subtitles, generated media, analysis data, approved music, and CapCut handoff drafts are intentional project deliverables.
 

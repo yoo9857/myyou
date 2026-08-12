@@ -1,0 +1,37 @@
+{
+  "capcutCliPreset": 1,
+  "style": {
+    "alignment": 1,
+    "font_size": 5.7,
+    "text_color": "#FFE8AF",
+    "text_alpha": 1.0,
+    "font_name": "Noto Sans KR",
+    "font_path": "C:/Windows/Fonts/NotoSansKR-VF.ttf",
+    "font_id": "",
+    "bold": true,
+    "italic": false,
+    "underline": false,
+    "letter_spacing": 0.01,
+    "line_spacing": 0.02,
+    "line_max_width": 0.68,
+    "force_apply_line_max_width": true,
+    "has_border": true,
+    "border_width": 0.055,
+    "border_color": "#080A0D",
+    "border_alpha": 0.92,
+    "has_shadow": true,
+    "has_text_shadow_config": true,
+    "shadow_color": "#000000",
+    "shadow_alpha": 0.68,
+    "shadow_angle": -45.0,
+    "shadow_distance": 2.0,
+    "shadow_smoothing": 0.38,
+    "background_color": "#050608",
+    "background_alpha": 0.0,
+    "background_style": 0
+  },
+  "transform": {
+    "x": 0.0,
+    "y": -0.66
+  }
+}

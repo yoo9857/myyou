@@ -1,0 +1,10 @@
+{
+  "voice_id": "Vuo6zmtjWmlDbzqgIDos",
+  "model": "eleven_v3",
+  "text": "This ordinary gathering is about to become a human experiment.",
+  "korean_caption": "평범한 모임이 곧 실험장으로 변합니다.",
+  "settings": "voice defaults (no request override)",
+  "post_processing": "same as approved original-normal sample",
+  "duration_sec": 3.727,
+  "file": "C:\\cineyoutube\\output\\narration_samples\\linked_voice_Vuo6zmtjWmlDbzqgIDos\\colony_v5_line_02_original_normal.mp3"
+}

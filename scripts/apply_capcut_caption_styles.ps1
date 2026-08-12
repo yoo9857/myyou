@@ -20,8 +20,8 @@ if (-not $project.StartsWith($prefix, [System.StringComparison]::OrdinalIgnoreCa
 $cli = Join-Path $workspace 'tools\capcut-cli\dist\index.js'
 $movieSrt = Join-Path $workspace 'output\capcut_import\movie_captions.srt'
 $narrationSrt = Join-Path $workspace 'output\capcut_import\narration.srt'
-$dialoguePreset = Join-Path $workspace 'styles\capcut\dialogue-modern.json'
-$narrationPreset = Join-Path $workspace 'styles\capcut\narration-modern.json'
+$dialoguePreset = Join-Path $workspace 'styles\capcut\dialogue-cinema-v2.json'
+$narrationPreset = Join-Path $workspace 'styles\capcut\narration-cinema-v2.json'
 
 foreach ($required in @($cli, $movieSrt, $narrationSrt, $dialoguePreset, $narrationPreset)) {
     if (-not (Test-Path -LiteralPath $required)) {

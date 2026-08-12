@@ -31,6 +31,7 @@
   ,"narration_question_limit": 2
   ,"spoiler_cutoff_source_sec": 6113.5
   ,"narration_tts_language": "en-US"
-  ,"elevenlabs_voice_id": "cfc7wVYq4gw4OpcEEAom"
+  ,"elevenlabs_voice_id": "Vuo6zmtjWmlDbzqgIDos"
   ,"elevenlabs_model": "eleven_v3"
+  ,"elevenlabs_voice_profile": "voice_profiles/colony_original_normal.json"
 }

@@ -1,0 +1,82 @@
+{
+  "status": "pass",
+  "project": "C:\\Users\\hanbi\\AppData\\Local\\CapCut\\User Data\\Projects\\com.lveditor.draft\\CONSTANTINE_STORY_REVIEW_V5",
+  "backup": "C:\\cineyoutube\\Constantine\\story_review_v5\\backups\\capcut_narration_user_reference\\20260812_210739",
+  "files_updated": 4,
+  "mirror_hashes_match": true,
+  "reports": [
+    {
+      "track": "REVIEW_NARRATION",
+      "segment_count": 29,
+      "changed_count": 29,
+      "reference_text": "From then on, an ordinary life quietly twists.",
+      "style_name": "USER_REFERENCE_CONTEXT_V5_MOBILE",
+      "font_name": "Cormorant Garamond",
+      "font_resource_id": "7148699606082130433",
+      "font_size": 5.0,
+      "text_color": "#ffffff",
+      "border_width": 0.042,
+      "position_y": -0.575,
+      "file": "C:\\Users\\hanbi\\AppData\\Local\\CapCut\\User Data\\Projects\\com.lveditor.draft\\CONSTANTINE_STORY_REVIEW_V5\\draft_content.json",
+      "sha256": "7aac0218a8113e8f85025fbe0e43c6ff33509c9f948f185c570e6e0dbdfbd137"
+    },
+    {
+      "track": "REVIEW_NARRATION",
+      "segment_count": 29,
+      "changed_count": 29,
+      "reference_text": "From then on, an ordinary life quietly twists.",
+      "style_name": "USER_REFERENCE_CONTEXT_V5_MOBILE",
+      "font_name": "Cormorant Garamond",
+      "font_resource_id": "7148699606082130433",
+      "font_size": 5.0,
+      "text_color": "#ffffff",
+      "border_width": 0.042,
+      "position_y": -0.575,
+      "file": "C:\\Users\\hanbi\\AppData\\Local\\CapCut\\User Data\\Projects\\com.lveditor.draft\\CONSTANTINE_STORY_REVIEW_V5\\template-2.tmp",
+      "sha256": "7aac0218a8113e8f85025fbe0e43c6ff33509c9f948f185c570e6e0dbdfbd137"
+    },
+    {
+      "track": "REVIEW_NARRATION",
+      "segment_count": 29,
+      "changed_count": 29,
+      "reference_text": "From then on, an ordinary life quietly twists.",
+      "style_name": "USER_REFERENCE_CONTEXT_V5_MOBILE",
+      "font_name": "Cormorant Garamond",
+      "font_resource_id": "7148699606082130433",
+      "font_size": 5.0,
+      "text_color": "#ffffff",
+      "border_width": 0.042,
+      "position_y": -0.575,
+      "file": "C:\\Users\\hanbi\\AppData\\Local\\CapCut\\User Data\\Projects\\com.lveditor.draft\\CONSTANTINE_STORY_REVIEW_V5\\Timelines\\2B0D9201-EBBD-4D8F-9FC3-9664DC515EDB\\draft_content.json",
+      "sha256": "7aac0218a8113e8f85025fbe0e43c6ff33509c9f948f185c570e6e0dbdfbd137"
+    },
+    {
+      "track": "REVIEW_NARRATION",
+      "segment_count": 29,
+      "changed_count": 29,
+      "reference_text": "From then on, an ordinary life quietly twists.",
+      "style_name": "USER_REFERENCE_CONTEXT_V5_MOBILE",
+      "font_name": "Cormorant Garamond",
+      "font_resource_id": "7148699606082130433",
+      "font_size": 5.0,
+      "text_color": "#ffffff",
+      "border_width": 0.042,
+      "position_y": -0.575,
+      "file": "C:\\Users\\hanbi\\AppData\\Local\\CapCut\\User Data\\Projects\\com.lveditor.draft\\CONSTANTINE_STORY_REVIEW_V5\\Timelines\\2B0D9201-EBBD-4D8F-9FC3-9664DC515EDB\\template-2.tmp",
+      "sha256": "7aac0218a8113e8f85025fbe0e43c6ff33509c9f948f185c570e6e0dbdfbd137"
+    }
+  ],
+  "verification": {
+    "narration_count": 29,
+    "movie_count": 287,
+    "narration_times_preserved": true,
+    "narration_text_preserved": true,
+    "movie_times_preserved": true,
+    "movie_text_preserved": true,
+    "all_new_style": true,
+    "all_y_minus_0575": true,
+    "animation_refs_preserved": true,
+    "capcut_running": false,
+    "status": "pass"
+  }
+}

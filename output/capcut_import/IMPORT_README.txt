@@ -1,5 +1,31 @@
-1. 상위 output 폴더의 rough_cut_v4_curiosity_hook.mp4와 이 폴더의 captions_combined.srt를 CapCut으로 가져옵니다.
-2. 음성 합성용으로는 narration.srt를 별도 가져와 원하는 한국어 남성 음성으로 텍스트 음성 변환합니다.
-3. movie_captions.srt는 기존 영화 SRT에서 원음 대사 구간만 새 타임라인으로 재매핑한 자막입니다.
-4. 나레이션이 끝나면 같은 클립 안에서 원음과 영화 자막이 자동으로 복귀합니다.
-5. 필요하면 clips 폴더의 개별 원본 클립과 timeline.csv로 컷을 교체합니다.
+COLONY V5 - APPROVED VOICE PROFILE / CINEMA CAPTIONS
+
+1. Final rendered video
+   output/rough_cut_v5_approved_voice_cinema_captions.mp4
+
+2. Editable CapCut handoff
+   - Video/audio base: output/rough_cut_v5_approved_voice_clean_audio.mp4
+   - Movie dialogue: output/capcut_import/movie_captions.srt
+   - Reviewer narration: output/capcut_import/narration.srt
+   - Separate narration voice files: output/capcut_import/narration_audio/
+
+3. Apply the two subtitle tracks separately.
+   - MOVIE_DIALOGUE: styles/capcut/dialogue-cinema-v2.json
+   - REVIEW_NARRATION: styles/capcut/narration-cinema-v2.json
+
+4. Current cue counts
+   - Movie dialogue: 320
+   - Reviewer narration: 17
+
+5. Do not import captions_combined.srt together with the two separate tracks;
+   doing so would duplicate every subtitle.
+
+6. The source-movie captions are suppressed only while reviewer narration is
+   audible, then resume from the remapped source SRT.
+
+7. Narration voice: voice profile colony-vuo-original-normal-v1
+   (Vuo6zmtjWmlDbzqgIDos / eleven_v3 / voice defaults). All 17 clips share the
+   same profile hash. See output/COLONY_APPROVED_VOICE_VIDEO_QA.json.
+
+8. The previous render (output/rough_cut_v5_selected_voice_cinema_captions.mp4
+   and output/rough_cut_v5_selected_voice.mp4) is kept for comparison.

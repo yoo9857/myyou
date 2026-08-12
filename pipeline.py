@@ -455,7 +455,10 @@ def build_caption_tracks(config: dict[str, Any], plan: dict[str, Any]) -> None:
             combined_entries.extend(entries)
             narration_end_source = source_start + narration_len + float(config.get("caption_resume_gap_sec", 0.12))
 
-        if bool(seg.get("keep_original_audio")) or text:
+        # A narration-pass candidate keeps the movie bed even when its review
+        # narration is later removed. In that case movie captions must return
+        # instead of disappearing with the rejected narration.
+        if bool(seg.get("keep_original_audio")) or text or "narration_original" in seg:
             for cue in source_cues:
                 if cue.start >= source_end:
                     break

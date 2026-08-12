@@ -1,6 +1,6 @@
 # COLONY 영화 리뷰 프로젝트 상태
 
-최종 갱신: 2026-08-11
+최종 갱신: 2026-08-13
 
 ## 확정된 방향
 
@@ -9,17 +9,19 @@
 - 결말 원칙: 최종 해결, 생존 결과, 마지막 반전과 후일담을 공개하지 않는다.
 - 영화 대사 자막: 제공된 `COLONY.2026.1080p.FHD.H264.AAC-iMBC.srt`를 재사용한다.
 - 나레이션: 길게 줄거리를 읽지 않고 흥미를 높이는 짧은 브리지로 제한한다.
-- TTS 기본 음성: ElevenLabs Nayva (`cfc7wVYq4gw4OpcEEAom`), `eleven_v3`, 영어 여성 음성
+- 현재 COLONY TTS 음성: 사용자 선택 Voice Library 보이스 (`Vuo6zmtjWmlDbzqgIDos`), `eleven_v3`, 보이스 원본 기본 설정
+- 승인 음성 프로필: `voice_profiles/colony_original_normal.json`; 승인 샘플과 동일한 후처리 및 캐시 검증을 강제한다.
 - 최종 수정: CapCut에서 영상, 분리 음원, SRT를 가져와 마무리한다.
 
 ## 현재 본편
 
-- 최신 렌더: `output/rough_cut_v4_curiosity_hook.mp4`
-- 길이: 약 1196.54초(19분 56.54초)
+- 최신 렌더: `output/rough_cut_v5_approved_voice_cinema_captions.mp4` (승인 프로필 음성 교체본, 2026-08-13)
+- 직전 렌더: `output/rough_cut_v5_selected_voice_cinema_captions.mp4`
+- 길이: 1196.533초(19분 56.533초)
 - 최신 나레이션 심사본: `output/narration_script_v5.json` 및 `.md`
-- V5 적용 후보 편집표: `output/edit_plan_v5_narration.json`
-- 주의: V5 후보 편집표는 현재 `output/edit_plan.json`과 다르며 아직 현재 편집표로 적용되지 않았다.
-- V5 적용 전에는 `python narration_pass.py apply --make-current`의 실제 지원 여부와 결과를 확인하고, 원본 편집표를 보존한다.
+- V5 편집표를 현재 `output/edit_plan.json`에 적용했으며, 적용 전 파일은 `backups/colony_before_voice_caption_v2_20260812/`에 보존했다.
+- V5에서 승인된 영어 나레이션 17개는 선택 보이스로 생성 완료: `output/capcut_import/narration_audio/`
+- 음성 길이 검증: 17개 전부 각 대사의 `max_seconds` 이내, 초과 0개
 
 ## 자막 버그 방지
 
@@ -53,6 +55,9 @@
 - 음악: `The Final Resolve.mp3`의 15초 지점부터 사용
 - 마지막 약 3초: 어두운 화면 위 `COLONY / LIKE + SUBSCRIBE / NEXT REVIEW SOON`
 - 아웃트로는 독립 파일이며 본편 V4와 하나의 MP4로 합치지는 않았다. CapCut에서 본편 마지막에 붙인다.
+- 선택 보이스 교체본: `output/outro_v5/colony_outro_v5_selected_voice.mp4`
+- 선택 보이스 분리 음원: `output/outro_v5/outro_selected_voice_en.mp3`
+- 기존 Nayva 아웃트로는 비교 및 복구용으로 보존한다.
 
 ## 재사용 장치
 
@@ -60,3 +65,31 @@
 - 호출 예: `$edit-movie-review 이 영화와 SRT로 기존 방식의 리뷰를 만들어줘.`
 - 상세 과정: `docs/WORKFLOW.md`
 - 나레이션 기준: `docs/NARRATION_STYLE_GUIDE.md`
+
+## 선택 보이스·시네마 자막 V5 완성본 (2026-08-12)
+
+- 최종 영상: `output/rough_cut_v5_selected_voice_cinema_captions.mp4`
+- 편집용 음성 교체본: `output/rough_cut_v5_selected_voice.mp4`
+- 보이스: `Vuo6zmtjWmlDbzqgIDos`, `eleven_v3`, 공급자 기본 설정
+- 길이: 1196.533초 (19분 56.533초), 1920×1080, H.264/AAC 48 kHz stereo
+- 영화 대사 자막: 320개, 하단 흰색, 검은 외곽선, 배경 박스 없음
+- 리뷰 나레이션 자막: 17개, 한 단 위 아이보리색, 배경 박스 없음
+- 영화/나레이션 자막 시간 겹침: 0개
+- QA 기록: `output/COLONY_SELECTED_VOICE_VIDEO_QA.json`
+- CapCut 인계 안내: `output/capcut_import/IMPORT_README.txt`
+- 기존 본편·기존 보이스·기존 아웃트로는 복구 및 비교용으로 보존한다.
+
+## 승인 프로필 음성 교체 완성본 (2026-08-13)
+
+- 최종 영상: `output/rough_cut_v5_approved_voice_cinema_captions.mp4`
+- 음성 교체본(자막 없음 계열): `output/rough_cut_v5_approved_voice_clean_audio.mp4`
+- 재생성 스크립트: `rebuild_colony_approved_voice.py`
+- 보이스 프로필: `colony-vuo-original-normal-v1`, 해시 `95c8237230996ee8f2886670fdabc21fbc218c7e995080b83469faf9fd90715e`, 17개 전부 동일
+- 나레이션 17개 길이: 전부 각 대사 `max_seconds` 이내, 초과 0개
+- 길이: 1196.533초, 1920×1080, H.264/AAC 48 kHz stereo 192 kbps
+- 영화 원음 처리: 나레이션 구간 0.20, 그 외 0.96, 최종 `alimiter=limit=0.891251`
+- 이전 나레이션 구간 37개를 원본 영화 음원으로 되돌린 뒤 승인 음성 17개를 다시 얹었다.
+- 자막은 직전 렌더에서 스트림 복사했으므로 영화 320개, 나레이션 17개, 겹침 0개가 그대로 유지된다.
+- 측정: 나레이션 구간 음량이 직전 렌더보다 약 2 dB 낮다. 더 크게 원하면 스크립트의 나레이션 `volume=1.0`을 올린다.
+- QA 기록: `output/COLONY_APPROVED_VOICE_VIDEO_QA.json`
+- 주의: ffmpeg 9.0에서 `-filter_complex_script`가 제거되어 `-/filter_complex <파일>`을 쓴다. 2026-08-12 렌더 실패 원인이었다.
