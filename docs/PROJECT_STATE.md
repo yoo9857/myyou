@@ -68,8 +68,23 @@
 - 믹스 상수(게인 0.60, 더킹, 리미터, 아웃트로 음악)를 그대로 유지해 목소리만 바뀌었다
 - 검증: 29/29 검출(평균 상관도 0.967), 이전 Nayva 렌더에서는 0/29(0.067)
 - QA 기록: `Constantine/story_review_v5/output/FINAL_SELECTED_VOICE_AUDIO_QA.json`
-- **미완료**: CapCut 프로젝트 `CONSTANTINE_STORY_REVIEW_V5`는 아직 Nayva 스템을 참조한다.
-  CapCut을 종료한 뒤 `assets/audio/`의 사본을 `constantine_selected_voice_stem.m4a`로 교체해야 한다.
+- CapCut 프로젝트 `CONSTANTINE_STORY_REVIEW_V5` 교체 완료 (2026-08-13 18:46)
+  - 교체 스크립트: `swap_constantine_capcut_voice.py`
+  - 음성 에셋: `constantine_nayva_voice_stem.m4a` → `constantine_selected_voice_stem.m4a`
+  - 영상 에셋: `..._ducked_bed_v2.mp4` → `..._selected_voice_bed.mp4`
+    (더킹은 나레이션을 사이드체인으로 받으므로, Nayva 베드를 두면 짧아진 새 대사 뒤에도 영화 음량이 눌린 채 남는다)
+  - 신·구 에셋 길이가 동일해 CapCut이 기록한 `duration`과 모든 `timerange`는 손대지 않았다
+  - 보존 확인: 프로젝트 길이 1501041666 us, 텍스트 소재 316개, 영화 자막 287개, 나레이션 29개, 트랙 구성 모두 그대로
+  - 미러 4개 파일 해시 일치, 참조 에셋 3개 전부 실제 존재
+  - 백업: `backups/capcut_selected_voice/20260813_184656` (프로젝트 문서만, assets 제외)
+  - 프로젝트 `assets/`의 미참조 영상 3개(488MB)를 제거했다
+
+## Constantine 해상도 문제 (미해결)
+
+- Constantine 최종본은 **960×540 / 971 kbps**다. COLONY 본편은 1920×1080이다.
+- 원인은 음성 교체가 아니라 상류다. `constantine_story_review_v5_voice_off.mp4`부터 540p로 렌더돼 있고,
+  이후 단계가 모두 `-c:v copy`라 그대로 내려온다.
+- 1080p로 올리려면 Constantine 컷 렌더를 처음부터 다시 해야 한다. 음성 교체 범위를 넘어서므로 손대지 않았다.
 
 ## 레거시 정리 (2026-08-13)
 

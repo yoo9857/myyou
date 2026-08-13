@@ -54,6 +54,9 @@
 5. `generate_constantine_selected_voice.py` — 승인 프로필로 29개 큐 생성 → `narration_audio_selected_voice/`
 6. `mix_constantine_selected_voice.py` — 음성 스템 → 더킹 베드 → 최종본
 7. `apply_constantine_reference_narration_style.py` — CapCut 나레이션 자막 스타일 적용
+8. `swap_constantine_capcut_voice.py` — CapCut 프로젝트의 음성·베드 에셋을 교체한다.
+   CapCut이 켜져 있으면 거부하고, 프로젝트 문서만 백업한 뒤, 길이·타임레인지·자막·트랙이
+   그대로인지 지문 대조로 확인한다. `--dry-run`은 임시 복사본으로만 돌린다.
 
 | 산출물 | 설명 |
 |---|---|

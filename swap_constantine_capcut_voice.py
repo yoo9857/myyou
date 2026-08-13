@@ -27,7 +27,6 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
 REVIEW = ROOT / "Constantine" / "story_review_v5"
-NEW_STEM = REVIEW / "output" / "constantine_selected_voice_stem.m4a"
 BACKUP_ROOT = REVIEW / "backups" / "capcut_selected_voice"
 QA_PATH = REVIEW / "output" / "CAPCUT_SELECTED_VOICE_SWAP_QA.json"
 
@@ -35,9 +34,27 @@ DEFAULT_PROJECT = (
     Path(os.environ["LOCALAPPDATA"]) / "CapCut" / "User Data" / "Projects"
     / "com.lveditor.draft" / "CONSTANTINE_STORY_REVIEW_V5"
 )
-OLD_NAME = "constantine_nayva_voice_stem.m4a"
-NEW_NAME = "constantine_selected_voice_stem.m4a"
 MIRROR_NAMES = {"draft_content.json", "template-2.tmp"}
+
+# Both assets are replaced by same-duration equivalents, so only name/path move.
+# The bed carries the movie audio ducked against the narration: keeping the Nayva
+# bed would hold the movie down past the end of the shorter approved-voice lines.
+SWAPS = [
+    {
+        "kind": "audios",
+        "asset_dir": ("assets", "audio"),
+        "old": "constantine_nayva_voice_stem.m4a",
+        "new": "constantine_selected_voice_stem.m4a",
+        "source": REVIEW / "output" / "constantine_selected_voice_stem.m4a",
+    },
+    {
+        "kind": "videos",
+        "asset_dir": ("assets", "video"),
+        "old": "constantine_story_review_v5_ducked_bed_v2.mp4",
+        "new": "constantine_story_review_v5_selected_voice_bed.mp4",
+        "source": REVIEW / "output" / "constantine_story_review_v5_selected_voice_bed.mp4",
+    },
+]
 
 
 def capcut_running() -> list[str]:
@@ -97,15 +114,27 @@ def fingerprint(doc: dict) -> dict:
                 "material_id": seg.get("material_id"),
                 "animations": seg.get("extra_material_refs"),
             })
+    video_segments = []
+    for track in doc.get("tracks", []):
+        if track.get("type") != "video":
+            continue
+        for seg in track["segments"]:
+            video_segments.append({
+                "source": seg["source_timerange"],
+                "target": seg["target_timerange"],
+            })
     return {
         "duration": doc.get("duration"),
         "audio_material_count": len(doc.get("materials", {}).get("audios", [])),
         "audio_material_durations": sorted(
             a["duration"] for a in doc.get("materials", {}).get("audios", [])
         ),
-        "video_material_paths": sorted(
-            v.get("path", "") for v in doc.get("materials", {}).get("videos", [])
+        "video_material_count": len(doc.get("materials", {}).get("videos", [])),
+        "video_material_geometry": sorted(
+            (v.get("duration"), v.get("width"), v.get("height"))
+            for v in doc.get("materials", {}).get("videos", [])
         ),
+        "video_segments": video_segments,
         "audio_segments": audio_segments,
         "text_count": len(texts),
         "texts": texts,
@@ -114,17 +143,33 @@ def fingerprint(doc: dict) -> dict:
     }
 
 
-def swap_document(path: Path, assets_audio: Path) -> tuple[dict, dict, int]:
+def swap_document(path: Path, project: Path) -> tuple[dict, dict, dict[str, int]]:
     doc = json.loads(path.read_text(encoding="utf-8"))
     before = fingerprint(doc)
-    changed = 0
-    for audio in doc.get("materials", {}).get("audios", []):
-        if audio.get("name") == OLD_NAME or Path(str(audio.get("path", ""))).name == OLD_NAME:
-            audio["name"] = NEW_NAME
-            audio["path"] = str(assets_audio / NEW_NAME)
-            changed += 1
-    if changed != 1:
-        raise RuntimeError(f"Expected exactly 1 Nayva audio material in {path}, found {changed}")
+    changed: dict[str, int] = {}
+    for swap in SWAPS:
+        target_dir = project.joinpath(*swap["asset_dir"])
+        items = doc.get("materials", {}).get(swap["kind"], [])
+        hits = 0
+        for item in items:
+            if (item.get("name") == swap["old"]
+                    or Path(str(item.get("path", ""))).name == swap["old"]):
+                item["name"] = swap["new"]
+                item["path"] = str(target_dir / swap["new"])
+                hits += 1
+        if hits == 0:
+            # Re-running after a partial swap is fine as long as it is already applied.
+            already = sum(1 for item in items if item.get("name") == swap["new"])
+            if already != 1:
+                raise RuntimeError(
+                    f"{path}: '{swap['old']}' not found in {swap['kind']} and "
+                    f"'{swap['new']}' appears {already} times; refusing to guess"
+                )
+        elif hits != 1:
+            raise RuntimeError(
+                f"Expected exactly 1 '{swap['old']}' in {swap['kind']} of {path}, found {hits}"
+            )
+        changed[swap["old"]] = hits
     path.write_text(
         json.dumps(doc, ensure_ascii=False, separators=(",", ":")), encoding="utf-8"
     )
@@ -140,8 +185,11 @@ def main() -> int:
                         help="leave the Nayva .m4a in assets/audio (default removes it)")
     args = parser.parse_args()
 
-    if not NEW_STEM.exists():
-        raise FileNotFoundError(f"{NEW_STEM} is missing. Run mix_constantine_selected_voice.py first.")
+    absent = [str(s["source"]) for s in SWAPS if not s["source"].exists()]
+    if absent:
+        raise FileNotFoundError(
+            "Run mix_constantine_selected_voice.py first; missing: " + ", ".join(absent)
+        )
     project = args.project
     if not project.is_dir():
         raise FileNotFoundError(f"CapCut project not found: {project}")
@@ -163,31 +211,48 @@ def main() -> int:
             )
             return 2
 
-    assets_audio = project / "assets" / "audio"
-    assets_audio.mkdir(parents=True, exist_ok=True)
-
     backup: Path | None = None
     if not args.dry_run:
         backup = BACKUP_ROOT / datetime.now().strftime("%Y%m%d_%H%M%S")
         backup.parent.mkdir(parents=True, exist_ok=True)
-        shutil.copytree(project, backup)
-        print(f"backup: {backup}")
+        # Skip assets/: they are hundreds of MB and every one of them is a copy of a
+        # file in output/. Only the project documents are needed to roll the swap back.
+        shutil.copytree(project, backup, ignore=shutil.ignore_patterns("assets"))
+        size_mb = sum(f.stat().st_size for f in backup.rglob("*") if f.is_file()) / 1048576
+        print(f"backup: {backup} ({size_mb:.1f} MB, assets excluded)")
 
-    new_asset = assets_audio / NEW_NAME
-    shutil.copy2(NEW_STEM, new_asset)
-
-    old_before = assets_audio / OLD_NAME
-    old_duration_us = media_duration_us(old_before) if old_before.exists() else None
-    new_duration_us = media_duration_us(new_asset)
-    if old_duration_us is not None and old_duration_us != new_duration_us:
-        raise RuntimeError(
-            f"Stem durations differ ({old_duration_us} vs {new_duration_us} us). "
-            "The recorded timeranges would no longer be valid; abort."
-        )
+    assets: list[dict] = []
+    removed_old: list[str] = []
+    for swap in SWAPS:
+        target_dir = project.joinpath(*swap["asset_dir"])
+        target_dir.mkdir(parents=True, exist_ok=True)
+        new_asset = target_dir / swap["new"]
+        shutil.copy2(swap["source"], new_asset)
+        old_asset = target_dir / swap["old"]
+        old_us = media_duration_us(old_asset) if old_asset.exists() else None
+        new_us = media_duration_us(new_asset)
+        if old_us is not None and old_us != new_us:
+            raise RuntimeError(
+                f"{swap['new']} runs {new_us} us but {swap['old']} runs {old_us} us. "
+                "The recorded timeranges would no longer be valid; abort."
+            )
+        assets.append({
+            "kind": swap["kind"],
+            "from": swap["old"],
+            "to": swap["new"],
+            "duration_us": new_us,
+            "old_asset_present": old_us is not None,
+            # None means the old asset was already gone from a previous run, so
+            # there was nothing left to compare against here.
+            "duration_matched_old": None if old_us is None else old_us == new_us,
+        })
+        if old_asset.exists() and not args.keep_old_asset:
+            old_asset.unlink()
+            removed_old.append(swap["old"])
 
     reports = []
     for mirror in mirrors(project):
-        before, after, changed = swap_document(mirror, assets_audio)
+        before, after, changed = swap_document(mirror, project)
         preserved = {k: before[k] == after[k] for k in before}
         if not all(preserved.values()):
             broken = [k for k, ok in preserved.items() if not ok]
@@ -203,31 +268,32 @@ def main() -> int:
     if len(hashes) != 1:
         raise RuntimeError(f"Mirror files diverged: {[r['file'] for r in reports]}")
 
-    removed_old = False
-    if old_before.exists() and not args.keep_old_asset:
-        old_before.unlink()
-        removed_old = True
-
-    # Re-read one mirror and confirm the project now points only at the new stem.
+    # Re-read one mirror and confirm every reference now resolves to a file on disk.
     doc = json.loads(mirrors(project)[0].read_text(encoding="utf-8"))
-    names = sorted(a["name"] for a in doc["materials"]["audios"])
-    paths = [Path(a["path"]).name for a in doc["materials"]["audios"]]
-    if OLD_NAME in names or OLD_NAME in paths:
-        raise RuntimeError("A reference to the Nayva stem survived the swap")
-    if NEW_NAME not in names:
-        raise RuntimeError("The new stem is not referenced after the swap")
+    referenced: list[str] = []
+    for kind in ("audios", "videos"):
+        for item in doc["materials"].get(kind, []):
+            path = str(item.get("path", ""))
+            if not path:
+                continue
+            referenced.append(Path(path).name)
+            if not Path(path).exists():
+                raise RuntimeError(f"Project references a missing file: {path}")
+    for swap in SWAPS:
+        if swap["old"] in referenced:
+            raise RuntimeError(f"A reference to {swap['old']} survived the swap")
+        if swap["new"] not in referenced:
+            raise RuntimeError(f"{swap['new']} is not referenced after the swap")
 
     qa = {
         "status": "pass",
         "dry_run": args.dry_run,
         "project": str(args.project),
         "backup": str(backup) if backup else None,
-        "replaced": {"from": OLD_NAME, "to": NEW_NAME},
-        "old_asset_removed": removed_old,
-        "stem_duration_us": new_duration_us,
-        "stem_duration_matched_old": old_duration_us == new_duration_us,
-        "capcut_recorded_duration_untouched": True,
-        "audio_materials": names,
+        "assets_replaced": assets,
+        "old_assets_removed": removed_old,
+        "capcut_recorded_durations_untouched": True,
+        "referenced_assets": sorted(referenced),
         "mirror_files_updated": len(reports),
         "mirror_hashes_match": len(hashes) == 1,
         "reports": reports,
@@ -236,8 +302,8 @@ def main() -> int:
         QA_PATH.write_text(json.dumps(qa, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(json.dumps(
         {k: qa[k] for k in
-         ("status", "dry_run", "replaced", "old_asset_removed", "stem_duration_matched_old",
-          "audio_materials", "mirror_files_updated", "mirror_hashes_match")},
+         ("status", "dry_run", "assets_replaced", "old_assets_removed",
+          "referenced_assets", "mirror_files_updated", "mirror_hashes_match")},
         ensure_ascii=False, indent=2,
     ))
     if temp_dir is not None:

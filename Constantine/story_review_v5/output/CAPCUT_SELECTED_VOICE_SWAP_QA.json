@@ -1,0 +1,121 @@
+{
+  "status": "pass",
+  "dry_run": false,
+  "project": "C:\\Users\\hanbi\\AppData\\Local\\CapCut\\User Data\\Projects\\com.lveditor.draft\\CONSTANTINE_STORY_REVIEW_V5",
+  "backup": "C:\\cineyoutube\\Constantine\\story_review_v5\\backups\\capcut_selected_voice\\20260813_184656",
+  "assets_replaced": [
+    {
+      "kind": "audios",
+      "from": "constantine_nayva_voice_stem.m4a",
+      "to": "constantine_selected_voice_stem.m4a",
+      "duration_us": 1501021313,
+      "old_asset_present": false,
+      "duration_matched_old": null
+    },
+    {
+      "kind": "videos",
+      "from": "constantine_story_review_v5_ducked_bed_v2.mp4",
+      "to": "constantine_story_review_v5_selected_voice_bed.mp4",
+      "duration_us": 1501021321,
+      "old_asset_present": true,
+      "duration_matched_old": true
+    }
+  ],
+  "old_assets_removed": [
+    "constantine_story_review_v5_ducked_bed_v2.mp4"
+  ],
+  "capcut_recorded_durations_untouched": true,
+  "referenced_assets": [
+    "constantine_outro_music_stem.m4a",
+    "constantine_selected_voice_stem.m4a",
+    "constantine_story_review_v5_selected_voice_bed.mp4"
+  ],
+  "mirror_files_updated": 4,
+  "mirror_hashes_match": true,
+  "reports": [
+    {
+      "file": "C:\\Users\\hanbi\\AppData\\Local\\CapCut\\User Data\\Projects\\com.lveditor.draft\\CONSTANTINE_STORY_REVIEW_V5\\draft_content.json",
+      "materials_changed": {
+        "constantine_nayva_voice_stem.m4a": 0,
+        "constantine_story_review_v5_ducked_bed_v2.mp4": 1
+      },
+      "sha256": "3088e6b5654861f41af72af456d61061c31de622297c2124856b82abffb868e3",
+      "preserved": {
+        "duration": true,
+        "audio_material_count": true,
+        "audio_material_durations": true,
+        "video_material_count": true,
+        "video_material_geometry": true,
+        "video_segments": true,
+        "audio_segments": true,
+        "text_count": true,
+        "texts": true,
+        "text_segments": true,
+        "track_count": true
+      }
+    },
+    {
+      "file": "C:\\Users\\hanbi\\AppData\\Local\\CapCut\\User Data\\Projects\\com.lveditor.draft\\CONSTANTINE_STORY_REVIEW_V5\\template-2.tmp",
+      "materials_changed": {
+        "constantine_nayva_voice_stem.m4a": 0,
+        "constantine_story_review_v5_ducked_bed_v2.mp4": 1
+      },
+      "sha256": "3088e6b5654861f41af72af456d61061c31de622297c2124856b82abffb868e3",
+      "preserved": {
+        "duration": true,
+        "audio_material_count": true,
+        "audio_material_durations": true,
+        "video_material_count": true,
+        "video_material_geometry": true,
+        "video_segments": true,
+        "audio_segments": true,
+        "text_count": true,
+        "texts": true,
+        "text_segments": true,
+        "track_count": true
+      }
+    },
+    {
+      "file": "C:\\Users\\hanbi\\AppData\\Local\\CapCut\\User Data\\Projects\\com.lveditor.draft\\CONSTANTINE_STORY_REVIEW_V5\\Timelines\\2B0D9201-EBBD-4D8F-9FC3-9664DC515EDB\\draft_content.json",
+      "materials_changed": {
+        "constantine_nayva_voice_stem.m4a": 0,
+        "constantine_story_review_v5_ducked_bed_v2.mp4": 1
+      },
+      "sha256": "3088e6b5654861f41af72af456d61061c31de622297c2124856b82abffb868e3",
+      "preserved": {
+        "duration": true,
+        "audio_material_count": true,
+        "audio_material_durations": true,
+        "video_material_count": true,
+        "video_material_geometry": true,
+        "video_segments": true,
+        "audio_segments": true,
+        "text_count": true,
+        "texts": true,
+        "text_segments": true,
+        "track_count": true
+      }
+    },
+    {
+      "file": "C:\\Users\\hanbi\\AppData\\Local\\CapCut\\User Data\\Projects\\com.lveditor.draft\\CONSTANTINE_STORY_REVIEW_V5\\Timelines\\2B0D9201-EBBD-4D8F-9FC3-9664DC515EDB\\template-2.tmp",
+      "materials_changed": {
+        "constantine_nayva_voice_stem.m4a": 0,
+        "constantine_story_review_v5_ducked_bed_v2.mp4": 1
+      },
+      "sha256": "3088e6b5654861f41af72af456d61061c31de622297c2124856b82abffb868e3",
+      "preserved": {
+        "duration": true,
+        "audio_material_count": true,
+        "audio_material_durations": true,
+        "video_material_count": true,
+        "video_material_geometry": true,
+        "video_segments": true,
+        "audio_segments": true,
+        "text_count": true,
+        "texts": true,
+        "text_segments": true,
+        "track_count": true
+      }
+    }
+  ]
+}
