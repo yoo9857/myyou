@@ -17,6 +17,14 @@
       "analysis_basis": "Original Korean automatic captions merged with 0.08-second tolerance",
       "limitations": "Coverage includes reviewer narration and Korean movie dialogue, so it measures spoken-flow continuity rather than narration share.",
       "metrics_file": "work/references/LToiOgexo_8.metrics.json"
+    },
+    {
+      "video_id": "rd5pF9Qj_C8",
+      "source": "https://www.youtube.com/watch?v=rd5pF9Qj_C8",
+      "profile": "steady short-cycle narration",
+      "analysis_basis": "Korean automatic captions merged with 0.08-second tolerance; the film is English, so the Korean track is the reviewer's own speech rather than movie dialogue",
+      "limitations": "Coverage is the reviewer's speaking share only because the film is not Korean; this reference also includes the ending, which our spoiler rule forbids and which must not be carried over.",
+      "metrics_file": "work/references/rd5pF9Qj_C8.metrics.json"
     }
   ],
   "rules": [
@@ -24,7 +32,9 @@
       "id": "phase_density_routing",
       "status": "approved",
       "instruction": "Use a denser short hook, let strong original dialogue carry the middle, and return to concise urgency only during the pre-resolution climb.",
-      "evidence": ["NAsiczi6_QI"],
+      "evidence": [
+        "NAsiczi6_QI"
+      ],
       "scope": "whole-review pacing",
       "rollback_condition": "Reject if the middle becomes causally unclear or the hook narrates future results."
     },
@@ -32,7 +42,10 @@
       "id": "short_setup_dialogue_return",
       "status": "approved",
       "instruction": "Use one short setup, then return to a meaningful movie line or reaction before adding another bridge.",
-      "evidence": ["NAsiczi6_QI", "LToiOgexo_8"],
+      "evidence": [
+        "NAsiczi6_QI",
+        "LToiOgexo_8"
+      ],
       "scope": "narration pass 2",
       "rollback_condition": "Reject if narration repeats the next movie line or three narration blocks become consecutive."
     },
@@ -40,7 +53,9 @@
       "id": "micro_interleave_only_for_useful_dialogue",
       "status": "approved",
       "instruction": "Use rapid narration-dialogue handoffs only when short original lines deliver an answer, threat, retort, or emotional response; otherwise compress the scene.",
-      "evidence": ["LToiOgexo_8"],
+      "evidence": [
+        "LToiOgexo_8"
+      ],
       "scope": "dialogue-rich story units",
       "rollback_condition": "Reject if speaker changes become confusing or emotional residue is cut off."
     },
@@ -48,9 +63,57 @@
       "id": "route_do_not_average",
       "status": "approved",
       "instruction": "Choose long original-audio breathing, micro-interleaving, or protected no-narration per story unit; never average reference densities into one global narration rate.",
-      "evidence": ["NAsiczi6_QI", "LToiOgexo_8"],
+      "evidence": [
+        "NAsiczi6_QI",
+        "LToiOgexo_8"
+      ],
       "scope": "story-unit routing",
       "rollback_condition": "Reject if a discovery, reversal, death, confession, horror payoff, or action payoff receives added narration."
+    },
+    {
+      "id": "narration_cycle_not_block_length",
+      "status": "candidate",
+      "instruction": "Keep narration blocks near 6 seconds but place one roughly every 13 seconds of runtime, leaving about 4 seconds of film between them. Fix spacing, not block length.",
+      "evidence": [
+        "rd5pF9Qj_C8"
+      ],
+      "scope": "narration pass 2 density",
+      "rollback_condition": "Reject if bridges start narrating what the next line already says, if three narration blocks land consecutively, or if a protected scene gains narration.",
+      "measurement": "Reference: 82 blocks over 1085 s, block median 5.86 s, gap median 4.0 s, cycle 13.2 s. Constantine V5: 29 blocks over 1501 s, block median 5.90 s, gap median 15.72 s, cycle 51.8 s. Block length already matched; the cycle was 3.9x too long."
+    },
+    {
+      "id": "reviewer_share_floor",
+      "status": "candidate",
+      "instruction": "Aim for the reviewer's own speech to cover roughly half the runtime. Treat a share under 30 percent as a structural fault, not a style choice.",
+      "evidence": [
+        "rd5pF9Qj_C8"
+      ],
+      "scope": "whole-review structure",
+      "rollback_condition": "Reject if reaching the share requires narrating over strong dialogue, restating movie lines, or filling protected scenes.",
+      "measurement": "Reference 54.2 percent. Constantine V5 11.0 percent, which also left the review indistinguishable from an excerpt reel for copyright purposes."
+    },
+    {
+      "id": "phase_density_curve_confirmed",
+      "status": "candidate",
+      "instruction": "Open dense, thin out through the second act, and tighten again into the pre-resolution climb.",
+      "evidence": [
+        "rd5pF9Qj_C8",
+        "NAsiczi6_QI"
+      ],
+      "scope": "whole-review pacing",
+      "rollback_condition": "Reject if the thinned middle loses causal clarity or the dense opening reveals a future result.",
+      "measurement": "Reference by 5-minute window: 58.7, 43.2, 54.4, 64.1 percent. Independently matches the shape already approved as phase_density_routing, now with a second reference."
+    },
+    {
+      "id": "shorter_total_runtime",
+      "status": "candidate",
+      "instruction": "Target 18 to 20 minutes rather than the full 19-25 band when the film's story can be carried in less.",
+      "evidence": [
+        "rd5pF9Qj_C8"
+      ],
+      "scope": "edit plan length",
+      "rollback_condition": "Reject if required story events or causal links have to be dropped to hit the length.",
+      "measurement": "Reference covers a 138-minute film in 18.1 minutes. Constantine V5 used 25.0 minutes and 20.5 percent of its source film."
     }
   ]
 }

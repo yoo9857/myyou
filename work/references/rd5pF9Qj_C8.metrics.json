@@ -1,0 +1,42 @@
+{
+  "source": "https://www.youtube.com/watch?v=rd5pF9Qj_C8",
+  "video_id": "rd5pF9Qj_C8",
+  "title": "\"오디세이\" 배우들 그대로 나와 극찬 받은 숨은 명작 스릴러,,,,이건 꼭 보세요 [결말포함 영화리뷰]",
+  "channel": "서울극장",
+  "duration_seconds": 1085.0,
+  "analysis_basis": "YouTube Korean automatic captions; overlapping caption intervals merged with 0.08-second tolerance",
+  "limitations": "Automatic captions transcribe reviewer speech and movie dialogue together, so coverage measures spoken-flow continuity rather than narration share. Caption-free windows may contain movie dialogue, reactions, action, music, or effects and must not be read as silence.",
+  "subtitle_cues": 250,
+  "merged_korean_caption_regions": 82,
+  "caption_interval_coverage_percent": 54.2,
+  "merged_caption_region_duration_median_seconds": 5.86,
+  "merged_caption_region_duration_p75_seconds": 7.12,
+  "merged_caption_region_duration_p90_seconds": 10.28,
+  "narrator_free_gap_median_seconds": 4.0,
+  "narrator_free_gap_p75_seconds": 9.12,
+  "narrator_free_gap_p90_seconds": 12.8,
+  "narrator_free_gaps_ge_2_seconds": 65,
+  "narrator_free_gaps_ge_4_seconds": 41,
+  "narrator_free_gaps_ge_8_seconds": 22,
+  "coverage_by_window": [
+    {
+      "window": "00:00-05:00",
+      "percent": 58.7
+    },
+    {
+      "window": "05:00-10:00",
+      "percent": 43.2
+    },
+    {
+      "window": "10:00-15:00",
+      "percent": 54.4
+    },
+    {
+      "window": "15:00-18:05",
+      "percent": 64.1
+    }
+  ],
+  "editorial_profile": "unclassified",
+  "copyright_rule": "Learn timing, density, handoff structure, and dialogue placement only. Do not copy sentences, jokes, or channel-specific wording.",
+  "caption_file": "work/references/rd5pF9Qj_C8.ko-orig.srt"
+}

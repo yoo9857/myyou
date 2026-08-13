@@ -318,10 +318,21 @@ def gate_capcut(g: Gates, cfg: dict, root: Path) -> None:
         g.check("CapCut", f"{track} 개수", len(tracks[track]) == expected,
                 f"{len(tracks[track])}개 vs SRT {expected}개")
 
+    # Only the caption tracks are held to the caption rules. A project may carry other
+    # text — a channel watermark, a logo lower-third — whose own styling is a design
+    # choice, and flagging its background box as a caption fault is just noise.
+    caption_tracks = ("MOVIE_DIALOGUE", "REVIEW_NARRATION")
+    other_text = [name for name in tracks if name not in caption_tracks]
+    if other_text:
+        g.check("CapCut", "자막 외 텍스트 트랙", True,
+                f"{len(other_text)}개 (규칙 적용 제외): "
+                + ", ".join(f"{n!r} {len(tracks[n])}개" for n in other_text))
+
     # The font the project claims vs the font file it actually points at.
     bad_font, boxed = [], []
     metrics: dict[str, tuple[float, float]] = {}
-    for track, ids in tracks.items():
+    for track in caption_tracks:
+        ids = tracks.get(track) or []
         sample = texts.get(ids[0]) if ids else None
         if not sample:
             continue
@@ -342,7 +353,7 @@ def gate_capcut(g: Gates, cfg: dict, root: Path) -> None:
     g.check("CapCut", "배경 박스 없음", not boxed,
             f"박스 켜진 트랙: {sorted(set(boxed))}" if boxed else "전부 꺼짐")
 
-    if len(metrics) == 2 and cfg.get("check_optical_size", True):
+    if len(metrics) == len(caption_tracks) and cfg.get("check_optical_size", True):
         (t1, (r1, s1)), (t2, (r2, s2)) = metrics.items()
         h1, h2 = r1 * s1, r2 * s2
         rel = abs(h1 - h2) / max(h1, h2)

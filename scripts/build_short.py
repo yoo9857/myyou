@@ -22,6 +22,7 @@ import subprocess
 import sys
 from pathlib import Path
 
+ROOT = Path(__file__).resolve().parent.parent
 W, H = 1080, 1920
 
 
@@ -126,9 +127,15 @@ def main() -> int:
     fonts = work / "fonts"
     fonts.mkdir(exist_ok=True)
     for key in ("dialogue_font", "narration_font"):
-        src = Path(cfg[key])
-        if src.exists():
-            shutil.copy2(src, fonts / src.name)
+        raw = Path(cfg[key])
+        # Prefer the copy inside the repo so a config is not tied to one machine's
+        # font folder; fall back to the given path for a font we do not ship.
+        candidates = [ROOT / "skills" / "edit-movie-review" / "assets" / "subtitle-style"
+                      / "fonts" / raw.name, raw, root / raw]
+        src = next((c for c in candidates if c.exists()), None)
+        if src is None:
+            raise FileNotFoundError(f"{cfg[key]} not found, and no repo copy of {raw.name}")
+        shutil.copy2(src, fonts / raw.name)
 
     counts = write_ass(work / "subs.ass", [
         {"name": "DLG", "srt": root / cfg["movie_caption_srt"],

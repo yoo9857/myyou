@@ -1,7 +1,7 @@
 {
   "root": ".",
   "render_config": "config.json",
-  "final_video": "output/constantine_story_review_v5_selected_voice_final.mp4",
+  "final_video": "output/constantine_story_review_v5_selected_voice_sfx_final.mp4",
   "bed_video": "output/constantine_story_review_v5_selected_voice_bed.mp4",
   "narration_stem": "output/constantine_selected_voice_stem.wav",
   "timing_reference": "output/constantine_story_review_v5_with_outro.mp4",
@@ -10,5 +10,6 @@
   "balance_qa": "output/CONSTANTINE_BALANCE_QA.json",
   "capcut_project": "%LOCALAPPDATA%/CapCut/User Data/Projects/com.lveditor.draft/CONSTANTINE_STORY_REVIEW_V5",
   "picture_probe_sec": 60,
-  "check_optical_size": true
+  "check_optical_size": true,
+  "note": "final_video is the SFX-preroll master, which is built on top of the balanced mix. Checking the pre-SFX file would pass while the actual deliverable went unverified."
 }
