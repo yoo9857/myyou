@@ -2,6 +2,32 @@
 
 최종 갱신: 2026-08-13
 
+## 사용자 프리롤 효과음 라이브러리 (2026-08-13)
+
+- 원본 효과음 5개는 저장소 루트에 그대로 보존했다.
+- 낮게 보정한 48kHz WAV 편집본은 `assets/sfx/narration_preroll/`에 저장했다.
+- 편집본 피크는 약 `-15.6~-15.0 dBFS`이며 베이스는 파일명 의도대로 첫 0.7초만 사용한다.
+- 용도: 선택된 오프닝·몰입 브리지에서 나레이션 시작 0.20~0.85초 전 프리롤.
+- 대본 심사 JSON에 `sfx_preroll`, `sfx_lead_seconds`, `sfx_rationale`를 기록하고 편집표에는 `narration_sfx_*` 필드로 전달한다.
+- 렌더러는 효과음 뒤에 나레이션 음성을 지연 배치하고, CapCut 인계본에는 별도 `sfx_timeline.csv`와 사용 자산을 패키징한다.
+- 전체 최대 8회, 동일 효과음 최소 90초 간격, 모든 효과음 최소 25초 간격을 기본으로 한다.
+- 강한 대사, 죽음, 슬픔, 고백, 발견·반전·공포 결산, 전투 장면은 보호 구간이다.
+- 자동 게이트는 SRT 대사 충돌, 보호 상태, 0.10~0.30초 꼬리 겹침, 전체/개별 사용 제한과 간격을 검사한다.
+- 자동 인계는 전체 길이 `sfx_preroll_stem.m4a`, 상세 CSV, 실제 피크·길이를 측정한 `SFX_PREROLL_QA.json`을 만든다.
+
+## 승인 기반 지속 학습 워크플로 (2026-08-13)
+
+- 참고 영상 원문은 분석 자료로만 보관하고 생성 프롬프트에는 넣지 않는다.
+- 승인 규칙의 단일 원본: `work/references/learning_registry.json`
+- 현재 승인 규칙 4개, 근거 참고 영상 2개이며 `scripts/validate_reference_learning.py` 검증을 통과한다.
+- 대본 생성기는 승인 규칙만 읽고 각 지표 파일·영상 ID·측정 한계·근거 참조를 다시 검사한다.
+- 새 규칙 승격 순서: 관찰 → 수치화 → 후보 → 미리보기 → 사용자 승인 → 승격 → 회귀검사.
+- 나레이션 3개 연속은 편집표 검증에서 차단한다.
+- `pipeline.py preflight`를 추가해 영화·SRT·스토리맵·편집표·학습 규칙·보이스 프로필을 렌더 전에 한 번에 검사하고 `WORKFLOW_PREFLIGHT_QA.json`을 남긴다.
+- Constantine 현행 51개 세그먼트는 새 preflight를 실제 통과했다.
+- SFX 충돌/꼬리/보호 장면과 연속 나레이션 회귀 테스트 5개가 통과했다.
+- 전역 스킬과 저장소 번들 스킬은 스토리맵·3패스·학습·음성·아웃트로·자막·검증 스크립트와 자산까지 동일하게 동기화했다.
+
 ## 확정된 방향
 
 - 최종 리뷰 길이: 19~25분
@@ -79,12 +105,11 @@
   - 백업: `backups/capcut_selected_voice/20260813_184656` (프로젝트 문서만, assets 제외)
   - 프로젝트 `assets/`의 미참조 영상 3개(488MB)를 제거했다
 
-## Constantine 해상도 문제 (미해결)
+## Constantine 1080p 복구 (해결)
 
-- Constantine 최종본은 **960×540 / 971 kbps**다. COLONY 본편은 1920×1080이다.
-- 원인은 음성 교체가 아니라 상류다. `constantine_story_review_v5_voice_off.mp4`부터 540p로 렌더돼 있고,
-  이후 단계가 모두 `-c:v copy`라 그대로 내려온다.
-- 1080p로 올리려면 Constantine 컷 렌더를 처음부터 다시 해야 한다. 음성 교체 범위를 넘어서므로 손대지 않았다.
+- 상류 컷부터 다시 조립해 현재 선택 보이스 최종본과 SFX 최종본은 **1920×1080**이다.
+- SFX 최종본: `Constantine/story_review_v5/output/constantine_story_review_v5_selected_voice_sfx_final.mp4`
+- SFX 합성 단계는 H.264 영상 스트림을 비트 단위로 복사했으며 원본·출력 영상 스트림 SHA-256이 일치한다.
 
 ## 레거시 정리 (2026-08-13)
 
@@ -128,3 +153,15 @@
 - 측정: 나레이션 구간 음량이 직전 렌더보다 약 2 dB 낮다. 더 크게 원하면 스크립트의 나레이션 `volume=1.0`을 올린다.
 - QA 기록: `output/COLONY_APPROVED_VOICE_VIDEO_QA.json`
 - 주의: ffmpeg 9.0에서 `-filter_complex_script`가 제거되어 `-/filter_complex <파일>`을 쓴다. 2026-08-12 렌더 실패 원인이었다.
+
+## Constantine narration pre-roll SFX V1 (2026-08-13)
+
+- New final: `Constantine/story_review_v5/output/constantine_story_review_v5_selected_voice_sfx_final.mp4`
+- Five low-level custom SFX were placed before narration cues 3, 11, 14, 20, and 28 after checking the picture and preceding movie captions.
+- Uses: danger knife, bass omen, curiosity sting, neutral transition, and short whoosh; each asset is used once.
+- No movie-dialogue overlap; effect tails overlap narration by only 0.155-0.279 seconds.
+- SFX stem peak: -16.4 dBFS. Final audio peak: -1.4 dBFS. Duration remains 1501.021321 seconds.
+- The H.264 video stream was copied bit-for-bit; source and output video-stream SHA-256 hashes match.
+- CapCut handoff: `Constantine/story_review_v5/output/capcut_import/sfx_preroll_v1/`
+- QA: `Constantine/story_review_v5/output/SFX_PREROLL_V1_QA.json`
+- Existing final and CapCut project JSON were not modified.

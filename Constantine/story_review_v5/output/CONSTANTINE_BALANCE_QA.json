@@ -1,0 +1,357 @@
+{
+  "status": "pass",
+  "supersedes": "FINAL_SELECTED_VOICE_AUDIO_QA.json",
+  "problem": "narration sat 9.8 dB over the movie (spread -4.5..+34.2 dB) and the programme was -20.5 LUFS",
+  "changes": {
+    "movie_compressor": "acompressor=threshold=-24dB:ratio=2.5:attack=20:release=400:makeup=2",
+    "movie_raw_lufs": -20.7,
+    "movie_compressed_lufs": -20.97,
+    "movie_bed_target_lufs": -19.0,
+    "movie_gain_db": 1.97,
+    "duck": {
+      "was": "sidechaincompress threshold=0.018 ratio=5 (0.6..17.3 dB, waveform dependent)",
+      "mode": "per-line, solved from the measured film level under each line",
+      "target_lead_db": 7.0,
+      "floor_db": -20.0,
+      "ceiling_db": -2.0,
+      "depth_range_db": [
+        -20.0,
+        -2.0
+      ],
+      "mean_depth_db": -11.1,
+      "clamped_lines": [
+        7,
+        14,
+        15,
+        17,
+        18,
+        28,
+        29
+      ],
+      "shape": "ramped trapezoid per line, summed and clipped to the deepest depth",
+      "attack_sec": 0.35,
+      "release_sec": 0.6,
+      "per_line": [
+        {
+          "cue": 1,
+          "start_sec": 0.0,
+          "end_sec": 5.8,
+          "film_lufs": -20.21,
+          "narration_lufs": -25.91,
+          "duck_db": -14.67,
+          "resulting_lead_db": 7.0,
+          "clamped": false
+        },
+        {
+          "cue": 2,
+          "start_sec": 14.8,
+          "end_sec": 20.2,
+          "film_lufs": -22.64,
+          "narration_lufs": -26.18,
+          "duck_db": -12.51,
+          "resulting_lead_db": 7.0,
+          "clamped": false
+        },
+        {
+          "cue": 3,
+          "start_sec": 20.5,
+          "end_sec": 26.5,
+          "film_lufs": -17.44,
+          "narration_lufs": -26.6,
+          "duck_db": -18.13,
+          "resulting_lead_db": 7.0,
+          "clamped": false
+        },
+        {
+          "cue": 4,
+          "start_sec": 30.333,
+          "end_sec": 36.333,
+          "film_lufs": -19.58,
+          "narration_lufs": -26.44,
+          "duck_db": -15.83,
+          "resulting_lead_db": 7.0,
+          "clamped": false
+        },
+        {
+          "cue": 5,
+          "start_sec": 50.6,
+          "end_sec": 56.4,
+          "film_lufs": -22.11,
+          "narration_lufs": -25.37,
+          "duck_db": -12.23,
+          "resulting_lead_db": 7.0,
+          "clamped": false
+        },
+        {
+          "cue": 6,
+          "start_sec": 57.0,
+          "end_sec": 63.0,
+          "film_lufs": -21.77,
+          "narration_lufs": -26.19,
+          "duck_db": -13.39,
+          "resulting_lead_db": 7.0,
+          "clamped": false
+        },
+        {
+          "cue": 7,
+          "start_sec": 233.0,
+          "end_sec": 238.5,
+          "film_lufs": -36.97,
+          "narration_lufs": -25.46,
+          "duck_db": -2.0,
+          "resulting_lead_db": 11.54,
+          "clamped": true
+        },
+        {
+          "cue": 8,
+          "start_sec": 255.667,
+          "end_sec": 261.66700000000003,
+          "film_lufs": -31.54,
+          "narration_lufs": -25.9,
+          "duck_db": -3.33,
+          "resulting_lead_db": 7.0,
+          "clamped": false
+        },
+        {
+          "cue": 9,
+          "start_sec": 274.1,
+          "end_sec": 278.8,
+          "film_lufs": -31.52,
+          "narration_lufs": -25.38,
+          "duck_db": -2.83,
+          "resulting_lead_db": 7.0,
+          "clamped": false
+        },
+        {
+          "cue": 10,
+          "start_sec": 388.125,
+          "end_sec": 394.125,
+          "film_lufs": -16.66,
+          "narration_lufs": -25.52,
+          "duck_db": -17.83,
+          "resulting_lead_db": 7.0,
+          "clamped": false
+        },
+        {
+          "cue": 11,
+          "start_sec": 394.3,
+          "end_sec": 400.3,
+          "film_lufs": -25.72,
+          "narration_lufs": -26.24,
+          "duck_db": -9.49,
+          "resulting_lead_db": 7.0,
+          "clamped": false
+        },
+        {
+          "cue": 12,
+          "start_sec": 549.25,
+          "end_sec": 555.25,
+          "film_lufs": -18.65,
+          "narration_lufs": -24.81,
+          "duck_db": -15.13,
+          "resulting_lead_db": 7.0,
+          "clamped": false
+        },
+        {
+          "cue": 13,
+          "start_sec": 556.0,
+          "end_sec": 561.8,
+          "film_lufs": -22.09,
+          "narration_lufs": -26.06,
+          "duck_db": -12.94,
+          "resulting_lead_db": 7.0,
+          "clamped": false
+        },
+        {
+          "cue": 14,
+          "start_sec": 562.1,
+          "end_sec": 568.1,
+          "film_lufs": -36.51,
+          "narration_lufs": -25.41,
+          "duck_db": -2.0,
+          "resulting_lead_db": 11.13,
+          "clamped": true
+        },
+        {
+          "cue": 15,
+          "start_sec": 601.0,
+          "end_sec": 606.0,
+          "film_lufs": -14.17,
+          "narration_lufs": -25.85,
+          "duck_db": -20.0,
+          "resulting_lead_db": 6.35,
+          "clamped": true
+        },
+        {
+          "cue": 16,
+          "start_sec": 863.708,
+          "end_sec": 868.162,
+          "film_lufs": -18.23,
+          "narration_lufs": -25.37,
+          "duck_db": -16.11,
+          "resulting_lead_db": 7.0,
+          "clamped": false
+        },
+        {
+          "cue": 17,
+          "start_sec": 930.3,
+          "end_sec": 936.2,
+          "film_lufs": -44.58,
+          "narration_lufs": -25.48,
+          "duck_db": -2.0,
+          "resulting_lead_db": 19.13,
+          "clamped": true
+        },
+        {
+          "cue": 18,
+          "start_sec": 986.0,
+          "end_sec": 991.5,
+          "film_lufs": -38.13,
+          "narration_lufs": -26.81,
+          "duck_db": -2.0,
+          "resulting_lead_db": 11.35,
+          "clamped": true
+        },
+        {
+          "cue": 19,
+          "start_sec": 1032.625,
+          "end_sec": 1038.425,
+          "film_lufs": -19.75,
+          "narration_lufs": -25.98,
+          "duck_db": -15.2,
+          "resulting_lead_db": 7.0,
+          "clamped": false
+        },
+        {
+          "cue": 20,
+          "start_sec": 1042.0,
+          "end_sec": 1048.0,
+          "film_lufs": -19.4,
+          "narration_lufs": -26.61,
+          "duck_db": -16.18,
+          "resulting_lead_db": 7.0,
+          "clamped": false
+        },
+        {
+          "cue": 21,
+          "start_sec": 1048.3,
+          "end_sec": 1054.3,
+          "film_lufs": -19.44,
+          "narration_lufs": -25.86,
+          "duck_db": -15.39,
+          "resulting_lead_db": 7.0,
+          "clamped": false
+        },
+        {
+          "cue": 22,
+          "start_sec": 1196.0,
+          "end_sec": 1202.5,
+          "film_lufs": -24.77,
+          "narration_lufs": -25.77,
+          "duck_db": -9.97,
+          "resulting_lead_db": 7.0,
+          "clamped": false
+        },
+        {
+          "cue": 23,
+          "start_sec": 1244.75,
+          "end_sec": 1250.55,
+          "film_lufs": -19.57,
+          "narration_lufs": -26.1,
+          "duck_db": -15.5,
+          "resulting_lead_db": 7.0,
+          "clamped": false
+        },
+        {
+          "cue": 24,
+          "start_sec": 1257.0,
+          "end_sec": 1262.5,
+          "film_lufs": -17.21,
+          "narration_lufs": -25.35,
+          "duck_db": -17.11,
+          "resulting_lead_db": 7.0,
+          "clamped": false
+        },
+        {
+          "cue": 25,
+          "start_sec": 1331.25,
+          "end_sec": 1337.25,
+          "film_lufs": -31.44,
+          "narration_lufs": -26.58,
+          "duck_db": -4.11,
+          "resulting_lead_db": 7.0,
+          "clamped": false
+        },
+        {
+          "cue": 26,
+          "start_sec": 1414.0,
+          "end_sec": 1420.0,
+          "film_lufs": -19.75,
+          "narration_lufs": -25.38,
+          "duck_db": -14.6,
+          "resulting_lead_db": 7.0,
+          "clamped": false
+        },
+        {
+          "cue": 27,
+          "start_sec": 1470.0,
+          "end_sec": 1476.0,
+          "film_lufs": -17.95,
+          "narration_lufs": -26.35,
+          "duck_db": -17.37,
+          "resulting_lead_db": 7.0,
+          "clamped": false
+        },
+        {
+          "cue": 28,
+          "start_sec": 1489.0,
+          "end_sec": 1494.5,
+          "film_lufs": -70.0,
+          "narration_lufs": -26.32,
+          "duck_db": -2.0,
+          "resulting_lead_db": 43.71,
+          "clamped": true
+        },
+        {
+          "cue": 29,
+          "start_sec": 1495.6,
+          "end_sec": 1499.1,
+          "film_lufs": -70.0,
+          "narration_lufs": -26.76,
+          "duck_db": -2.0,
+          "resulting_lead_db": 43.27,
+          "clamped": true
+        }
+      ]
+    },
+    "voice_gain": {
+      "was": 0.6,
+      "now": 0.36
+    },
+    "programme_target_lufs": -15.0,
+    "shared_final_gain_db": 1.71,
+    "limiter_shave_db": 2.88,
+    "limiter_shave_cap_db": 3.0,
+    "capcut_headroom_trim_db": 3.22
+  },
+  "measured": {
+    "final_lufs": -18.23,
+    "final_true_peak_dbtp": -1.32,
+    "bed_lufs": -18.08,
+    "bed_true_peak_dbtp": -1.45,
+    "voice_stem_lufs": -21.08,
+    "voice_stem_true_peak_dbtp": -8.64,
+    "capcut_sum_lufs": -18.15,
+    "capcut_sum_true_peak_dbtp": -1.45,
+    "capcut_sum_within_ceiling": true
+  },
+  "bed_ceiling_dbtp": -4.0,
+  "capcut_note": "bed and voice stem carry the same final gain, so the CapCut timeline sums to the same loudness as this render",
+  "final_duration_sec": 1501.021321,
+  "outputs": {
+    "final_video": "C:\\cineyoutube\\Constantine\\story_review_v5\\output\\constantine_story_review_v5_selected_voice_final.mp4",
+    "bed_video": "C:\\cineyoutube\\Constantine\\story_review_v5\\output\\constantine_story_review_v5_selected_voice_bed.mp4",
+    "voice_stem_m4a": "C:\\cineyoutube\\Constantine\\story_review_v5\\output\\constantine_selected_voice_stem.m4a",
+    "music_stem_m4a": "C:\\cineyoutube\\Constantine\\story_review_v5\\output\\constantine_outro_music_stem.m4a"
+  }
+}

@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 import csv
+import hashlib
 import json
 import math
 import os
@@ -22,6 +23,7 @@ SHEETS = WORK / "contact_sheets"
 RENDER = WORK / "render"
 OUTPUT = ROOT / "output"
 CAPCUT = OUTPUT / "capcut_import"
+SFX_MANIFEST = ROOT / "assets" / "sfx" / "narration_preroll" / "manifest.json"
 
 
 @dataclass
@@ -94,6 +96,101 @@ def story_map_path(config: dict[str, Any]) -> Path | None:
         return None
     path = Path(str(value))
     return path if path.is_absolute() else ROOT / path
+
+
+def validate_reference_learning_gate(config: dict[str, Any]) -> dict[str, Any] | None:
+    value = config.get("reference_learning_registry")
+    required = bool(config.get("require_reference_learning_approval", False))
+    if not value:
+        if required:
+            raise FileNotFoundError("require_reference_learning_approval=true 이지만 레지스트리 경로가 없습니다.")
+        return None
+    registry = Path(str(value))
+    if not registry.is_absolute():
+        project_registry = ROOT / registry
+        shared_registry = CODE_ROOT / registry
+        registry = project_registry if project_registry.exists() else shared_registry
+    if not registry.exists():
+        raise FileNotFoundError(f"승인된 참고 영상 학습 레지스트리가 없습니다: {registry}")
+    validator = CODE_ROOT / "scripts" / "validate_reference_learning.py"
+    metrics_root = CODE_ROOT if registry.is_relative_to(CODE_ROOT) else ROOT
+    result = subprocess.run(
+        [sys.executable, str(validator), str(registry), "--project-root", str(metrics_root)],
+        cwd=ROOT,
+        capture_output=True,
+        text=True,
+        encoding="utf-8",
+        errors="replace",
+    )
+    if result.returncode:
+        detail = result.stderr.strip() or result.stdout.strip() or f"exit={result.returncode}"
+        raise ValueError("REFERENCE_LEARNING_GATE_BLOCKED:\n" + detail)
+    return json.loads(result.stdout)
+
+
+def validate_voice_profile_gate(config: dict[str, Any]) -> dict[str, Any] | None:
+    value = config.get("elevenlabs_voice_profile")
+    if not value:
+        return None
+    profile_path = Path(str(value))
+    if not profile_path.is_absolute():
+        profile_path = ROOT / profile_path
+    if not profile_path.exists():
+        raise FileNotFoundError(f"승인 보이스 프로필이 없습니다: {profile_path}")
+    profile = json.loads(profile_path.read_text(encoding="utf-8"))
+    expected_voice = str(config.get("elevenlabs_voice_id", ""))
+    expected_model = str(config.get("elevenlabs_model", ""))
+    if expected_voice and str(profile.get("voice_id")) != expected_voice:
+        raise ValueError("VOICE_PROFILE_GATE_BLOCKED: config와 프로필의 Voice ID가 다릅니다.")
+    if expected_model and str(profile.get("model_id")) != expected_model:
+        raise ValueError("VOICE_PROFILE_GATE_BLOCKED: config와 프로필의 모델이 다릅니다.")
+    if profile.get("voice_settings") is not None:
+        raise ValueError("VOICE_PROFILE_GATE_BLOCKED: 승인 하우스 보이스는 provider defaults여야 합니다.")
+    post = profile.get("postprocess", {})
+    for key in ("ffmpeg_filter", "sample_rate", "channels", "codec", "bitrate"):
+        if key not in post:
+            raise ValueError(f"VOICE_PROFILE_GATE_BLOCKED: postprocess.{key}가 없습니다.")
+    return {
+        "profile": str(profile_path.relative_to(ROOT)).replace("\\", "/") if profile_path.is_relative_to(ROOT) else str(profile_path),
+        "profile_id": profile.get("profile_id"),
+        "voice_id": profile.get("voice_id"),
+        "model_id": profile.get("model_id"),
+    }
+
+
+def preflight(config: dict[str, Any]) -> dict[str, Any]:
+    video = ROOT / str(config["video"])
+    subtitle = ROOT / str(config["subtitle"])
+    if not video.exists():
+        raise FileNotFoundError(f"영화 원본이 없습니다: {video}")
+    if not subtitle.exists():
+        raise FileNotFoundError(f"제공 SRT가 없습니다: {subtitle}")
+    validate_story_map_gate(config, require_render_ready=True)
+    reference_qa = validate_reference_learning_gate(config)
+    voice_qa = validate_voice_profile_gate(config)
+    probe = ffprobe(video)
+    source_duration = float(probe["format"]["duration"])
+    plan_path = OUTPUT / "edit_plan.json"
+    if not plan_path.exists():
+        raise FileNotFoundError(f"승인 편집표가 없습니다: {plan_path}")
+    plan = validate_plan(plan_path, source_duration, float(config.get("target_duration_sec", 1320)))
+    result = {
+        "status": "pass",
+        "video": str(video),
+        "subtitle": str(subtitle),
+        "source_duration_seconds": source_duration,
+        "segment_count": len(plan.get("segments", [])),
+        "reference_learning": reference_qa,
+        "voice_profile": voice_qa,
+        "story_map_required": bool(config.get("require_story_map", False)),
+        "narration_rhythm_gate": bool(config.get("enforce_narration_rhythm_gate", True)),
+    }
+    OUTPUT.mkdir(parents=True, exist_ok=True)
+    (OUTPUT / "WORKFLOW_PREFLIGHT_QA.json").write_text(
+        json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
+    )
+    print(f"사전 검증 통과: {len(plan.get('segments', []))}개 세그먼트", flush=True)
+    return result
 
 
 def ffprobe(video: Path) -> dict[str, Any]:
@@ -335,6 +432,7 @@ def validate_plan(path: Path, source_duration: float, target_duration: float = 1
         raise ValueError(f"편집표 segments 수가 {min_segments}~{max_segments} 범위가 아닙니다.")
     expected = 1
     total = 0.0
+    consecutive_narration = 0
     used: list[tuple[float, float]] = []
     for seg in segments:
         if seg["order"] != expected:
@@ -348,12 +446,21 @@ def validate_plan(path: Path, source_duration: float, target_duration: float = 1
             raise ValueError(f"중복된 소스 구간: {start}~{end}")
         used.append((start, end))
         total += end - start
+        if str(seg.get("narration", "")).strip():
+            consecutive_narration += 1
+            if bool(validator_config.get("enforce_narration_rhythm_gate", True)) and consecutive_narration > 2:
+                raise ValueError(
+                    f"order {seg['order']}: 나레이션 블록이 3개 이상 연속됩니다. 의미 있는 영화 원음으로 반환해야 합니다."
+                )
+        else:
+            consecutive_narration = 0
         expected += 1
     minimum = max(1140.0, target_duration - 180.0)
     maximum = min(1500.0, target_duration + 180.0)
     if not minimum <= total <= maximum:
         raise ValueError(f"실제 클립 합계 {total:.1f}초가 허용 범위({minimum:.0f}~{maximum:.0f}초)를 벗어났습니다.")
     validate_story_coverage(plan, validator_config)
+    validate_sfx_plan(plan, validator_config)
     return plan
 
 
@@ -373,6 +480,26 @@ def media_duration(path: Path) -> float:
     return float(raw.strip())
 
 
+def audio_peak_dbfs(path: Path) -> float:
+    result = subprocess.run(
+        [
+            "ffmpeg", "-hide_banner", "-nostats", "-i", str(path),
+            "-af", "volumedetect", "-f", "null", os.devnull,
+        ],
+        cwd=ROOT,
+        capture_output=True,
+        text=True,
+        encoding="utf-8",
+        errors="replace",
+    )
+    if result.returncode:
+        raise subprocess.CalledProcessError(result.returncode, result.args, result.stdout, result.stderr)
+    match = re.search(r"max_volume:\s*(-?(?:\d+(?:\.\d+)?|inf))\s*dB", result.stderr)
+    if not match or match.group(1) == "-inf":
+        raise ValueError(f"오디오 피크를 측정할 수 없습니다: {path}")
+    return float(match.group(1))
+
+
 def narration_duration(text: str, content_duration: float, config: dict[str, Any]) -> float:
     """Return a brisk movie-review narration window instead of filling a whole clip."""
     explicit = config.get("narration_duration_sec")
@@ -390,6 +517,114 @@ def narration_audio_path(order: int) -> Path:
     return CAPCUT / "narration_audio" / f"clip_{order:03d}.mp3"
 
 
+def load_sfx_manifest() -> dict[str, Any]:
+    if not SFX_MANIFEST.exists():
+        raise FileNotFoundError(f"효과음 manifest를 찾을 수 없습니다: {SFX_MANIFEST}")
+    return json.loads(SFX_MANIFEST.read_text(encoding="utf-8"))
+
+
+def segment_sfx_asset(seg: dict[str, Any]) -> tuple[str, Path, dict[str, Any]] | None:
+    asset_id = str(seg.get("narration_sfx_preroll", "none")).strip() or "none"
+    if asset_id == "none":
+        return None
+    manifest = load_sfx_manifest()
+    spec = manifest.get("assets", {}).get(asset_id)
+    if not spec:
+        raise ValueError(f"알 수 없는 나레이션 프리롤 효과음입니다: {asset_id}")
+    path = ROOT / str(spec["processed_path"])
+    if not path.exists():
+        raise FileNotFoundError(f"프리롤 효과음 파일을 찾을 수 없습니다: {path}")
+    expected_hash = str(spec.get("processed_sha256", "")).upper()
+    if expected_hash:
+        actual_hash = hashlib.sha256(path.read_bytes()).hexdigest().upper()
+        if actual_hash != expected_hash:
+            raise ValueError(f"프리롤 효과음 해시 불일치: {asset_id}")
+    return asset_id, path, spec
+
+
+def validate_sfx_plan(plan: dict[str, Any], config: dict[str, Any] | None = None) -> None:
+    segments = plan.get("segments", [])
+    if not any(str(seg.get("narration_sfx_preroll", "none")).strip() not in ("", "none") for seg in segments):
+        return
+    manifest = load_sfx_manifest()
+    rules = manifest.get("global_rules", {})
+    global_limit = int((config or {}).get("narration_sfx_max_uses", rules.get("max_uses_per_19_25_min_review", 8)))
+    minimum_any = float(rules.get("minimum_seconds_between_any_sfx", 25))
+    minimum_same = float(rules.get("minimum_seconds_before_reusing_same_sfx", 90))
+    tail_min = float((config or {}).get("narration_sfx_tail_min_sec", rules.get("tail_under_narration_min_seconds", 0.10)))
+    tail_max = float((config or {}).get("narration_sfx_tail_max_sec", rules.get("tail_under_narration_max_seconds", 0.30)))
+    subtitle_cues: list[Cue] = []
+    subtitle_value = (config or {}).get("subtitle")
+    if subtitle_value:
+        subtitle_path = Path(str(subtitle_value))
+        if not subtitle_path.is_absolute():
+            subtitle_path = ROOT / subtitle_path
+        if not subtitle_path.exists():
+            raise FileNotFoundError(f"효과음 대사 충돌 검사에 필요한 SRT가 없습니다: {subtitle_path}")
+        subtitle_cues = parse_srt(subtitle_path)
+    counts: dict[str, int] = {}
+    timeline = 0.0
+    last_any: float | None = None
+    last_by_id: dict[str, float] = {}
+    total = 0
+    for seg in segments:
+        asset = segment_sfx_asset(seg)
+        if asset:
+            asset_id, _, spec = asset
+            if not str(seg.get("narration", "")).strip():
+                raise ValueError(f"order {seg.get('order')}: 나레이션 없는 구간에 프리롤 효과음이 있습니다.")
+            lead = float(seg.get("narration_sfx_lead_seconds", 0.0) or 0.0)
+            if not 0.15 <= lead <= 1.0:
+                raise ValueError(f"order {seg.get('order')}: 효과음 lead는 0.15~1.0초여야 합니다.")
+            rationale = str(seg.get("narration_sfx_rationale", "")).strip()
+            if not rationale:
+                raise ValueError(f"order {seg.get('order')}: 효과음 장면 선택 근거가 없습니다.")
+            scene_protection = str(seg.get("narration_scene_protection", "unreviewed")).strip() or "unreviewed"
+            if scene_protection != "clear":
+                raise ValueError(
+                    f"order {seg.get('order')}: 보호 장면({scene_protection})에는 프리롤 효과음을 사용할 수 없습니다."
+                )
+            asset_duration = float(spec.get("duration_seconds", 0.0))
+            tail_overlap = asset_duration - lead
+            if not tail_min - 1e-9 <= tail_overlap <= tail_max + 1e-9:
+                raise ValueError(
+                    f"order {seg.get('order')}: {asset_id} 꼬리 겹침이 {tail_overlap:.3f}초입니다. "
+                    f"허용 범위는 {tail_min:.2f}~{tail_max:.2f}초입니다."
+                )
+            source_start = float(seg["source_start"])
+            preroll_end = source_start + lead
+            dialogue_hits = [
+                cue for cue in subtitle_cues
+                if cue.start < preroll_end - 1e-9 and cue.end > source_start + 1e-9
+            ]
+            if dialogue_hits:
+                sample = dialogue_hits[0]
+                raise ValueError(
+                    f"order {seg.get('order')}: 효과음 프리롤이 영화 대사와 겹칩니다 "
+                    f"({sample.start:.3f}~{sample.end:.3f}, {sample.text})."
+                )
+            if last_any is not None and timeline - last_any < minimum_any:
+                raise ValueError(
+                    f"order {seg.get('order')}: 직전 효과음과 {timeline - last_any:.1f}초 간격입니다. "
+                    f"최소 {minimum_any:g}초가 필요합니다."
+                )
+            if asset_id in last_by_id and timeline - last_by_id[asset_id] < minimum_same:
+                raise ValueError(
+                    f"order {seg.get('order')}: {asset_id} 재사용 간격이 {timeline - last_by_id[asset_id]:.1f}초입니다. "
+                    f"최소 {minimum_same:g}초가 필요합니다."
+                )
+            counts[asset_id] = counts.get(asset_id, 0) + 1
+            maximum = int(spec.get("max_uses_per_review", global_limit))
+            if counts[asset_id] > maximum:
+                raise ValueError(f"효과음 {asset_id}가 사용 제한 {maximum}회를 넘습니다.")
+            total += 1
+            if total > global_limit:
+                raise ValueError(f"프리롤 효과음이 전체 제한 {global_limit}회를 넘습니다.")
+            last_any = timeline
+            last_by_id[asset_id] = timeline
+        timeline += float(seg["source_end"]) - float(seg["source_start"])
+
+
 def segment_narration_duration(seg: dict[str, Any], content_duration: float, config: dict[str, Any]) -> float:
     text = str(seg.get("narration", "")).strip()
     if not text:
@@ -398,6 +633,19 @@ def segment_narration_duration(seg: dict[str, Any], content_duration: float, con
     if audio.exists():
         return min(content_duration, media_duration(audio) + 0.15)
     return narration_duration(text, content_duration, config)
+
+
+def segment_narration_timing(
+    seg: dict[str, Any], content_duration: float, config: dict[str, Any]
+) -> tuple[float, float, tuple[str, Path, dict[str, Any]] | None]:
+    text = str(seg.get("narration", "")).strip()
+    if not text:
+        return 0.0, 0.0, None
+    sfx_asset = segment_sfx_asset(seg)
+    lead = float(seg.get("narration_sfx_lead_seconds", 0.0) or 0.0) if sfx_asset else 0.0
+    lead = min(max(0.0, lead), max(0.0, content_duration - 0.2))
+    narration_len = segment_narration_duration(seg, max(0.0, content_duration - lead), config)
+    return lead, narration_len, sfx_asset
 
 
 def split_narration_cues(start: float, duration: float, text: str) -> list[tuple[float, float, str]]:
@@ -414,6 +662,92 @@ def split_narration_cues(start: float, duration: float, text: str) -> list[tuple
         cues.append((cursor, end, sentence))
         cursor = end
     return cues
+
+
+def build_sfx_handoff(
+    config: dict[str, Any], segments: list[dict[str, Any]], sfx_rows: list[dict[str, Any]], timeline_duration: float
+) -> None:
+    if not sfx_rows:
+        return
+    package = CAPCUT / "sfx_preroll"
+    package.mkdir(parents=True, exist_ok=True)
+    shutil.copy2(SFX_MANIFEST, package / "manifest.json")
+    manifest = load_sfx_manifest()
+    gain = float(config.get("narration_sfx_mix_gain", manifest.get("global_rules", {}).get("default_mix_gain_linear", 0.85)))
+    if not 0 < gain <= 1:
+        raise ValueError("narration_sfx_mix_gain은 0보다 크고 1 이하여야 합니다.")
+    limiter = float(config.get("audio_limiter", 0.891251))
+    inputs = [
+        "ffmpeg", "-hide_banner", "-loglevel", "error",
+        "-f", "lavfi", "-t", f"{timeline_duration:.6f}", "-i", "anullsrc=r=48000:cl=stereo",
+    ]
+    filters: list[str] = []
+    labels = ["[0:a]"]
+    copied: set[Path] = set()
+    for input_index, row in enumerate(sfx_rows, 1):
+        seg = segments[int(row["order"]) - 1]
+        asset = segment_sfx_asset(seg)
+        assert asset is not None
+        _, asset_path, _ = asset
+        inputs.extend(["-i", str(asset_path)])
+        delay_ms = int(round(float(row["sfx_start"]) * 1000))
+        label = f"sfx{input_index}"
+        filters.append(
+            f"[{input_index}:a]aresample=48000,volume={gain:.6f},adelay={delay_ms}:all=1[{label}]"
+        )
+        labels.append(f"[{label}]")
+        if asset_path not in copied:
+            shutil.copy2(asset_path, package / asset_path.name)
+            copied.add(asset_path)
+    filters.append(
+        "".join(labels)
+        + f"amix=inputs={len(labels)}:duration=first:dropout_transition=0:normalize=0,"
+        + f"alimiter=limit={limiter:.6f}:level=false,atrim=duration={timeline_duration:.6f}[stem]"
+    )
+    stem = package / "sfx_preroll_stem.m4a"
+    run([
+        *inputs, "-filter_complex", ";".join(filters), "-map", "[stem]",
+        "-c:a", "aac", "-b:a", "192k", "-ar", "48000", "-ac", "2",
+        "-movflags", "+faststart", "-y", str(stem),
+    ])
+    measured_duration = media_duration(stem)
+    if abs(measured_duration - timeline_duration) > 0.05:
+        raise ValueError(
+            f"SFX 스템 길이 불일치: expected={timeline_duration:.6f}, actual={measured_duration:.6f}"
+        )
+    measured_peak = audio_peak_dbfs(stem)
+    maximum_peak = float(config.get("narration_sfx_max_peak_dbfs", -14.0))
+    if measured_peak > maximum_peak:
+        raise ValueError(f"SFX 스템 피크가 너무 큽니다: {measured_peak:.1f} dBFS > {maximum_peak:.1f} dBFS")
+    placements = [float(row["sfx_start"]) for row in sfx_rows]
+    tails = [float(row["tail_under_narration_seconds"]) for row in sfx_rows]
+    qa = {
+        "status": "pass",
+        "use_count": len(sfx_rows),
+        "timeline_duration_seconds": round(timeline_duration, 6),
+        "measured_stem_duration_seconds": round(measured_duration, 6),
+        "measured_stem_peak_dbfs": measured_peak,
+        "maximum_allowed_peak_dbfs": maximum_peak,
+        "mix_gain_linear": gain,
+        "mix_gain_db": round(20 * math.log10(gain), 2),
+        "minimum_spacing_seconds": round(min((b - a for a, b in zip(placements, placements[1:])), default=0.0), 3),
+        "movie_dialogue_overlap_count": 0,
+        "tail_overlap_min_seconds": round(min(tails), 3),
+        "tail_overlap_max_seconds": round(max(tails), 3),
+        "stem": str(stem.relative_to(ROOT)).replace("\\", "/"),
+        "render_bake_sfx_preroll": bool(config.get("render_bake_sfx_preroll", False)),
+    }
+    (package / "SFX_PREROLL_QA.json").write_text(
+        json.dumps(qa, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
+    )
+    (package / "README.md").write_text(
+        "# SFX_PREROLL handoff\n\n"
+        "Import `sfx_preroll_stem.m4a` on one separate CapCut audio track at 00:00:00.000. "
+        "Keep it at 0 dB because the approved low-level assets and project mix gain are already applied.\n\n"
+        "Use `../sfx_timeline.csv` only when individual WAV placement is needed. "
+        "Do not import both the stem and individual effects.\n",
+        encoding="utf-8",
+    )
 
 
 def build_caption_tracks(config: dict[str, Any], plan: dict[str, Any]) -> None:
@@ -449,11 +783,13 @@ def build_caption_tracks(config: dict[str, Any], plan: dict[str, Any]) -> None:
         source_end = float(seg["source_end"])
         narration_end_source = source_start
         if text:
-            narration_len = segment_narration_duration(seg, content_duration, config)
-            entries = split_narration_cues(timeline, narration_len, text)
+            narration_lead, narration_len, sfx_asset = segment_narration_timing(seg, content_duration, config)
+            entries = split_narration_cues(timeline + narration_lead, narration_len, text)
             narration_entries.extend(entries)
             combined_entries.extend(entries)
-            narration_end_source = source_start + narration_len + float(config.get("caption_resume_gap_sec", 0.12))
+            narration_end_source = source_start + narration_lead + narration_len + float(config.get("caption_resume_gap_sec", 0.12))
+        else:
+            narration_lead, narration_len, sfx_asset = 0.0, 0.0, None
 
         # A narration-pass candidate keeps the movie bed even when its review
         # narration is later removed. In that case movie captions must return
@@ -471,6 +807,11 @@ def build_caption_tracks(config: dict[str, Any], plan: dict[str, Any]) -> None:
                     movie_entries.append(entry)
                     combined_entries.append(entry)
 
+        previous_caption_end = max(
+            (cue.end for cue in source_cues if cue.end <= source_start + 1e-9), default=0.0
+        )
+        sfx_duration = float(sfx_asset[2].get("duration_seconds", 0.0)) if sfx_asset else 0.0
+        tail_overlap = max(0.0, sfx_duration - narration_lead) if sfx_asset else 0.0
         csv_rows.append({
             "order": order,
             "timeline_start": round(timeline, 3),
@@ -481,6 +822,16 @@ def build_caption_tracks(config: dict[str, Any], plan: dict[str, Any]) -> None:
             "story_beat": seg["story_beat"],
             "audio_level": seg["audio_level"],
             "narration": text,
+            "narration_start": round(timeline + narration_lead, 3) if text else "",
+            "sfx_preroll": sfx_asset[0] if sfx_asset else "none",
+            "sfx_start": round(timeline, 3) if sfx_asset else "",
+            "sfx_lead_seconds": round(narration_lead, 3) if sfx_asset else 0,
+            "sfx_duration_seconds": round(sfx_duration, 3) if sfx_asset else 0,
+            "tail_under_narration_seconds": round(tail_overlap, 3) if sfx_asset else 0,
+            "dialogue_clearance_seconds": round(source_start - previous_caption_end, 3) if sfx_asset else "",
+            "scene_protection": seg.get("narration_scene_protection", "unreviewed"),
+            "sfx_rationale": seg.get("narration_sfx_rationale", ""),
+            "mix_gain_linear": float(config.get("narration_sfx_mix_gain", 0.85)) if sfx_asset else "",
             "purpose": seg["purpose"],
             "clip": str(clip.relative_to(CAPCUT)),
         })
@@ -499,6 +850,17 @@ def build_caption_tracks(config: dict[str, Any], plan: dict[str, Any]) -> None:
         writer = csv.DictWriter(f, fieldnames=list(csv_rows[0].keys()))
         writer.writeheader()
         writer.writerows(csv_rows)
+    sfx_rows = [row for row in csv_rows if row["sfx_preroll"] != "none"]
+    with (CAPCUT / "sfx_timeline.csv").open("w", encoding="utf-8-sig", newline="") as f:
+        fields = [
+            "order", "sfx_preroll", "sfx_start", "narration_start", "sfx_lead_seconds",
+            "sfx_duration_seconds", "tail_under_narration_seconds", "dialogue_clearance_seconds",
+            "scene_protection", "sfx_rationale", "mix_gain_linear", "purpose",
+        ]
+        writer = csv.DictWriter(f, fieldnames=fields, extrasaction="ignore")
+        writer.writeheader()
+        writer.writerows(sfx_rows)
+    build_sfx_handoff(config, segments, sfx_rows, timeline)
     print(
         f"자막 완료: 영화 대사 {len(movie_entries)}개, 나레이션 {len(narration_entries)}개, "
         f"통합 {len(combined_entries)}개",
@@ -507,7 +869,7 @@ def build_caption_tracks(config: dict[str, Any], plan: dict[str, Any]) -> None:
 
 
 def render(config: dict[str, Any]) -> None:
-    validate_story_map_gate(config, require_render_ready=True)
+    preflight(config)
     video = ROOT / config["video"]
     source_duration = float(ffprobe(video)["format"]["duration"])
     plan = validate_plan(OUTPUT / "edit_plan.json", source_duration, float(config.get("target_duration_sec", 1320)))
@@ -561,23 +923,39 @@ def render(config: dict[str, Any]) -> None:
         vf = ",".join(video_filters)
         level = float(seg["audio_level"])
         text = str(seg.get("narration", "")).strip()
-        narration_len = segment_narration_duration(seg, duration, config) if text else 0.0
+        narration_lead, narration_len, sfx_asset = segment_narration_timing(seg, duration, config)
         tts_audio = narration_audio_path(order)
         duck_without_voice = bool(config.get("preview_duck_without_voice", False))
         should_duck = bool(text and (tts_audio.exists() or duck_without_voice))
         if should_duck:
             normal_level = float(config.get("post_narration_audio_level", 0.96))
+            voice_start = narration_lead
+            voice_end = narration_lead + narration_len
             attack = min(float(config.get("audio_duck_attack_sec", 0.35)), narration_len / 3)
             release = min(float(config.get("audio_duck_release_sec", 0.55)), narration_len / 3)
-            release_start = max(attack, narration_len - release)
-            volume_curve = (
-                f"if(lt(t,{attack:.3f}),"
-                f"{normal_level:.4f}+({level:.4f}-{normal_level:.4f})*(t/{attack:.3f}),"
-                f"if(lt(t,{release_start:.3f}),{level:.4f},"
-                f"if(lt(t,{narration_len:.3f}),"
-                f"{level:.4f}+({normal_level:.4f}-{level:.4f})*((t-{release_start:.3f})/{release:.3f}),"
-                f"{normal_level:.4f})))"
-            )
+            release_start = max(voice_start, voice_end - release)
+            if voice_start > 0:
+                attack_start = max(0.0, voice_start - attack)
+                attack_duration = max(0.001, voice_start - attack_start)
+                volume_curve = (
+                    f"if(lt(t,{attack_start:.3f}),{normal_level:.4f},"
+                    f"if(lt(t,{voice_start:.3f}),"
+                    f"{normal_level:.4f}+({level:.4f}-{normal_level:.4f})*((t-{attack_start:.3f})/{attack_duration:.3f}),"
+                    f"if(lt(t,{release_start:.3f}),{level:.4f},"
+                    f"if(lt(t,{voice_end:.3f}),"
+                    f"{level:.4f}+({normal_level:.4f}-{level:.4f})*((t-{release_start:.3f})/{release:.3f}),"
+                    f"{normal_level:.4f}))))"
+                )
+            else:
+                release_start = max(attack, narration_len - release)
+                volume_curve = (
+                    f"if(lt(t,{attack:.3f}),"
+                    f"{normal_level:.4f}+({level:.4f}-{normal_level:.4f})*(t/{attack:.3f}),"
+                    f"if(lt(t,{release_start:.3f}),{level:.4f},"
+                    f"if(lt(t,{narration_len:.3f}),"
+                    f"{level:.4f}+({normal_level:.4f}-{level:.4f})*((t-{release_start:.3f})/{release:.3f}),"
+                    f"{normal_level:.4f})))"
+                )
             audio_filter = (
                 f"volume='{volume_curve}':eval=frame,"
                 "aresample=48000"
@@ -586,13 +964,41 @@ def render(config: dict[str, Any]) -> None:
             unducked_level = float(config.get("post_narration_audio_level", 0.96)) if text else level
             audio_filter = f"volume={unducked_level:.3f},aresample=48000"
         audio_fade_filter = ("," + ",".join(audio_fades)) if audio_fades else ""
+        mix_gain = float(config.get("narration_sfx_mix_gain", 0.85))
+        limiter = float(config.get("audio_limiter", 0.891251))
+        mix_tail = f",alimiter=limit={limiter:.6f}:level=false{audio_fade_filter}[a]"
         if text and tts_audio.exists():
+            voice_delay_ms = int(round(narration_lead * 1000))
+            voice_filter = "[1:a:0]aresample=48000,volume=1.0"
+            if voice_delay_ms:
+                voice_filter += f",adelay={voice_delay_ms}:all=1"
+            voice_filter += "[vo];"
+            bake_sfx = bool(sfx_asset and config.get("render_bake_sfx_preroll", False))
+            sfx_input = ["-i", str(sfx_asset[1])] if bake_sfx else []
+            if bake_sfx:
+                mix_filter = (
+                    f"[0:v:0]{vf}[v];[0:a:0]{audio_filter}[bed];{voice_filter}"
+                    f"[2:a:0]aresample=48000,volume={mix_gain:.6f}[fx];"
+                    f"[bed][fx][vo]amix=inputs=3:duration=first:dropout_transition=0:normalize=0{mix_tail}"
+                )
+            else:
+                mix_filter = (
+                    f"[0:v:0]{vf}[v];[0:a:0]{audio_filter}[bed];{voice_filter}"
+                    f"[bed][vo]amix=inputs=2:duration=first:dropout_transition=0:normalize=0{mix_tail}"
+                )
             run([
                 "ffmpeg", "-hide_banner", "-loglevel", "error", *input_options, "-ss", f"{start:.3f}", "-t", f"{duration:.3f}",
-                "-i", str(video), "-i", str(tts_audio),
-                "-filter_complex",
-                f"[0:v:0]{vf}[v];[0:a:0]{audio_filter}[bed];[1:a:0]aresample=48000,volume=1.0[vo];"
-                f"[bed][vo]amix=inputs=2:duration=first:dropout_transition=0{audio_fade_filter}[a]",
+                "-i", str(video), "-i", str(tts_audio), *sfx_input,
+                "-filter_complex", mix_filter,
+                "-map", "[v]", "-map", "[a]", *video_encode_options,
+                "-c:a", "aac", "-b:a", "192k", "-ar", "48000", "-ac", "2", "-movflags", "+faststart", "-y", str(clip),
+            ])
+        elif sfx_asset and bool(config.get("preview_sfx_without_voice", False)):
+            run([
+                "ffmpeg", "-hide_banner", "-loglevel", "error", *input_options, "-ss", f"{start:.3f}", "-t", f"{duration:.3f}",
+                "-i", str(video), "-i", str(sfx_asset[1]), "-filter_complex",
+                f"[0:v:0]{vf}[v];[0:a:0]{audio_filter}[bed];[1:a:0]aresample=48000,volume={mix_gain:.6f}[fx];"
+                f"[bed][fx]amix=inputs=2:duration=first:dropout_transition=0:normalize=0{mix_tail}",
                 "-map", "[v]", "-map", "[a]", *video_encode_options,
                 "-c:a", "aac", "-b:a", "192k", "-ar", "48000", "-ac", "2", "-movflags", "+faststart", "-y", str(clip),
             ])
@@ -605,11 +1011,16 @@ def render(config: dict[str, Any]) -> None:
             ])
         concat_lines.append(f"file '{clip.as_posix()}'")
         if text:
-            narration.append((timeline, timeline + narration_len, text))
+            narration.append((timeline + narration_lead, timeline + narration_lead + narration_len, text))
         csv_rows.append({
             "order": order, "timeline_start": round(timeline, 3), "timeline_end": round(timeline + duration, 3),
             "source_start": start, "source_end": end, "kind": seg["kind"], "story_beat": seg["story_beat"],
-            "audio_level": level, "narration": text, "purpose": seg["purpose"], "clip": str(clip.relative_to(CAPCUT)),
+            "audio_level": level, "narration": text,
+            "narration_start": round(timeline + narration_lead, 3) if text else "",
+            "sfx_preroll": sfx_asset[0] if sfx_asset else "none",
+            "sfx_start": round(timeline, 3) if sfx_asset else "",
+            "sfx_lead_seconds": round(narration_lead, 3) if sfx_asset else 0,
+            "purpose": seg["purpose"], "clip": str(clip.relative_to(CAPCUT)),
         })
         timeline += duration
 
@@ -620,11 +1031,14 @@ def render(config: dict[str, Any]) -> None:
     shutil.copy2(OUTPUT / "edit_plan.json", CAPCUT / "edit_plan.json")
     build_caption_tracks(config, plan)
     (CAPCUT / "IMPORT_README.txt").write_text(
-        f"1. 상위 output 폴더의 {output_video}와 이 폴더의 captions_combined.srt를 CapCut으로 가져옵니다.\n"
-        "2. 음성 합성용으로는 narration.srt를 별도 가져와 원하는 한국어 남성 음성으로 텍스트 음성 변환합니다.\n"
-        "3. movie_captions.srt는 기존 영화 SRT에서 원음 대사 구간만 새 타임라인으로 재매핑한 자막입니다.\n"
+        f"1. 상위 output 폴더의 {output_video}를 CapCut으로 가져옵니다.\n"
+        "2. movie_captions.srt와 narration.srt만 각각 별도 자막 트랙으로 가져옵니다. captions_combined.srt는 QA용이며 가져오지 않습니다.\n"
+        "3. narration_audio 폴더의 승인 음성을 REVIEW_NARRATION 오디오 트랙에 배치합니다. CapCut 임의 TTS로 대체하지 않습니다.\n"
         "4. 나레이션이 끝나면 같은 클립 안에서 원음과 영화 자막이 자동으로 복귀합니다.\n"
-        "5. 필요하면 clips 폴더의 개별 원본 클립과 timeline.csv로 컷을 교체합니다.\n",
+        "5. 프리롤 효과음이 선택된 경우 sfx_preroll/sfx_preroll_stem.m4a를 타임라인 0초에 SFX_PREROLL 별도 트랙으로 한 번만 가져옵니다.\n"
+        "6. render_bake_sfx_preroll=true로 렌더한 러프컷에는 효과음이 이미 포함되므로 별도 트랙을 중복 추가하지 않습니다.\n"
+        "7. 개별 WAV를 직접 배치할 때만 sfx_timeline.csv를 사용하며 스템과 동시에 쓰지 않습니다.\n"
+        "8. 필요하면 clips 폴더의 개별 원본 클립과 timeline.csv로 컷을 교체합니다.\n",
         encoding="utf-8",
     )
     print(f"완료: {OUTPUT / output_video} ({timeline:.1f}초)")
@@ -632,13 +1046,15 @@ def render(config: dict[str, Any]) -> None:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description="영화 리뷰 자동 편집 + CapCut 인계 파이프라인")
-    parser.add_argument("stage", choices=("analyze", "plan", "render", "captions", "all"), nargs="?", default="all")
+    parser.add_argument("stage", choices=("analyze", "plan", "preflight", "render", "captions", "all"), nargs="?", default="all")
     args = parser.parse_args()
     config = load_config()
     if args.stage in ("analyze", "all"):
         build_analysis(config)
     if args.stage in ("plan", "all"):
         build_plan(config)
+    if args.stage == "preflight":
+        preflight(config)
     if args.stage in ("render", "all"):
         render(config)
     if args.stage == "captions":

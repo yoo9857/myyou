@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "project_title": "MOVIE REVIEW",
+  "timeline_mode": "chronological",
+  "spoiler_cutoff_source_sec": null,
+  "sections": [
+    {
+      "id": "opening",
+      "status": "draft",
+      "audience_question": "What makes this story begin?",
+      "exit_answer": null,
+      "next_question": null,
+      "events": [
+        {
+          "id": "opening_event",
+          "source_start": 0,
+          "source_end": 10,
+          "summary": "Opening event",
+          "cause_ids": [],
+          "entry_point": true,
+          "characters": [],
+          "visible_action": "Describe only what is visible",
+          "emotional_stake": "Why the viewer should care",
+          "question_opened": "What happens next?",
+          "question_answered": null,
+          "reveal_time": 0,
+          "must_show": true,
+          "selected_intervals": [[0, 10]],
+          "narration_role": "orient",
+          "narration_start_time": 0,
+          "narration_evidence_time": 0,
+          "transition_in": "opening",
+          "needs_visual_review": true
+        }
+      ]
+    }
+  ]
+}

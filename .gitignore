@@ -8,9 +8,48 @@
 COLONY.2026.1080p.FHD.H264.AAC-iMBC.mp4
 Constantine/*.mkv
 
-# Lossless narration stems: pure intermediates, hundreds of MB each.
-# Rebuilt from the fitted cues by the mix script; the .m4a beside them is tracked.
-*_voice_stem.wav
+# Renders stay local. A single film's cut, bed, master and clip set run to ~6 GB, they are
+# all rebuilt from the scripts plus the source film, and carrying them made every clone a
+# multi-gigabyte download. samples/ holds short excerpts instead — see samples/README.md.
+*.mp4
+*.mkv
+*.mov
+*.avi
+*.wav
+*.m4a
+*.aac
+!samples/**
+# Sound-effect sources are production inputs, not renders: a few hundred KB each and not
+# reproducible from anything in this repo.
+!assets/sfx/**
+
+# Left behind when a `>/dev/null` redirect is taken as a relative path on Windows.
+# The real hooks live in .git/hooks.
+dev/null/
+
+# Scratch analysis output.
+tmp/
+
+# Release-group advertising that ships beside a download.
+**/[[]TGx[]]*.txt
+**/NEW upcoming releases*.txt
+
+# Reference footage pulled from elsewhere for style study, not our output.
+Constantine/work/reference_corpus/
+Constantine/work/reference/
+
+# CapCut project backups are machine-local safety copies of a live editor project,
+# including its own undo history. Restoring one only makes sense on the machine that
+# made it, so they are not shared.
+**/backups/capcut*/
+**/capcut_projects/**/assets/
+
+# Scratch frames pulled while checking a render or a layout. Kept until the decision is
+# made, then worthless; samples/ carries the ones worth showing.
+Constantine/*/output/thumbnail/
+Constantine/*/output/shorts/*.jpg
+Constantine/*/work/shorts/
+Constantine/*/work/sfx_preroll_checks/
 
 # Machine-local state
 __pycache__/

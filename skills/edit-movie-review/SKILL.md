@@ -1,23 +1,32 @@
 ---
 name: edit-movie-review
-description: Build or improve a 19–25 minute YouTube movie-review edit from a movie file and existing subtitle file, including story mapping, spoiler-safe scene selection, short hook-style narration, exact subtitle retiming, ElevenLabs female English voiceover, FFmpeg assembly, a curiosity-preserving outro, and a CapCut handoff package. Use for requests to analyze, cut, narrate, subtitle, continue, repair sync, or package movie-review videos, especially when the user refers to the established movie-review workflow or asks to process another film the same way.
+description: Design, build, or improve reusable 19–25 minute YouTube movie reviews from a movie file and subtitle file, including causal story mapping, omission and future-leak detection, three-pass human reviewer narration, reference-driven mobile subtitle typography and motion, dry comic relief, spoiler-safe outros, scene selection, subtitle retiming, voiceover, FFmpeg assembly, and CapCut handoff. Use for requests to analyze, structure, cut, narrate, preprocess, review, style subtitles, add an outro, repair, validate, or package any movie-review video or improve the shared movie-review algorithm.
 ---
 
 # Edit Movie Review
 
 Read `references/workflow.md` before planning or rendering and `references/quality-gates.md` before subtitle, audio, or CapCut work.
+Read `references/preprocessing-workflow.md` before writing, expanding, voicing, or applying reviewer narration.
+Read `references/learning-loop.md` before extracting or promoting rules from a reference video.
+Read `references/outro-workflow.md` before selecting, writing, rendering, or applying an outro.
+Read `references/subtitle-visual-workflow.md` before designing, importing, restyling, animating, or validating subtitles in CapCut. Treat supplied reference images as authoritative; do not replace their visual language with an unsolicited generic trend treatment.
 
 1. Locate the movie, supplied SRT, configuration, prior outputs, and selected music. Preserve originals.
-2. Use the supplied SRT; do not transcribe again unless it is missing or unusable.
-3. Build an audio-first dialogue/silence map, then visually inspect representative candidate scenes.
-4. Plan a 19–25 minute arc through the pre-resolution climax. Hide the final solution, survivor state, final reveal, and denouement.
-5. Alternate preserved dialogue with sparse 2–5 second narration. If the project has an approved voice profile, treat it as authoritative. For COLONY use `voice_profiles/colony_original_normal.json`; do not substitute Nayva or an unverified cached take.
-6. Rebuild captions from exact source/output offsets. Suppress only cues overlapping narration and resume movie captions afterward.
-7. Keep movie dialogue and narration in separate CapCut tracks with separate JSON style presets. Never import the combined SRT as a third duplicate track.
-8. Back up the CapCut project and close CapCut before modifying JSON.
-9. Create a short spoiler-safe outro with muted movie audio, narration, credit music, and a final CTA.
-10. Package editable media, SRTs, timeline/edit plan, and import instructions under `output/capcut_import/`.
-
-For TTS work, read `references/voice-lock.md`. Generate one pilot line before a batch whenever the user has not yet approved the active profile. Copy an approved exact-text asset verbatim, and reject cached audio whose profile hash, text, model, or post-processing record differs.
+2. Read `references/story-engine.md` and build a versioned causal story map before selecting clips.
+3. When the user requests premium or SSS-style storytelling, read `references/reviewer-patterns.md` and select a profile without copying wording.
+4. Use the supplied SRT; do not transcribe again unless it is missing or unusable.
+5. Build an audio-first dialogue/silence map, then visually inspect every required causal event.
+6. Design and approve one story section at a time. Do not render while any section is draft or any required event is missing.
+7. Plan a 19–25 minute arc through the pre-resolution climax. Hide the final solution, survivor state, final reveal, and denouement.
+8. Build narration in three versioned passes: causal bridges, human connective review, then sparse dry comic relief. Merge them into one review track and reject future-result narration.
+9. Run `scripts/validate_story_map.py STORY_MAP --require-render-ready` before creating an edit plan or rendering.
+10. Rebuild captions from exact source/output offsets. Suppress only cues overlapping narration and resume movie captions afterward.
+11. Keep movie dialogue and narration in separate CapCut tracks with separate JSON style presets. Never import the combined SRT as a third duplicate track.
+12. Back up the CapCut project and close CapCut before modifying JSON.
+13. Package editable media, SRTs, timeline/edit plan, validation reports, and import instructions under `output/capcut_import/`.
+14. Run `scripts/validate_narration_track.py` on the final movie-dialogue and review SRTs before CapCut or TTS.
+15. Build the outro as a separate versioned plan, validate it with `scripts/validate_outro_plan.py`, then append its review cues to the single narration track.
+16. Apply subtitle styling from `assets/subtitle-style/user-reference-mobile-v5.json`, adapting only for language support and safe-area fit. Preview one representative cue per role before a full-project rewrite when visual approval is not already established.
+17. For selected narration prerolls, require a dialogue-free source window, a 0.10–0.30 second quiet tail under speech, protected-scene clearance, spacing/usage limits, and one separate full-length CapCut SFX stem with QA.
 
 Inspect the latest state before rerunning expensive work. Change only the requested line, voice, subtitle, or outro element when possible. Never print or commit API keys or copyrighted source media.

@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "profile_id": "user-reference-mobile-v5",
+  "authority": "user-supplied-reference-images",
+  "tracks": {
+    "movie_dialogue": {
+      "font": "Pretendard Medium",
+      "size_range": [4.25, 5.15],
+      "color": "#F2F3F5",
+      "max_width": 0.78,
+      "y": -0.78,
+      "animation": "none"
+    },
+    "main_review": {
+      "font": "Archivo Black",
+      "size_range": [5.5, 6.7],
+      "color": "#FFFFFF",
+      "max_width": 0.72,
+      "y": -0.605
+    },
+    "name_review": {
+      "font": "Roboto Condensed Bold Italic",
+      "italic": true,
+      "base_color": "#F9E7E5",
+      "accent_color": "#FF241C",
+      "max_size": 7.0,
+      "max_width": 0.71,
+      "y": -0.61,
+      "range_units": "character-index"
+    },
+    "situation_review": {
+      "font": "Cormorant Garamond Medium",
+      "size_range": [5.0, 6.0],
+      "base_color": "#FFFFFF",
+      "accent_color": "#FFF1A6",
+      "max_width": 0.74,
+      "y": -0.575,
+      "range_units": "character-index"
+    }
+  },
+  "required_top_level_fields": ["font_name", "font_path", "font_size", "bold", "italic", "underline", "has_border"],
+  "review_motion": {
+    "intro": "fade-in",
+    "intro_ms": [150, 190],
+    "micro_rise": 0.012,
+    "settle_ms": 220,
+    "outro": "fade-out",
+    "outro_ms": 150,
+    "final_outro_ms": 240
+  },
+  "forbidden_motion": ["glitch", "typewriter", "pop-up", "bounce", "blur", "wipe", "karaoke"],
+  "quality_gates": {
+    "capcut_lint_errors": 0,
+    "capcut_lint_warnings": 0,
+    "movie_dialogue_animation_refs": 0,
+    "oversized_materials": 0,
+    "missing_font_files": 0,
+    "review_top_level_style_flags": 29,
+    "timeline_mirrors_identical": true
+  }
+}

@@ -9,8 +9,10 @@
 
 | 파일 | 역할 |
 |---|---|
-| `pipeline.py` | SRT 파싱·기록, 컷 처리 등 공용 함수. 다른 스크립트가 import 한다. |
-| `narration_pass.py` | COLONY 편집표를 실제 컷 영상으로 렌더한다. |
+| `pipeline.py` | SRT 파싱, 컷 렌더, 자막 재매핑, SFX 대사 충돌 검사, CapCut SFX 스템·QA 생성. |
+| `narration_pass.py` | 3패스 대본 심사 결과를 생성·검증하고 승인 편집표에 적용한다. |
+| `scripts/validate_reference_learning.py` | 참고 영상 학습 레지스트리의 근거·한계·승인·롤백 조건을 검사한다. |
+| `work/references/learning_registry.json` | 대본 생성에 실제 투입되는 승인 참고 규칙의 단일 원본. |
 | `voice_profiles/colony_original_normal.json` | 승인 보이스 프로필. COLONY와 Constantine이 **공유**한다. |
 | `config.json` | `elevenlabs_voice_id`, `elevenlabs_voice_profile` 등 현행 설정. |
 
@@ -18,6 +20,10 @@
 후처리는 `silenceremove` 두 번 + `loudnorm=I=-16.5:TP=-1.5:LRA=7`이다.
 프로필 해시는 **정규화된 JSON**을 SHA256 한 값(`95c8237…0715e`)이고,
 두 프로젝트의 매니페스트가 같은 값을 기록해야 한다.
+
+새 대본 생성 전 `python scripts/validate_reference_learning.py work/references/learning_registry.json`을 통과해야 한다.
+새 편집표는 나레이션 3개 연속, SFX와 영화 대사 충돌, 보호 장면 SFX, 0.10~0.30초를 벗어난 SFX 꼬리를 자동 거부한다.
+렌더 직전 `python pipeline.py preflight`를 실행한다. `pipeline.py render`도 같은 사전 검증을 자동 실행하며 결과는 `output/WORKFLOW_PREFLIGHT_QA.json`에 남는다.
 
 ## COLONY
 
@@ -67,6 +73,9 @@
 | `constantine_story_review_v5_with_outro.mp4` | 6번의 소스. 지우면 안 된다. |
 | `constantine_outro_music_stem.wav` / `.m4a` | 아웃트로 음악. 목소리와 무관해 재생성하지 않는다. |
 | `FINAL_SELECTED_VOICE_AUDIO_QA.json` | 검증 기록 |
+| `constantine_story_review_v5_selected_voice_sfx_final.mp4` | 1080p 선택 보이스 + 상황별 프리롤 SFX 최종본 |
+| `capcut_import/sfx_preroll_v1/constantine_sfx_preroll_stem.m4a` | CapCut 타임라인 0초용 SFX 단일 스템 |
+| `SFX_PREROLL_V1_QA.json` | 5개 배치, 대사 겹침, 음량, 영상 스트림 보존 검증 |
 
 6번의 믹스 상수는 Nayva 세대와 동일하게 유지한다: 음성 게인 0.60,
 더킹 threshold 0.018 / ratio 5 / attack 180 ms / release 750 ms, 리미터 0.88,

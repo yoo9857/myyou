@@ -1,6 +1,11 @@
 {
   "video": "MOVIE_FILE.mp4",
   "subtitle": "MOVIE_FILE.srt",
+  "story_map": "story_map.v1.json",
+  "require_story_map": true,
+  "must_show_min_coverage_ratio": 0.85,
+  "editorial_profile": "immersive_analytic",
+  "timeline_mode": "chronological",
   "target_duration_sec": 1320,
   "min_duration_sec": 1140,
   "max_duration_sec": 1500,
@@ -8,7 +13,38 @@
   "spoiler_cutoff_source_sec": null,
   "generate_movie_captions": false,
   "review_language": "ko",
-  "elevenlabs_voice_name": "Nayva",
-  "elevenlabs_voice_id": "cfc7wVYq4gw4OpcEEAom",
-  "elevenlabs_model": "eleven_v3"
+  "reference_learning_registry": "work/references/learning_registry.json",
+  "require_reference_learning_approval": true,
+  "enforce_narration_rhythm_gate": true,
+  "narration_sfx_max_uses": 8,
+  "narration_sfx_mix_gain": 0.85,
+  "narration_sfx_tail_min_sec": 0.10,
+  "narration_sfx_tail_max_sec": 0.30,
+  "narration_sfx_max_peak_dbfs": -14.0,
+  "render_bake_sfx_preroll": false,
+  "audio_limiter": 0.891251,
+  "narration_preprocessing": {
+    "passes": ["causal_bridge", "human_connective", "dry_comic_relief"],
+    "preserve_versions": true,
+    "single_review_track": true,
+    "voice_generation_during_review": false,
+    "caption_resume_margin_sec": 0.12,
+    "max_korean_chars_per_sec": 5.8,
+    "comic_relief_default_min": 2,
+    "comic_relief_default_max": 6
+  },
+  "outro": {
+    "enabled": true,
+    "target_duration_sec": 16,
+    "min_duration_sec": 14,
+    "max_duration_sec": 18,
+    "movie_audio_muted": true,
+    "single_cta": true,
+    "music_rise_after_speech": true,
+    "fade_out_sec": 0.9
+  },
+  "elevenlabs_voice_name": "Approved house voice",
+  "elevenlabs_voice_id": "Vuo6zmtjWmlDbzqgIDos",
+  "elevenlabs_model": "eleven_v3",
+  "elevenlabs_voice_profile": "voice_profiles/colony_original_normal.json"
 }

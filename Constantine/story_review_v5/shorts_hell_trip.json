@@ -1,0 +1,22 @@
+{
+  "root": ".",
+  "source_video": "output/constantine_story_review_v5_selected_voice_final.mp4",
+  "start_sec": 554.0,
+  "end_sec": 607.0,
+  "output": "output/shorts/constantine_short_01_hell_trip.mp4",
+  "work_dir": "work/shorts",
+  "movie_caption_srt": "output/movie_captions_en.srt",
+  "narration_srt": "output/narration_v4_outro_en.srt",
+  "dialogue_font": "C:/Users/hanbi/AppData/Local/Microsoft/Windows/Fonts/Pretendard-Medium.ttf",
+  "dialogue_font_name": "Pretendard Medium",
+  "dialogue_size": 46,
+  "dialogue_margin": 96,
+  "narration_font": "C:/Users/hanbi/AppData/Local/Microsoft/Windows/Fonts/CormorantGaramond-Medium.ttf",
+  "narration_font_name": "Cormorant Garamond",
+  "narration_size": 58,
+  "narration_margin": 250,
+  "picture_crop": "1920:804:0:138",
+  "fps": 24,
+  "band_height": 1080,
+  "crop_bias": 0.5
+}

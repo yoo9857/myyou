@@ -29,6 +29,17 @@
   ,"narration_max_chars_ko": 32
   ,"narration_max_words_en": 14
   ,"narration_question_limit": 2
+  ,"narration_sfx_max_uses": 8
+  ,"narration_sfx_mix_gain": 0.85
+  ,"narration_sfx_tail_min_sec": 0.10
+  ,"narration_sfx_tail_max_sec": 0.30
+  ,"narration_sfx_max_peak_dbfs": -14.0
+  ,"preview_sfx_without_voice": false
+  ,"render_bake_sfx_preroll": false
+  ,"audio_limiter": 0.891251
+  ,"enforce_narration_rhythm_gate": true
+  ,"reference_learning_registry": "work/references/learning_registry.json"
+  ,"require_reference_learning_approval": true
   ,"spoiler_cutoff_source_sec": 6113.5
   ,"narration_tts_language": "en-US"
   ,"elevenlabs_voice_id": "Vuo6zmtjWmlDbzqgIDos"

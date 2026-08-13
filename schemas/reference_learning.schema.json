@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "copyright_policy", "references", "rules"],
+  "properties": {
+    "schema_version": {"type": "integer", "const": 1},
+    "copyright_policy": {"type": "string", "minLength": 1},
+    "references": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["video_id", "source", "profile", "analysis_basis", "limitations", "metrics_file"],
+        "properties": {
+          "video_id": {"type": "string", "minLength": 1},
+          "source": {"type": "string", "minLength": 1},
+          "profile": {"type": "string", "minLength": 1},
+          "analysis_basis": {"type": "string", "minLength": 1},
+          "limitations": {"type": "string", "minLength": 1},
+          "metrics_file": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "rules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "status", "instruction", "evidence", "scope", "rollback_condition"],
+        "properties": {
+          "id": {"type": "string", "minLength": 1},
+          "status": {"type": "string", "enum": ["candidate", "approved", "rejected"]},
+          "instruction": {"type": "string", "minLength": 1},
+          "evidence": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+          "scope": {"type": "string", "minLength": 1},
+          "rollback_condition": {"type": "string", "minLength": 1}
+        }
+      }
+    }
+  }
+}

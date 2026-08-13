@@ -35,6 +35,10 @@ DEFAULT_PROJECT = (
     / "com.lveditor.draft" / "CONSTANTINE_STORY_REVIEW_V5"
 )
 MIRROR_NAMES = {"draft_content.json", "template-2.tmp"}
+# CapCut names audio materials with `name` and video materials with `material_name`.
+# Writing `name` onto a video looked fine until CapCut re-saved the project and dropped
+# the key it does not recognise, leaving the old name beside a new path.
+NAME_FIELD = {"audios": "name", "videos": "material_name"}
 
 # Both assets are replaced by same-duration equivalents, so only name/path move.
 # The bed carries the movie audio ducked against the narration: keeping the Nayva
@@ -79,6 +83,19 @@ def media_duration_us(path: Path) -> int:
         text=True, encoding="utf-8",
     ).strip()
     return round(float(raw) * 1_000_000)
+
+
+def video_size(path: Path) -> tuple[int, int] | None:
+    """Pixel dimensions, or None when the file carries no video stream."""
+    raw = subprocess.check_output(
+        ["ffprobe", "-v", "error", "-select_streams", "v:0",
+         "-show_entries", "stream=width,height", "-of", "csv=p=0:s=x", str(path)],
+        text=True, encoding="utf-8",
+    ).strip()
+    if not raw or "x" not in raw:
+        return None
+    width, height = raw.split("x")[:2]
+    return int(width), int(height)
 
 
 def mirrors(project: Path) -> list[Path]:
@@ -130,9 +147,10 @@ def fingerprint(doc: dict) -> dict:
             a["duration"] for a in doc.get("materials", {}).get("audios", [])
         ),
         "video_material_count": len(doc.get("materials", {}).get("videos", [])),
-        "video_material_geometry": sorted(
-            (v.get("duration"), v.get("width"), v.get("height"))
-            for v in doc.get("materials", {}).get("videos", [])
+        # Durations must hold; width/height are deliberately excluded because swapping in
+        # the 1080p bed changes them, and the swap rewrites them from the new file.
+        "video_material_durations": sorted(
+            v.get("duration") for v in doc.get("materials", {}).get("videos", [])
         ),
         "video_segments": video_segments,
         "audio_segments": audio_segments,
@@ -150,21 +168,30 @@ def swap_document(path: Path, project: Path) -> tuple[dict, dict, dict[str, int]
     for swap in SWAPS:
         target_dir = project.joinpath(*swap["asset_dir"])
         items = doc.get("materials", {}).get(swap["kind"], [])
+        size = video_size(swap["source"]) if swap["kind"] == "videos" else None
+        field = NAME_FIELD[swap["kind"]]
+
+        def labels(item: dict) -> set[str]:
+            return {
+                str(item.get(field, "")),
+                Path(str(item.get("path", ""))).name,
+            }
+
         hits = 0
         for item in items:
-            if (item.get("name") == swap["old"]
-                    or Path(str(item.get("path", ""))).name == swap["old"]):
-                item["name"] = swap["new"]
+            if swap["old"] in labels(item) or swap["new"] in labels(item):
+                item[field] = swap["new"]
                 item["path"] = str(target_dir / swap["new"])
+                if size is not None:
+                    # The 1080p bed replaces a 540p one; CapCut mis-scales if these
+                    # stay at the old dimensions.
+                    item["width"], item["height"] = size
                 hits += 1
-        if hits == 0:
-            # Re-running after a partial swap is fine as long as it is already applied.
-            already = sum(1 for item in items if item.get("name") == swap["new"])
-            if already != 1:
-                raise RuntimeError(
-                    f"{path}: '{swap['old']}' not found in {swap['kind']} and "
-                    f"'{swap['new']}' appears {already} times; refusing to guess"
-                )
+        if hits != 1:
+            raise RuntimeError(
+                f"{path}: expected exactly 1 {swap['kind']} material matching "
+                f"'{swap['old']}' or '{swap['new']}', found {hits}"
+            )
         elif hits != 1:
             raise RuntimeError(
                 f"Expected exactly 1 '{swap['old']}' in {swap['kind']} of {path}, found {hits}"
@@ -236,10 +263,12 @@ def main() -> int:
                 f"{swap['new']} runs {new_us} us but {swap['old']} runs {old_us} us. "
                 "The recorded timeranges would no longer be valid; abort."
             )
+        size = video_size(new_asset) if swap["kind"] == "videos" else None
         assets.append({
             "kind": swap["kind"],
             "from": swap["old"],
             "to": swap["new"],
+            "resolution": f"{size[0]}x{size[1]}" if size else None,
             "duration_us": new_us,
             "old_asset_present": old_us is not None,
             # None means the old asset was already gone from a previous run, so
@@ -284,6 +313,13 @@ def main() -> int:
             raise RuntimeError(f"A reference to {swap['old']} survived the swap")
         if swap["new"] not in referenced:
             raise RuntimeError(f"{swap['new']} is not referenced after the swap")
+        # The display name has to agree with the path, in the field CapCut actually reads.
+        field = NAME_FIELD[swap["kind"]]
+        names = [str(item.get(field, "")) for item in doc["materials"].get(swap["kind"], [])]
+        if swap["old"] in names:
+            raise RuntimeError(f"{field} still reads {swap['old']}")
+        if swap["new"] not in names:
+            raise RuntimeError(f"{field} was not set to {swap['new']}; got {names}")
 
     qa = {
         "status": "pass",

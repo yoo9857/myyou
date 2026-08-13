@@ -1,0 +1,30 @@
+{
+  "source": "https://www.youtube.com/watch?v=NAsiczi6_QI",
+  "video_id": "NAsiczi6_QI",
+  "channel": "드림텔러 DREAM TELLER",
+  "duration_seconds": 1640.0,
+  "analysis_basis": "YouTube Korean automatic captions; overlapping caption intervals merged with 0.08-second tolerance",
+  "limitations": "Caption-free windows may contain movie dialogue, reactions, action, music, or effects and must not be interpreted as literal silence.",
+  "subtitle_cues": 313,
+  "merged_korean_caption_regions": 110,
+  "caption_interval_coverage_percent": 53.3,
+  "merged_caption_region_duration_median_seconds": 6.34,
+  "merged_caption_region_duration_p75_seconds": 8.76,
+  "merged_caption_region_duration_p90_seconds": 13.76,
+  "narrator_free_gap_median_seconds": 5.44,
+  "narrator_free_gap_p75_seconds": 10.96,
+  "narrator_free_gap_p90_seconds": 14.07,
+  "narrator_free_gaps_ge_2_seconds": 78,
+  "narrator_free_gaps_ge_4_seconds": 59,
+  "narrator_free_gaps_ge_8_seconds": 41,
+  "coverage_by_window": [
+    {"window": "00:00-05:00", "percent": 71.7},
+    {"window": "05:00-10:00", "percent": 56.6},
+    {"window": "10:00-15:00", "percent": 43.5},
+    {"window": "15:00-20:00", "percent": 46.2},
+    {"window": "20:00-25:00", "percent": 38.3},
+    {"window": "25:00-27:20", "percent": 73.9}
+  ],
+  "editorial_profile": "short-breath dialogue-interleave",
+  "copyright_rule": "Learn timing, density, handoff structure, and dialogue placement only. Do not copy sentences, jokes, or channel-specific wording."
+}

@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "status": "pass",
+  "created_at": "2026-08-13",
+  "source_final": {
+    "path": "constantine_story_review_v5_selected_voice_final.mp4",
+    "duration_seconds": 1501.021321,
+    "video": "H.264 1920x1080",
+    "audio": "AAC 48000 Hz stereo",
+    "mean_volume_dbfs": -22.1,
+    "max_volume_dbfs": -1.3
+  },
+  "sfx_final": {
+    "path": "constantine_story_review_v5_selected_voice_sfx_final.mp4",
+    "sha256": "666F66C7CBF2A7832E332A4D817063AE71905A967816D110369D344F5B325F5E",
+    "duration_seconds": 1501.021321,
+    "size_bytes": 1314523346,
+    "video": "H.264 1920x1080 stream copy",
+    "audio": "AAC 48000 Hz stereo 192 kbps",
+    "mean_volume_dbfs": -22.2,
+    "max_volume_dbfs": -1.4
+  },
+  "video_integrity": {
+    "source_video_stream_sha256": "69d4b163d258e509060c212a0fd507d3ea0c0db61994114989f8a1ee2e47d04d",
+    "sfx_final_video_stream_sha256": "69d4b163d258e509060c212a0fd507d3ea0c0db61994114989f8a1ee2e47d04d",
+    "bit_exact_match": true
+  },
+  "sfx_stem": {
+    "path": "capcut_import/sfx_preroll_v1/constantine_sfx_preroll_stem.m4a",
+    "sha256": "26828D4C6D6117F55225C612508C52523ED3597897611AB2FBAFCABB87628387",
+    "duration_seconds": 1501.021313,
+    "size_bytes": 785889,
+    "sample_rate_hz": 48000,
+    "channels": 2,
+    "mean_volume_dbfs": -58.9,
+    "max_volume_dbfs": -16.4
+  },
+  "placement_checks": {
+    "use_count": 5,
+    "total_effect_audio_seconds": 3.418,
+    "minimum_spacing_seconds": 167.95,
+    "movie_dialogue_overlap_count": 0,
+    "tail_overlap_range_seconds": [0.155, 0.279],
+    "protected_scene_violations": 0
+  },
+  "event_peak_dbfs": {
+    "danger_knife": -16.6,
+    "bass_omen": -16.7,
+    "curiosity_sting": -17.0,
+    "neutral_transition": -16.4,
+    "short_whoosh": -16.4
+  },
+  "preview": {
+    "path": "capcut_import/sfx_preroll_v1/constantine_sfx_preroll_preview_v1.mp4",
+    "sha256": "059075242D11E0D247F1E733B688C4981256E576B3C6686FCFFE63ADAEDBF326",
+    "duration_seconds": 22.645,
+    "size_bytes": 15240090
+  },
+  "capcut_project_json_modified": false
+}

@@ -1,15 +1,29 @@
 # Quality gates
 
+- Every required event has a visible source interval and a causal parent or is explicitly marked as the opening event.
+- No result is narrated before its `reveal_time`; events inside the same clip still count as future events.
+- Every large source-time jump is classified as intentional compression and has either a clear visual transition or a short bridge.
+- No section advances from `draft` until its required events, emotional motivation, and open question are present.
+- Rendering is forbidden while any section is not `approved` or the story-map validator reports an error.
 - Duration is 19–25 minutes or the deviation is explained.
 - Opening narration matches the visible scene.
 - The full resolution and aftermath are absent.
 - Strong dialogue/action has no narration collision.
-- The user-approved pilot, batch manifest, and active voice profile have the same voice ID, model, request settings, and post-processing chain.
-- Every reused TTS clip has matching text and profile SHA-256; exact-text approved assets are copied verbatim.
-- No previous reviewer voice remains underneath or between replacement narration lines.
+- Every SFX preroll starts in a subtitle-verified dialogue-free source window, uses an approved hash-matched asset, and leaves only a 0.10–0.30 second quiet tail under speech.
+- The SFX stem starts at timeline zero, matches its placement CSV, stays below narration, and is not duplicated by baked effects or individual CapCut clips.
+- Three reviewer-narration blocks never appear consecutively.
+- Every promoted reference rule has metrics, limitations, evidence, user approval, and a rollback condition; raw reference wording is absent.
+- Reviewer text uses story-internal viewpoint unless explicit essay mode is selected.
+- Korean immersive narration has no accidental `관객/시청자/영화는/장면은/연출은` meta viewpoint and no repetitive `~입니다/~습니다` report cadence.
+- Comic relief appears only in verified breathing gaps after tension release and never over protected emotional, reveal, horror-payoff, or action scenes.
+- Every narration cue fits a natural speaking rate before TTS; shorten text instead of forcing speed.
 - Movie audio and captions resume after each narration interval.
 - Every cue is recomputed from exact cut offsets and stays inside its owning clip.
 - Exactly one movie-dialogue track and one narration track exist in CapCut.
 - SRT cue counts equal CapCut text-segment counts.
 - CapCut timeline mirrors are synchronized and lint has no errors.
 - Source media remains unchanged and secrets are absent from deliverables.
+- Outro duration is 14–18 seconds and its visual stays at or before the spoiler cutoff.
+- Outro movie dialogue/audio is muted, and no movie-caption cues are duplicated there.
+- Outro review and CTA cues stay inside the outro, do not overlap, and do not reveal the resolution.
+- Outro music rises only after the last spoken cue and fades with the picture.

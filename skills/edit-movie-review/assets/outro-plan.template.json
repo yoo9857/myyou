@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "duration_sec": 16.0,
+  "source_start": 0.0,
+  "source_end": 16.0,
+  "spoiler_cutoff_source_sec": null,
+  "spoiler_safe": true,
+  "movie_audio_muted": true,
+  "movie_captions_suppressed": true,
+  "review_cue": {
+    "start": 2.0,
+    "end": 7.0,
+    "text": "이미 드러난 이야기의 의미를 짧게 남기는 마무리 문장"
+  },
+  "cta_cue": {
+    "start": 10.0,
+    "end": 13.0,
+    "text": "다음 리뷰에서 다시 만나죠"
+  },
+  "music": {
+    "start": 0.0,
+    "rise_start": 13.0,
+    "fade_out_start": 15.1,
+    "end": 16.0
+  },
+  "video_fade_out_sec": 0.9,
+  "audio_fade_out_sec": 0.9
+}

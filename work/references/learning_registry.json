@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "copyright_policy": "Transfer timing, density, handoff structure, and dialogue-placement patterns only. Never copy sentences, jokes, titles, or distinctive channel wording.",
+  "references": [
+    {
+      "video_id": "NAsiczi6_QI",
+      "source": "https://www.youtube.com/watch?v=NAsiczi6_QI",
+      "profile": "short-breath dialogue-interleave",
+      "analysis_basis": "Korean automatic captions merged with 0.08-second tolerance",
+      "limitations": "Caption-free windows may contain movie dialogue, reactions, action, music, or effects and are not literal silence.",
+      "metrics_file": "work/references/NAsiczi6_QI.metrics.json"
+    },
+    {
+      "video_id": "LToiOgexo_8",
+      "source": "https://www.youtube.com/watch?v=LToiOgexo_8",
+      "profile": "micro-interleaved narration-dialogue",
+      "analysis_basis": "Original Korean automatic captions merged with 0.08-second tolerance",
+      "limitations": "Coverage includes reviewer narration and Korean movie dialogue, so it measures spoken-flow continuity rather than narration share.",
+      "metrics_file": "work/references/LToiOgexo_8.metrics.json"
+    }
+  ],
+  "rules": [
+    {
+      "id": "phase_density_routing",
+      "status": "approved",
+      "instruction": "Use a denser short hook, let strong original dialogue carry the middle, and return to concise urgency only during the pre-resolution climb.",
+      "evidence": ["NAsiczi6_QI"],
+      "scope": "whole-review pacing",
+      "rollback_condition": "Reject if the middle becomes causally unclear or the hook narrates future results."
+    },
+    {
+      "id": "short_setup_dialogue_return",
+      "status": "approved",
+      "instruction": "Use one short setup, then return to a meaningful movie line or reaction before adding another bridge.",
+      "evidence": ["NAsiczi6_QI", "LToiOgexo_8"],
+      "scope": "narration pass 2",
+      "rollback_condition": "Reject if narration repeats the next movie line or three narration blocks become consecutive."
+    },
+    {
+      "id": "micro_interleave_only_for_useful_dialogue",
+      "status": "approved",
+      "instruction": "Use rapid narration-dialogue handoffs only when short original lines deliver an answer, threat, retort, or emotional response; otherwise compress the scene.",
+      "evidence": ["LToiOgexo_8"],
+      "scope": "dialogue-rich story units",
+      "rollback_condition": "Reject if speaker changes become confusing or emotional residue is cut off."
+    },
+    {
+      "id": "route_do_not_average",
+      "status": "approved",
+      "instruction": "Choose long original-audio breathing, micro-interleaving, or protected no-narration per story unit; never average reference densities into one global narration rate.",
+      "evidence": ["NAsiczi6_QI", "LToiOgexo_8"],
+      "scope": "story-unit routing",
+      "rollback_condition": "Reject if a discovery, reversal, death, confession, horror payoff, or action payoff receives added narration."
+    }
+  ]
+}

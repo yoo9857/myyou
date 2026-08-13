@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "project": "Constantine Story Review V5",
+  "source_final": "constantine_story_review_v5_selected_voice_final.mp4",
+  "timeline_duration_seconds": 1501.021321,
+  "mix_gain_linear": 0.85,
+  "mix_gain_db": -1.41,
+  "placement_policy": {
+    "minimum_seconds_between_any_sfx": 25,
+    "maximum_total_uses": 8,
+    "movie_dialogue_overlap_allowed": false,
+    "narration_tail_overlap_target_seconds": "0.10-0.30",
+    "protected_scenes_avoided": true
+  },
+  "placements": [
+    {
+      "order": 1,
+      "narration_cue": 3,
+      "narration_start_seconds": 20.5,
+      "narration_text": "Hardly museum material—it changes whoever finds it.",
+      "sfx_id": "danger_knife",
+      "sfx_file": "assets/sfx/narration_preroll/danger_knife_low.wav",
+      "sfx_start_seconds": 19.65,
+      "sfx_duration_seconds": 1.129,
+      "tail_under_narration_seconds": 0.279,
+      "previous_movie_caption_end_seconds": 14.373,
+      "dialogue_clearance_seconds": 5.277,
+      "rationale": "The metallic threat lands on Manuel holding the ancient spear, before the review explains that the object changes its finder."
+    },
+    {
+      "order": 2,
+      "narration_cue": 11,
+      "narration_start_seconds": 394.3,
+      "narration_text": "Here, Heaven and Hell agree to stop fighting.",
+      "sfx_id": "bass_omen",
+      "sfx_file": "assets/sfx/narration_preroll/bass_omen_0700ms_low.wav",
+      "sfx_start_seconds": 393.8,
+      "sfx_duration_seconds": 0.7,
+      "tail_under_narration_seconds": 0.2,
+      "previous_movie_caption_end_seconds": 388.079,
+      "dialogue_clearance_seconds": 5.721,
+      "rationale": "A restrained low omen underlines the suspicious Heaven–Hell truce as the story enters Midnite's neutral territory."
+    },
+    {
+      "order": 3,
+      "narration_cue": 14,
+      "narration_start_seconds": 562.1,
+      "narration_text": "Tap water, a cat, and a trip to Hell. Oddly practical.",
+      "sfx_id": "curiosity_sting",
+      "sfx_file": "assets/sfx/narration_preroll/curiosity_sting_low.wav",
+      "sfx_start_seconds": 561.75,
+      "sfx_duration_seconds": 0.557,
+      "tail_under_narration_seconds": 0.207,
+      "previous_movie_caption_end_seconds": 549.227,
+      "dialogue_clearance_seconds": 12.523,
+      "rationale": "The cue lands on the cat and ritual setup, reinforcing the strange unanswered method without spoiling the Hell payoff."
+    },
+    {
+      "order": 4,
+      "narration_cue": 20,
+      "narration_start_seconds": 1042.0,
+      "narration_text": "She is no longer the client, but the eyes hunting the demon.",
+      "sfx_id": "neutral_transition",
+      "sfx_file": "assets/sfx/narration_preroll/neutral_transition_low.wav",
+      "sfx_start_seconds": 1041.6,
+      "sfx_duration_seconds": 0.657,
+      "tail_under_narration_seconds": 0.257,
+      "previous_movie_caption_end_seconds": 1032.575,
+      "dialogue_clearance_seconds": 9.025,
+      "rationale": "A plain handoff marks Angela's causal role change from client to active tracker without overselling the moment."
+    },
+    {
+      "order": 5,
+      "narration_cue": 28,
+      "narration_start_seconds": 1489.0,
+      "narration_text": "With no answer from either side, Constantine pushes on…",
+      "sfx_id": "short_whoosh",
+      "sfx_file": "assets/sfx/narration_preroll/short_whoosh_low.wav",
+      "sfx_start_seconds": 1488.78,
+      "sfx_duration_seconds": 0.375,
+      "tail_under_narration_seconds": 0.155,
+      "previous_movie_caption_end_seconds": 1486.862,
+      "dialogue_clearance_seconds": 1.918,
+      "rationale": "The short pickup tightens the final forward push while staying clear of the preceding plea and the spoiler-safe outro line."
+    }
+  ]
+}

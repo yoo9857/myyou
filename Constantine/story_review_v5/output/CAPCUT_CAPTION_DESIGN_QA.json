@@ -1,0 +1,77 @@
+{
+  "status": "pass",
+  "dry_run": false,
+  "project": "C:\\Users\\hanbi\\AppData\\Local\\CapCut\\User Data\\Projects\\com.lveditor.draft\\CONSTANTINE_STORY_REVIEW_V5",
+  "backup": "C:\\cineyoutube\\Constantine\\story_review_v5\\backups\\capcut_caption_design\\20260813_215447",
+  "tiers": {
+    "dialogue": {
+      "track": "MOVIE_DIALOGUE",
+      "font": "Pretendard Medium",
+      "font_size": 7.0,
+      "text_color": "#FFFFFF",
+      "letter_spacing": -0.005,
+      "border_width": 0.055,
+      "border_alpha": 1.0,
+      "shadow_alpha": 0.55,
+      "shadow_smoothing": 0.7,
+      "shadow_distance": 1.6,
+      "background_alpha": 0.0
+    },
+    "narration": {
+      "track": "REVIEW_NARRATION",
+      "font_file": "C:\\Users\\hanbi\\AppData\\Local\\Microsoft\\Windows\\Fonts\\CormorantGaramond-Medium.ttf",
+      "font_name": "Cormorant Garamond",
+      "font_resource_id": "",
+      "font_source_platform": 0,
+      "font_size": 9.62,
+      "text_color": "#F6EBD2",
+      "letter_spacing": 0.03,
+      "border_width": 0.032,
+      "border_alpha": 1.0,
+      "shadow_alpha": 0.62,
+      "shadow_smoothing": 0.68,
+      "shadow_distance": 1.5,
+      "background_alpha": 0.0,
+      "italic_degree": 10
+    },
+    "characters": {
+      "cast_colour": "#FFD24D",
+      "cast": [
+        "John Constantine",
+        "Constantine",
+        "Angela",
+        "Isabel",
+        "Beeman",
+        "Midnite",
+        "Manuel",
+        "Chas"
+      ],
+      "antagonist_colour": "#FF5555",
+      "antagonists": [
+        "Mammon"
+      ],
+      "highlights_applied": {
+        "#FFD24D": 21,
+        "#FF5555": 1
+      },
+      "excluded_proper_nouns": [
+        "Hell",
+        "Heaven",
+        "Los Angeles",
+        "Mexico",
+        "GPS"
+      ]
+    }
+  },
+  "defects_fixed": [
+    "narration font references resolved to cached Rubik-Bold.ttf despite font_name saying Cormorant Garamond",
+    "narration background_alpha was 1.0, a solid black box"
+  ],
+  "restyled": {
+    "REVIEW_NARRATION": 29,
+    "MOVIE_DIALOGUE": 287
+  },
+  "mirror_files_updated": 4,
+  "mirror_hashes_match": true,
+  "preserved": "timeranges, positions, text strings, animation refs, media paths"
+}

@@ -12,7 +12,7 @@
       "items": {
         "type": "object",
         "additionalProperties": false,
-        "required": ["order", "use_narration", "role", "caption_ko", "tts_en", "delivery", "max_seconds", "handoff", "spoiler_risk", "rationale"],
+        "required": ["order", "use_narration", "role", "caption_ko", "tts_en", "delivery", "max_seconds", "handoff", "spoiler_risk", "rationale", "scene_protection", "sfx_preroll", "sfx_lead_seconds", "sfx_rationale"],
         "properties": {
           "order": {"type": "integer", "minimum": 1},
           "use_narration": {"type": "boolean"},
@@ -23,7 +23,11 @@
           "max_seconds": {"type": "number", "minimum": 2.0, "maximum": 5.2},
           "handoff": {"type": "string", "enum": ["next_dialogue", "visual_reveal", "silence"]},
           "spoiler_risk": {"type": "string", "enum": ["low", "medium", "high"]},
-          "rationale": {"type": "string"}
+          "rationale": {"type": "string"},
+          "scene_protection": {"type": "string", "enum": ["unreviewed", "clear", "strong_dialogue", "death_grief", "confession", "discovery_payoff", "reversal_reveal", "horror_payoff", "active_combat"]},
+          "sfx_preroll": {"type": "string", "enum": ["none", "danger_knife", "short_whoosh", "bass_omen", "neutral_transition", "curiosity_sting"]},
+          "sfx_lead_seconds": {"type": "number", "minimum": 0, "maximum": 1.0},
+          "sfx_rationale": {"type": "string", "maxLength": 160}
         }
       }
     }

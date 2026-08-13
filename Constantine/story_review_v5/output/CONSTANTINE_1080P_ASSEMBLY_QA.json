@@ -1,0 +1,33 @@
+{
+  "status": "pass",
+  "cut": {
+    "resolution": "1920x1080",
+    "frames": 35638,
+    "duration_sec": 1486.979655,
+    "reference_duration_sec": 1486.979655,
+    "delta_ms": 0.0
+  },
+  "outro": {
+    "resolution": "1920x1080",
+    "frames": 337,
+    "duration_sec": 14.041667,
+    "reference_duration_sec": 14.041667,
+    "delta_ms": 0.0
+  },
+  "joined": {
+    "resolution": "1920x1080",
+    "frames": 35975,
+    "duration_sec": 1501.021321,
+    "reference_duration_sec": 1501.021321,
+    "delta_ms": 0.0
+  },
+  "sum_check_sec": 1501.021322,
+  "tolerance_sec": 0.002,
+  "captions_unaffected": true,
+  "note": "frame counts and durations match the 540p originals, so the 287 movie cues, 29 narration cues and audio placements stay valid",
+  "outputs": {
+    "cut": "C:\\cineyoutube\\Constantine\\story_review_v5\\output\\constantine_story_review_v5_voice_off_1080p.mp4",
+    "outro": "C:\\cineyoutube\\Constantine\\story_review_v5\\output\\outro_v1_1080p.mp4",
+    "joined": "C:\\cineyoutube\\Constantine\\story_review_v5\\output\\constantine_story_review_v5_with_outro_1080p.mp4"
+  }
+}

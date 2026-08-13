@@ -1,6 +1,6 @@
 # 다음 작업자 인계서
 
-최종 인계일: 2026-08-11
+최종 인계일: 2026-08-13
 
 ## 먼저 할 일
 
@@ -27,6 +27,8 @@ powershell -ExecutionPolicy Bypass -File .\scripts\setup_tools.ps1
 - 재사용 가능한 Codex `edit-movie-review` 스킬
 - CapCut CLI `0.18.0` 고정 버전에 적용할 로컬 패치
 - 현재 프로젝트 상태와 품질 검증 규칙
+- 승인된 참고 영상 학습 레지스트리와 검증 스크립트
+- 상황별 나레이션 프리롤 SFX 라이브러리, 자동 충돌 게이트, CapCut 단일 스템 생성
 - 원본 SRT, 승인된 엔딩 음악, 기존 렌더와 분석 자료
 - `output/`, `work/`, `backups/` 전체
 - `handoff/capcut_projects/0811 (5)/` CapCut 초안 사본
@@ -58,6 +60,8 @@ C:\cineyoutube\COLONY.2026.1080p.FHD.H264.AAC-iMBC.mp4
 - 현대적 Noto Sans KR 자막 프리셋 적용
 - 16.6초 Nayva + `The Final Resolve` 엔딩 아웃트로 제작
 - V5 나레이션 후보 편집표는 생성됐지만 현재 본편 편집표로 확정 적용하지 않음
+- 참고 영상 학습은 `work/references/learning_registry.json`의 승인 규칙만 대본 생성에 사용
+- 효과음은 영화 대사 공백·보호 장면·간격·꼬리 겹침을 코드로 검증하고 별도 CapCut 스템으로 인계
 
 정확한 상태는 `docs/PROJECT_STATE.md`를 기준으로 판단한다.
 
