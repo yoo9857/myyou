@@ -8,6 +8,10 @@
 COLONY.2026.1080p.FHD.H264.AAC-iMBC.mp4
 Constantine/*.mkv
 
+# Lossless narration stems: pure intermediates, hundreds of MB each.
+# Rebuilt from the fitted cues by the mix script; the .m4a beside them is tracked.
+*_voice_stem.wav
+
 # Machine-local state
 __pycache__/
 *.py[cod]

@@ -1,0 +1,58 @@
+{
+  "schema_version": 3,
+  "final_video": "C:\\cineyoutube\\Constantine\\story_review_v5\\output\\constantine_story_review_v5_selected_voice_final.mp4",
+  "source_video": "C:\\cineyoutube\\Constantine\\story_review_v5\\output\\constantine_story_review_v5_with_outro.mp4",
+  "replaces": "C:\\cineyoutube\\Constantine\\story_review_v5\\output\\constantine_story_review_v5_nayva_final.mp4",
+  "voice_id": "Vuo6zmtjWmlDbzqgIDos",
+  "voice_model": "eleven_v3",
+  "voice_settings": "voice defaults (no request override)",
+  "voice_profile_id": "colony-vuo-original-normal-v1",
+  "voice_profile_sha256": "95c8237230996ee8f2886670fdabc21fbc218c7e995080b83469faf9fd90715e",
+  "voice_cues": 29,
+  "max_atempo": 0.96,
+  "overrun_count": 0,
+  "voice_gain": 0.6,
+  "voice_stem": "C:\\cineyoutube\\Constantine\\story_review_v5\\output\\constantine_selected_voice_stem.wav",
+  "voice_stem_m4a": "C:\\cineyoutube\\Constantine\\story_review_v5\\output\\constantine_selected_voice_stem.m4a",
+  "movie_bed_video": "C:\\cineyoutube\\Constantine\\story_review_v5\\output\\constantine_story_review_v5_selected_voice_bed.mp4",
+  "movie_duck": {
+    "threshold": 0.018,
+    "ratio": 5,
+    "attack_ms": 180,
+    "release_ms": 750
+  },
+  "outro_music_stem": "C:\\cineyoutube\\Constantine\\story_review_v5\\output\\constantine_outro_music_stem.wav",
+  "outro_music_stem_rebuilt": false,
+  "outro_start_sec": 1487.0,
+  "source_duration_sec": 1501.021321,
+  "voice_stem_duration_sec": 1501.021313,
+  "music_stem_duration_sec": 14.021313,
+  "final_duration_sec": 1501.021321,
+  "voice_replacement_proof": {
+    "method": "decode both renders to 16 kHz mono, lag-compensated normalized cross-correlation of each fitted cue against the render (+/-600 ms search)",
+    "cues_found_in_new_render": "29 / 29",
+    "cues_found_in_previous_nayva_render": "0 / 29",
+    "mean_abs_correlation": {
+      "selected_voice_render": 0.967,
+      "nayva_render": 0.067
+    },
+    "placement_lag_ms": {
+      "min": 5.0,
+      "max": 5.1,
+      "spread": 0.1,
+      "note": "constant AAC encode/decode priming offset, matches the COLONY render; no drift"
+    },
+    "post_outro_cues_checked": [
+      28,
+      29
+    ],
+    "unchanged_from_nayva_pass": [
+      "voice_gain 0.60",
+      "duck 0.018/5/180ms/750ms",
+      "alimiter 0.88",
+      "outro music stem",
+      "final duration 1501.021321s"
+    ]
+  },
+  "status": "pass"
+}

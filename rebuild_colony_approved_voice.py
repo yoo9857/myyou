@@ -60,7 +60,14 @@ def merge_intervals(intervals: list[tuple[float, float]]) -> list[tuple[float, f
 
 
 def main() -> int:
-    required = [BASE_VIDEO, SOURCE_AUDIO, OLD_SRT, OLD_TIMELINE, NEW_SRT, MANIFEST, CURRENT_CAPTIONED]
+    if not CURRENT_CAPTIONED.exists():
+        # This render is the caption source: its burnt-in video track is copied
+        # verbatim. It is not kept around after a successful run, so rebuild it first.
+        raise FileNotFoundError(
+            f"{CURRENT_CAPTIONED.name} is absent. Run build_colony_selected_voice_video.py "
+            "first to burn the caption tracks, then re-run this script."
+        )
+    required = [BASE_VIDEO, SOURCE_AUDIO, OLD_SRT, OLD_TIMELINE, NEW_SRT, MANIFEST]
     missing = [str(path) for path in required if not path.exists()]
     if missing:
         raise FileNotFoundError("Missing required files: " + ", ".join(missing))

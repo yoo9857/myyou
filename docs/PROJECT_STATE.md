@@ -59,6 +59,26 @@
 - 선택 보이스 분리 음원: `output/outro_v5/outro_selected_voice_en.mp3`
 - 기존 Nayva 아웃트로는 비교 및 복구용으로 보존한다.
 
+## Constantine story_review_v5 음성 교체 (2026-08-13)
+
+- COLONY와 **같은 승인 프로필**로 교체했다: `colony-vuo-original-normal-v1`, 해시 `95c8237…0715e`
+- 최종 영상: `Constantine/story_review_v5/output/constantine_story_review_v5_selected_voice_final.mp4`
+- 나레이션 29개 큐 전부 생성, max atempo 0.96, 슬롯 초과 0개
+- 길이 1501.021321초로 Nayva 세대와 동일
+- 믹스 상수(게인 0.60, 더킹, 리미터, 아웃트로 음악)를 그대로 유지해 목소리만 바뀌었다
+- 검증: 29/29 검출(평균 상관도 0.967), 이전 Nayva 렌더에서는 0/29(0.067)
+- QA 기록: `Constantine/story_review_v5/output/FINAL_SELECTED_VOICE_AUDIO_QA.json`
+- **미완료**: CapCut 프로젝트 `CONSTANTINE_STORY_REVIEW_V5`는 아직 Nayva 스템을 참조한다.
+  CapCut을 종료한 뒤 `assets/audio/`의 사본을 `constantine_selected_voice_stem.m4a`로 교체해야 한다.
+
+## 레거시 정리 (2026-08-13)
+
+- 폐기 미디어 약 4.24GB 삭제: 구 rough cut 3개, selected_voice 렌더 2개, Nayva 세대 스템·베드·최종본, 구 백업 2개, Nayva 나레이션 음원 2세트
+- 폐기 스크립트 20개 삭제. 루트 스크립트가 33개에서 13개로 줄었다.
+- 지우면 안 되는 파일과 실행 순서는 `docs/PIPELINE.md`에 고정했다.
+- `edit_plan.json`을 덮어쓰던 구세대 변환기(`create_spoiler_safe_v3.py` 등)를 지웠다. 실수 실행으로 V5 편집표가 깨질 위험을 없앴다.
+- 이미 푸시된 LFS 용량은 히스토리에 남아 회수되지 않는다. 로컬 캐시 정리는 하지 않았다.
+
 ## 재사용 장치
 
 - 전역 Codex 스킬: `%USERPROFILE%\.codex\skills\edit-movie-review`
