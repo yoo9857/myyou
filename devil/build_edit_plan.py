@@ -26,7 +26,10 @@ ROOT = Path(__file__).resolve().parent
 STORY_MAP = ROOT / "story_map.v1.json"
 OUT = ROOT / "output" / "edit_plan.json"
 
-TARGET = 1080.0             # 18:00
+# Budgeted 6 percent over the 18:00 the reference runs, because tiling always lands under
+# budget: a group stops emitting when the event window runs out or when the last narration
+# block leaves no room for a film run after it. Aiming at 18:00 exactly produced 17:00.
+TARGET = 1145.0             # budgets for 19:05, lands near 18:00
 NARRATION_SHARE = 0.40      # approved
 KEPT_DIALOGUE_SHARE = 0.14  # the beats where the film speaks for itself
 NARRATION_BLOCK = 7.0       # approved: blocks near 6 s, 7 keeps the count under the cap
