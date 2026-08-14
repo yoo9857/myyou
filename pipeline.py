@@ -455,8 +455,14 @@ def validate_plan(path: Path, source_duration: float, target_duration: float = 1
         else:
             consecutive_narration = 0
         expected += 1
-    minimum = max(1140.0, target_duration - 180.0)
-    maximum = min(1500.0, target_duration + 180.0)
+    # The 1140 floor came from the 19-25 minute policy. A project may set its own band via
+    # min_duration_sec / max_duration_sec, which the config template already exposes; a
+    # same-film reference measured at 18.1 minutes is a reason to go under 19, and it should
+    # not need a code change. Defaults keep the old behaviour for projects that set neither.
+    floor = validator_config.get("min_duration_sec")
+    ceiling = validator_config.get("max_duration_sec")
+    minimum = float(floor) if floor else max(1140.0, target_duration - 180.0)
+    maximum = float(ceiling) if ceiling else min(1500.0, target_duration + 180.0)
     if not minimum <= total <= maximum:
         raise ValueError(f"실제 클립 합계 {total:.1f}초가 허용 범위({minimum:.0f}~{maximum:.0f}초)를 벗어났습니다.")
     validate_story_coverage(plan, validator_config)
@@ -963,6 +969,14 @@ def render(config: dict[str, Any]) -> None:
         else:
             unducked_level = float(config.get("post_narration_audio_level", 0.96)) if text else level
             audio_filter = f"volume={unducked_level:.3f},aresample=48000"
+        # Optional explicit downmix, applied before anything else touches the bed.
+        # ffmpeg's default 5.1 -> stereo drops the centre channel by 3 dB and folds the
+        # surrounds in, which costs dialogue exactly where a review needs it: measured on a
+        # 5.1 source, the default landed 4.2 dB under a centre-weighted pan. Empty by
+        # default so stereo sources and existing projects are untouched.
+        downmix = str(config.get("source_audio_downmix", "")).strip()
+        if downmix:
+            audio_filter = f"{downmix},{audio_filter}"
         audio_fade_filter = ("," + ",".join(audio_fades)) if audio_fades else ""
         mix_gain = float(config.get("narration_sfx_mix_gain", 0.85))
         limiter = float(config.get("audio_limiter", 0.891251))

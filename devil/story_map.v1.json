@@ -1,0 +1,1159 @@
+{
+  "schema_version": 1,
+  "project_title": "THE DEVIL ALL THE TIME REVIEW",
+  "timeline_mode": "audience_reveal",
+  "timeline_mode_reason": "The review opens on the prayer log at 22:24 and then rewinds to the war, and it groups the film's cross-cut threads by character. Neither is chronological in source time.",
+  "spoiler_cutoff_source_sec": 7570.0,
+  "review_language": "en",
+  "reference_structure": {
+    "learned_from": "rd5pF9Qj_C8",
+    "note": "Structure only. That review reveals the ending; this map stops before the shooting.",
+    "carried_over": [
+      "one character group at a time instead of the film's cross-cutting",
+      "single short beats for connective information",
+      "the closing confrontations take the largest share",
+      "the film's own dialogue left running at the confrontations",
+      "an unbroken closing block: theme, then protagonist read, then the cast hook",
+      "the cast hook is promised in the title and paid off only at the very end"
+    ],
+    "deliberately_not_carried": [
+      "the outcome. The reference names who dies and who walks away; this map cuts on the raised guns at 126:10, the last line before the shooting."
+    ]
+  },
+  "sections": [
+    {
+      "id": "cold_open_prayer_log",
+      "status": "draft",
+      "audience_question": "Why is this man kneeling at a cross in the woods?",
+      "exit_answer": null,
+      "next_question": "When did the praying start?",
+      "events": [
+        {
+          "id": "prayer_log_present",
+          "source_start": 1344.0,
+          "source_end": 1416.0,
+          "summary": "Willard kneels at a cross he built in the woods, his son beside him",
+          "cause_ids": [],
+          "entry_point": true,
+          "characters": [
+            "Willard",
+            "Arvin"
+          ],
+          "visible_action": "A father and son on their knees at a log cross, the wood dark with blood",
+          "emotional_stake": "The ritual arrives with no explanation, which is exactly why it holds",
+          "question_opened": "What is this prayer trying to hold back?",
+          "question_answered": null,
+          "reveal_time": 1344.0,
+          "must_show": true,
+          "selected_intervals": [
+            [
+              1344.0,
+              1392.0
+            ]
+          ],
+          "narration_role": "orient",
+          "narration_start_time": 1350.0,
+          "narration_evidence_time": 1344.0,
+          "transition_in": "opening",
+          "needs_visual_review": true
+        }
+      ]
+    },
+    {
+      "id": "willard_war_and_charlotte",
+      "status": "draft",
+      "audience_question": "Where did Willard get this faith?",
+      "exit_answer": null,
+      "next_question": "What holds the family he builds together?",
+      "events": [
+        {
+          "id": "crucified_soldier",
+          "source_start": 240.0,
+          "source_end": 324.0,
+          "summary": "In the Pacific, Willard finds a US soldier nailed up and still alive",
+          "cause_ids": [
+            "prayer_log_present"
+          ],
+          "entry_point": false,
+          "characters": [
+            "Willard"
+          ],
+          "visible_action": "A man lashed to a cross, maggots, Willard raising his sidearm",
+          "emotional_stake": "Everything he later does with God starts here",
+          "question_opened": "What does that leave in him?",
+          "question_answered": null,
+          "reveal_time": 240.0,
+          "must_show": true,
+          "selected_intervals": [
+            [
+              240.0,
+              300.0
+            ]
+          ],
+          "narration_role": "causal_bridge",
+          "narration_start_time": 276.0,
+          "narration_evidence_time": 240.0,
+          "transition_in": "cut",
+          "needs_visual_review": true
+        },
+        {
+          "id": "meets_charlotte",
+          "source_start": 516.0,
+          "source_end": 600.0,
+          "summary": "On the way home he sees Charlotte in a diner and says nothing",
+          "cause_ids": [
+            "crucified_soldier"
+          ],
+          "entry_point": false,
+          "characters": [
+            "Willard",
+            "Charlotte"
+          ],
+          "visible_action": "A diner counter, a waitress, a man walking out without a word",
+          "emotional_stake": "His silence is what lets his mother start arranging his life",
+          "question_opened": "Will he come back for her?",
+          "question_answered": null,
+          "reveal_time": 516.0,
+          "must_show": true,
+          "selected_intervals": [
+            [
+              516.0,
+              576.0
+            ]
+          ],
+          "narration_role": "none",
+          "narration_start_time": null,
+          "narration_evidence_time": null,
+          "transition_in": "cut",
+          "needs_visual_review": true
+        },
+        {
+          "id": "emma_matchmaking",
+          "source_start": 600.0,
+          "source_end": 660.0,
+          "summary": "His mother Emma lines him up with Helen from her church",
+          "cause_ids": [
+            "meets_charlotte"
+          ],
+          "entry_point": false,
+          "characters": [
+            "Willard",
+            "Emma",
+            "Helen"
+          ],
+          "visible_action": "A conversation outside the church, mother and son",
+          "emotional_stake": "Two marriages get decided in one conversation",
+          "question_opened": "Which woman does he choose?",
+          "question_answered": null,
+          "reveal_time": 600.0,
+          "must_show": true,
+          "selected_intervals": [
+            [
+              600.0,
+              648.0
+            ]
+          ],
+          "narration_role": "rule_clarify",
+          "narration_start_time": 612.0,
+          "narration_evidence_time": 600.0,
+          "transition_in": "cut",
+          "needs_visual_review": true
+        }
+      ]
+    },
+    {
+      "id": "roy_and_helen_parallel",
+      "status": "draft",
+      "audience_question": "What became of the other couple from that same church?",
+      "exit_answer": null,
+      "next_question": "How far will that kind of faith go?",
+      "events": [
+        {
+          "id": "roy_spider_sermon",
+          "source_start": 708.0,
+          "source_end": 804.0,
+          "summary": "Roy the preacher pours a jar of spiders over his own head to prove his faith",
+          "cause_ids": [
+            "emma_matchmaking"
+          ],
+          "entry_point": false,
+          "characters": [
+            "Roy",
+            "Helen",
+            "Theodore"
+          ],
+          "visible_action": "A pulpit, a jar of spiders, a congregation coming apart",
+          "emotional_stake": "Summarising this would kill it, so the scene has to play",
+          "question_opened": "What kind of person falls for this man?",
+          "question_answered": null,
+          "reveal_time": 708.0,
+          "must_show": true,
+          "selected_intervals": [
+            [
+              714.0,
+              774.0
+            ]
+          ],
+          "narration_role": "none",
+          "narration_start_time": null,
+          "narration_evidence_time": null,
+          "transition_in": "cut",
+          "needs_visual_review": true
+        },
+        {
+          "id": "helen_chooses_roy",
+          "source_start": 804.0,
+          "source_end": 864.0,
+          "summary": "Helen takes it as a sign and chooses him",
+          "cause_ids": [
+            "roy_spider_sermon"
+          ],
+          "entry_point": false,
+          "characters": [
+            "Roy",
+            "Helen"
+          ],
+          "visible_action": "Helen's face after the service, moving toward him",
+          "emotional_stake": "This is the choice the rest of her life answers for",
+          "question_opened": "How does this marriage end?",
+          "question_answered": null,
+          "reveal_time": 804.0,
+          "must_show": true,
+          "selected_intervals": [
+            [
+              804.0,
+              852.0
+            ]
+          ],
+          "narration_role": "stakes",
+          "narration_start_time": 816.0,
+          "narration_evidence_time": 804.0,
+          "transition_in": "cut",
+          "needs_visual_review": true
+        }
+      ]
+    },
+    {
+      "id": "arvin_boyhood",
+      "status": "draft",
+      "audience_question": "What does the father teach the son?",
+      "exit_answer": null,
+      "next_question": "When does that lesson get used?",
+      "events": [
+        {
+          "id": "arvin_bullied",
+          "source_start": 1224.0,
+          "source_end": 1296.0,
+          "summary": "Arvin gets worked over by older boys on the school bus",
+          "cause_ids": [
+            "meets_charlotte"
+          ],
+          "entry_point": false,
+          "characters": [
+            "Arvin"
+          ],
+          "visible_action": "A bus seat, a swollen eye, a boy keeping his head down",
+          "emotional_stake": "He is carrying it alone, and his father notices",
+          "question_opened": "How does his father step in?",
+          "question_answered": null,
+          "reveal_time": 1224.0,
+          "must_show": true,
+          "selected_intervals": [
+            [
+              1236.0,
+              1284.0
+            ]
+          ],
+          "narration_role": "none",
+          "narration_start_time": null,
+          "narration_evidence_time": null,
+          "transition_in": "cut",
+          "needs_visual_review": true
+        },
+        {
+          "id": "willard_teaches_revenge",
+          "source_start": 1440.0,
+          "source_end": 1536.0,
+          "summary": "Willard teaches Arvin to wait for the right moment and then settle it",
+          "cause_ids": [
+            "arvin_bullied"
+          ],
+          "entry_point": false,
+          "characters": [
+            "Willard",
+            "Arvin"
+          ],
+          "visible_action": "A car pulled over, two men on the ground, a boy watching",
+          "emotional_stake": "Every choice Arvin makes later traces back to this lesson",
+          "question_opened": "When does Arvin use it?",
+          "question_answered": null,
+          "reveal_time": 1440.0,
+          "must_show": true,
+          "selected_intervals": [
+            [
+              1440.0,
+              1512.0
+            ]
+          ],
+          "narration_role": "rule_clarify",
+          "narration_start_time": 1500.0,
+          "narration_evidence_time": 1440.0,
+          "transition_in": "cut",
+          "needs_visual_review": true
+        },
+        {
+          "id": "charlotte_illness",
+          "source_start": 1656.0,
+          "source_end": 1740.0,
+          "summary": "Charlotte collapses at home and the diagnosis comes back cancer",
+          "cause_ids": [
+            "crucified_soldier"
+          ],
+          "entry_point": false,
+          "characters": [
+            "Charlotte",
+            "Willard"
+          ],
+          "visible_action": "A woman on the kitchen floor, her husband running",
+          "emotional_stake": "This is where the praying stops working",
+          "question_opened": "How far will Willard go to fix it?",
+          "question_answered": null,
+          "reveal_time": 1656.0,
+          "must_show": true,
+          "selected_intervals": [
+            [
+              1656.0,
+              1716.0
+            ]
+          ],
+          "narration_role": "causal_bridge",
+          "narration_start_time": 1692.0,
+          "narration_evidence_time": 1656.0,
+          "transition_in": "cut",
+          "needs_visual_review": true
+        },
+        {
+          "id": "jack_sacrifice",
+          "source_start": 1740.0,
+          "source_end": 1836.0,
+          "summary": "Willard sacrifices Arvin's dog at the prayer log",
+          "cause_ids": [
+            "charlotte_illness"
+          ],
+          "entry_point": false,
+          "characters": [
+            "Willard",
+            "Arvin"
+          ],
+          "visible_action": "The cross, a man carrying a dog up the hill, his son's face",
+          "emotional_stake": "The moment Arvin stops believing anything his father believes",
+          "question_opened": "What is left for the boy?",
+          "question_answered": null,
+          "reveal_time": 1740.0,
+          "must_show": true,
+          "selected_intervals": [
+            [
+              1740.0,
+              1812.0
+            ]
+          ],
+          "narration_role": "stakes",
+          "narration_start_time": 1800.0,
+          "narration_evidence_time": 1740.0,
+          "transition_in": "cut",
+          "needs_visual_review": true
+        }
+      ]
+    },
+    {
+      "id": "roy_ends",
+      "status": "draft",
+      "audience_question": "Where does Roy's faith finally stop?",
+      "exit_answer": null,
+      "next_question": "Where does their child end up?",
+      "events": [
+        {
+          "id": "roy_kills_helen",
+          "source_start": 2328.0,
+          "source_end": 2436.0,
+          "summary": "Roy kills Helen in the woods, then tries to raise her from the dead",
+          "cause_ids": [
+            "helen_chooses_roy"
+          ],
+          "entry_point": false,
+          "characters": [
+            "Roy",
+            "Helen",
+            "Theodore"
+          ],
+          "visible_action": "Woods, a screwdriver, a body, two men driving away",
+          "emotional_stake": "Faith turns into murder in about a minute",
+          "question_opened": "How far does he get?",
+          "question_answered": null,
+          "reveal_time": 2328.0,
+          "must_show": true,
+          "selected_intervals": [
+            [
+              2328.0,
+              2412.0
+            ]
+          ],
+          "narration_role": "causal_bridge",
+          "narration_start_time": 2388.0,
+          "narration_evidence_time": 2328.0,
+          "transition_in": "cut",
+          "needs_visual_review": true
+        },
+        {
+          "id": "roy_meets_carl",
+          "source_start": 2724.0,
+          "source_end": 2844.0,
+          "summary": "Roy thumbs a ride and gets into Carl and Sandy's car",
+          "cause_ids": [
+            "roy_kills_helen"
+          ],
+          "entry_point": false,
+          "characters": [
+            "Roy",
+            "Carl",
+            "Sandy"
+          ],
+          "visible_action": "A highway, a man getting in, a camera on the seat",
+          "emotional_stake": "We can see what he is getting into and he cannot",
+          "question_opened": "Why does this couple pick people up?",
+          "question_answered": null,
+          "reveal_time": 2724.0,
+          "must_show": true,
+          "selected_intervals": [
+            [
+              2724.0,
+              2808.0
+            ]
+          ],
+          "narration_role": "stakes",
+          "narration_start_time": 2772.0,
+          "narration_evidence_time": 2724.0,
+          "transition_in": "cut",
+          "needs_visual_review": true
+        }
+      ]
+    },
+    {
+      "id": "arvin_and_lenora_grow",
+      "status": "draft",
+      "audience_question": "How do the two orphaned kids grow up?",
+      "exit_answer": null,
+      "next_question": "Who walks into their lives next?",
+      "events": [
+        {
+          "id": "lenora_and_arvin",
+          "source_start": 2544.0,
+          "source_end": 2616.0,
+          "summary": "A grown Arvin settles it for Lenora when boys go after her",
+          "cause_ids": [
+            "willard_teaches_revenge"
+          ],
+          "entry_point": false,
+          "characters": [
+            "Arvin",
+            "Lenora"
+          ],
+          "visible_action": "Behind the school, three boys down, Arvin walking her home",
+          "emotional_stake": "His father's rule is running him now",
+          "question_opened": "What are these two to each other?",
+          "question_answered": null,
+          "reveal_time": 2544.0,
+          "must_show": true,
+          "selected_intervals": [
+            [
+              2544.0,
+              2604.0
+            ]
+          ],
+          "narration_role": "causal_bridge",
+          "narration_start_time": 2580.0,
+          "narration_evidence_time": 2544.0,
+          "transition_in": "cut",
+          "needs_visual_review": true
+        },
+        {
+          "id": "earskell_gives_pistol",
+          "source_start": 2904.0,
+          "source_end": 2988.0,
+          "summary": "Uncle Earskell hands Arvin his father's pistol for his birthday",
+          "cause_ids": [
+            "crucified_soldier"
+          ],
+          "entry_point": false,
+          "characters": [
+            "Arvin"
+          ],
+          "visible_action": "A kitchen table, an old Luger, a boy taking it",
+          "emotional_stake": "Once the gun is on screen the only question is when",
+          "question_opened": "Who does that gun end up pointed at?",
+          "question_answered": null,
+          "reveal_time": 2904.0,
+          "must_show": true,
+          "selected_intervals": [
+            [
+              2904.0,
+              2976.0
+            ]
+          ],
+          "narration_role": "stakes",
+          "narration_start_time": 2940.0,
+          "narration_evidence_time": 2904.0,
+          "transition_in": "cut",
+          "needs_visual_review": true
+        }
+      ]
+    },
+    {
+      "id": "preacher_arrives",
+      "status": "draft",
+      "audience_question": "What does the new preacher bring to this town?",
+      "exit_answer": null,
+      "next_question": "What happens to Lenora?",
+      "events": [
+        {
+          "id": "teagardin_arrives",
+          "source_start": 3120.0,
+          "source_end": 3192.0,
+          "summary": "Preston Teagardin takes over the pulpit",
+          "cause_ids": [],
+          "entry_point": true,
+          "characters": [
+            "Preston"
+          ],
+          "visible_action": "A new preacher at the church, a grandmother cooking to welcome him",
+          "emotional_stake": "One arrival tips the whole town",
+          "question_opened": "What kind of man is he?",
+          "question_answered": null,
+          "reveal_time": 3120.0,
+          "must_show": true,
+          "selected_intervals": [
+            [
+              3120.0,
+              3180.0
+            ]
+          ],
+          "narration_role": "orient",
+          "narration_start_time": 3144.0,
+          "narration_evidence_time": 3120.0,
+          "transition_in": "cut",
+          "needs_visual_review": true
+        },
+        {
+          "id": "teagardin_sermon",
+          "source_start": 3336.0,
+          "source_end": 3444.0,
+          "summary": "Teagardin turns a welcome dinner into a sermon aimed at the room",
+          "cause_ids": [
+            "teagardin_arrives"
+          ],
+          "entry_point": false,
+          "characters": [
+            "Preston"
+          ],
+          "visible_action": "A preacher standing over a table, chicken livers, faces going stiff",
+          "emotional_stake": "His whole method is in how he talks, so let him talk",
+          "question_opened": "Who does that voice get turned on?",
+          "question_answered": null,
+          "reveal_time": 3336.0,
+          "must_show": true,
+          "selected_intervals": [
+            [
+              3348.0,
+              3432.0
+            ]
+          ],
+          "narration_role": "none",
+          "narration_start_time": null,
+          "narration_evidence_time": null,
+          "transition_in": "cut",
+          "needs_visual_review": true
+        },
+        {
+          "id": "lenora_groomed",
+          "source_start": 3816.0,
+          "source_end": 3924.0,
+          "summary": "Teagardin uses counselling to get Lenora alone",
+          "cause_ids": [
+            "teagardin_sermon"
+          ],
+          "entry_point": false,
+          "characters": [
+            "Preston",
+            "Lenora"
+          ],
+          "visible_action": "A parked car, an empty church, a girl and a preacher",
+          "emotional_stake": "He uses her faith as the way in",
+          "question_opened": "What does she think is happening?",
+          "question_answered": null,
+          "reveal_time": 3816.0,
+          "must_show": true,
+          "selected_intervals": [
+            [
+              3816.0,
+              3900.0
+            ]
+          ],
+          "narration_role": "character_subtext",
+          "narration_start_time": 3864.0,
+          "narration_evidence_time": 3816.0,
+          "transition_in": "cut",
+          "needs_visual_review": true
+        }
+      ]
+    },
+    {
+      "id": "predators_established",
+      "status": "draft",
+      "audience_question": "Who is the law here, and who is hunting?",
+      "exit_answer": null,
+      "next_question": "When do these roads cross Arvin's?",
+      "events": [
+        {
+          "id": "carl_method",
+          "source_start": 4080.0,
+          "source_end": 4164.0,
+          "summary": "Carl's rule for picking hitchhikers gets spelled out",
+          "cause_ids": [
+            "roy_meets_carl"
+          ],
+          "entry_point": false,
+          "characters": [
+            "Carl",
+            "Sandy"
+          ],
+          "visible_action": "A camera, a highway, another man getting in",
+          "emotional_stake": "Now every ride in this film reads as a countdown",
+          "question_opened": "Who is next?",
+          "question_answered": null,
+          "reveal_time": 4080.0,
+          "must_show": true,
+          "selected_intervals": [
+            [
+              4080.0,
+              4152.0
+            ]
+          ],
+          "narration_role": "rule_clarify",
+          "narration_start_time": 4104.0,
+          "narration_evidence_time": 4080.0,
+          "transition_in": "cut",
+          "needs_visual_review": true
+        },
+        {
+          "id": "bodecker_corruption",
+          "source_start": 4320.0,
+          "source_end": 4416.0,
+          "summary": "Sheriff Bodecker runs the county on bribes and threats",
+          "cause_ids": [],
+          "entry_point": true,
+          "characters": [
+            "Bodecker"
+          ],
+          "visible_action": "Campaign signs, a diner booth, an envelope changing hands",
+          "emotional_stake": "The law here is not protection, it is another threat",
+          "question_opened": "If Arvin gets in trouble, who comes for him?",
+          "question_answered": null,
+          "reveal_time": 4320.0,
+          "must_show": true,
+          "selected_intervals": [
+            [
+              4320.0,
+              4404.0
+            ]
+          ],
+          "narration_role": "stakes",
+          "narration_start_time": 4356.0,
+          "narration_evidence_time": 4320.0,
+          "transition_in": "cut",
+          "needs_visual_review": true
+        }
+      ]
+    },
+    {
+      "id": "lenora_breaks",
+      "status": "draft",
+      "audience_question": "How far is Lenora pushed?",
+      "exit_answer": null,
+      "next_question": "What does Arvin find out?",
+      "events": [
+        {
+          "id": "lenora_pregnant",
+          "source_start": 5040.0,
+          "source_end": 5136.0,
+          "summary": "Lenora tells Teagardin she is pregnant and he turns on her",
+          "cause_ids": [
+            "lenora_groomed"
+          ],
+          "entry_point": false,
+          "characters": [
+            "Lenora",
+            "Preston"
+          ],
+          "visible_action": "A car, a preacher facing away, a girl left in it",
+          "emotional_stake": "He makes it her fault and drives off",
+          "question_opened": "What is left open to her?",
+          "question_answered": null,
+          "reveal_time": 5040.0,
+          "must_show": true,
+          "selected_intervals": [
+            [
+              5040.0,
+              5124.0
+            ]
+          ],
+          "narration_role": "causal_bridge",
+          "narration_start_time": 5088.0,
+          "narration_evidence_time": 5040.0,
+          "transition_in": "cut",
+          "needs_visual_review": true
+        },
+        {
+          "id": "lenora_dies",
+          "source_start": 5280.0,
+          "source_end": 5376.0,
+          "summary": "Lenora hangs herself, and changes her mind a second too late",
+          "cause_ids": [
+            "lenora_pregnant"
+          ],
+          "entry_point": false,
+          "characters": [
+            "Lenora"
+          ],
+          "visible_action": "A barn, a bucket, a girl who has just realised she was wrong",
+          "emotional_stake": "We are told what she is thinking while it happens",
+          "question_opened": "How does Arvin learn the truth?",
+          "question_answered": null,
+          "reveal_time": 5280.0,
+          "must_show": true,
+          "selected_intervals": [
+            [
+              5280.0,
+              5364.0
+            ]
+          ],
+          "narration_role": "reflection",
+          "narration_start_time": 5340.0,
+          "narration_evidence_time": 5280.0,
+          "transition_in": "cut",
+          "needs_visual_review": true
+        },
+        {
+          "id": "suicide_burial_refused",
+          "source_start": 5496.0,
+          "source_end": 5556.0,
+          "summary": "Arvin hears the church will not bury a suicide",
+          "cause_ids": [
+            "lenora_dies"
+          ],
+          "entry_point": false,
+          "characters": [
+            "Arvin"
+          ],
+          "visible_action": "A kitchen conversation, a boy's face closing",
+          "emotional_stake": "The man who did it is fine, and she is the one shut out",
+          "question_opened": "What does Arvin decide?",
+          "question_answered": null,
+          "reveal_time": 5496.0,
+          "must_show": true,
+          "selected_intervals": [
+            [
+              5496.0,
+              5544.0
+            ]
+          ],
+          "narration_role": "causal_bridge",
+          "narration_start_time": 5520.0,
+          "narration_evidence_time": 5496.0,
+          "transition_in": "cut",
+          "needs_visual_review": true
+        }
+      ]
+    },
+    {
+      "id": "arvin_acts",
+      "status": "draft",
+      "audience_question": "Who does Arvin use his father's rule on?",
+      "exit_answer": null,
+      "next_question": "Where does he go after that?",
+      "events": [
+        {
+          "id": "arvin_confronts_preacher",
+          "source_start": 5760.0,
+          "source_end": 5916.0,
+          "summary": "Arvin calls Teagardin out by asking for time as a sinner",
+          "cause_ids": [
+            "suicide_burial_refused",
+            "earskell_gives_pistol"
+          ],
+          "entry_point": false,
+          "characters": [
+            "Arvin",
+            "Preston"
+          ],
+          "visible_action": "An empty church, two men sitting, a pistol",
+          "emotional_stake": "The longest verbal fight in the film, so it plays with nothing over it",
+          "question_opened": "What does the preacher admit?",
+          "question_answered": null,
+          "reveal_time": 5760.0,
+          "must_show": true,
+          "selected_intervals": [
+            [
+              5772.0,
+              5904.0
+            ]
+          ],
+          "narration_role": "none",
+          "narration_start_time": null,
+          "narration_evidence_time": null,
+          "transition_in": "cut",
+          "needs_visual_review": true
+        },
+        {
+          "id": "preacher_dies",
+          "source_start": 5976.0,
+          "source_end": 6060.0,
+          "summary": "Talking runs out and Arvin fires",
+          "cause_ids": [
+            "arvin_confronts_preacher"
+          ],
+          "entry_point": false,
+          "characters": [
+            "Arvin",
+            "Preston"
+          ],
+          "visible_action": "A shot inside a church, a young man leaving fast",
+          "emotional_stake": "The line he cannot walk back",
+          "question_opened": "Who starts hunting him now?",
+          "question_answered": null,
+          "reveal_time": 5976.0,
+          "must_show": true,
+          "selected_intervals": [
+            [
+              5976.0,
+              6048.0
+            ]
+          ],
+          "narration_role": "stakes",
+          "narration_start_time": 6012.0,
+          "narration_evidence_time": 5976.0,
+          "transition_in": "cut",
+          "needs_visual_review": true
+        }
+      ]
+    },
+    {
+      "id": "roads_converge",
+      "status": "draft",
+      "audience_question": "Whose car picks up a boy on the run?",
+      "exit_answer": null,
+      "next_question": "What does the sheriff learn?",
+      "events": [
+        {
+          "id": "arvin_rides_with_carl",
+          "source_start": 6384.0,
+          "source_end": 6516.0,
+          "summary": "On the run, Arvin gets into Carl and Sandy's car",
+          "cause_ids": [
+            "preacher_dies",
+            "carl_method"
+          ],
+          "entry_point": false,
+          "characters": [
+            "Arvin",
+            "Carl",
+            "Sandy"
+          ],
+          "visible_action": "A highway, a boy in the back seat, the car turning off into trees",
+          "emotional_stake": "The rule from earlier means we already know what this ride is",
+          "question_opened": "Who moves first?",
+          "question_answered": null,
+          "reveal_time": 6384.0,
+          "must_show": true,
+          "selected_intervals": [
+            [
+              6384.0,
+              6504.0
+            ]
+          ],
+          "narration_role": "stakes",
+          "narration_start_time": 6432.0,
+          "narration_evidence_time": 6384.0,
+          "transition_in": "cut",
+          "needs_visual_review": true
+        },
+        {
+          "id": "woods_shootout",
+          "source_start": 6564.0,
+          "source_end": 6684.0,
+          "summary": "In the woods it goes wrong for the couple instead",
+          "cause_ids": [
+            "arvin_rides_with_carl"
+          ],
+          "entry_point": false,
+          "characters": [
+            "Arvin",
+            "Carl",
+            "Sandy"
+          ],
+          "visible_action": "A clearing, a camera, two guns",
+          "emotional_stake": "The film's two loaded threats finally hit each other",
+          "question_opened": "Whose family does this land on?",
+          "question_answered": null,
+          "reveal_time": 6564.0,
+          "must_show": true,
+          "selected_intervals": [
+            [
+              6576.0,
+              6672.0
+            ]
+          ],
+          "narration_role": "none",
+          "narration_start_time": null,
+          "narration_evidence_time": null,
+          "transition_in": "cut",
+          "needs_visual_review": true
+        },
+        {
+          "id": "bodecker_learns",
+          "source_start": 6720.0,
+          "source_end": 6816.0,
+          "summary": "Bodecker learns the two bodies are his sister and her husband",
+          "cause_ids": [
+            "woods_shootout",
+            "bodecker_corruption"
+          ],
+          "entry_point": false,
+          "characters": [
+            "Bodecker"
+          ],
+          "visible_action": "A radio call, a sheriff driving out, a scene in the woods",
+          "emotional_stake": "This stops being police work",
+          "question_opened": "Where will he look for Arvin?",
+          "question_answered": null,
+          "reveal_time": 6720.0,
+          "must_show": true,
+          "selected_intervals": [
+            [
+              6720.0,
+              6804.0
+            ]
+          ],
+          "narration_role": "causal_bridge",
+          "narration_start_time": 6768.0,
+          "narration_evidence_time": 6720.0,
+          "transition_in": "cut",
+          "needs_visual_review": true
+        }
+      ]
+    },
+    {
+      "id": "cornered",
+      "status": "draft",
+      "audience_question": "What is waiting where Arvin goes back to?",
+      "exit_answer": null,
+      "next_question": null,
+      "events": [
+        {
+          "id": "arvin_returns_home",
+          "source_start": 6984.0,
+          "source_end": 7104.0,
+          "summary": "Arvin walks back to the empty hill he grew up on",
+          "cause_ids": [
+            "woods_shootout"
+          ],
+          "entry_point": false,
+          "characters": [
+            "Arvin"
+          ],
+          "visible_action": "A collapsed house and barn, a short exchange with a stranger",
+          "emotional_stake": "He has come back to where it started, which is not an accident",
+          "question_opened": "Why here?",
+          "question_answered": null,
+          "reveal_time": 6984.0,
+          "must_show": true,
+          "selected_intervals": [
+            [
+              6984.0,
+              7092.0
+            ]
+          ],
+          "narration_role": "reflection",
+          "narration_start_time": 7032.0,
+          "narration_evidence_time": 6984.0,
+          "transition_in": "cut",
+          "needs_visual_review": true
+        },
+        {
+          "id": "arvin_understands_father",
+          "source_start": 7338.0,
+          "source_end": 7392.0,
+          "summary": "Arvin finally understands his father had no choice either",
+          "cause_ids": [
+            "jack_sacrifice",
+            "arvin_returns_home"
+          ],
+          "entry_point": false,
+          "characters": [
+            "Arvin",
+            "Willard"
+          ],
+          "visible_action": "The rotted prayer log, and his father's face in memory",
+          "emotional_stake": "The one moment he forgives the man who ruined him",
+          "question_opened": "Where does that leave him?",
+          "question_answered": null,
+          "reveal_time": 7338.0,
+          "must_show": true,
+          "selected_intervals": [
+            [
+              7338.0,
+              7386.0
+            ]
+          ],
+          "narration_role": "reflection",
+          "narration_start_time": 7362.0,
+          "narration_evidence_time": 7338.0,
+          "transition_in": "cut",
+          "needs_visual_review": true
+        },
+        {
+          "id": "bodecker_calls_him_out",
+          "source_start": 7404.0,
+          "source_end": 7476.0,
+          "summary": "Bodecker calls his name through the trees",
+          "cause_ids": [
+            "bodecker_learns",
+            "arvin_understands_father"
+          ],
+          "entry_point": false,
+          "characters": [
+            "Bodecker",
+            "Arvin"
+          ],
+          "visible_action": "A sheriff with a gun, timber, a young man not moving",
+          "emotional_stake": "Hunter and hunted are finally in the same clearing",
+          "question_opened": "Does Arvin come out?",
+          "question_answered": null,
+          "reveal_time": 7404.0,
+          "must_show": true,
+          "selected_intervals": [
+            [
+              7404.0,
+              7470.0
+            ]
+          ],
+          "narration_role": "stakes",
+          "narration_start_time": 7434.0,
+          "narration_evidence_time": 7404.0,
+          "transition_in": "cut",
+          "needs_visual_review": true
+        },
+        {
+          "id": "standoff",
+          "source_start": 7494.0,
+          "source_end": 7570.2,
+          "summary": "Both guns up, Arvin offering a photograph as proof and asking him to stand down",
+          "cause_ids": [
+            "bodecker_calls_him_out"
+          ],
+          "entry_point": false,
+          "characters": [
+            "Arvin",
+            "Bodecker"
+          ],
+          "visible_action": "Two men facing each other, two barrels, a snapshot in a pocket",
+          "emotional_stake": "The last second this could end with words is running out",
+          "question_opened": "Who fires first?",
+          "question_answered": null,
+          "reveal_time": 7494.0,
+          "must_show": true,
+          "selected_intervals": [
+            [
+              7494.0,
+              7570.2
+            ]
+          ],
+          "narration_role": "none",
+          "narration_start_time": null,
+          "narration_evidence_time": null,
+          "transition_in": "cut",
+          "needs_visual_review": true
+        }
+      ]
+    },
+    {
+      "id": "closing_wrap",
+      "status": "draft",
+      "audience_question": "What was this story actually about?",
+      "exit_answer": null,
+      "next_question": null,
+      "events": [
+        {
+          "id": "closing_theme",
+          "source_start": 1872.0,
+          "source_end": 1956.0,
+          "summary": "One line of theme over a boy walking away from that cross",
+          "cause_ids": [
+            "standoff"
+          ],
+          "entry_point": false,
+          "characters": [
+            "Arvin",
+            "Willard"
+          ],
+          "visible_action": "The log cross, and Arvin's back as he leaves it",
+          "emotional_stake": "Every choice made for good reasons leaves blood behind it, and that is the film",
+          "question_opened": "Where do choices like that end?",
+          "question_answered": null,
+          "reveal_time": 1872.0,
+          "must_show": false,
+          "selected_intervals": [
+            [
+              1872.0,
+              1956.0
+            ]
+          ],
+          "narration_role": "reflection",
+          "narration_start_time": 1884.0,
+          "narration_evidence_time": 1872.0,
+          "transition_in": "bridge",
+          "needs_visual_review": true
+        },
+        {
+          "id": "closing_cast_hook",
+          "source_start": 6072.0,
+          "source_end": 6156.0,
+          "summary": "The cast promised in the title, finally named",
+          "cause_ids": [
+            "closing_theme"
+          ],
+          "entry_point": false,
+          "characters": [
+            "Arvin"
+          ],
+          "visible_action": "Arvin leaving the church, the other faces still fresh",
+          "emotional_stake": "Tom Holland, Robert Pattinson, Sebastian Stan and Eliza Scanlen in one small film is the hook",
+          "question_opened": "Why did all of them sign up for this one?",
+          "question_answered": null,
+          "reveal_time": 6072.0,
+          "must_show": false,
+          "selected_intervals": [
+            [
+              6072.0,
+              6156.0
+            ]
+          ],
+          "narration_role": "reflection",
+          "narration_start_time": 6084.0,
+          "narration_evidence_time": 6072.0,
+          "transition_in": "bridge",
+          "needs_visual_review": true
+        }
+      ]
+    }
+  ]
+}

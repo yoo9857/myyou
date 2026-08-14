@@ -27,6 +27,7 @@ ROOT = Path(__file__).resolve().parent.parent
 REFS = ROOT / "work" / "references"
 MERGE_TOLERANCE = 0.08
 WINDOW = 300.0
+BLANK_LINE = re.compile(r"\n\s*\n")
 
 
 def video_id(value: str) -> str:
@@ -70,25 +71,64 @@ def fetch_subs(vid: str) -> Path:
     return existing[0]
 
 
-def cues(path: Path) -> list[tuple[float, float]]:
+def cues(path: Path) -> list[tuple[float, float, str]]:
     pattern = re.compile(r"(\d\d):(\d\d):(\d\d),(\d{3}) --> (\d\d):(\d\d):(\d\d),(\d{3})")
     out = []
-    for g in pattern.findall(path.read_text(encoding="utf-8-sig", errors="replace")):
+    for chunk in BLANK_LINE.split(path.read_text(encoding="utf-8-sig",
+                                                 errors="replace").strip()):
+        lines = [l.strip() for l in chunk.splitlines() if l.strip()]
+        if len(lines) < 3:
+            continue
+        m = pattern.search(lines[1])
+        if not m:
+            continue
+        g = m.groups()
         a = int(g[0]) * 3600 + int(g[1]) * 60 + int(g[2]) + int(g[3]) / 1000
         b = int(g[4]) * 3600 + int(g[5]) * 60 + int(g[6]) + int(g[7]) / 1000
         if b > a:
-            out.append((a, b))
+            out.append((a, b, " ".join(lines[2:])))
     return sorted(out)
 
 
-def merge(spans: list[tuple[float, float]]) -> list[tuple[float, float]]:
-    merged: list[list[float]] = []
-    for a, b in spans:
+def merge(spans: list[tuple[float, float, str]]) -> list[tuple[float, float, str]]:
+    """Rolling captions repeat their tail in the next cue; drop the repeat when joining."""
+    merged: list[list] = []
+    for a, b, text in spans:
         if merged and a <= merged[-1][1] + MERGE_TOLERANCE:
+            words, new = merged[-1][2].split(), text.split()
+            overlap = next((k for k in range(min(len(words), len(new)), 0, -1)
+                            if words[-k:] == new[:k]), 0)
             merged[-1][1] = max(merged[-1][1], b)
+            merged[-1][2] = " ".join(words + new[overlap:])
         else:
-            merged.append([a, b])
-    return [(a, b) for a, b in merged]
+            merged.append([a, b, text])
+    return [(a, b, t) for a, b, t in merged]
+
+
+HANGUL = re.compile(r"[가-힣]")
+LATIN = re.compile(r"[A-Za-z]")
+NON_SPEECH = re.compile(r"^[\s>\[\]음악비명박수웃음한숨]*$")
+
+
+def classify(spans: list[tuple[float, float, str]]) -> dict[str, list[tuple[float, float]]]:
+    """Split spoken blocks into reviewer narration, kept film dialogue, and markers.
+
+    A Korean caption track on an English-language film still transcribes the film's own
+    dialogue wherever the reviewer leaves it in, so raw coverage over-states the narration
+    share. On one reference it read 54.2 percent; the narration was 41.9 and the film's own
+    lines were another 10.2. Script rules keyed to the wrong figure would ask for a density
+    that reference never had.
+    """
+    out: dict[str, list[tuple[float, float]]] = {"narration": [], "film_dialogue": [],
+                                                 "markers": []}
+    for a, b, text in spans:
+        body = re.sub(r">>|\[[^\]]*\]", "", text).strip()
+        if not body or NON_SPEECH.match(text):
+            out["markers"].append((a, b))
+            continue
+        hangul, latin = len(HANGUL.findall(body)), len(LATIN.findall(body))
+        out["narration" if hangul >= latin else "film_dialogue"].append((a, b))
+    return out
 
 
 def quantiles(values: list[float]) -> dict[str, float]:
@@ -115,22 +155,24 @@ def main() -> int:
     regions = merge(raw)
     duration = meta["duration_seconds"] or (regions[-1][1] if regions else 0.0)
 
-    spoken = sum(b - a for a, b in regions)
-    gaps = [regions[i + 1][0] - regions[i][1] for i in range(len(regions) - 1)]
+    spoken = sum(b - a for a, b, _ in regions)
+    kinds = classify(regions)
+    narration = kinds["narration"]
+    gaps = [narration[i + 1][0] - narration[i][1] for i in range(len(narration) - 1)]
     gaps = [g for g in gaps if g > 0]
 
     windows = []
     edge = 0.0
     while edge < duration:
         top = min(edge + WINDOW, duration)
-        covered = sum(max(0.0, min(b, top) - max(a, edge)) for a, b in regions)
+        covered = sum(max(0.0, min(b, top) - max(a, edge)) for a, b in narration)
         windows.append({
             "window": f"{int(edge)//60:02d}:{int(edge)%60:02d}-{int(top)//60:02d}:{int(top)%60:02d}",
             "percent": round(covered / (top - edge) * 100, 1),
         })
         edge = top
 
-    rq = quantiles([b - a for a, b in regions])
+    rq = quantiles([b - a for a, b in narration])
     gq = quantiles(gaps)
     metrics = {
         "source": f"https://www.youtube.com/watch?v={vid}",
@@ -145,11 +187,18 @@ def main() -> int:
                        "narration share. Caption-free windows may contain movie dialogue, "
                        "reactions, action, music, or effects and must not be read as silence.",
         "subtitle_cues": len(raw),
-        "merged_korean_caption_regions": len(regions),
-        "caption_interval_coverage_percent": round(spoken / duration * 100, 1) if duration else 0.0,
-        "merged_caption_region_duration_median_seconds": rq["median"],
-        "merged_caption_region_duration_p75_seconds": rq["p75"],
-        "merged_caption_region_duration_p90_seconds": rq["p90"],
+        "merged_spoken_regions": len(regions),
+        "spoken_coverage_percent": round(spoken / duration * 100, 1) if duration else 0.0,
+        "narration_blocks": len(narration),
+        "narration_share_percent": round(
+            sum(b - a for a, b in narration) / duration * 100, 1) if duration else 0.0,
+        "kept_film_dialogue_blocks": len(kinds["film_dialogue"]),
+        "kept_film_dialogue_percent": round(
+            sum(b - a for a, b in kinds["film_dialogue"]) / duration * 100, 1) if duration else 0.0,
+        "narration_cycle_seconds": round(duration / len(narration), 1) if narration else 0.0,
+        "narration_block_duration_median_seconds": rq["median"],
+        "narration_block_duration_p75_seconds": rq["p75"],
+        "narration_block_duration_p90_seconds": rq["p90"],
         "narrator_free_gap_median_seconds": gq["median"],
         "narrator_free_gap_p75_seconds": gq["p75"],
         "narrator_free_gap_p90_seconds": gq["p90"],
@@ -167,11 +216,13 @@ def main() -> int:
                         encoding="utf-8")
     print(f"기록: {out_path.relative_to(ROOT)}")
     for key in ("title", "channel", "duration_seconds", "subtitle_cues",
-                "merged_korean_caption_regions", "caption_interval_coverage_percent",
-                "merged_caption_region_duration_median_seconds",
+                "merged_spoken_regions", "spoken_coverage_percent",
+                "narration_blocks", "narration_share_percent", "narration_cycle_seconds",
+                "kept_film_dialogue_blocks", "kept_film_dialogue_percent",
+                "narration_block_duration_median_seconds",
                 "narrator_free_gap_median_seconds", "narrator_free_gaps_ge_4_seconds"):
         print(f"  {key:44} {metrics[key]}")
-    print("  구간별 발화 밀도:")
+    print("  구간별 해설 밀도:")
     for w in windows:
         bar = "#" * int(w["percent"] / 3)
         print(f"    {w['window']}  {w['percent']:5.1f}%  {bar}")
