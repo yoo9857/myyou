@@ -499,6 +499,7 @@ for section in sections:
 story_map = {
     "schema_version": 1,
     "project_title": "THE DEVIL ALL THE TIME REVIEW",
+    "premise": "In postwar southern Ohio and West Virginia, a boy raised on his father's violent prayers grows up among preachers, a serial-killing couple and a corrupt sheriff, and every one of them does the worst thing they do for a reason they believe is good.",
     "timeline_mode": "audience_reveal",
     "timeline_mode_reason": "The review opens on the prayer log at 22:24 and then rewinds to "
                             "the war, and it groups the film's cross-cut threads by character. "

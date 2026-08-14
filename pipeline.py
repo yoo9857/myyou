@@ -23,7 +23,10 @@ SHEETS = WORK / "contact_sheets"
 RENDER = WORK / "render"
 OUTPUT = ROOT / "output"
 CAPCUT = OUTPUT / "capcut_import"
-SFX_MANIFEST = ROOT / "assets" / "sfx" / "narration_preroll" / "manifest.json"
+_SFX_RELATIVE = Path("assets") / "sfx" / "narration_preroll" / "manifest.json"
+# The preroll library is shared. A project only carries its own copy if it needs different
+# assets; otherwise it uses the one beside the code, same as the learning registry does.
+SFX_MANIFEST = ROOT / _SFX_RELATIVE if (ROOT / _SFX_RELATIVE).exists() else CODE_ROOT / _SFX_RELATIVE
 
 
 @dataclass
@@ -537,7 +540,13 @@ def segment_sfx_asset(seg: dict[str, Any]) -> tuple[str, Path, dict[str, Any]] |
     spec = manifest.get("assets", {}).get(asset_id)
     if not spec:
         raise ValueError(f"알 수 없는 나레이션 프리롤 효과음입니다: {asset_id}")
-    path = ROOT / str(spec["processed_path"])
+    # The asset sits beside whichever manifest was loaded, so a project using the shared
+    # library gets the shared wav files rather than being asked for its own copies.
+    # processed_path is written relative to the root that contains assets/, three levels
+    # above the manifest itself.
+    path = SFX_MANIFEST.parents[3] / str(spec["processed_path"])
+    if not path.exists():
+        path = ROOT / str(spec["processed_path"])
     if not path.exists():
         raise FileNotFoundError(f"프리롤 효과음 파일을 찾을 수 없습니다: {path}")
     expected_hash = str(spec.get("processed_sha256", "")).upper()

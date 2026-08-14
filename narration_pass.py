@@ -15,7 +15,10 @@ DEFAULT_SOURCE = OUTPUT / "edit_plan_v4_curiosity_hook.json"
 SCRIPT_JSON = OUTPUT / "narration_script_v5.json"
 SCRIPT_MD = OUTPUT / "narration_script_v5.md"
 TARGET_PLAN = OUTPUT / "edit_plan_v5_narration.json"
-SFX_MANIFEST = ROOT / "assets" / "sfx" / "narration_preroll" / "manifest.json"
+_SFX_RELATIVE = Path("assets") / "sfx" / "narration_preroll" / "manifest.json"
+# The preroll library is shared. A project only carries its own copy if it needs different
+# assets; otherwise it uses the one beside the code, same as the learning registry does.
+SFX_MANIFEST = ROOT / _SFX_RELATIVE if (ROOT / _SFX_RELATIVE).exists() else CODE_ROOT / _SFX_RELATIVE
 
 
 def compact_dialogue(cues: list[Any], start: float, end: float, limit: int = 240) -> str:
@@ -65,6 +68,14 @@ def visible_korean_chars(text: str) -> int:
     return len(re.sub(r"[\s,.!?·…'\"“”‘’]", "", text))
 
 
+def _sfx_durations() -> dict[str, float]:
+    manifest = json.loads(SFX_MANIFEST.read_text(encoding="utf-8"))
+    return {
+        asset_id: float(spec.get("duration_seconds", 0.0))
+        for asset_id, spec in manifest.get("assets", {}).items()
+    }
+
+
 def normalize_script(script: dict[str, Any], config: dict[str, Any] | None = None) -> None:
     """Keep user-approved anchor copy stable across model regenerations."""
     for item in script.get("items", []):
@@ -72,6 +83,14 @@ def normalize_script(script: dict[str, Any], config: dict[str, Any] | None = Non
         item["tts_en"] = str(item.get("tts_en", "")).strip()
         item["sfx_preroll"] = str(item.get("sfx_preroll", "none")).strip() or "none"
         item["sfx_lead_seconds"] = float(item.get("sfx_lead_seconds", 0.0) or 0.0)
+        # The lead is arithmetic, not judgement: the effect has to finish so that only its
+        # quiet tail runs under the first fifth of a second of speech, which fixes the lead
+        # at the asset's own length minus that overlap. Left to the model it comes back
+        # wrong - a 0.7 s asset was given a 0.9 s lead, putting the effect after the words.
+        if item["sfx_preroll"] != "none":
+            duration = _sfx_durations().get(item["sfx_preroll"])
+            if duration:
+                item["sfx_lead_seconds"] = round(min(max(duration - 0.20, 0.15), 1.0), 3)
         item["sfx_rationale"] = str(item.get("sfx_rationale", "")).strip()
         item["scene_protection"] = str(item.get("scene_protection", "unreviewed")).strip() or "unreviewed"
         if config and int(item.get("order", 0)) == 1 and config.get("hook_caption_ko"):
@@ -94,6 +113,10 @@ def validate_script(script: dict[str, Any], candidate_orders: set[int], config: 
         extra = sorted(set(orders) - candidate_orders)
         raise ValueError(f"나레이션 후보 불일치: missing={missing}, extra={extra}")
 
+    # 32 characters is a Korean caption's readable width. The same count in English is
+    # about four words, so a review narrated in English is measured in words instead - the
+    # caption carries the same sentence as the voice line and reads at the same rate.
+    english_caption = str(config.get("review_language", "ko")).lower().startswith("en")
     max_ko = int(config.get("narration_max_chars_ko", 32))
     max_en = int(config.get("narration_max_words_en", 14))
     question_limit = int(config.get("narration_question_limit", 2))
@@ -127,7 +150,13 @@ def validate_script(script: dict[str, Any], candidate_orders: set[int], config: 
             raise ValueError(f"order {item['order']}: 사용할 문장의 한/영 텍스트가 비었습니다.")
         if "\n" in ko or "\n" in en:
             raise ValueError(f"order {item['order']}: 한 문장만 허용됩니다.")
-        if visible_korean_chars(ko) > max_ko:
+        if english_caption:
+            caption_words = len(re.findall(r"[A-Za-z0-9']+", ko))
+            if caption_words > max_en:
+                raise ValueError(f"order {item['order']}: 자막 문장이 {max_en}단어를 넘습니다: {ko}")
+            if re.search(r"[가-힣]", ko + en):
+                raise ValueError(f"order {item['order']}: 영어 리뷰인데 한글이 섞였습니다: {ko}")
+        elif visible_korean_chars(ko) > max_ko:
             raise ValueError(f"order {item['order']}: 한국어 문장이 {max_ko}자를 넘습니다: {ko}")
         if len(re.findall(r"[A-Za-z0-9']+", en)) > max_en:
             raise ValueError(f"order {item['order']}: 영어 문장이 {max_en}단어를 넘습니다: {en}")
@@ -230,11 +259,32 @@ def generate(source: Path) -> None:
     candidates = build_candidates(plan, config)
     if not candidates:
         raise ValueError("나레이션 후보가 없습니다.")
-    outline = json.loads((ANALYSIS / "story_outline.json").read_text(encoding="utf-8"))
     prompt = (CODE_ROOT / "prompts" / "narration_pass.md").read_text(encoding="utf-8")
+    # The shared prompt was written for a review that prunes narration down to what the
+    # film cannot say for itself, and it assumes Korean. A project whose approved rules
+    # disagree - a different language, a narration share the edit plan already allocated -
+    # states so here rather than by forking the prompt, which every other project reads.
+    directives = str(config.get("narration_pass_directives", "")).strip()
+    if directives:
+        prompt += (
+            "\n\n## Project directives\n\n"
+            "These come from this project's approved reference learning and override the "
+            "general guidance above wherever the two disagree.\n\n" + directives
+        )
     reference_learning = load_reference_learning_context(config)
     story_path = story_map_path(config)
     story_map = json.loads(story_path.read_text(encoding="utf-8")) if story_path and story_path.exists() else {}
+    # Only the title and premise are wanted here. A project that authored its story map by
+    # hand has both already and does not need the codex outline pass, which exists to derive
+    # a beat list from the subtitle track - work the story map supersedes.
+    outline_path = ANALYSIS / "story_outline.json"
+    if outline_path.exists():
+        outline = json.loads(outline_path.read_text(encoding="utf-8"))
+    elif story_map.get("project_title") and story_map.get("premise"):
+        outline = {"title": story_map["project_title"], "premise": story_map["premise"]}
+    else:
+        raise FileNotFoundError(
+            f"{outline_path} 가 없고 스토리맵에 project_title/premise도 없습니다.")
     prompt += (
         "\n\nSTORY_CONTEXT:\n" + json.dumps({
             "title": outline.get("title"),
@@ -294,7 +344,10 @@ def apply(source: Path, make_current: bool) -> None:
             kept += 1
     plan["narration_version"] = 5
     plan["narration_sfx_library"] = {
-        "manifest": str(SFX_MANIFEST.relative_to(ROOT)).replace("\\", "/"),
+        "manifest": str(
+            SFX_MANIFEST.relative_to(ROOT) if SFX_MANIFEST.is_relative_to(ROOT)
+            else SFX_MANIFEST
+        ).replace("\\", "/"),
         "version": 1,
         "placement": "low-level preroll before selected narration cues",
     }
