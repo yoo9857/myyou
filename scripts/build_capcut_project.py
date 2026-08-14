@@ -66,6 +66,47 @@ def text_material(template: dict, cue_text: str) -> dict:
     return material
 
 
+def fit_font_size(materials: list[dict], frame: tuple[int, int], max_lines: int = 2) -> float | None:
+    """Find the largest size at which no caption on this track needs a third line.
+
+    The sizes carried over were set against Korean, which is compact; the same numbers on
+    English put 25 of 49 narration captions onto three lines. Rather than pick a new number
+    by eye, each caption's width is measured against the font CapCut will actually render it
+    with, and the size is the largest one that keeps every line within the box.
+
+    CapCut states font_size as a percentage of frame height, and line_max_width as a
+    fraction of frame width, so both resolve to pixels here.
+    """
+    try:
+        from fontTools.ttLib import TTFont
+    except ImportError:
+        return None
+    first = materials[0]
+    style = (json.loads(first["content"]).get("styles") or [{}])[0]
+    font_path = Path(str(style.get("font", {}).get("path") or first.get("font_path", "")))
+    if not font_path.exists():
+        return None
+    font = TTFont(str(font_path), fontNumber=0)
+    units = font["head"].unitsPerEm
+    cmap, metrics = font.getBestCmap(), font["hmtx"]
+
+    def em_width(text: str) -> float:
+        return sum(metrics[cmap[ord(c)]][0] if ord(c) in cmap else units / 2
+                   for c in text) / units
+
+    width, height = frame
+    box = width * float(first.get("line_max_width", 0.78))
+    widths = [em_width(json.loads(m["content"])["text"]) for m in materials]
+    current = float(first.get("font_size", 7.0))
+    size = current
+    while size > 3.0:
+        em = size / 100 * height
+        if all(-(-w * em // box) <= max_lines for w in widths):
+            return round(size, 2)
+        size -= 0.1
+    return None
+
+
 def text_segment(template: dict, material_id: str, start: float, end: float) -> dict:
     segment = json.loads(json.dumps(template))
     segment["id"] = new_id()
@@ -105,8 +146,11 @@ def main() -> int:
     target = DRAFTS / name
     if target.exists():
         shutil.rmtree(target)
+    # The .bak files come along: CapCut reads them when the primary document fails to parse,
+    # and a draft carrying a backup of somebody else's project is a trap either way, so they
+    # are overwritten with this project's content below along with everything else.
     shutil.copytree(template_dir, target,
-                    ignore=shutil.ignore_patterns(".capcut-cli-history", "*.bak"))
+                    ignore=shutil.ignore_patterns(".capcut-cli-history"))
 
     # CapCut keeps private copies of every asset inside the draft, so the review is copied in
     # rather than referenced where it sits.
@@ -165,25 +209,42 @@ def main() -> int:
         written[track["name"]] = (made, len(cues))
 
     materials["texts"] = [m for m in materials["texts"] if m["id"] in keep_texts]
-    for made, _ in written.values():
+    fitted = {}
+    for label, (made, _) in written.items():
+        size = fit_font_size(made, (width, height))
+        if size is not None and size < float(made[0].get("font_size", 7.0)):
+            for material in made:
+                material["font_size"] = size
+                content = json.loads(material["content"])
+                for style in content.get("styles", []):
+                    style["size"] = size
+                material["content"] = json.dumps(content, ensure_ascii=False)
+            fitted[label] = size
         materials["texts"].extend(made)
 
     source["duration"] = total
     source["canvas_config"].update({"width": width, "height": height})
-    source["id"] = new_id()
+    # The document's id is the timeline's id: it names the Timelines/<id>/ folder the mirror
+    # copies live in. Issuing a fresh one left the folder pointing at a timeline that no
+    # longer existed, and CapCut listed the project but would not open it.
 
     payload = json.dumps(source, ensure_ascii=False)
-    mirrors = [p for p in target.rglob("*") if p.is_file() and p.name in MIRRORS]
+    mirrors = [p for p in target.rglob("*")
+               if p.is_file() and (p.name in MIRRORS
+                                   or p.name in {f"{m}.bak" for m in MIRRORS})]
     for mirror in mirrors:
         mirror.write_text(payload, encoding="utf-8")
 
     meta_path = target / "draft_meta_info.json"
     meta = json.loads(meta_path.read_text(encoding="utf-8"))
+    draft_id = new_id()
     meta["draft_name"] = name
-    meta["draft_id"] = new_id()
+    meta["draft_id"] = draft_id
     meta["tm_duration"] = total
-    meta["draft_fold_path"] = str(target)
-    meta["draft_removable_storage_device"] = str(target.drive)
+    # CapCut writes these with forward slashes and leaves the storage-device field empty on a
+    # local draft. Backslashes and a drive letter are what it does for removable media, and a
+    # draft that claims to live on one it cannot find does not open.
+    meta["draft_fold_path"] = target.as_posix()
     for item in meta.get("draft_materials", []):
         for entry in item.get("value", []):
             if str(entry.get("metetype")) == "video" or entry.get("file_Path", "").endswith(".mp4"):
@@ -196,10 +257,37 @@ def main() -> int:
         if extra != meta_path:
             extra.write_text(json.dumps(meta, ensure_ascii=False), encoding="utf-8")
 
+    # CapCut lists projects from this index, not from what is on disk, so a draft that is not
+    # registered here simply does not appear - the folder existing is not enough.
+    index_path = DRAFTS / "root_meta_info.json"
+    index = json.loads(index_path.read_text(encoding="utf-8"))
+    entries = [e for e in index.get("all_draft_store", [])
+               if e.get("draft_name") != name and e.get("draft_fold_path") != target.as_posix()]
+    donor = next((e for e in index["all_draft_store"]
+                  if e.get("draft_name") == args.template), index["all_draft_store"][0])
+    entry = json.loads(json.dumps(donor))
+    entry.update({
+        "draft_name": name,
+        "draft_id": draft_id,
+        "draft_fold_path": target.as_posix(),
+        "draft_json_file": f"{target.as_posix()}\\draft_content.json",
+        "draft_cover": f"{target.as_posix()}\\draft_cover.jpg",
+        "tm_duration": total,
+        "tm_draft_modified": meta.get("tm_draft_modified", 0),
+        "tm_draft_create": meta.get("tm_draft_create", 0),
+    })
+    # Only all_draft_store is ours to touch. draft_ids is an integer CapCut keeps for its own
+    # bookkeeping - writing a list of ids there, which is what the name suggests, is how the
+    # index stopped parsing and the project stopped appearing.
+    index["all_draft_store"] = [entry] + entries
+    index_path.write_text(json.dumps(index, ensure_ascii=False), encoding="utf-8")
+
     print(f"  프로젝트: {name}")
+    print(f"  목록 등록: {len(index['all_draft_store'])}개 중 첫 번째")
     print(f"  영상 {asset.name}  {width}x{height}  {duration/60:.2f}분")
     for label, (_, count) in written.items():
-        print(f"  {label:16} 자막 {count}개")
+        note = f", 글자 크기 {fitted[label]}로 축소 (3줄 방지)" if label in fitted else ""
+        print(f"  {label:16} 자막 {count}개{note}")
     print(f"  미러 파일 {len(mirrors)}개 동일 기록")
     print(f"  위치: {target}")
     return 0
