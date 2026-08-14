@@ -48,8 +48,8 @@
           "must_show": true,
           "selected_intervals": [
             [
-              1596.0,
-              1610.0
+              1597.668,
+              1613.668
             ]
           ],
           "narration_role": "orient",
@@ -88,7 +88,7 @@
           "selected_intervals": [
             [
               225.0,
-              239.0
+              241.0
             ]
           ],
           "narration_role": "causal_bridge",
@@ -118,8 +118,8 @@
           "must_show": true,
           "selected_intervals": [
             [
-              372.0,
-              381.0
+              373.501,
+              383.501
             ]
           ],
           "narration_role": "none",
@@ -150,8 +150,8 @@
           "must_show": true,
           "selected_intervals": [
             [
-              591.0,
-              604.5
+              592.418,
+              608.418
             ]
           ],
           "narration_role": "rule_clarify",
@@ -191,8 +191,8 @@
           "must_show": true,
           "selected_intervals": [
             [
-              798.0,
-              807.0
+              798.3760000000001,
+              808.3760000000001
             ]
           ],
           "narration_role": "none",
@@ -222,8 +222,8 @@
           "must_show": true,
           "selected_intervals": [
             [
-              906.0,
-              918.0
+              907.168,
+              923.168
             ]
           ],
           "narration_role": "stakes",
@@ -261,8 +261,8 @@
           "must_show": true,
           "selected_intervals": [
             [
-              1224.0,
-              1233.0
+              1225.168,
+              1235.168
             ]
           ],
           "narration_role": "none",
@@ -292,8 +292,8 @@
           "must_show": true,
           "selected_intervals": [
             [
-              1416.0,
-              1430.0
+              1416.335,
+              1434.335
             ]
           ],
           "narration_role": "rule_clarify",
@@ -323,8 +323,8 @@
           "must_show": true,
           "selected_intervals": [
             [
-              1482.0,
-              1496.0
+              1483.376,
+              1501.376
             ]
           ],
           "narration_role": "causal_bridge",
@@ -355,7 +355,7 @@
           "selected_intervals": [
             [
               1743.0,
-              1757.0
+              1759.0
             ]
           ],
           "narration_role": "stakes",
@@ -396,7 +396,7 @@
           "selected_intervals": [
             [
               2256.0,
-              2270.0
+              2274.0
             ]
           ],
           "narration_role": "causal_bridge",
@@ -428,7 +428,7 @@
           "selected_intervals": [
             [
               2451.0,
-              2465.0
+              2469.0
             ]
           ],
           "narration_role": "stakes",
@@ -468,7 +468,7 @@
           "selected_intervals": [
             [
               2952.0,
-              2966.0
+              2970.0
             ]
           ],
           "narration_role": "causal_bridge",
@@ -497,8 +497,8 @@
           "must_show": true,
           "selected_intervals": [
             [
-              2802.0,
-              2816.0
+              2804.543,
+              2822.543
             ]
           ],
           "narration_role": "stakes",
@@ -535,7 +535,7 @@
           "selected_intervals": [
             [
               3255.0,
-              3269.0
+              3273.0
             ]
           ],
           "narration_role": "orient",
@@ -565,7 +565,7 @@
           "selected_intervals": [
             [
               3336.0,
-              3345.0
+              3346.0
             ]
           ],
           "narration_role": "none",
@@ -596,7 +596,7 @@
           "selected_intervals": [
             [
               3828.0,
-              3842.0
+              3846.0
             ]
           ],
           "narration_role": "character_subtext",
@@ -635,8 +635,8 @@
           "must_show": true,
           "selected_intervals": [
             [
-              2562.0,
-              2576.0
+              2563.543,
+              2581.543
             ]
           ],
           "narration_role": "rule_clarify",
@@ -663,8 +663,8 @@
           "must_show": true,
           "selected_intervals": [
             [
-              4263.0,
-              4277.0
+              4264.251,
+              4282.251
             ]
           ],
           "narration_role": "stakes",
@@ -703,8 +703,8 @@
           "must_show": true,
           "selected_intervals": [
             [
-              5214.0,
-              5228.0
+              5215.251,
+              5233.251
             ]
           ],
           "narration_role": "causal_bridge",
@@ -733,8 +733,8 @@
           "must_show": true,
           "selected_intervals": [
             [
-              5343.0,
-              5355.0
+              5345.085,
+              5361.085
             ]
           ],
           "narration_role": "reflection",
@@ -763,8 +763,8 @@
           "must_show": true,
           "selected_intervals": [
             [
-              5376.0,
-              5390.0
+              5376.543,
+              5394.543
             ]
           ],
           "narration_role": "causal_bridge",
@@ -805,7 +805,7 @@
           "selected_intervals": [
             [
               5760.0,
-              5769.0
+              5770.0
             ]
           ],
           "narration_role": "none",
@@ -835,8 +835,8 @@
           "must_show": true,
           "selected_intervals": [
             [
-              5976.0,
-              5990.0
+              5976.46,
+              5994.46
             ]
           ],
           "narration_role": "stakes",
@@ -878,7 +878,7 @@
           "selected_intervals": [
             [
               6384.0,
-              6398.0
+              6402.0
             ]
           ],
           "narration_role": "stakes",
@@ -910,7 +910,7 @@
           "selected_intervals": [
             [
               6564.0,
-              6573.0
+              6574.0
             ]
           ],
           "narration_role": "none",
@@ -941,7 +941,7 @@
           "selected_intervals": [
             [
               6771.0,
-              6785.0
+              6789.0
             ]
           ],
           "narration_role": "causal_bridge",
@@ -980,7 +980,7 @@
           "selected_intervals": [
             [
               7020.0,
-              7034.0
+              7038.0
             ]
           ],
           "narration_role": "reflection",
@@ -1012,7 +1012,7 @@
           "selected_intervals": [
             [
               7338.0,
-              7352.0
+              7354.2
             ]
           ],
           "narration_role": "reflection",
@@ -1044,7 +1044,7 @@
           "selected_intervals": [
             [
               7404.0,
-              7418.0
+              7422.0
             ]
           ],
           "narration_role": "stakes",
@@ -1074,7 +1074,7 @@
           "must_show": true,
           "selected_intervals": [
             [
-              7560.0,
+              7559.0,
               7569.0
             ]
           ],
@@ -1114,8 +1114,8 @@
           "must_show": false,
           "selected_intervals": [
             [
-              1809.0,
-              1823.0
+              1809.418,
+              1825.418
             ]
           ],
           "narration_role": "reflection",
@@ -1145,7 +1145,7 @@
           "selected_intervals": [
             [
               6945.0,
-              6959.0
+              6962.1
             ]
           ],
           "narration_role": "reflection",

@@ -1,899 +1,915 @@
 1
-00:00:05,088 --> 00:00:06,380
+00:00:03,937 --> 00:00:04,712
 Pray, God dammit.
 
 2
-00:00:07,255 --> 00:00:09,713
+00:00:05,587 --> 00:00:08,045
 -You want your mama to die? -No, sir.
 
 3
-00:00:09,796 --> 00:00:10,755
+00:00:08,167 --> 00:00:09,089
 Then pray!
 
 4
-00:00:13,546 --> 00:00:14,409
+00:00:11,880 --> 00:00:14,755
 Lord, please save my mama!
 
 5
-00:00:18,060 --> 00:00:20,763
+00:00:15,255 --> 00:00:19,089
 -Clean the cancer inside of her! -We need your help!
 
 6
-00:00:23,179 --> 00:00:25,846
+00:00:22,852 --> 00:00:24,172
 Now you pray, now! You hear me?
 
 7
-00:00:25,929 --> 00:00:26,971
+00:00:24,255 --> 00:00:25,297
 Yes, Lord!
 
 8
-00:00:27,054 --> 00:00:28,554
+00:00:25,380 --> 00:00:26,880
 Save my mama, Lord!
 
 9
-00:00:29,061 --> 00:00:31,270
+00:00:27,380 --> 00:00:29,589
 Please clean the cancer inside of her!
 
 10
-00:00:32,478 --> 00:00:35,270
+00:00:30,797 --> 00:00:33,589
 And don't be crying, you hear? Don't be crying!
 
 11
-00:00:35,353 --> 00:00:35,833
+00:00:33,672 --> 00:00:37,130
 -Pray like you mean it! Lord!
 
 12
-00:00:35,833 --> 00:00:38,811
--Pray like you mean it! Lord!
-
-13
-00:00:38,895 --> 00:00:39,895
+00:00:37,250 --> 00:00:38,214
 Spare my wife!
 
-14
-00:00:41,811 --> 00:00:43,243
+13
+00:00:40,130 --> 00:00:41,797
 Don't take her from me.
 
-15
-00:00:51,921 --> 00:00:53,755
+14
+00:00:55,046 --> 00:00:56,880
 Fuck.
 
-16
-00:01:03,170 --> 00:01:04,836
+15
+00:01:06,295 --> 00:01:07,961
 -Fuck!
 
-17
-00:01:06,545 --> 00:01:09,711
+16
+00:01:09,670 --> 00:01:12,836
 We gotta do something. The Japs just left him up there.
 
-18
-00:01:25,459 --> 00:01:27,459
+17
+00:01:28,584 --> 00:01:30,584
 Next stop, Meade, Ohio.
 
-19
-00:01:29,375 --> 00:01:30,796
--Get out. I told you last time. -Come on, now.
-
-20
-00:01:30,880 --> 00:01:33,296
+18
+00:01:32,504 --> 00:01:34,920
 Next time, the cops will drag you out.
 
-21
-00:01:33,380 --> 00:01:34,963
+19
+00:01:35,004 --> 00:01:36,587
 -Excuse me. -Get out!
 
-22
-00:01:35,046 --> 00:01:37,046
+20
+00:01:36,670 --> 00:01:38,670
 I'm just gonna take my break outside.
 
-23
-00:01:37,130 --> 00:01:38,755
+21
+00:01:38,754 --> 00:01:40,379
 All right.
 
+22
+00:01:41,004 --> 00:01:42,629
+-All right!
+
+23
+00:01:49,753 --> 00:01:52,170
+-Welcome. -<i> Willard.</i>
+
 24
-00:01:44,671 --> 00:01:46,000
--Welcome. -<i> Willard.</i>
-
-25
-00:01:46,000 --> 00:01:47,088
--Welcome. -<i> Willard.</i>
-
-26
-00:01:47,171 --> 00:01:49,963
+00:01:52,253 --> 00:01:55,045
 Willard, I've asked Helen to sit with us. Go on, Helen.
 
-27
-00:01:50,046 --> 00:01:52,296
+25
+00:01:55,167 --> 00:01:57,380
 -Nice to meet you. -Hi, how are you?
 
-28
-00:01:57,142 --> 00:01:57,804
+26
+00:01:59,797 --> 00:02:01,505
+Willard just got back, Helen.
+
+27
+00:02:01,589 --> 00:02:02,880
 -You-- -Welcome home.
 
-29
-00:02:01,096 --> 00:02:02,304
+28
+00:02:06,726 --> 00:02:07,380
 It's been four days.
 
-30
-00:02:02,388 --> 00:02:05,221
+29
+00:02:07,464 --> 00:02:10,297
 <i>Willard didn't know</i> <i>that Emma had promised God</i>
 
-31
-00:02:05,304 --> 00:02:07,721
+30
+00:02:10,459 --> 00:02:12,839
 <i>that in exchange</i> <i>for bringing him home safe,</i>
 
+31
+00:02:12,922 --> 00:02:15,381
+<i>she'd make sure he married Helen Hatton.</i>
+
 32
-00:02:12,284 --> 00:02:13,978
+00:02:16,047 --> 00:02:19,089
 <i>The girl's family burned up</i> <i>in a house fire</i>
 
 33
-00:02:14,061 --> 00:02:14,833
-<i>leaving the poor thing all alone.</i>
-
-34
-00:02:14,833 --> 00:02:15,978
-<i>leaving the poor thing all alone.</i>
-
-35
-00:02:16,520 --> 00:02:17,978
-Good gracious.
-
-36
-00:02:18,061 --> 00:02:19,270
+00:02:23,659 --> 00:02:24,381
 It's hot, ain't it?
 
-37
-00:02:19,353 --> 00:02:21,478
+34
+00:02:24,464 --> 00:02:26,589
 -Amen. -It's bound to get hotter.
 
-38
-00:02:21,561 --> 00:02:22,243
+35
+00:02:26,709 --> 00:02:29,381
 Right now, we got two boys from over in Topperville
 
-39
-00:02:22,250 --> 00:02:23,338
-I want you to finish it.
-
-40
-00:02:23,421 --> 00:02:24,630
+36
+00:02:29,504 --> 00:02:30,713
 You understand?
 
-41
-00:02:24,713 --> 00:02:25,796
+37
+00:02:30,796 --> 00:02:31,879
 Yes, sir.
 
-42
-00:02:31,875 --> 00:02:32,130
-Oh, shit!
+38
+00:02:39,963 --> 00:02:41,879
+Now, you pray on what happened today.
 
-43
-00:02:34,171 --> 00:02:36,213
+39
+00:02:44,462 --> 00:02:46,504
 -God!
 
-44
-00:02:36,296 --> 00:02:38,875
+40
+00:02:46,587 --> 00:02:49,337
 -Stubbs! -Stubbs, get out here, man!
 
-45
-00:02:39,796 --> 00:02:41,755
+41
+00:02:50,087 --> 00:02:52,046
 -Get out of here! -Come on, give me a hand.
 
-46
-00:02:41,838 --> 00:02:43,255
+42
+00:02:52,129 --> 00:02:53,546
 Get the fuck out of here!
 
-47
-00:02:55,388 --> 00:02:57,096
+43
+00:03:05,672 --> 00:03:07,380
 Now you remember what I told you?
 
-48
-00:02:58,263 --> 00:03:00,388
-About them boys on the bus that gave you the black eye?
-
-49
-00:03:01,686 --> 00:03:02,936
+44
+00:03:11,971 --> 00:03:13,221
 That's what I meant.
 
-50
-00:03:03,978 --> 00:03:06,228
+45
+00:03:14,263 --> 00:03:16,513
 Just gotta pick the right time.
 
-51
-00:03:07,103 --> 00:03:07,708
+46
+00:03:17,422 --> 00:03:18,380
 Yes, sir.
 
-52
-00:03:07,708 --> 00:03:08,061
-Yes, sir.
-
-53
-00:03:08,728 --> 00:03:10,853
+47
+00:03:19,047 --> 00:03:21,172
 There's a lot of no good sons of bitches out there.
 
-54
-00:03:12,228 --> 00:03:14,561
+48
+00:03:22,547 --> 00:03:24,880
 -More than a hundred?
 
+49
+00:03:26,965 --> 00:03:28,548
+Yeah, at least that many.
+
+50
+00:03:33,590 --> 00:03:35,548
+How about I buy you a candy bar, huh?
+
+51
+00:03:37,340 --> 00:03:39,881
+We gotta get some sugar for Mama too.
+
+52
+00:03:44,042 --> 00:03:44,463
+Mama?
+
+53
+00:03:45,630 --> 00:03:46,546
+Mama?
+
+54
+00:03:47,630 --> 00:03:48,588
+Mama?
+
 55
-00:03:20,046 --> 00:03:20,963
-Mama?
-
-56
-00:03:22,130 --> 00:03:23,046
-Mama?
-
-57
-00:03:24,130 --> 00:03:25,088
-Mama?
-
-58
-00:03:27,005 --> 00:03:30,130
+00:03:50,505 --> 00:03:53,630
 -Mama?
 
-59
-00:03:30,213 --> 00:03:30,460
+56
+00:03:53,713 --> 00:03:54,713
 Dad!
 
-60
-00:03:30,500 --> 00:03:31,253
-Dad!
-
-61
-00:03:31,836 --> 00:03:32,795
+57
+00:03:55,376 --> 00:03:56,295
 -Mama!
 
-62
-00:03:33,586 --> 00:03:36,211
+58
+00:03:57,086 --> 00:03:59,711
 No! Charlotte!
 
-63
-00:03:36,711 --> 00:03:37,500
+59
+00:04:00,211 --> 00:04:02,961
 Listen to me. Charlotte!
 
-64
-00:03:37,500 --> 00:03:39,461
-Listen to me. Charlotte!
-
-65
-00:03:50,672 --> 00:03:50,875
+60
+00:04:10,961 --> 00:04:14,336
 -What are you saying? -The test results aren't good.
 
-66
-00:03:51,625 --> 00:03:52,875
+61
+00:04:15,086 --> 00:04:17,670
 The morphine will continue to dampen the pain but...
 
-67
-00:03:52,875 --> 00:03:54,209
-The morphine will continue to dampen the pain but...
-
-68
-00:03:54,750 --> 00:03:56,875
+62
+00:04:18,211 --> 00:04:20,336
 there's no way we can destroy that cancer.
 
-69
-00:04:22,088 --> 00:04:23,708
+63
+00:04:26,131 --> 00:04:27,756
+Let's talk downstairs.
+
+64
+00:04:41,129 --> 00:04:44,629
+Now... them doctors can't do your mom any good.
+
+65
+00:04:53,131 --> 00:04:54,751
 Dad, no!
 
-70
-00:04:24,588 --> 00:04:28,796
+66
+00:04:55,631 --> 00:04:59,839
 Dad, no!
 
-71
-00:04:28,879 --> 00:04:29,838
+67
+00:04:59,922 --> 00:05:00,881
 Dad!
 
-72
-00:04:29,921 --> 00:04:32,043
+68
+00:05:00,964 --> 00:05:04,547
 Lord, this here is my boy's dog.
 
-73
-00:04:35,961 --> 00:04:37,378
-He loved him.
-
-74
-00:04:43,336 --> 00:04:44,753
+69
+00:05:14,339 --> 00:05:15,756
 Now you take him!
 
-75
-00:04:44,836 --> 00:04:46,294
+70
+00:05:15,839 --> 00:05:17,297
 Bring him back!
 
-76
-00:04:46,378 --> 00:04:47,419
+71
+00:05:17,381 --> 00:05:18,797
 You save Charlotte!
 
-77
-00:04:52,473 --> 00:04:53,458
-It's gonna be all right.
-
-78
-00:05:02,833 --> 00:05:03,129
-Let me tell you something, friends.
-
-79
-00:05:05,504 --> 00:05:07,421
+72
+00:05:37,712 --> 00:05:39,629
 Before I found the Holy Ghost...
 
-80
-00:05:10,296 --> 00:05:12,963
+73
+00:05:42,504 --> 00:05:45,171
 I was scared plumb to death of spiders.
 
-81
-00:05:14,963 --> 00:05:17,338
+74
+00:05:47,171 --> 00:05:49,546
 -Ain't that right, Theodore? -Mm-hmm.
 
-82
-00:05:17,421 --> 00:05:18,863
+75
+00:05:49,629 --> 00:05:51,337
 -Mm? -Hmm.
 
-83
-00:05:22,588 --> 00:05:25,875
+76
+00:05:55,057 --> 00:05:57,296
 <i>Helen did, in fact, meet the man</i> <i>she would marry that afternoon.</i>
 
-84
-00:05:25,963 --> 00:05:27,588
+77
+00:05:57,379 --> 00:05:59,004
 Bless me, Reverend.
 
-85
-00:05:27,671 --> 00:05:28,838
+78
+00:05:59,126 --> 00:06:00,256
 Bless me.
 
-86
-00:05:31,380 --> 00:05:34,130
+79
+00:06:02,798 --> 00:06:05,548
 <i>And Willard's mind was already</i> <i>hundreds of miles away.</i>
 
-87
-00:05:45,880 --> 00:05:46,796
+80
+00:06:19,131 --> 00:06:20,047
 Lenora...
 
-88
-00:06:16,463 --> 00:06:17,338
+81
+00:06:49,714 --> 00:06:50,589
 Roy?
 
-89
-00:06:29,951 --> 00:06:30,784
+82
+00:07:03,202 --> 00:07:04,035
 Roy?
 
-90
-00:06:35,285 --> 00:06:36,285
+83
+00:07:08,536 --> 00:07:09,536
 Where about?
 
-91
-00:06:37,368 --> 00:06:38,868
+84
+00:07:10,619 --> 00:07:12,119
 C-Coal Creek, West Virginia.
 
-92
-00:06:38,951 --> 00:06:40,701
+85
+00:07:12,202 --> 00:07:13,952
 We'll get you close enough, son.
 
-93
-00:06:41,410 --> 00:06:42,095
+86
+00:07:14,661 --> 00:07:16,536
 I'm Carl, by the way, this here's Sandy.
 
-94
-00:06:45,356 --> 00:06:47,880
+87
+00:07:19,899 --> 00:07:22,422
 -Sister fucker. <i>-He would do anything to protect her.</i>
 
-95
-00:06:49,167 --> 00:06:51,130
+88
+00:07:23,547 --> 00:07:25,672
 <i>No matter what the weather was,</i>
 
-96
-00:06:51,213 --> 00:06:53,922
+89
+00:07:25,792 --> 00:07:28,464
 <i>Lenora would visit her mother's grave</i> <i>after school.</i>
 
-97
-00:06:54,880 --> 00:06:57,380
+90
+00:07:29,422 --> 00:07:31,922
 <i>Some days</i> <i>she'd even read the Bible out loud,</i>
 
-98
-00:06:57,463 --> 00:06:59,338
+91
+00:07:32,005 --> 00:07:33,880
 <i>and imagine her mother was listening.</i>
 
-99
-00:07:00,422 --> 00:07:00,882
+92
+00:07:34,964 --> 00:07:36,797
 <i>Though he wasn't one for praying</i>
 
-100
-00:07:04,524 --> 00:07:05,755
--Happy birthday! -Oh, no.
+93
+00:07:37,380 --> 00:07:39,880
+<i>Arvin would often drive her</i> <i>and keep her company.</i>
 
-101
-00:07:12,255 --> 00:07:14,213
+94
+00:07:48,796 --> 00:07:50,754
 Happy birthday.
 
-102
-00:07:18,338 --> 00:07:19,255
+95
+00:07:54,879 --> 00:07:55,796
 All right.
 
-103
-00:07:29,547 --> 00:07:30,422
+96
+00:07:57,838 --> 00:08:00,421
+Make a wish before that candle burns out.
+
+97
+00:08:10,422 --> 00:08:11,297
 Hello there.
 
-104
-00:07:30,505 --> 00:07:32,380
+98
+00:08:11,380 --> 00:08:13,255
 Pleased to meet you, Reverend.
 
-105
-00:07:32,463 --> 00:07:33,505
+99
+00:08:13,338 --> 00:08:14,380
 Emma Russell.
 
-106
-00:07:33,588 --> 00:07:34,477
+100
+00:08:14,463 --> 00:08:17,005
 Nice to meet you too. What you got there?
 
-107
-00:07:36,630 --> 00:07:37,880
+101
+00:08:19,256 --> 00:08:20,506
 there's no doubt...
 
-108
-00:07:39,463 --> 00:07:42,963
+102
+00:08:22,089 --> 00:08:25,589
 we're all humble people gathered here.
 
-109
-00:07:43,046 --> 00:07:44,421
+103
+00:08:25,672 --> 00:08:27,047
 -Amen. -Amen.
 
-110
-00:07:44,921 --> 00:07:46,755
+104
+00:08:27,547 --> 00:08:29,381
 Y'all have been awful nice to me
 
-111
-00:07:47,380 --> 00:07:50,046
+105
+00:08:30,006 --> 00:08:32,672
 and I thank you from the bottom of my heart for the welcome.
 
-112
-00:07:50,130 --> 00:07:52,088
+106
+00:08:32,756 --> 00:08:34,714
 -Yes.
 
-113
-00:07:52,671 --> 00:07:53,671
+107
+00:08:35,297 --> 00:08:36,297
 But friends...
 
-114
-00:07:56,171 --> 00:07:56,942
+108
+00:08:38,797 --> 00:08:40,089
 the poor soul...
 
-115
-00:08:02,588 --> 00:08:03,421
+109
+00:08:45,839 --> 00:08:46,672
 Lenora...
 
-116
-00:08:05,838 --> 00:08:08,546
+110
+00:08:49,089 --> 00:08:51,797
 have you truly opened yourself to the Lord with...
 
-117
-00:08:09,504 --> 00:08:11,379
+111
+00:08:52,755 --> 00:08:54,630
 Preacher Sykes or...
 
-118
-00:08:12,463 --> 00:08:13,629
+112
+00:08:55,714 --> 00:08:56,880
 any other preacher?
 
-119
-00:08:20,418 --> 00:08:21,963
+113
+00:09:00,046 --> 00:09:03,671
 Come on, she likes lanky old studs like yourself. Come on.
 
-120
-00:08:25,796 --> 00:08:27,671
+114
+00:09:08,919 --> 00:09:09,379
 What's going on here, mister?
 
-121
-00:08:27,754 --> 00:08:30,213
+115
+00:09:09,462 --> 00:09:11,921
 Oh, come on, Jesus Christ, huh?
 
-122
-00:08:37,797 --> 00:08:39,880
+116
+00:09:13,255 --> 00:09:16,172
+Pay attention. It's like I said, you're gonna fuck my wife
+
+117
+00:09:16,255 --> 00:09:18,547
+and I'm gonna take some pictures, that's all.
+
+118
+00:09:25,880 --> 00:09:27,963
 I got another election coming up, Sandy.
 
-123
-00:08:41,130 --> 00:08:44,755
+119
+00:09:29,214 --> 00:09:32,839
 Ol' Matthew's out there doing anything he can to try to make me look bad.
 
-124
-00:08:46,922 --> 00:08:49,257
+120
+00:09:35,006 --> 00:09:37,631
 Is Carl the one pimping you? That fat son of a bitch?
 
-125
-00:08:53,442 --> 00:08:53,797
+121
+00:09:37,714 --> 00:09:39,799
+No, he's working, making deliveries.
+
+122
+00:09:39,838 --> 00:09:43,088
 for some wrong done to you by another person.
 
-126
-00:08:53,880 --> 00:08:54,963
+123
+00:09:43,171 --> 00:09:44,254
 That's true.
 
-127
-00:08:57,880 --> 00:08:59,255
-You're saying you don't...
-
-128
-00:09:00,297 --> 00:09:03,130
+124
+00:09:49,734 --> 00:09:52,421
 remember all the things we did in your car?
 
-129
-00:09:06,797 --> 00:09:08,007
+125
+00:09:56,088 --> 00:09:57,754
 I'm saying you must be crazy.
 
+126
+00:09:57,838 --> 00:10:01,338
+Coming in the Lord's house and talking all this trash.
+
+127
+00:10:04,046 --> 00:10:06,046
+<i>Look, my advice to you, girl...</i>
+
+128
+00:10:06,170 --> 00:10:07,337
+Grandma!
+
+129
+00:10:08,087 --> 00:10:09,253
+Grandma!
+
 130
-00:09:08,042 --> 00:09:10,047
-No! No! No!
+00:10:09,420 --> 00:10:11,295
+No, no, no!
 
 131
-00:09:10,130 --> 00:09:11,297
+00:10:14,337 --> 00:10:15,545
 Grandma!
 
 132
-00:09:12,047 --> 00:09:13,213
+00:10:20,587 --> 00:10:22,045
 Grandma!
 
 133
-00:09:13,380 --> 00:09:15,042
-No, no, no!
+00:10:24,462 --> 00:10:27,253
+<i>No one would know</i> <i>she wasn't a suicide</i>
 
 134
-00:09:15,042 --> 00:09:15,255
-No, no, no!
+00:10:27,628 --> 00:10:30,962
+<i>and that in the end,</i> <i>she was all right with her maker.</i>
 
 135
-00:09:18,297 --> 00:09:19,505
-Grandma!
+00:10:31,420 --> 00:10:32,503
+Oh, Lord.
 
 136
-00:09:24,547 --> 00:09:26,005
-Grandma!
-
-137
-00:09:31,088 --> 00:09:33,130
+00:10:36,379 --> 00:10:38,421
 But you take her into your arms.
 
-138
-00:09:40,880 --> 00:09:42,172
+137
+00:10:46,171 --> 00:10:47,463
 Uh, ain't somebody...
 
-139
-00:09:43,672 --> 00:09:45,047
+138
+00:10:48,963 --> 00:10:50,338
 saying prayers or...
 
+139
+00:11:16,964 --> 00:11:18,006
+Excuse me.
+
 140
-00:10:04,630 --> 00:10:05,672
+00:11:22,006 --> 00:11:23,006
 Excuse me.
 
 141
-00:10:09,672 --> 00:10:10,672
-Excuse me.
-
-142
-00:10:10,755 --> 00:10:11,542
-Preacher?
-
-143
-00:10:19,213 --> 00:10:20,172
+00:11:30,253 --> 00:11:31,212
 So...
 
-144
-00:10:21,255 --> 00:10:22,338
+142
+00:11:32,295 --> 00:11:33,378
 Mrs. Russell's boy?
 
-145
-00:10:25,588 --> 00:10:26,588
+143
+00:11:36,628 --> 00:11:37,628
 All right.
 
-146
-00:10:31,176 --> 00:10:32,612
+144
+00:11:41,570 --> 00:11:43,653
 Don't do anything you'll regret, son.
 
-147
-00:10:33,279 --> 00:10:34,208
+145
+00:11:44,320 --> 00:11:46,820
 Why don't you put the gun down and...
 
-148
-00:10:34,250 --> 00:10:35,821
-Why don't you put the gun down and...
-
-149
-00:10:36,738 --> 00:10:38,321
+146
+00:11:47,737 --> 00:11:49,320
 we can talk all about it.
 
-150
-00:10:38,946 --> 00:10:40,154
-Go ahead and talk.
-
-151
-00:10:46,095 --> 00:10:47,512
+147
+00:11:57,089 --> 00:11:58,506
 It wasn't my fault.
 
-152
-00:10:50,429 --> 00:10:52,137
+148
+00:12:01,423 --> 00:12:03,131
 And Lenora...
 
-153
-00:10:53,929 --> 00:10:55,179
+149
+00:12:04,923 --> 00:12:06,173
 was just like this...
 
-154
-00:10:56,512 --> 00:10:57,679
+150
+00:12:07,506 --> 00:12:08,673
 this Reaster girl.
 
-155
-00:11:03,206 --> 00:11:03,713
-I see him.
+151
+00:12:10,131 --> 00:12:11,464
+She wouldn't let me be.
 
-156
-00:11:06,046 --> 00:11:06,921
+152
+00:12:13,423 --> 00:12:16,548
+But I want you to know that I--
+
+153
+00:12:17,214 --> 00:12:20,006
+I pray for that girl's soul
+
+154
+00:12:20,089 --> 00:12:21,756
+every night.
+
+155
+00:12:24,047 --> 00:12:25,130
 Carl?
 
+156
+00:12:26,047 --> 00:12:27,047
+I see him.
+
 157
-00:11:09,713 --> 00:11:12,338
+00:12:33,047 --> 00:12:35,672
 -We don't even know where he's going. -Carl?
 
 158
-00:11:12,421 --> 00:11:14,267
+00:12:35,793 --> 00:12:37,715
 -Just-- -God dammit, Carl.
 
 159
-00:11:21,779 --> 00:11:23,904
-Let's just see where he's going, Sandy.
+00:12:37,798 --> 00:12:39,256
+He's going to Ohio.
 
 160
-00:11:28,029 --> 00:11:28,904
-Morning.
+00:12:39,340 --> 00:12:41,340
+No one from home. That's your rule.
 
 161
-00:11:29,654 --> 00:11:29,975
-Where you headed?
+00:12:51,322 --> 00:12:52,197
+Morning.
 
 162
-00:11:35,429 --> 00:11:36,888
-The paper-mill town, right?
+00:12:53,006 --> 00:12:53,964
+Where you headed?
 
 163
-00:11:37,042 --> 00:11:38,096
-Yeah, that's right.
+00:12:54,464 --> 00:12:56,089
+Meade, Ohio. You heard of it?
 
 164
-00:11:41,721 --> 00:11:43,554
-We're passing right through it.
+00:12:58,714 --> 00:13:00,173
+The paper-mill town, right?
 
 165
-00:11:47,629 --> 00:11:50,171
-Damn. That's gonna be one fine sunset.
+00:13:00,256 --> 00:13:01,381
+Yeah, that's right.
 
 166
-00:11:50,838 --> 00:11:54,213
-You have to be patient with me while I get a few shots off.
+00:13:05,294 --> 00:13:06,839
+We're passing right through it.
 
 167
-00:11:55,546 --> 00:11:56,629
-Hon, give me the key.
+00:13:09,756 --> 00:13:11,423
+What you going to Meade for?
 
 168
-00:11:57,713 --> 00:12:00,296
-Don't you worry none. We've got some hooch in the back and...
+00:13:11,964 --> 00:13:14,089
+-Just visiting. -Got family there?
 
 169
-00:12:01,588 --> 00:12:03,588
-Well, Sandy's good company.
+00:13:16,173 --> 00:13:18,839
+No, I used to live there a long time ago.
 
 170
-00:12:19,838 --> 00:12:21,546
-I'm sorry, Lee. This is fucked up.
+00:13:20,880 --> 00:13:23,422
+Damn. That's gonna be one fine sunset.
 
 171
-00:12:22,046 --> 00:12:23,004
-What do you mean?
+00:13:24,089 --> 00:13:27,464
+You have to be patient with me while I get a few shots off.
 
 172
-00:12:23,588 --> 00:12:25,004
-It's your sister and her husband.
+00:13:28,797 --> 00:13:29,880
+Hon, give me the key.
 
 173
-00:12:31,350 --> 00:12:32,779
-Carl was shot twice.
+00:13:30,964 --> 00:13:33,547
+Don't you worry none. We've got some hooch in the back and...
 
 174
-00:12:33,529 --> 00:12:34,375
-Sandy once.
+00:13:34,839 --> 00:13:36,839
+Well, Sandy's good company.
 
 175
-00:12:34,417 --> 00:12:34,655
-Sandy once.
+00:13:53,089 --> 00:13:54,797
+I'm sorry, Lee. This is fucked up.
 
 176
-00:12:38,280 --> 00:12:40,113
-It looks like it was a nine millimeter.
+00:13:55,297 --> 00:13:56,255
+What do you mean?
 
 177
-00:12:40,196 --> 00:12:41,863
-Sandy got one shot off but...
+00:13:56,839 --> 00:13:58,255
+It's your sister and her husband.
 
 178
-00:12:52,221 --> 00:12:54,429
--Jesus Christ. -Lee?
+00:14:04,601 --> 00:14:06,030
+Carl was shot twice.
 
 179
-00:13:02,733 --> 00:13:03,463
-Still there?
+00:14:06,780 --> 00:14:07,864
+Sandy once.
 
 180
-00:13:05,797 --> 00:13:07,088
-Well, I'll be damned.
+00:14:11,548 --> 00:14:13,381
+It looks like it was a nine millimeter.
 
 181
-00:13:08,255 --> 00:13:09,838
-You're that Russell boy, ain't you?
+00:14:13,464 --> 00:14:15,131
+Sandy got one shot off but...
 
 182
-00:13:13,380 --> 00:13:14,434
-I just thought, seeing as I was this way, I'd stop by and see the old place again.
+00:14:16,173 --> 00:14:17,756
+her gun was loaded with blanks.
 
 183
-00:13:20,029 --> 00:13:21,458
-Son, I hate to tell you this, but that place burned some years ago.
+00:14:25,423 --> 00:14:27,631
+-Jesus Christ. -Lee?
 
 184
-00:13:21,500 --> 00:13:24,113
-Son, I hate to tell you this, but that place burned some years ago.
+00:14:32,006 --> 00:14:34,214
+Give me a couple minutes here alone with her.
 
 185
-00:13:24,196 --> 00:13:25,863
-They think some kids did it.
+00:14:38,275 --> 00:14:39,005
+Still there?
 
 186
-00:13:26,363 --> 00:13:29,279
-Wasn't nobody ever living there since you and your folks.
+00:14:41,339 --> 00:14:42,630
+Well, I'll be damned.
 
 187
-00:13:29,821 --> 00:13:30,142
-Well, heck, I come all this way, I may as well walk up there anyways.
+00:14:43,797 --> 00:14:45,380
+You're that Russell boy, ain't you?
 
 188
-00:13:34,769 --> 00:13:36,762
-Sure, just cut across Clarence's pasture.
+00:14:48,922 --> 00:14:52,589
+I just thought, seeing as I was this way, I'd stop by and see the old place again.
 
 189
-00:13:36,845 --> 00:13:37,208
-He won't say nothing.
+00:14:55,701 --> 00:14:59,589
+Son, I hate to tell you this, but that place burned some years ago.
 
 190
-00:13:37,208 --> 00:13:38,095
-He won't say nothing.
+00:14:59,709 --> 00:15:01,339
+They think some kids did it.
 
 191
-00:13:50,171 --> 00:13:52,875
-<i>how Willard wanted so much</i> <i>for her to live.</i>
+00:15:01,839 --> 00:15:04,755
+Wasn't nobody ever living there since you and your folks.
 
 192
-00:13:53,630 --> 00:13:55,880
-<i>His father</i> <i>would have done anything to save her.</i>
+00:15:05,297 --> 00:15:08,339
+Well, heck, I come all this way, I may as well walk up there anyways.
 
 193
-00:13:56,505 --> 00:14:00,171
-<i>Fuck the blood and stink,</i> <i>the heat and the insects.</i>
+00:15:08,447 --> 00:15:12,197
+Sure, just cut across Clarence's pasture.
 
 194
-00:14:00,713 --> 00:14:01,517
-Anything.
+00:15:12,280 --> 00:15:13,530
+He won't say nothing.
 
 195
-00:14:05,988 --> 00:14:08,542
-<i>And suddenly he realized,</i> <i>standing in his father's church,</i>
+00:15:22,363 --> 00:15:24,988
+I never did thank you for the night my dad died.
 
 196
-00:14:08,583 --> 00:14:10,029
-<i>And suddenly he realized,</i> <i>standing in his father's church,</i>
+00:15:26,780 --> 00:15:28,113
+You were awful kind of me,
 
 197
-00:14:10,529 --> 00:14:12,487
-<i>that he'd had no other choice,</i>
+00:15:28,197 --> 00:15:30,780
+and I just want you to know that I ain't never forgot it.
 
 198
-00:14:13,404 --> 00:14:16,737
-<i>that Willard had needed to go</i> <i>wherever Charlotte went.</i>
+00:15:31,505 --> 00:15:35,172
+<i>Arvin thought about the days</i> <i>leading up to his mother's death,</i>
 
 199
-00:14:37,796 --> 00:14:39,254
-Arvin Russell!
+00:15:35,255 --> 00:15:38,047
+<i>how Willard wanted so much</i> <i>for her to live.</i>
 
 200
-00:14:41,088 --> 00:14:42,629
-I know you're down there somewhere!
+00:15:42,442 --> 00:15:45,256
+<i>Fuck the blood and stink,</i> <i>the heat and the insects.</i>
 
 201
-00:14:44,171 --> 00:14:46,088
-It's Sheriff Bodecker, son!
+00:15:45,798 --> 00:15:46,756
+Anything.
 
 202
-00:14:47,838 --> 00:14:48,600
-Got some questions to ask you!
+00:15:47,256 --> 00:15:49,215
+<i>Arvin said to himself.</i>
 
 203
-00:14:59,905 --> 00:15:01,196
-Sorry about that!
+00:15:51,048 --> 00:15:55,048
+<i>And suddenly he realized,</i> <i>standing in his father's church,</i>
 
 204
-00:15:03,446 --> 00:15:04,309
-Goddamn bird scared me.
+00:15:55,589 --> 00:15:57,547
+<i>that he'd had no other choice,</i>
 
 205
-00:15:09,721 --> 00:15:11,179
-I ain't here to hurt you!
+00:15:58,464 --> 00:16:01,797
+<i>that Willard had needed to go</i> <i>wherever Charlotte went.</i>
 
 206
-00:15:14,554 --> 00:15:17,096
-And I know that you don't wanna hurt me!
+00:16:29,506 --> 00:16:30,964
+Arvin Russell!
 
 207
-00:15:19,096 --> 00:15:20,018
-Come on out so we can have us a talk!
+00:16:32,798 --> 00:16:34,339
+I know you're down there somewhere!
 
 208
-00:15:20,088 --> 00:15:21,130
-I had no choice!
+00:16:35,881 --> 00:16:37,798
+It's Sheriff Bodecker, son!
 
 209
-00:15:31,588 --> 00:15:34,755
-I hate to be the one to tell you this, Sheriff, but your sister...
+00:16:39,548 --> 00:16:41,089
+Got some questions to ask you!
 
 210
-00:15:35,338 --> 00:15:37,338
-and her husband, they weren't no good neither!
+00:16:51,548 --> 00:16:52,839
+Sorry about that!
 
 211
-00:15:37,422 --> 00:15:40,880
-I got a snapshot in my pocket here of her hugging on some dead guy.
+00:16:55,089 --> 00:16:56,851
+Goddamn bird scared me.
 
 212
-00:15:40,963 --> 00:15:42,838
-You let loose that gun and I'll show it to you!
+00:17:01,323 --> 00:17:02,781
+I ain't here to hurt you!
 
 213
-00:15:50,547 --> 00:15:50,963
-You can meet Uncle Earskell.
+00:17:06,198 --> 00:17:08,740
+And I know that you don't wanna hurt me!
 
 214
-00:15:52,088 --> 00:15:53,042
-And that girl that's living with them...
+00:17:10,740 --> 00:17:12,906
+Come on out so we can have us a talk!
 
 215
-00:15:53,042 --> 00:15:54,088
-And that girl that's living with them...
+00:17:13,130 --> 00:17:14,172
+I had no choice!
 
 216
-00:15:54,922 --> 00:15:56,797
-She's just a little younger than you.
+00:17:24,630 --> 00:17:27,797
+I hate to be the one to tell you this, Sheriff, but your sister...
 
 217
-00:15:56,880 --> 00:15:59,130
-Maybe we'll stay for a while.
+00:17:28,380 --> 00:17:30,380
+and her husband, they weren't no good neither!
 
 218
-00:16:07,204 --> 00:16:08,287
-Arvin.
+00:17:30,464 --> 00:17:33,922
+I got a snapshot in my pocket here of her hugging on some dead guy.
 
 219
-00:16:25,776 --> 00:16:27,526
-<i>I wish you were here, Jack.</i>
+00:17:34,005 --> 00:17:35,880
+You let loose that gun and I'll show it to you!
 
 220
-00:16:30,110 --> 00:16:31,485
-When Dad goes to sleep...
+00:17:44,712 --> 00:17:46,712
+And that girl that's living with them...
 
 221
-00:16:32,693 --> 00:16:33,259
-I'm going to bring you down and give you a proper burial.
+00:17:47,548 --> 00:17:49,423
+She's just a little younger than you.
 
 222
-00:16:38,504 --> 00:16:40,129
-<i>Durham, North Carolina.</i>
+00:17:49,506 --> 00:17:51,756
+Maybe we'll stay for a while.
 
 223
-00:16:40,838 --> 00:16:44,254
-<i>Though the poor fucker had been</i> <i>completely worthless as a model,</i>
+00:17:59,831 --> 00:18:00,914
+Arvin.
 
 224
-00:16:44,796 --> 00:16:47,088
-<i>Carl was insistent on keeping a record</i>
+00:18:22,737 --> 00:18:24,112
+When Dad goes to sleep...
 
 225
-00:16:47,296 --> 00:16:49,009
+00:18:25,381 --> 00:18:28,256
+I'm going to bring you down and give you a proper burial.
+
+226
+00:18:33,547 --> 00:18:35,172
+<i>Durham, North Carolina.</i>
+
+227
+00:18:35,881 --> 00:18:39,297
+<i>Though the poor fucker had been</i> <i>completely worthless as a model,</i>
+
+228
+00:18:39,839 --> 00:18:42,131
+<i>Carl was insistent on keeping a record</i>
+
+229
+00:18:42,339 --> 00:18:45,589
 <i>of both his successes and his failures.</i>

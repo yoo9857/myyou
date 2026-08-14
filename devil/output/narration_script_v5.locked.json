@@ -146,7 +146,7 @@
       "sfx_rationale": ""
     },
     {
-      "order": 21,
+      "order": 22,
       "use_narration": false,
       "role": "rule_clarify",
       "caption_ko": "",
@@ -162,7 +162,7 @@
       "sfx_rationale": ""
     },
     {
-      "order": 23,
+      "order": 24,
       "use_narration": true,
       "role": "rule_clarify",
       "caption_ko": "Willard makes Arvin study the wreckage before explaining the lesson.",
@@ -178,7 +178,7 @@
       "sfx_rationale": ""
     },
     {
-      "order": 25,
+      "order": 26,
       "use_narration": false,
       "role": "rule_clarify",
       "caption_ko": "",
@@ -194,7 +194,7 @@
       "sfx_rationale": ""
     },
     {
-      "order": 27,
+      "order": 28,
       "use_narration": true,
       "role": "escalation",
       "caption_ko": "One ordinary afternoon ends the moment Charlotte cannot answer her son.",
@@ -210,7 +210,7 @@
       "sfx_rationale": ""
     },
     {
-      "order": 29,
+      "order": 31,
       "use_narration": false,
       "role": "stakes",
       "caption_ko": "",
@@ -226,7 +226,7 @@
       "sfx_rationale": ""
     },
     {
-      "order": 31,
+      "order": 33,
       "use_narration": true,
       "role": "stakes",
       "caption_ko": "The diagnosis leaves medicine managing pain while Willard searches beyond it.",
@@ -242,7 +242,7 @@
       "sfx_rationale": ""
     },
     {
-      "order": 33,
+      "order": 35,
       "use_narration": true,
       "role": "causal_bridge",
       "caption_ko": "When the doctors give up, Willard turns to the only power he trusts.",
@@ -258,7 +258,7 @@
       "sfx_rationale": ""
     },
     {
-      "order": 35,
+      "order": 37,
       "use_narration": false,
       "role": "stakes",
       "caption_ko": "",
@@ -274,7 +274,7 @@
       "sfx_rationale": ""
     },
     {
-      "order": 37,
+      "order": 39,
       "use_narration": true,
       "role": "stakes",
       "caption_ko": "Willard offers what Arvin loves most as payment for Charlotte's life.",
@@ -290,7 +290,7 @@
       "sfx_rationale": ""
     },
     {
-      "order": 39,
+      "order": 41,
       "use_narration": true,
       "role": "character_subtext",
       "caption_ko": "His promise comforts nobody because Arvin has seen what faith now demands.",
@@ -306,7 +306,7 @@
       "sfx_rationale": ""
     },
     {
-      "order": 42,
+      "order": 44,
       "use_narration": true,
       "role": "choice",
       "caption_ko": "Helen reads Roy's spectacle as proof that her loneliness has ended.",
@@ -322,7 +322,7 @@
       "sfx_rationale": ""
     },
     {
-      "order": 44,
+      "order": 46,
       "use_narration": false,
       "role": "escalation",
       "caption_ko": "",
@@ -338,7 +338,7 @@
       "sfx_rationale": ""
     },
     {
-      "order": 46,
+      "order": 48,
       "use_narration": true,
       "role": "reflection",
       "caption_ko": "Roy stays beside Helen, expecting belief to undo what belief caused.",
@@ -354,7 +354,7 @@
       "sfx_rationale": ""
     },
     {
-      "order": 48,
+      "order": 50,
       "use_narration": true,
       "role": "misdirection",
       "caption_ko": "A waiting camera makes this generous pickup feel carefully staged.",
@@ -370,7 +370,7 @@
       "sfx_rationale": "The visible camera turns an ordinary roadside pickup into a suspicious encounter."
     },
     {
-      "order": 50,
+      "order": 52,
       "use_narration": true,
       "role": "stakes",
       "caption_ko": "Sandy keeps calling Roy's name while Carl quietly controls the route.",
@@ -386,7 +386,7 @@
       "sfx_rationale": ""
     },
     {
-      "order": 52,
+      "order": 54,
       "use_narration": true,
       "role": "causal_bridge",
       "caption_ko": "Arvin protects Lenora with the exact timing his father taught him.",
@@ -402,7 +402,7 @@
       "sfx_rationale": ""
     },
     {
-      "order": 54,
+      "order": 56,
       "use_narration": true,
       "role": "setup",
       "caption_ko": "The birthday gift puts Willard's old weapon back into Arvin's hands.",
@@ -418,7 +418,7 @@
       "sfx_rationale": ""
     },
     {
-      "order": 56,
+      "order": 58,
       "use_narration": true,
       "role": "orient",
       "caption_ko": "A polished stranger arrives to lead the same church that raised Lenora.",
@@ -434,7 +434,7 @@
       "sfx_rationale": "The restrained transition marks the arrival of a new preacher and story thread."
     },
     {
-      "order": 59,
+      "order": 61,
       "use_narration": true,
       "role": "character_subtext",
       "caption_ko": "Lenora hears private attention as spiritual guidance, exactly as Preston intends.",
@@ -450,7 +450,7 @@
       "sfx_rationale": ""
     },
     {
-      "order": 61,
+      "order": 64,
       "use_narration": true,
       "role": "rule_clarify",
       "caption_ko": "Carl packages control as crude humor, keeping Sandy inside the performance.",
@@ -466,7 +466,7 @@
       "sfx_rationale": ""
     },
     {
-      "order": 63,
+      "order": 66,
       "use_narration": true,
       "role": "character_subtext",
       "caption_ko": "Bodecker questions his own sister with the patience of a threat.",
@@ -482,7 +482,7 @@
       "sfx_rationale": ""
     },
     {
-      "order": 65,
+      "order": 69,
       "use_narration": true,
       "role": "character_subtext",
       "caption_ko": "Preston uses sacred language to make Lenora distrust her own memory.",
@@ -498,7 +498,7 @@
       "sfx_rationale": ""
     },
     {
-      "order": 67,
+      "order": 72,
       "use_narration": false,
       "role": "reflection",
       "caption_ko": "",
@@ -514,7 +514,7 @@
       "sfx_rationale": ""
     },
     {
-      "order": 69,
+      "order": 75,
       "use_narration": true,
       "role": "stakes",
       "caption_ko": "Even in mourning, the family asks the same faith for mercy.",
@@ -530,7 +530,7 @@
       "sfx_rationale": ""
     },
     {
-      "order": 72,
+      "order": 78,
       "use_narration": true,
       "role": "choice",
       "caption_ko": "Arvin frames the confrontation around Lenora, refusing to let Preston redirect it.",
@@ -546,7 +546,7 @@
       "sfx_rationale": ""
     },
     {
-      "order": 74,
+      "order": 81,
       "use_narration": true,
       "role": "character_subtext",
       "caption_ko": "Only after being exposed does Preston start speaking like a peacemaker.",
@@ -562,7 +562,7 @@
       "sfx_rationale": ""
     },
     {
-      "order": 76,
+      "order": 83,
       "use_narration": false,
       "role": "character_subtext",
       "caption_ko": "",
@@ -578,7 +578,7 @@
       "sfx_rationale": ""
     },
     {
-      "order": 78,
+      "order": 86,
       "use_narration": true,
       "role": "causal_bridge",
       "caption_ko": "Carl recognizes a lone traveler, while Sandy recognizes the broken rule.",
@@ -594,7 +594,7 @@
       "sfx_rationale": ""
     },
     {
-      "order": 80,
+      "order": 88,
       "use_narration": true,
       "role": "rule_clarify",
       "caption_ko": "Sandy's warning confirms that Arvin falls outside their usual hunting pattern.",
@@ -610,7 +610,7 @@
       "sfx_rationale": ""
     },
     {
-      "order": 82,
+      "order": 90,
       "use_narration": true,
       "role": "misdirection",
       "caption_ko": "Arvin answers plainly because their practiced friendliness gives him no warning.",
@@ -626,7 +626,7 @@
       "sfx_rationale": ""
     },
     {
-      "order": 85,
+      "order": 93,
       "use_narration": true,
       "role": "causal_bridge",
       "caption_ko": "A double-homicide call sends Bodecker toward the county road.",
@@ -642,7 +642,7 @@
       "sfx_rationale": "The low omen marks the homicide call as the start of a personal pursuit."
     },
     {
-      "order": 87,
+      "order": 95,
       "use_narration": true,
       "role": "stakes",
       "caption_ko": "Two measured wounds tell Bodecker this was no random roadside panic.",
@@ -658,7 +658,7 @@
       "sfx_rationale": ""
     },
     {
-      "order": 89,
+      "order": 97,
       "use_narration": true,
       "role": "causal_bridge",
       "caption_ko": "The blank in Sandy's gun turns Carl's arrangement into a betrayal.",
@@ -674,7 +674,7 @@
       "sfx_rationale": ""
     },
     {
-      "order": 91,
+      "order": 99,
       "use_narration": true,
       "role": "reflection",
       "caption_ko": "Arvin returns to Mitchell Flats because every road began on this hill.",
@@ -690,7 +690,7 @@
       "sfx_rationale": ""
     },
     {
-      "order": 93,
+      "order": 101,
       "use_narration": true,
       "role": "reflection",
       "caption_ko": "The burned house leaves Arvin with memory instead of shelter.",
@@ -706,7 +706,7 @@
       "sfx_rationale": ""
     },
     {
-      "order": 95,
+      "order": 104,
       "use_narration": true,
       "role": "causal_bridge",
       "caption_ko": "He keeps walking because the prayer ground matters more than the house.",
@@ -722,7 +722,7 @@
       "sfx_rationale": ""
     },
     {
-      "order": 97,
+      "order": 107,
       "use_narration": true,
       "role": "reflection",
       "caption_ko": "For once, Arvin remembers Willard's desperation before judging his violence.",
@@ -738,7 +738,7 @@
       "sfx_rationale": ""
     },
     {
-      "order": 99,
+      "order": 110,
       "use_narration": true,
       "role": "reflection",
       "caption_ko": "Understanding the motive does not erase what that devotion cost Arvin.",
@@ -754,7 +754,7 @@
       "sfx_rationale": ""
     },
     {
-      "order": 101,
+      "order": 112,
       "use_narration": true,
       "role": "reflection",
       "caption_ko": "At the ruined altar, anger finally makes room for understanding.",
@@ -770,7 +770,7 @@
       "sfx_rationale": ""
     },
     {
-      "order": 103,
+      "order": 113,
       "use_narration": true,
       "role": "stakes",
       "caption_ko": "Bodecker's voice turns Arvin's childhood woods into a hunting ground.",
@@ -786,7 +786,7 @@
       "sfx_rationale": ""
     },
     {
-      "order": 105,
+      "order": 115,
       "use_narration": true,
       "role": "escalation",
       "caption_ko": "The sheriff controls the clearing with noise while Arvin stays hidden.",
@@ -802,7 +802,7 @@
       "sfx_rationale": ""
     },
     {
-      "order": 107,
+      "order": 117,
       "use_narration": true,
       "role": "misdirection",
       "caption_ko": "His claim of peaceful intent only sharpens the threat in his hand.",
@@ -818,7 +818,7 @@
       "sfx_rationale": ""
     },
     {
-      "order": 110,
+      "order": 120,
       "use_narration": true,
       "role": "reflection",
       "caption_ko": "Every adult calls his choice necessary, while the children inherit its cost.",
@@ -834,7 +834,7 @@
       "sfx_rationale": ""
     },
     {
-      "order": 112,
+      "order": 123,
       "use_narration": true,
       "role": "reflection",
       "caption_ko": "Arvin's story begins with adults choosing a future on his behalf.",
@@ -850,7 +850,7 @@
       "sfx_rationale": ""
     },
     {
-      "order": 114,
+      "order": 125,
       "use_narration": true,
       "role": "reflection",
       "caption_ko": "What remains compelling is how Arvin resists becoming his father's copy.",
@@ -866,7 +866,7 @@
       "sfx_rationale": ""
     },
     {
-      "order": 116,
+      "order": 127,
       "use_narration": true,
       "role": "reflection",
       "caption_ko": "That weight lands because Tom Holland plays Arvin without easy innocence.",
@@ -882,7 +882,7 @@
       "sfx_rationale": ""
     },
     {
-      "order": 118,
+      "order": 129,
       "use_narration": true,
       "role": "character_subtext",
       "caption_ko": "Robert Pattinson makes Preston's charm feel practiced long before it turns cruel.",
@@ -898,7 +898,7 @@
       "sfx_rationale": ""
     },
     {
-      "order": 120,
+      "order": 131,
       "use_narration": true,
       "role": "button",
       "caption_ko": "Sebastian Stan and Eliza Scanlen complete a cast built on damaged certainty.",

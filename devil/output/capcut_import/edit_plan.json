@@ -7,8 +7,8 @@
   "segments": [
     {
       "order": 1,
-      "source_start": 1596.0,
-      "source_end": 1603.0,
+      "source_start": 1597.668,
+      "source_end": 1605.833,
       "kind": "narration",
       "story_beat": "cold_open_prayer_log",
       "story_event_id": "prayer_log_present",
@@ -30,8 +30,8 @@
     },
     {
       "order": 2,
-      "source_start": 1603.0,
-      "source_end": 1610.409,
+      "source_start": 1605.833,
+      "source_end": 1616.875,
       "kind": "movie_dialogue",
       "story_beat": "cold_open_prayer_log",
       "story_event_id": "prayer_log_present",
@@ -43,8 +43,8 @@
     },
     {
       "order": 3,
-      "source_start": 1610.409,
-      "source_end": 1617.409,
+      "source_start": 1616.875,
+      "source_end": 1624.666,
       "kind": "narration",
       "story_beat": "cold_open_prayer_log",
       "story_event_id": "prayer_log_present",
@@ -66,8 +66,8 @@
     },
     {
       "order": 4,
-      "source_start": 1617.409,
-      "source_end": 1624.818,
+      "source_start": 1624.666,
+      "source_end": 1634.916,
       "kind": "movie_dialogue",
       "story_beat": "cold_open_prayer_log",
       "story_event_id": "prayer_log_present",
@@ -79,8 +79,8 @@
     },
     {
       "order": 5,
-      "source_start": 1624.818,
-      "source_end": 1631.818,
+      "source_start": 1634.916,
+      "source_end": 1641.916,
       "kind": "narration",
       "story_beat": "cold_open_prayer_log",
       "story_event_id": "prayer_log_present",
@@ -102,8 +102,8 @@
     },
     {
       "order": 6,
-      "source_start": 1631.818,
-      "source_end": 1639.228,
+      "source_start": 1641.916,
+      "source_end": 1644.0,
       "kind": "movie_dialogue",
       "story_beat": "cold_open_prayer_log",
       "story_event_id": "prayer_log_present",
@@ -223,8 +223,8 @@
     },
     {
       "order": 13,
-      "source_start": 372.0,
-      "source_end": 381.618,
+      "source_start": 373.501,
+      "source_end": 386.501,
       "kind": "movie_dialogue",
       "story_beat": "willard_war_and_charlotte",
       "story_event_id": "meets_charlotte",
@@ -236,8 +236,8 @@
     },
     {
       "order": 14,
-      "source_start": 591.0,
-      "source_end": 598.0,
+      "source_start": 592.418,
+      "source_end": 602.083,
       "kind": "narration",
       "story_beat": "willard_war_and_charlotte",
       "story_event_id": "emma_matchmaking",
@@ -259,8 +259,8 @@
     },
     {
       "order": 15,
-      "source_start": 598.0,
-      "source_end": 605.409,
+      "source_start": 602.083,
+      "source_end": 609.916,
       "kind": "movie_dialogue",
       "story_beat": "willard_war_and_charlotte",
       "story_event_id": "emma_matchmaking",
@@ -272,8 +272,8 @@
     },
     {
       "order": 16,
-      "source_start": 605.409,
-      "source_end": 612.409,
+      "source_start": 609.916,
+      "source_end": 617.333,
       "kind": "narration",
       "story_beat": "willard_war_and_charlotte",
       "story_event_id": "emma_matchmaking",
@@ -295,8 +295,8 @@
     },
     {
       "order": 17,
-      "source_start": 612.409,
-      "source_end": 619.818,
+      "source_start": 617.333,
+      "source_end": 626.083,
       "kind": "movie_dialogue",
       "story_beat": "willard_war_and_charlotte",
       "story_event_id": "emma_matchmaking",
@@ -308,8 +308,8 @@
     },
     {
       "order": 18,
-      "source_start": 619.818,
-      "source_end": 626.818,
+      "source_start": 626.083,
+      "source_end": 633.583,
       "kind": "narration",
       "story_beat": "willard_war_and_charlotte",
       "story_event_id": "emma_matchmaking",
@@ -331,8 +331,8 @@
     },
     {
       "order": 19,
-      "source_start": 626.818,
-      "source_end": 634.228,
+      "source_start": 633.583,
+      "source_end": 636.375,
       "kind": "movie_dialogue",
       "story_beat": "willard_war_and_charlotte",
       "story_event_id": "emma_matchmaking",
@@ -344,8 +344,8 @@
     },
     {
       "order": 20,
-      "source_start": 1224.0,
-      "source_end": 1233.618,
+      "source_start": 1225.168,
+      "source_end": 1238.168,
       "kind": "movie_dialogue",
       "story_beat": "arvin_boyhood",
       "story_event_id": "arvin_bullied",
@@ -357,8 +357,21 @@
     },
     {
       "order": 21,
-      "source_start": 1416.0,
-      "source_end": 1423.0,
+      "source_start": 1416.335,
+      "source_end": 1427.5,
+      "kind": "movie_dialogue",
+      "story_beat": "arvin_boyhood",
+      "story_event_id": "willard_teaches_revenge",
+      "purpose": "When does Arvin use it?",
+      "narration": "",
+      "keep_original_audio": true,
+      "audio_level": 0.96,
+      "transition": "cut"
+    },
+    {
+      "order": 22,
+      "source_start": 1427.5,
+      "source_end": 1434.5,
       "kind": "narration",
       "story_beat": "arvin_boyhood",
       "story_event_id": "willard_teaches_revenge",
@@ -379,9 +392,9 @@
       "narration_scene_protection": "active_combat"
     },
     {
-      "order": 22,
-      "source_start": 1423.0,
-      "source_end": 1430.409,
+      "order": 23,
+      "source_start": 1434.5,
+      "source_end": 1441.909,
       "kind": "movie_dialogue",
       "story_beat": "arvin_boyhood",
       "story_event_id": "willard_teaches_revenge",
@@ -392,9 +405,9 @@
       "transition": "cut"
     },
     {
-      "order": 23,
-      "source_start": 1430.409,
-      "source_end": 1437.409,
+      "order": 24,
+      "source_start": 1441.909,
+      "source_end": 1450.458,
       "kind": "narration",
       "story_beat": "arvin_boyhood",
       "story_event_id": "willard_teaches_revenge",
@@ -415,9 +428,9 @@
       "narration_scene_protection": "clear"
     },
     {
-      "order": 24,
-      "source_start": 1437.409,
-      "source_end": 1444.818,
+      "order": 25,
+      "source_start": 1450.458,
+      "source_end": 1458.791,
       "kind": "movie_dialogue",
       "story_beat": "arvin_boyhood",
       "story_event_id": "willard_teaches_revenge",
@@ -428,9 +441,9 @@
       "transition": "cut"
     },
     {
-      "order": 25,
-      "source_start": 1444.818,
-      "source_end": 1451.818,
+      "order": 26,
+      "source_start": 1458.791,
+      "source_end": 1465.791,
       "kind": "narration",
       "story_beat": "arvin_boyhood",
       "story_event_id": "willard_teaches_revenge",
@@ -451,9 +464,9 @@
       "narration_scene_protection": "strong_dialogue"
     },
     {
-      "order": 26,
-      "source_start": 1451.818,
-      "source_end": 1459.228,
+      "order": 27,
+      "source_start": 1465.791,
+      "source_end": 1473.791,
       "kind": "movie_dialogue",
       "story_beat": "arvin_boyhood",
       "story_event_id": "willard_teaches_revenge",
@@ -464,9 +477,9 @@
       "transition": "cut"
     },
     {
-      "order": 27,
-      "source_start": 1482.0,
-      "source_end": 1489.0,
+      "order": 28,
+      "source_start": 1483.376,
+      "source_end": 1490.376,
       "kind": "narration",
       "story_beat": "arvin_boyhood",
       "story_event_id": "charlotte_illness",
@@ -487,9 +500,9 @@
       "narration_scene_protection": "discovery_payoff"
     },
     {
-      "order": 28,
-      "source_start": 1489.0,
-      "source_end": 1497.335,
+      "order": 29,
+      "source_start": 1490.376,
+      "source_end": 1498.711,
       "kind": "movie_dialogue",
       "story_beat": "arvin_boyhood",
       "story_event_id": "charlotte_illness",
@@ -500,9 +513,22 @@
       "transition": "cut"
     },
     {
-      "order": 29,
-      "source_start": 1497.335,
-      "source_end": 1504.335,
+      "order": 30,
+      "source_start": 1498.711,
+      "source_end": 1506.461,
+      "kind": "movie_dialogue",
+      "story_beat": "arvin_boyhood",
+      "story_event_id": "charlotte_illness",
+      "purpose": "How far will Willard go to fix it?",
+      "narration": "",
+      "keep_original_audio": true,
+      "audio_level": 0.96,
+      "transition": "cut"
+    },
+    {
+      "order": 31,
+      "source_start": 1506.461,
+      "source_end": 1513.461,
       "kind": "narration",
       "story_beat": "arvin_boyhood",
       "story_event_id": "charlotte_illness",
@@ -523,9 +549,9 @@
       "narration_scene_protection": "discovery_payoff"
     },
     {
-      "order": 30,
-      "source_start": 1504.335,
-      "source_end": 1512.671,
+      "order": 32,
+      "source_start": 1513.461,
+      "source_end": 1523.791,
       "kind": "movie_dialogue",
       "story_beat": "arvin_boyhood",
       "story_event_id": "charlotte_illness",
@@ -536,9 +562,9 @@
       "transition": "cut"
     },
     {
-      "order": 31,
-      "source_start": 1512.671,
-      "source_end": 1519.671,
+      "order": 33,
+      "source_start": 1523.791,
+      "source_end": 1531.208,
       "kind": "narration",
       "story_beat": "arvin_boyhood",
       "story_event_id": "charlotte_illness",
@@ -559,9 +585,9 @@
       "narration_scene_protection": "strong_dialogue"
     },
     {
-      "order": 32,
-      "source_start": 1519.671,
-      "source_end": 1528.006,
+      "order": 34,
+      "source_start": 1531.208,
+      "source_end": 1539.543,
       "kind": "movie_dialogue",
       "story_beat": "arvin_boyhood",
       "story_event_id": "charlotte_illness",
@@ -572,9 +598,9 @@
       "transition": "cut"
     },
     {
-      "order": 33,
-      "source_start": 1528.006,
-      "source_end": 1535.006,
+      "order": 35,
+      "source_start": 1539.543,
+      "source_end": 1548.0,
       "kind": "narration",
       "story_beat": "arvin_boyhood",
       "story_event_id": "charlotte_illness",
@@ -595,9 +621,9 @@
       "narration_scene_protection": "strong_dialogue"
     },
     {
-      "order": 34,
-      "source_start": 1535.006,
-      "source_end": 1543.341,
+      "order": 36,
+      "source_start": 1548.0,
+      "source_end": 1551.0,
       "kind": "movie_dialogue",
       "story_beat": "arvin_boyhood",
       "story_event_id": "charlotte_illness",
@@ -608,7 +634,7 @@
       "transition": "cut"
     },
     {
-      "order": 35,
+      "order": 37,
       "source_start": 1743.0,
       "source_end": 1750.0,
       "kind": "narration",
@@ -631,9 +657,9 @@
       "narration_scene_protection": "horror_payoff"
     },
     {
-      "order": 36,
+      "order": 38,
       "source_start": 1750.0,
-      "source_end": 1758.335,
+      "source_end": 1759.916,
       "kind": "movie_dialogue",
       "story_beat": "arvin_boyhood",
       "story_event_id": "jack_sacrifice",
@@ -644,9 +670,9 @@
       "transition": "cut"
     },
     {
-      "order": 37,
-      "source_start": 1758.335,
-      "source_end": 1765.335,
+      "order": 39,
+      "source_start": 1759.916,
+      "source_end": 1766.916,
       "kind": "narration",
       "story_beat": "arvin_boyhood",
       "story_event_id": "jack_sacrifice",
@@ -667,9 +693,9 @@
       "narration_scene_protection": "death_grief"
     },
     {
-      "order": 38,
-      "source_start": 1765.335,
-      "source_end": 1773.671,
+      "order": 40,
+      "source_start": 1766.916,
+      "source_end": 1775.251,
       "kind": "movie_dialogue",
       "story_beat": "arvin_boyhood",
       "story_event_id": "jack_sacrifice",
@@ -680,9 +706,9 @@
       "transition": "cut"
     },
     {
-      "order": 39,
-      "source_start": 1773.671,
-      "source_end": 1780.671,
+      "order": 41,
+      "source_start": 1775.251,
+      "source_end": 1782.251,
       "kind": "narration",
       "story_beat": "arvin_boyhood",
       "story_event_id": "jack_sacrifice",
@@ -703,9 +729,9 @@
       "narration_scene_protection": "death_grief"
     },
     {
-      "order": 40,
-      "source_start": 1780.671,
-      "source_end": 1789.006,
+      "order": 42,
+      "source_start": 1782.251,
+      "source_end": 1790.587,
       "kind": "movie_dialogue",
       "story_beat": "arvin_boyhood",
       "story_event_id": "jack_sacrifice",
@@ -716,9 +742,9 @@
       "transition": "cut"
     },
     {
-      "order": 41,
-      "source_start": 798.0,
-      "source_end": 814.03,
+      "order": 43,
+      "source_start": 798.376,
+      "source_end": 814.406,
       "kind": "movie_dialogue",
       "story_beat": "roy_and_helen_parallel",
       "story_event_id": "roy_spider_sermon",
@@ -729,9 +755,9 @@
       "transition": "cut"
     },
     {
-      "order": 42,
-      "source_start": 906.0,
-      "source_end": 913.0,
+      "order": 44,
+      "source_start": 907.168,
+      "source_end": 914.833,
       "kind": "narration",
       "story_beat": "roy_and_helen_parallel",
       "story_event_id": "helen_chooses_roy",
@@ -752,9 +778,9 @@
       "narration_scene_protection": "strong_dialogue"
     },
     {
-      "order": 43,
-      "source_start": 913.0,
-      "source_end": 922.595,
+      "order": 45,
+      "source_start": 914.833,
+      "source_end": 924.428,
       "kind": "movie_dialogue",
       "story_beat": "roy_and_helen_parallel",
       "story_event_id": "helen_chooses_roy",
@@ -765,7 +791,7 @@
       "transition": "cut"
     },
     {
-      "order": 44,
+      "order": 46,
       "source_start": 2256.0,
       "source_end": 2263.0,
       "kind": "narration",
@@ -788,7 +814,7 @@
       "narration_scene_protection": "death_grief"
     },
     {
-      "order": 45,
+      "order": 47,
       "source_start": 2263.0,
       "source_end": 2272.595,
       "kind": "movie_dialogue",
@@ -801,7 +827,7 @@
       "transition": "cut"
     },
     {
-      "order": 46,
+      "order": 48,
       "source_start": 2272.595,
       "source_end": 2279.595,
       "kind": "narration",
@@ -824,7 +850,7 @@
       "narration_scene_protection": "death_grief"
     },
     {
-      "order": 47,
+      "order": 49,
       "source_start": 2279.595,
       "source_end": 2289.19,
       "kind": "movie_dialogue",
@@ -837,7 +863,7 @@
       "transition": "cut"
     },
     {
-      "order": 48,
+      "order": 50,
       "source_start": 2451.0,
       "source_end": 2458.0,
       "kind": "narration",
@@ -860,7 +886,7 @@
       "narration_scene_protection": "clear"
     },
     {
-      "order": 49,
+      "order": 51,
       "source_start": 2458.0,
       "source_end": 2467.595,
       "kind": "movie_dialogue",
@@ -873,7 +899,7 @@
       "transition": "cut"
     },
     {
-      "order": 50,
+      "order": 52,
       "source_start": 2467.595,
       "source_end": 2474.595,
       "kind": "narration",
@@ -896,9 +922,9 @@
       "narration_scene_protection": "strong_dialogue"
     },
     {
-      "order": 51,
+      "order": 53,
       "source_start": 2474.595,
-      "source_end": 2484.19,
+      "source_end": 2485.5,
       "kind": "movie_dialogue",
       "story_beat": "roy_ends",
       "story_event_id": "roy_meets_carl",
@@ -909,9 +935,9 @@
       "transition": "cut"
     },
     {
-      "order": 52,
+      "order": 54,
       "source_start": 2952.0,
-      "source_end": 2959.0,
+      "source_end": 2961.083,
       "kind": "narration",
       "story_beat": "arvin_and_lenora_grow",
       "story_event_id": "lenora_and_arvin",
@@ -932,9 +958,9 @@
       "narration_scene_protection": "active_combat"
     },
     {
-      "order": 53,
-      "source_start": 2959.0,
-      "source_end": 2970.715,
+      "order": 55,
+      "source_start": 2961.083,
+      "source_end": 2975.291,
       "kind": "movie_dialogue",
       "story_beat": "arvin_and_lenora_grow",
       "story_event_id": "lenora_and_arvin",
@@ -945,9 +971,9 @@
       "transition": "cut"
     },
     {
-      "order": 54,
-      "source_start": 2802.0,
-      "source_end": 2809.0,
+      "order": 56,
+      "source_start": 2804.543,
+      "source_end": 2811.543,
       "kind": "narration",
       "story_beat": "arvin_and_lenora_grow",
       "story_event_id": "earskell_gives_pistol",
@@ -968,9 +994,9 @@
       "narration_scene_protection": "strong_dialogue"
     },
     {
-      "order": 55,
-      "source_start": 2809.0,
-      "source_end": 2820.715,
+      "order": 57,
+      "source_start": 2811.543,
+      "source_end": 2825.083,
       "kind": "movie_dialogue",
       "story_beat": "arvin_and_lenora_grow",
       "story_event_id": "earskell_gives_pistol",
@@ -981,7 +1007,7 @@
       "transition": "cut"
     },
     {
-      "order": 56,
+      "order": 58,
       "source_start": 3255.0,
       "source_end": 3262.0,
       "kind": "narration",
@@ -1004,9 +1030,9 @@
       "narration_scene_protection": "clear"
     },
     {
-      "order": 57,
+      "order": 59,
       "source_start": 3262.0,
-      "source_end": 3269.81,
+      "source_end": 3271.583,
       "kind": "movie_dialogue",
       "story_beat": "preacher_arrives",
       "story_event_id": "teagardin_arrives",
@@ -1017,9 +1043,9 @@
       "transition": "cut"
     },
     {
-      "order": 58,
+      "order": 60,
       "source_start": 3336.0,
-      "source_end": 3358.442,
+      "source_end": 3359.083,
       "kind": "movie_dialogue",
       "story_beat": "preacher_arrives",
       "story_event_id": "teagardin_sermon",
@@ -1030,7 +1056,7 @@
       "transition": "cut"
     },
     {
-      "order": 59,
+      "order": 61,
       "source_start": 3828.0,
       "source_end": 3835.0,
       "kind": "narration",
@@ -1053,7 +1079,7 @@
       "narration_scene_protection": "strong_dialogue"
     },
     {
-      "order": 60,
+      "order": 62,
       "source_start": 3835.0,
       "source_end": 3846.715,
       "kind": "movie_dialogue",
@@ -1066,9 +1092,22 @@
       "transition": "cut"
     },
     {
-      "order": 61,
-      "source_start": 2562.0,
-      "source_end": 2569.0,
+      "order": 63,
+      "source_start": 2563.543,
+      "source_end": 2568.793,
+      "kind": "movie_dialogue",
+      "story_beat": "predators_established",
+      "story_event_id": "carl_method",
+      "purpose": "Who is next?",
+      "narration": "",
+      "keep_original_audio": true,
+      "audio_level": 0.96,
+      "transition": "cut"
+    },
+    {
+      "order": 64,
+      "source_start": 2568.793,
+      "source_end": 2576.625,
       "kind": "narration",
       "story_beat": "predators_established",
       "story_event_id": "carl_method",
@@ -1089,9 +1128,9 @@
       "narration_scene_protection": "strong_dialogue"
     },
     {
-      "order": 62,
-      "source_start": 2569.0,
-      "source_end": 2576.81,
+      "order": 65,
+      "source_start": 2576.625,
+      "source_end": 2584.435,
       "kind": "movie_dialogue",
       "story_beat": "predators_established",
       "story_event_id": "carl_method",
@@ -1102,9 +1141,9 @@
       "transition": "cut"
     },
     {
-      "order": 63,
-      "source_start": 4263.0,
-      "source_end": 4270.0,
+      "order": 66,
+      "source_start": 4264.251,
+      "source_end": 4272.458,
       "kind": "narration",
       "story_beat": "predators_established",
       "story_event_id": "bodecker_corruption",
@@ -1125,9 +1164,9 @@
       "narration_scene_protection": "strong_dialogue"
     },
     {
-      "order": 64,
-      "source_start": 4270.0,
-      "source_end": 4281.715,
+      "order": 67,
+      "source_start": 4272.458,
+      "source_end": 4284.173,
       "kind": "movie_dialogue",
       "story_beat": "predators_established",
       "story_event_id": "bodecker_corruption",
@@ -1138,9 +1177,22 @@
       "transition": "cut"
     },
     {
-      "order": 65,
-      "source_start": 5214.0,
-      "source_end": 5221.0,
+      "order": 68,
+      "source_start": 5215.251,
+      "source_end": 5221.001,
+      "kind": "movie_dialogue",
+      "story_beat": "lenora_breaks",
+      "story_event_id": "lenora_pregnant",
+      "purpose": "What is left open to her?",
+      "narration": "",
+      "keep_original_audio": true,
+      "audio_level": 0.96,
+      "transition": "cut"
+    },
+    {
+      "order": 69,
+      "source_start": 5221.001,
+      "source_end": 5228.001,
       "kind": "narration",
       "story_beat": "lenora_breaks",
       "story_event_id": "lenora_pregnant",
@@ -1161,9 +1213,9 @@
       "narration_scene_protection": "strong_dialogue"
     },
     {
-      "order": 66,
-      "source_start": 5221.0,
-      "source_end": 5232.715,
+      "order": 70,
+      "source_start": 5228.001,
+      "source_end": 5241.583,
       "kind": "movie_dialogue",
       "story_beat": "lenora_breaks",
       "story_event_id": "lenora_pregnant",
@@ -1174,9 +1226,22 @@
       "transition": "cut"
     },
     {
-      "order": 67,
-      "source_start": 5343.0,
-      "source_end": 5350.0,
+      "order": 71,
+      "source_start": 5345.085,
+      "source_end": 5352.335,
+      "kind": "movie_dialogue",
+      "story_beat": "lenora_breaks",
+      "story_event_id": "lenora_dies",
+      "purpose": "How does Arvin learn the truth?",
+      "narration": "",
+      "keep_original_audio": true,
+      "audio_level": 0.96,
+      "transition": "cut"
+    },
+    {
+      "order": 72,
+      "source_start": 5352.335,
+      "source_end": 5359.335,
       "kind": "narration",
       "story_beat": "lenora_breaks",
       "story_event_id": "lenora_dies",
@@ -1197,9 +1262,9 @@
       "narration_scene_protection": "death_grief"
     },
     {
-      "order": 68,
-      "source_start": 5350.0,
-      "source_end": 5361.715,
+      "order": 73,
+      "source_start": 5359.335,
+      "source_end": 5371.541,
       "kind": "movie_dialogue",
       "story_beat": "lenora_breaks",
       "story_event_id": "lenora_dies",
@@ -1210,9 +1275,22 @@
       "transition": "cut"
     },
     {
-      "order": 69,
-      "source_start": 5376.0,
-      "source_end": 5383.0,
+      "order": 74,
+      "source_start": 5376.543,
+      "source_end": 5383.043,
+      "kind": "movie_dialogue",
+      "story_beat": "lenora_breaks",
+      "story_event_id": "suicide_burial_refused",
+      "purpose": "What does Arvin decide?",
+      "narration": "",
+      "keep_original_audio": true,
+      "audio_level": 0.96,
+      "transition": "cut"
+    },
+    {
+      "order": 75,
+      "source_start": 5383.043,
+      "source_end": 5390.043,
       "kind": "narration",
       "story_beat": "lenora_breaks",
       "story_event_id": "suicide_burial_refused",
@@ -1233,9 +1311,9 @@
       "narration_scene_protection": "death_grief"
     },
     {
-      "order": 70,
-      "source_start": 5383.0,
-      "source_end": 5394.715,
+      "order": 76,
+      "source_start": 5390.043,
+      "source_end": 5401.758,
       "kind": "movie_dialogue",
       "story_beat": "lenora_breaks",
       "story_event_id": "suicide_burial_refused",
@@ -1246,9 +1324,9 @@
       "transition": "cut"
     },
     {
-      "order": 71,
+      "order": 77,
       "source_start": 5760.0,
-      "source_end": 5786.0,
+      "source_end": 5785.163,
       "kind": "movie_dialogue",
       "story_beat": "arvin_acts",
       "story_event_id": "arvin_confronts_preacher",
@@ -1259,9 +1337,9 @@
       "transition": "cut"
     },
     {
-      "order": 72,
-      "source_start": 5976.0,
-      "source_end": 5983.0,
+      "order": 78,
+      "source_start": 5976.46,
+      "source_end": 5983.46,
       "kind": "narration",
       "story_beat": "arvin_acts",
       "story_event_id": "preacher_dies",
@@ -1282,9 +1360,9 @@
       "narration_scene_protection": "strong_dialogue"
     },
     {
-      "order": 73,
-      "source_start": 5983.0,
-      "source_end": 5991.642,
+      "order": 79,
+      "source_start": 5983.46,
+      "source_end": 5992.102,
       "kind": "movie_dialogue",
       "story_beat": "arvin_acts",
       "story_event_id": "preacher_dies",
@@ -1295,9 +1373,22 @@
       "transition": "cut"
     },
     {
-      "order": 74,
-      "source_start": 5991.642,
-      "source_end": 5998.642,
+      "order": 80,
+      "source_start": 5992.102,
+      "source_end": 6002.833,
+      "kind": "movie_dialogue",
+      "story_beat": "arvin_acts",
+      "story_event_id": "preacher_dies",
+      "purpose": "Who starts hunting him now?",
+      "narration": "",
+      "keep_original_audio": true,
+      "audio_level": 0.96,
+      "transition": "cut"
+    },
+    {
+      "order": 81,
+      "source_start": 6002.833,
+      "source_end": 6009.833,
       "kind": "narration",
       "story_beat": "arvin_acts",
       "story_event_id": "preacher_dies",
@@ -1318,9 +1409,9 @@
       "narration_scene_protection": "strong_dialogue"
     },
     {
-      "order": 75,
-      "source_start": 5998.642,
-      "source_end": 6007.284,
+      "order": 82,
+      "source_start": 6009.833,
+      "source_end": 6019.625,
       "kind": "movie_dialogue",
       "story_beat": "arvin_acts",
       "story_event_id": "preacher_dies",
@@ -1331,9 +1422,9 @@
       "transition": "cut"
     },
     {
-      "order": 76,
-      "source_start": 6007.284,
-      "source_end": 6014.284,
+      "order": 83,
+      "source_start": 6019.625,
+      "source_end": 6026.625,
       "kind": "narration",
       "story_beat": "arvin_acts",
       "story_event_id": "preacher_dies",
@@ -1354,9 +1445,9 @@
       "narration_scene_protection": "confession"
     },
     {
-      "order": 77,
-      "source_start": 6014.284,
-      "source_end": 6022.927,
+      "order": 84,
+      "source_start": 6026.625,
+      "source_end": 6035.267,
       "kind": "movie_dialogue",
       "story_beat": "arvin_acts",
       "story_event_id": "preacher_dies",
@@ -1367,9 +1458,22 @@
       "transition": "cut"
     },
     {
-      "order": 78,
+      "order": 85,
       "source_start": 6384.0,
-      "source_end": 6391.0,
+      "source_end": 6389.25,
+      "kind": "movie_dialogue",
+      "story_beat": "roads_converge",
+      "story_event_id": "arvin_rides_with_carl",
+      "purpose": "Who moves first?",
+      "narration": "",
+      "keep_original_audio": true,
+      "audio_level": 0.96,
+      "transition": "cut"
+    },
+    {
+      "order": 86,
+      "source_start": 6389.25,
+      "source_end": 6397.833,
       "kind": "narration",
       "story_beat": "roads_converge",
       "story_event_id": "arvin_rides_with_carl",
@@ -1390,9 +1494,9 @@
       "narration_scene_protection": "strong_dialogue"
     },
     {
-      "order": 79,
-      "source_start": 6391.0,
-      "source_end": 6399.642,
+      "order": 87,
+      "source_start": 6397.833,
+      "source_end": 6406.475,
       "kind": "movie_dialogue",
       "story_beat": "roads_converge",
       "story_event_id": "arvin_rides_with_carl",
@@ -1403,9 +1507,9 @@
       "transition": "cut"
     },
     {
-      "order": 80,
-      "source_start": 6399.642,
-      "source_end": 6406.642,
+      "order": 88,
+      "source_start": 6406.475,
+      "source_end": 6414.333,
       "kind": "narration",
       "story_beat": "roads_converge",
       "story_event_id": "arvin_rides_with_carl",
@@ -1426,9 +1530,9 @@
       "narration_scene_protection": "strong_dialogue"
     },
     {
-      "order": 81,
-      "source_start": 6406.642,
-      "source_end": 6415.284,
+      "order": 89,
+      "source_start": 6414.333,
+      "source_end": 6423.458,
       "kind": "movie_dialogue",
       "story_beat": "roads_converge",
       "story_event_id": "arvin_rides_with_carl",
@@ -1439,9 +1543,9 @@
       "transition": "cut"
     },
     {
-      "order": 82,
-      "source_start": 6415.284,
-      "source_end": 6422.284,
+      "order": 90,
+      "source_start": 6423.458,
+      "source_end": 6430.458,
       "kind": "narration",
       "story_beat": "roads_converge",
       "story_event_id": "arvin_rides_with_carl",
@@ -1462,9 +1566,9 @@
       "narration_scene_protection": "strong_dialogue"
     },
     {
-      "order": 83,
-      "source_start": 6422.284,
-      "source_end": 6430.927,
+      "order": 91,
+      "source_start": 6430.458,
+      "source_end": 6440.916,
       "kind": "movie_dialogue",
       "story_beat": "roads_converge",
       "story_event_id": "arvin_rides_with_carl",
@@ -1475,7 +1579,7 @@
       "transition": "cut"
     },
     {
-      "order": 84,
+      "order": 92,
       "source_start": 6564.0,
       "source_end": 6590.0,
       "kind": "movie_dialogue",
@@ -1488,7 +1592,7 @@
       "transition": "cut"
     },
     {
-      "order": 85,
+      "order": 93,
       "source_start": 6771.0,
       "source_end": 6778.0,
       "kind": "narration",
@@ -1511,7 +1615,7 @@
       "narration_scene_protection": "clear"
     },
     {
-      "order": 86,
+      "order": 94,
       "source_start": 6778.0,
       "source_end": 6786.642,
       "kind": "movie_dialogue",
@@ -1524,9 +1628,9 @@
       "transition": "cut"
     },
     {
-      "order": 87,
+      "order": 95,
       "source_start": 6786.642,
-      "source_end": 6793.642,
+      "source_end": 6794.0,
       "kind": "narration",
       "story_beat": "roads_converge",
       "story_event_id": "bodecker_learns",
@@ -1547,9 +1651,9 @@
       "narration_scene_protection": "discovery_payoff"
     },
     {
-      "order": 88,
-      "source_start": 6793.642,
-      "source_end": 6802.284,
+      "order": 96,
+      "source_start": 6794.0,
+      "source_end": 6803.833,
       "kind": "movie_dialogue",
       "story_beat": "roads_converge",
       "story_event_id": "bodecker_learns",
@@ -1560,9 +1664,9 @@
       "transition": "cut"
     },
     {
-      "order": 89,
-      "source_start": 6802.284,
-      "source_end": 6809.284,
+      "order": 97,
+      "source_start": 6803.833,
+      "source_end": 6810.833,
       "kind": "narration",
       "story_beat": "roads_converge",
       "story_event_id": "bodecker_learns",
@@ -1583,9 +1687,9 @@
       "narration_scene_protection": "reversal_reveal"
     },
     {
-      "order": 90,
-      "source_start": 6809.284,
-      "source_end": 6817.927,
+      "order": 98,
+      "source_start": 6810.833,
+      "source_end": 6820.291,
       "kind": "movie_dialogue",
       "story_beat": "roads_converge",
       "story_event_id": "bodecker_learns",
@@ -1596,7 +1700,7 @@
       "transition": "cut"
     },
     {
-      "order": 91,
+      "order": 99,
       "source_start": 7020.0,
       "source_end": 7027.0,
       "kind": "narration",
@@ -1619,9 +1723,9 @@
       "narration_scene_protection": "strong_dialogue"
     },
     {
-      "order": 92,
+      "order": 100,
       "source_start": 7027.0,
-      "source_end": 7035.642,
+      "source_end": 7038.375,
       "kind": "movie_dialogue",
       "story_beat": "cornered",
       "story_event_id": "arvin_returns_home",
@@ -1632,9 +1736,9 @@
       "transition": "cut"
     },
     {
-      "order": 93,
-      "source_start": 7035.642,
-      "source_end": 7042.642,
+      "order": 101,
+      "source_start": 7038.375,
+      "source_end": 7045.375,
       "kind": "narration",
       "story_beat": "cornered",
       "story_event_id": "arvin_returns_home",
@@ -1655,9 +1759,9 @@
       "narration_scene_protection": "strong_dialogue"
     },
     {
-      "order": 94,
-      "source_start": 7042.642,
-      "source_end": 7051.284,
+      "order": 102,
+      "source_start": 7045.375,
+      "source_end": 7054.017,
       "kind": "movie_dialogue",
       "story_beat": "cornered",
       "story_event_id": "arvin_returns_home",
@@ -1668,9 +1772,22 @@
       "transition": "cut"
     },
     {
-      "order": 95,
-      "source_start": 7051.284,
-      "source_end": 7058.284,
+      "order": 103,
+      "source_start": 7054.017,
+      "source_end": 7059.267,
+      "kind": "movie_dialogue",
+      "story_beat": "cornered",
+      "story_event_id": "arvin_returns_home",
+      "purpose": "Why here?",
+      "narration": "",
+      "keep_original_audio": true,
+      "audio_level": 0.96,
+      "transition": "cut"
+    },
+    {
+      "order": 104,
+      "source_start": 7059.267,
+      "source_end": 7066.267,
       "kind": "narration",
       "story_beat": "cornered",
       "story_event_id": "arvin_returns_home",
@@ -1691,9 +1808,9 @@
       "narration_scene_protection": "strong_dialogue"
     },
     {
-      "order": 96,
-      "source_start": 7058.284,
-      "source_end": 7066.927,
+      "order": 105,
+      "source_start": 7066.267,
+      "source_end": 7076.458,
       "kind": "movie_dialogue",
       "story_beat": "cornered",
       "story_event_id": "arvin_returns_home",
@@ -1704,9 +1821,22 @@
       "transition": "cut"
     },
     {
-      "order": 97,
+      "order": 106,
       "source_start": 7338.0,
-      "source_end": 7345.0,
+      "source_end": 7345.208,
+      "kind": "movie_dialogue",
+      "story_beat": "cornered",
+      "story_event_id": "arvin_understands_father",
+      "purpose": "Where does that leave him?",
+      "narration": "",
+      "keep_original_audio": true,
+      "audio_level": 0.96,
+      "transition": "cut"
+    },
+    {
+      "order": 107,
+      "source_start": 7345.208,
+      "source_end": 7352.416,
       "kind": "narration",
       "story_beat": "cornered",
       "story_event_id": "arvin_understands_father",
@@ -1727,9 +1857,9 @@
       "narration_scene_protection": "strong_dialogue"
     },
     {
-      "order": 98,
-      "source_start": 7345.0,
-      "source_end": 7353.642,
+      "order": 108,
+      "source_start": 7352.416,
+      "source_end": 7362.208,
       "kind": "movie_dialogue",
       "story_beat": "cornered",
       "story_event_id": "arvin_understands_father",
@@ -1740,9 +1870,22 @@
       "transition": "cut"
     },
     {
-      "order": 99,
-      "source_start": 7353.642,
-      "source_end": 7360.642,
+      "order": 109,
+      "source_start": 7362.208,
+      "source_end": 7368.958,
+      "kind": "movie_dialogue",
+      "story_beat": "cornered",
+      "story_event_id": "arvin_understands_father",
+      "purpose": "Where does that leave him?",
+      "narration": "",
+      "keep_original_audio": true,
+      "audio_level": 0.96,
+      "transition": "cut"
+    },
+    {
+      "order": 110,
+      "source_start": 7368.958,
+      "source_end": 7375.958,
       "kind": "narration",
       "story_beat": "cornered",
       "story_event_id": "arvin_understands_father",
@@ -1763,9 +1906,9 @@
       "narration_scene_protection": "strong_dialogue"
     },
     {
-      "order": 100,
-      "source_start": 7360.642,
-      "source_end": 7369.284,
+      "order": 111,
+      "source_start": 7375.958,
+      "source_end": 7384.6,
       "kind": "movie_dialogue",
       "story_beat": "cornered",
       "story_event_id": "arvin_understands_father",
@@ -1776,9 +1919,9 @@
       "transition": "cut"
     },
     {
-      "order": 101,
-      "source_start": 7369.284,
-      "source_end": 7376.284,
+      "order": 112,
+      "source_start": 7384.6,
+      "source_end": 7391.6,
       "kind": "narration",
       "story_beat": "cornered",
       "story_event_id": "arvin_understands_father",
@@ -1799,20 +1942,7 @@
       "narration_scene_protection": "clear"
     },
     {
-      "order": 102,
-      "source_start": 7376.284,
-      "source_end": 7384.927,
-      "kind": "movie_dialogue",
-      "story_beat": "cornered",
-      "story_event_id": "arvin_understands_father",
-      "purpose": "Where does that leave him?",
-      "narration": "",
-      "keep_original_audio": true,
-      "audio_level": 0.96,
-      "transition": "cut"
-    },
-    {
-      "order": 103,
+      "order": 113,
       "source_start": 7404.0,
       "source_end": 7411.0,
       "kind": "narration",
@@ -1835,9 +1965,9 @@
       "narration_scene_protection": "strong_dialogue"
     },
     {
-      "order": 104,
+      "order": 114,
       "source_start": 7411.0,
-      "source_end": 7419.642,
+      "source_end": 7420.541,
       "kind": "movie_dialogue",
       "story_beat": "cornered",
       "story_event_id": "bodecker_calls_him_out",
@@ -1848,9 +1978,9 @@
       "transition": "cut"
     },
     {
-      "order": 105,
-      "source_start": 7419.642,
-      "source_end": 7426.642,
+      "order": 115,
+      "source_start": 7420.541,
+      "source_end": 7427.541,
       "kind": "narration",
       "story_beat": "cornered",
       "story_event_id": "bodecker_calls_him_out",
@@ -1871,9 +2001,9 @@
       "narration_scene_protection": "strong_dialogue"
     },
     {
-      "order": 106,
-      "source_start": 7426.642,
-      "source_end": 7435.284,
+      "order": 116,
+      "source_start": 7427.541,
+      "source_end": 7436.183,
       "kind": "movie_dialogue",
       "story_beat": "cornered",
       "story_event_id": "bodecker_calls_him_out",
@@ -1884,9 +2014,9 @@
       "transition": "cut"
     },
     {
-      "order": 107,
-      "source_start": 7435.284,
-      "source_end": 7442.284,
+      "order": 117,
+      "source_start": 7436.183,
+      "source_end": 7443.183,
       "kind": "narration",
       "story_beat": "cornered",
       "story_event_id": "bodecker_calls_him_out",
@@ -1907,9 +2037,9 @@
       "narration_scene_protection": "strong_dialogue"
     },
     {
-      "order": 108,
-      "source_start": 7442.284,
-      "source_end": 7450.927,
+      "order": 118,
+      "source_start": 7443.183,
+      "source_end": 7452.291,
       "kind": "movie_dialogue",
       "story_beat": "cornered",
       "story_event_id": "bodecker_calls_him_out",
@@ -1920,7 +2050,7 @@
       "transition": "cut"
     },
     {
-      "order": 109,
+      "order": 119,
       "source_start": 7543.0,
       "source_end": 7569.0,
       "kind": "movie_dialogue",
@@ -1933,9 +2063,9 @@
       "transition": "cut"
     },
     {
-      "order": 110,
-      "source_start": 1809.0,
-      "source_end": 1816.0,
+      "order": 120,
+      "source_start": 1809.418,
+      "source_end": 1817.166,
       "kind": "narration",
       "story_beat": "closing_wrap",
       "story_event_id": "closing_theme",
@@ -1956,9 +2086,9 @@
       "narration_scene_protection": "strong_dialogue"
     },
     {
-      "order": 111,
-      "source_start": 1816.0,
-      "source_end": 1824.676,
+      "order": 121,
+      "source_start": 1817.166,
+      "source_end": 1825.842,
       "kind": "movie_dialogue",
       "story_beat": "closing_wrap",
       "story_event_id": "closing_theme",
@@ -1969,9 +2099,22 @@
       "transition": "bridge"
     },
     {
-      "order": 112,
-      "source_start": 1824.676,
-      "source_end": 1831.676,
+      "order": 122,
+      "source_start": 1825.842,
+      "source_end": 1831.342,
+      "kind": "movie_dialogue",
+      "story_beat": "closing_wrap",
+      "story_event_id": "closing_theme",
+      "purpose": "Where do choices like that end?",
+      "narration": "",
+      "keep_original_audio": true,
+      "audio_level": 0.96,
+      "transition": "bridge"
+    },
+    {
+      "order": 123,
+      "source_start": 1831.342,
+      "source_end": 1838.342,
       "kind": "narration",
       "story_beat": "closing_wrap",
       "story_event_id": "closing_theme",
@@ -1992,9 +2135,9 @@
       "narration_scene_protection": "strong_dialogue"
     },
     {
-      "order": 113,
-      "source_start": 1831.676,
-      "source_end": 1840.353,
+      "order": 124,
+      "source_start": 1838.342,
+      "source_end": 1847.019,
       "kind": "movie_dialogue",
       "story_beat": "closing_wrap",
       "story_event_id": "closing_theme",
@@ -2005,9 +2148,9 @@
       "transition": "bridge"
     },
     {
-      "order": 114,
-      "source_start": 1840.353,
-      "source_end": 1847.353,
+      "order": 125,
+      "source_start": 1847.019,
+      "source_end": 1854.375,
       "kind": "narration",
       "story_beat": "closing_wrap",
       "story_event_id": "closing_theme",
@@ -2028,9 +2171,9 @@
       "narration_scene_protection": "clear"
     },
     {
-      "order": 115,
-      "source_start": 1847.353,
-      "source_end": 1856.029,
+      "order": 126,
+      "source_start": 1854.375,
+      "source_end": 1858.458,
       "kind": "movie_dialogue",
       "story_beat": "closing_wrap",
       "story_event_id": "closing_theme",
@@ -2041,7 +2184,7 @@
       "transition": "bridge"
     },
     {
-      "order": 116,
+      "order": 127,
       "source_start": 6945.0,
       "source_end": 6952.0,
       "kind": "narration",
@@ -2064,9 +2207,9 @@
       "narration_scene_protection": "strong_dialogue"
     },
     {
-      "order": 117,
+      "order": 128,
       "source_start": 6952.0,
-      "source_end": 6960.676,
+      "source_end": 6962.333,
       "kind": "movie_dialogue",
       "story_beat": "closing_wrap",
       "story_event_id": "closing_cast_hook",
@@ -2077,9 +2220,9 @@
       "transition": "bridge"
     },
     {
-      "order": 118,
-      "source_start": 6960.676,
-      "source_end": 6967.676,
+      "order": 129,
+      "source_start": 6962.333,
+      "source_end": 6969.333,
       "kind": "narration",
       "story_beat": "closing_wrap",
       "story_event_id": "closing_cast_hook",
@@ -2100,9 +2243,9 @@
       "narration_scene_protection": "strong_dialogue"
     },
     {
-      "order": 119,
-      "source_start": 6967.676,
-      "source_end": 6976.353,
+      "order": 130,
+      "source_start": 6969.333,
+      "source_end": 6978.009,
       "kind": "movie_dialogue",
       "story_beat": "closing_wrap",
       "story_event_id": "closing_cast_hook",
@@ -2113,9 +2256,9 @@
       "transition": "bridge"
     },
     {
-      "order": 120,
-      "source_start": 6976.353,
-      "source_end": 6983.353,
+      "order": 131,
+      "source_start": 6978.009,
+      "source_end": 6985.009,
       "kind": "narration",
       "story_beat": "closing_wrap",
       "story_event_id": "closing_cast_hook",
@@ -2136,9 +2279,9 @@
       "narration_scene_protection": "clear"
     },
     {
-      "order": 121,
-      "source_start": 6983.353,
-      "source_end": 6992.029,
+      "order": 132,
+      "source_start": 6985.009,
+      "source_end": 6993.686,
       "kind": "movie_dialogue",
       "story_beat": "closing_wrap",
       "story_event_id": "closing_cast_hook",

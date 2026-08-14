@@ -1,122 +1,133 @@
 ﻿order,timeline_start,timeline_end,source_start,source_end,kind,story_beat,audio_level,narration,narration_start,sfx_preroll,sfx_start,sfx_lead_seconds,sfx_duration_seconds,tail_under_narration_seconds,dialogue_clearance_seconds,scene_protection,sfx_rationale,mix_gain_linear,purpose,clip
-1,0.0,7.0,1596.0,1603.0,narration,cold_open_prayer_log,0.32,"At this blood-darkened cross, Willard turns prayer into an order.",0.0,none,,0,0,0,,strong_dialogue,,,What is this prayer trying to hold back?,clips_v1\clip_001_narration.mp4
-2,7.0,14.417,1603.0,1610.409,movie_dialogue,cold_open_prayer_log,0.96,,,none,,0,0,0,,unreviewed,,,What is this prayer trying to hold back?,clips_v1\clip_002_movie_dialogue.mp4
-3,14.417,21.417,1610.409,1617.409,narration,cold_open_prayer_log,0.32,The ritual binds Arvin to a fear he cannot yet understand.,14.417,none,,0,0,0,,strong_dialogue,,,What is this prayer trying to hold back?,clips_v1\clip_003_narration.mp4
-4,21.417,28.833,1617.409,1624.818,movie_dialogue,cold_open_prayer_log,0.96,,,none,,0,0,0,,unreviewed,,,What is this prayer trying to hold back?,clips_v1\clip_004_movie_dialogue.mp4
-5,28.833,35.833,1624.818,1631.818,narration,cold_open_prayer_log,0.32,,,none,,0,0,0,,strong_dialogue,,,What is this prayer trying to hold back?,clips_v1\clip_005_narration.mp4
-6,35.833,43.25,1631.818,1639.228,movie_dialogue,cold_open_prayer_log,0.96,,,none,,0,0,0,,unreviewed,,,What is this prayer trying to hold back?,clips_v1\clip_006_movie_dialogue.mp4
-7,43.25,50.25,225.0,232.0,narration,willard_war_and_charlotte,0.32,"Years earlier, one crucified Marine gave Willard's faith its permanent shape.",43.25,none,,0,0,0,,horror_payoff,,,What does that leave in him?,clips_v1\clip_007_narration.mp4
-8,50.25,58.625,232.0,240.335,movie_dialogue,willard_war_and_charlotte,0.96,,,none,,0,0,0,,unreviewed,,,What does that leave in him?,clips_v1\clip_008_movie_dialogue.mp4
-9,58.625,65.625,240.335,247.335,narration,willard_war_and_charlotte,0.32,The sight turns survival itself into something cruel and unbearable.,58.625,none,,0,0,0,,horror_payoff,,,What does that leave in him?,clips_v1\clip_009_narration.mp4
-10,65.625,74.0,247.335,255.671,movie_dialogue,willard_war_and_charlotte,0.96,,,none,,0,0,0,,unreviewed,,,What does that leave in him?,clips_v1\clip_010_movie_dialogue.mp4
-11,74.0,81.0,255.671,262.671,narration,willard_war_and_charlotte,0.32,"With the Marine beyond saving, mercy becomes another kind of violence.",74.0,none,,0,0,0,,horror_payoff,,,What does that leave in him?,clips_v1\clip_011_narration.mp4
-12,81.0,89.375,262.671,271.006,movie_dialogue,willard_war_and_charlotte,0.96,,,none,,0,0,0,,unreviewed,,,What does that leave in him?,clips_v1\clip_012_movie_dialogue.mp4
-13,89.375,99.0,372.0,381.618,movie_dialogue,willard_war_and_charlotte,0.96,,,none,,0,0,0,,unreviewed,,,Will he come back for her?,clips_v1\clip_013_movie_dialogue.mp4
-14,99.0,106.0,591.0,598.0,narration,willard_war_and_charlotte,0.32,"Back home, Willard's silence lets his mother arrange the next chapter.",99.0,none,,0,0,0,,strong_dialogue,,,Which woman does he choose?,clips_v1\clip_014_narration.mp4
-15,106.0,113.417,598.0,605.409,movie_dialogue,willard_war_and_charlotte,0.96,,,none,,0,0,0,,unreviewed,,,Which woman does he choose?,clips_v1\clip_015_movie_dialogue.mp4
-16,113.417,120.417,605.409,612.409,narration,willard_war_and_charlotte,0.32,Helen enters before Willard has even settled back into civilian life.,113.417,none,,0,0,0,,strong_dialogue,,,Which woman does he choose?,clips_v1\clip_016_narration.mp4
-17,120.417,127.833,612.409,619.818,movie_dialogue,willard_war_and_charlotte,0.96,,,none,,0,0,0,,unreviewed,,,Which woman does he choose?,clips_v1\clip_017_movie_dialogue.mp4
-18,127.833,134.833,619.818,626.818,narration,willard_war_and_charlotte,0.32,Emma sees two wounded young people and mistakes proximity for providence.,127.833,none,,0,0,0,,strong_dialogue,,,Which woman does he choose?,clips_v1\clip_018_narration.mp4
-19,134.833,142.25,626.818,634.228,movie_dialogue,willard_war_and_charlotte,0.96,,,none,,0,0,0,,unreviewed,,,Which woman does he choose?,clips_v1\clip_019_movie_dialogue.mp4
-20,142.25,151.875,1224.0,1233.618,movie_dialogue,arvin_boyhood,0.96,,,none,,0,0,0,,unreviewed,,,How does his father step in?,clips_v1\clip_020_movie_dialogue.mp4
-21,151.875,158.875,1416.0,1423.0,narration,arvin_boyhood,0.32,,,none,,0,0,0,,active_combat,,,When does Arvin use it?,clips_v1\clip_021_narration.mp4
-22,158.875,166.292,1423.0,1430.409,movie_dialogue,arvin_boyhood,0.96,,,none,,0,0,0,,unreviewed,,,When does Arvin use it?,clips_v1\clip_022_movie_dialogue.mp4
-23,166.292,173.292,1430.409,1437.409,narration,arvin_boyhood,0.32,Willard makes Arvin study the wreckage before explaining the lesson.,166.292,none,,0,0,0,,clear,,,When does Arvin use it?,clips_v1\clip_023_narration.mp4
-24,173.292,180.708,1437.409,1444.818,movie_dialogue,arvin_boyhood,0.96,,,none,,0,0,0,,unreviewed,,,When does Arvin use it?,clips_v1\clip_024_movie_dialogue.mp4
-25,180.708,187.708,1444.818,1451.818,narration,arvin_boyhood,0.32,,,none,,0,0,0,,strong_dialogue,,,When does Arvin use it?,clips_v1\clip_025_narration.mp4
-26,187.708,195.125,1451.818,1459.228,movie_dialogue,arvin_boyhood,0.96,,,none,,0,0,0,,unreviewed,,,When does Arvin use it?,clips_v1\clip_026_movie_dialogue.mp4
-27,195.125,202.125,1482.0,1489.0,narration,arvin_boyhood,0.32,One ordinary afternoon ends the moment Charlotte cannot answer her son.,195.125,none,,0,0,0,,discovery_payoff,,,How far will Willard go to fix it?,clips_v1\clip_027_narration.mp4
-28,202.125,210.5,1489.0,1497.335,movie_dialogue,arvin_boyhood,0.96,,,none,,0,0,0,,unreviewed,,,How far will Willard go to fix it?,clips_v1\clip_028_movie_dialogue.mp4
-29,210.5,217.5,1497.335,1504.335,narration,arvin_boyhood,0.32,,,none,,0,0,0,,discovery_payoff,,,How far will Willard go to fix it?,clips_v1\clip_029_narration.mp4
-30,217.5,225.875,1504.335,1512.671,movie_dialogue,arvin_boyhood,0.96,,,none,,0,0,0,,unreviewed,,,How far will Willard go to fix it?,clips_v1\clip_030_movie_dialogue.mp4
-31,225.875,232.875,1512.671,1519.671,narration,arvin_boyhood,0.32,The diagnosis leaves medicine managing pain while Willard searches beyond it.,225.875,none,,0,0,0,,strong_dialogue,,,How far will Willard go to fix it?,clips_v1\clip_031_narration.mp4
-32,232.875,241.25,1519.671,1528.006,movie_dialogue,arvin_boyhood,0.96,,,none,,0,0,0,,unreviewed,,,How far will Willard go to fix it?,clips_v1\clip_032_movie_dialogue.mp4
-33,241.25,248.292,1528.006,1535.006,narration,arvin_boyhood,0.32,"When the doctors give up, Willard turns to the only power he trusts.",241.25,none,,0,0,0,,strong_dialogue,,,How far will Willard go to fix it?,clips_v1\clip_033_narration.mp4
-34,248.292,256.708,1535.006,1543.341,movie_dialogue,arvin_boyhood,0.96,,,none,,0,0,0,,unreviewed,,,How far will Willard go to fix it?,clips_v1\clip_034_movie_dialogue.mp4
-35,256.708,263.708,1743.0,1750.0,narration,arvin_boyhood,0.32,,,none,,0,0,0,,horror_payoff,,,What is left for the boy?,clips_v1\clip_035_narration.mp4
-36,263.708,272.083,1750.0,1758.335,movie_dialogue,arvin_boyhood,0.96,,,none,,0,0,0,,unreviewed,,,What is left for the boy?,clips_v1\clip_036_movie_dialogue.mp4
-37,272.083,279.083,1758.335,1765.335,narration,arvin_boyhood,0.32,Willard offers what Arvin loves most as payment for Charlotte's life.,272.083,none,,0,0,0,,death_grief,,,What is left for the boy?,clips_v1\clip_037_narration.mp4
-38,279.083,287.458,1765.335,1773.671,movie_dialogue,arvin_boyhood,0.96,,,none,,0,0,0,,unreviewed,,,What is left for the boy?,clips_v1\clip_038_movie_dialogue.mp4
-39,287.458,294.458,1773.671,1780.671,narration,arvin_boyhood,0.32,His promise comforts nobody because Arvin has seen what faith now demands.,287.458,none,,0,0,0,,death_grief,,,What is left for the boy?,clips_v1\clip_039_narration.mp4
-40,294.458,302.833,1780.671,1789.006,movie_dialogue,arvin_boyhood,0.96,,,none,,0,0,0,,unreviewed,,,What is left for the boy?,clips_v1\clip_040_movie_dialogue.mp4
-41,302.833,318.875,798.0,814.03,movie_dialogue,roy_and_helen_parallel,0.96,,,none,,0,0,0,,unreviewed,,,What kind of person falls for this man?,clips_v1\clip_041_movie_dialogue.mp4
-42,318.875,325.875,906.0,913.0,narration,roy_and_helen_parallel,0.32,Helen reads Roy's spectacle as proof that her loneliness has ended.,318.875,none,,0,0,0,,strong_dialogue,,,How does this marriage end?,clips_v1\clip_042_narration.mp4
-43,325.875,335.5,913.0,922.595,movie_dialogue,roy_and_helen_parallel,0.96,,,none,,0,0,0,,unreviewed,,,How does this marriage end?,clips_v1\clip_043_movie_dialogue.mp4
-44,335.5,342.5,2256.0,2263.0,narration,roy_ends,0.32,,,none,,0,0,0,,death_grief,,,How far does he get?,clips_v1\clip_044_narration.mp4
-45,342.5,352.125,2263.0,2272.595,movie_dialogue,roy_ends,0.96,,,none,,0,0,0,,unreviewed,,,How far does he get?,clips_v1\clip_045_movie_dialogue.mp4
-46,352.125,359.167,2272.595,2279.595,narration,roy_ends,0.32,"Roy stays beside Helen, expecting belief to undo what belief caused.",352.125,none,,0,0,0,,death_grief,,,How far does he get?,clips_v1\clip_046_narration.mp4
-47,359.167,368.833,2279.595,2289.19,movie_dialogue,roy_ends,0.96,,,none,,0,0,0,,unreviewed,,,How far does he get?,clips_v1\clip_047_movie_dialogue.mp4
-48,368.833,375.833,2451.0,2458.0,narration,roy_ends,0.32,A waiting camera makes this generous pickup feel carefully staged.,369.19,curiosity_sting,368.833,0.357,0.557,0.2,0.495,clear,The visible camera turns an ordinary roadside pickup into a suspicious encounter.,0.85,Why does this couple pick people up?,clips_v1\clip_048_narration.mp4
-49,375.833,385.458,2458.0,2467.595,movie_dialogue,roy_ends,0.96,,,none,,0,0,0,,unreviewed,,,Why does this couple pick people up?,clips_v1\clip_049_movie_dialogue.mp4
-50,385.458,392.5,2467.595,2474.595,narration,roy_ends,0.32,Sandy keeps calling Roy's name while Carl quietly controls the route.,385.458,none,,0,0,0,,strong_dialogue,,,Why does this couple pick people up?,clips_v1\clip_050_narration.mp4
-51,392.5,402.167,2474.595,2484.19,movie_dialogue,roy_ends,0.96,,,none,,0,0,0,,unreviewed,,,Why does this couple pick people up?,clips_v1\clip_051_movie_dialogue.mp4
-52,402.167,409.167,2952.0,2959.0,narration,arvin_and_lenora_grow,0.32,Arvin protects Lenora with the exact timing his father taught him.,402.167,none,,0,0,0,,active_combat,,,What are these two to each other?,clips_v1\clip_052_narration.mp4
-53,409.167,420.917,2959.0,2970.715,movie_dialogue,arvin_and_lenora_grow,0.96,,,none,,0,0,0,,unreviewed,,,What are these two to each other?,clips_v1\clip_053_movie_dialogue.mp4
-54,420.917,427.917,2802.0,2809.0,narration,arvin_and_lenora_grow,0.32,The birthday gift puts Willard's old weapon back into Arvin's hands.,420.917,none,,0,0,0,,strong_dialogue,,,Who does that gun end up pointed at?,clips_v1\clip_054_narration.mp4
-55,427.917,439.667,2809.0,2820.715,movie_dialogue,arvin_and_lenora_grow,0.96,,,none,,0,0,0,,unreviewed,,,Who does that gun end up pointed at?,clips_v1\clip_055_movie_dialogue.mp4
-56,439.667,446.667,3255.0,3262.0,narration,preacher_arrives,0.32,A polished stranger arrives to lead the same church that raised Lenora.,440.124,neutral_transition,439.667,0.457,0.657,0.2,1.287,clear,The restrained transition marks the arrival of a new preacher and story thread.,0.85,What kind of man is he?,clips_v1\clip_056_narration.mp4
-57,446.667,454.5,3262.0,3269.81,movie_dialogue,preacher_arrives,0.96,,,none,,0,0,0,,unreviewed,,,What kind of man is he?,clips_v1\clip_057_movie_dialogue.mp4
-58,454.5,476.958,3336.0,3358.442,movie_dialogue,preacher_arrives,0.96,,,none,,0,0,0,,unreviewed,,,Who does that voice get turned on?,clips_v1\clip_058_movie_dialogue.mp4
-59,476.958,483.958,3828.0,3835.0,narration,preacher_arrives,0.32,"Lenora hears private attention as spiritual guidance, exactly as Preston intends.",476.958,none,,0,0,0,,strong_dialogue,,,What does she think is happening?,clips_v1\clip_059_narration.mp4
-60,483.958,495.708,3835.0,3846.715,movie_dialogue,preacher_arrives,0.96,,,none,,0,0,0,,unreviewed,,,What does she think is happening?,clips_v1\clip_060_movie_dialogue.mp4
-61,495.708,502.708,2562.0,2569.0,narration,predators_established,0.32,"Carl packages control as crude humor, keeping Sandy inside the performance.",495.708,none,,0,0,0,,strong_dialogue,,,Who is next?,clips_v1\clip_061_narration.mp4
-62,502.708,510.542,2569.0,2576.81,movie_dialogue,predators_established,0.96,,,none,,0,0,0,,unreviewed,,,Who is next?,clips_v1\clip_062_movie_dialogue.mp4
-63,510.542,517.542,4263.0,4270.0,narration,predators_established,0.32,Bodecker questions his own sister with the patience of a threat.,510.542,none,,0,0,0,,strong_dialogue,,,"If Arvin gets in trouble, who comes for him?",clips_v1\clip_063_narration.mp4
-64,517.542,529.292,4270.0,4281.715,movie_dialogue,predators_established,0.96,,,none,,0,0,0,,unreviewed,,,"If Arvin gets in trouble, who comes for him?",clips_v1\clip_064_movie_dialogue.mp4
-65,529.292,536.292,5214.0,5221.0,narration,lenora_breaks,0.32,Preston uses sacred language to make Lenora distrust her own memory.,529.292,none,,0,0,0,,strong_dialogue,,,What is left open to her?,clips_v1\clip_065_narration.mp4
-66,536.292,548.042,5221.0,5232.715,movie_dialogue,lenora_breaks,0.96,,,none,,0,0,0,,unreviewed,,,What is left open to her?,clips_v1\clip_066_movie_dialogue.mp4
-67,548.042,555.042,5343.0,5350.0,narration,lenora_breaks,0.32,,,none,,0,0,0,,death_grief,,,How does Arvin learn the truth?,clips_v1\clip_067_narration.mp4
-68,555.042,566.792,5350.0,5361.715,movie_dialogue,lenora_breaks,0.96,,,none,,0,0,0,,unreviewed,,,How does Arvin learn the truth?,clips_v1\clip_068_movie_dialogue.mp4
-69,566.792,573.792,5376.0,5383.0,narration,lenora_breaks,0.32,"Even in mourning, the family asks the same faith for mercy.",566.792,none,,0,0,0,,death_grief,,,What does Arvin decide?,clips_v1\clip_069_narration.mp4
-70,573.792,585.542,5383.0,5394.715,movie_dialogue,lenora_breaks,0.96,,,none,,0,0,0,,unreviewed,,,What does Arvin decide?,clips_v1\clip_070_movie_dialogue.mp4
-71,585.542,611.542,5760.0,5786.0,movie_dialogue,arvin_acts,0.96,,,none,,0,0,0,,unreviewed,,,What does the preacher admit?,clips_v1\clip_071_movie_dialogue.mp4
-72,611.542,618.542,5976.0,5983.0,narration,arvin_acts,0.32,"Arvin frames the confrontation around Lenora, refusing to let Preston redirect it.",611.542,none,,0,0,0,,strong_dialogue,,,Who starts hunting him now?,clips_v1\clip_072_narration.mp4
-73,618.542,627.208,5983.0,5991.642,movie_dialogue,arvin_acts,0.96,,,none,,0,0,0,,unreviewed,,,Who starts hunting him now?,clips_v1\clip_073_movie_dialogue.mp4
-74,627.208,634.25,5991.642,5998.642,narration,arvin_acts,0.32,Only after being exposed does Preston start speaking like a peacemaker.,627.208,none,,0,0,0,,strong_dialogue,,,Who starts hunting him now?,clips_v1\clip_074_narration.mp4
-75,634.25,642.958,5998.642,6007.284,movie_dialogue,arvin_acts,0.96,,,none,,0,0,0,,unreviewed,,,Who starts hunting him now?,clips_v1\clip_075_movie_dialogue.mp4
-76,642.958,649.958,6007.284,6014.284,narration,arvin_acts,0.32,,,none,,0,0,0,,confession,,,Who starts hunting him now?,clips_v1\clip_076_narration.mp4
-77,649.958,658.625,6014.284,6022.927,movie_dialogue,arvin_acts,0.96,,,none,,0,0,0,,unreviewed,,,Who starts hunting him now?,clips_v1\clip_077_movie_dialogue.mp4
-78,658.625,665.625,6384.0,6391.0,narration,roads_converge,0.32,"Carl recognizes a lone traveler, while Sandy recognizes the broken rule.",658.625,none,,0,0,0,,strong_dialogue,,,Who moves first?,clips_v1\clip_078_narration.mp4
-79,665.625,674.292,6391.0,6399.642,movie_dialogue,roads_converge,0.96,,,none,,0,0,0,,unreviewed,,,Who moves first?,clips_v1\clip_079_movie_dialogue.mp4
-80,674.292,681.333,6399.642,6406.642,narration,roads_converge,0.32,Sandy's warning confirms that Arvin falls outside their usual hunting pattern.,674.292,none,,0,0,0,,strong_dialogue,,,Who moves first?,clips_v1\clip_080_narration.mp4
-81,681.333,690.042,6406.642,6415.284,movie_dialogue,roads_converge,0.96,,,none,,0,0,0,,unreviewed,,,Who moves first?,clips_v1\clip_081_movie_dialogue.mp4
-82,690.042,697.042,6415.284,6422.284,narration,roads_converge,0.32,Arvin answers plainly because their practiced friendliness gives him no warning.,690.042,none,,0,0,0,,strong_dialogue,,,Who moves first?,clips_v1\clip_082_narration.mp4
-83,697.042,705.708,6422.284,6430.927,movie_dialogue,roads_converge,0.96,,,none,,0,0,0,,unreviewed,,,Who moves first?,clips_v1\clip_083_movie_dialogue.mp4
-84,705.708,731.708,6564.0,6590.0,movie_dialogue,roads_converge,0.96,,,none,,0,0,0,,unreviewed,,,Whose family does this land on?,clips_v1\clip_084_movie_dialogue.mp4
-85,731.708,738.708,6771.0,6778.0,narration,roads_converge,0.32,A double-homicide call sends Bodecker toward the county road.,732.208,bass_omen,731.708,0.5,0.7,0.2,2.745,clear,The low omen marks the homicide call as the start of a personal pursuit.,0.85,Where will he look for Arvin?,clips_v1\clip_085_narration.mp4
-86,738.708,747.375,6778.0,6786.642,movie_dialogue,roads_converge,0.96,,,none,,0,0,0,,unreviewed,,,Where will he look for Arvin?,clips_v1\clip_086_movie_dialogue.mp4
-87,747.375,754.417,6786.642,6793.642,narration,roads_converge,0.32,Two measured wounds tell Bodecker this was no random roadside panic.,747.375,none,,0,0,0,,discovery_payoff,,,Where will he look for Arvin?,clips_v1\clip_087_narration.mp4
-88,754.417,763.125,6793.642,6802.284,movie_dialogue,roads_converge,0.96,,,none,,0,0,0,,unreviewed,,,Where will he look for Arvin?,clips_v1\clip_088_movie_dialogue.mp4
-89,763.125,770.125,6802.284,6809.284,narration,roads_converge,0.32,The blank in Sandy's gun turns Carl's arrangement into a betrayal.,763.125,none,,0,0,0,,reversal_reveal,,,Where will he look for Arvin?,clips_v1\clip_089_narration.mp4
-90,770.125,778.792,6809.284,6817.927,movie_dialogue,roads_converge,0.96,,,none,,0,0,0,,unreviewed,,,Where will he look for Arvin?,clips_v1\clip_090_movie_dialogue.mp4
-91,778.792,785.792,7020.0,7027.0,narration,cornered,0.32,Arvin returns to Mitchell Flats because every road began on this hill.,778.792,none,,0,0,0,,strong_dialogue,,,Why here?,clips_v1\clip_091_narration.mp4
-92,785.792,794.458,7027.0,7035.642,movie_dialogue,cornered,0.96,,,none,,0,0,0,,unreviewed,,,Why here?,clips_v1\clip_092_movie_dialogue.mp4
-93,794.458,801.5,7035.642,7042.642,narration,cornered,0.32,The burned house leaves Arvin with memory instead of shelter.,794.458,none,,0,0,0,,strong_dialogue,,,Why here?,clips_v1\clip_093_narration.mp4
-94,801.5,810.208,7042.642,7051.284,movie_dialogue,cornered,0.96,,,none,,0,0,0,,unreviewed,,,Why here?,clips_v1\clip_094_movie_dialogue.mp4
-95,810.208,817.208,7051.284,7058.284,narration,cornered,0.32,He keeps walking because the prayer ground matters more than the house.,810.208,none,,0,0,0,,strong_dialogue,,,Why here?,clips_v1\clip_095_narration.mp4
-96,817.208,825.875,7058.284,7066.927,movie_dialogue,cornered,0.96,,,none,,0,0,0,,unreviewed,,,Why here?,clips_v1\clip_096_movie_dialogue.mp4
-97,825.875,832.875,7338.0,7345.0,narration,cornered,0.32,"For once, Arvin remembers Willard's desperation before judging his violence.",825.875,none,,0,0,0,,strong_dialogue,,,Where does that leave him?,clips_v1\clip_097_narration.mp4
-98,832.875,841.542,7345.0,7353.642,movie_dialogue,cornered,0.96,,,none,,0,0,0,,unreviewed,,,Where does that leave him?,clips_v1\clip_098_movie_dialogue.mp4
-99,841.542,848.583,7353.642,7360.642,narration,cornered,0.32,Understanding the motive does not erase what that devotion cost Arvin.,841.542,none,,0,0,0,,strong_dialogue,,,Where does that leave him?,clips_v1\clip_099_narration.mp4
-100,848.583,857.292,7360.642,7369.284,movie_dialogue,cornered,0.96,,,none,,0,0,0,,unreviewed,,,Where does that leave him?,clips_v1\clip_100_movie_dialogue.mp4
-101,857.292,864.292,7369.284,7376.284,narration,cornered,0.32,"At the ruined altar, anger finally makes room for understanding.",857.292,none,,0,0,0,,clear,,,Where does that leave him?,clips_v1\clip_101_narration.mp4
-102,864.292,872.958,7376.284,7384.927,movie_dialogue,cornered,0.96,,,none,,0,0,0,,unreviewed,,,Where does that leave him?,clips_v1\clip_102_movie_dialogue.mp4
-103,872.958,879.958,7404.0,7411.0,narration,cornered,0.32,Bodecker's voice turns Arvin's childhood woods into a hunting ground.,872.958,none,,0,0,0,,strong_dialogue,,,Does Arvin come out?,clips_v1\clip_103_narration.mp4
-104,879.958,888.625,7411.0,7419.642,movie_dialogue,cornered,0.96,,,none,,0,0,0,,unreviewed,,,Does Arvin come out?,clips_v1\clip_104_movie_dialogue.mp4
-105,888.625,895.667,7419.642,7426.642,narration,cornered,0.32,The sheriff controls the clearing with noise while Arvin stays hidden.,888.625,none,,0,0,0,,strong_dialogue,,,Does Arvin come out?,clips_v1\clip_105_narration.mp4
-106,895.667,904.375,7426.642,7435.284,movie_dialogue,cornered,0.96,,,none,,0,0,0,,unreviewed,,,Does Arvin come out?,clips_v1\clip_106_movie_dialogue.mp4
-107,904.375,911.375,7435.284,7442.284,narration,cornered,0.32,His claim of peaceful intent only sharpens the threat in his hand.,904.375,none,,0,0,0,,strong_dialogue,,,Does Arvin come out?,clips_v1\clip_107_narration.mp4
-108,911.375,920.042,7442.284,7450.927,movie_dialogue,cornered,0.96,,,none,,0,0,0,,unreviewed,,,Does Arvin come out?,clips_v1\clip_108_movie_dialogue.mp4
-109,920.042,946.042,7543.0,7569.0,movie_dialogue,cornered,0.96,,,none,,0,0,0,,unreviewed,,,Who fires first?,clips_v1\clip_109_movie_dialogue.mp4
-110,946.042,953.042,1809.0,1816.0,narration,closing_wrap,0.32,"Every adult calls his choice necessary, while the children inherit its cost.",946.042,none,,0,0,0,,strong_dialogue,,,Where do choices like that end?,clips_v1\clip_110_narration.mp4
-111,953.042,961.75,1816.0,1824.676,movie_dialogue,closing_wrap,0.96,,,none,,0,0,0,,unreviewed,,,Where do choices like that end?,clips_v1\clip_111_movie_dialogue.mp4
-112,961.75,968.792,1824.676,1831.676,narration,closing_wrap,0.32,Arvin's story begins with adults choosing a future on his behalf.,961.75,none,,0,0,0,,strong_dialogue,,,Where do choices like that end?,clips_v1\clip_112_narration.mp4
-113,968.792,977.542,1831.676,1840.353,movie_dialogue,closing_wrap,0.96,,,none,,0,0,0,,unreviewed,,,Where do choices like that end?,clips_v1\clip_113_movie_dialogue.mp4
-114,977.542,984.583,1840.353,1847.353,narration,closing_wrap,0.32,What remains compelling is how Arvin resists becoming his father's copy.,977.542,none,,0,0,0,,clear,,,Where do choices like that end?,clips_v1\clip_114_narration.mp4
-115,984.583,993.333,1847.353,1856.029,movie_dialogue,closing_wrap,0.96,,,none,,0,0,0,,unreviewed,,,Where do choices like that end?,clips_v1\clip_115_movie_dialogue.mp4
-116,993.333,1000.333,6945.0,6952.0,narration,closing_wrap,0.32,That weight lands because Tom Holland plays Arvin without easy innocence.,993.333,none,,0,0,0,,strong_dialogue,,,Why did all of them sign up for this one?,clips_v1\clip_116_narration.mp4
-117,1000.333,1009.042,6952.0,6960.676,movie_dialogue,closing_wrap,0.96,,,none,,0,0,0,,unreviewed,,,Why did all of them sign up for this one?,clips_v1\clip_117_movie_dialogue.mp4
-118,1009.042,1016.083,6960.676,6967.676,narration,closing_wrap,0.32,Robert Pattinson makes Preston's charm feel practiced long before it turns cruel.,1009.042,none,,0,0,0,,strong_dialogue,,,Why did all of them sign up for this one?,clips_v1\clip_118_narration.mp4
-119,1016.083,1024.833,6967.676,6976.353,movie_dialogue,closing_wrap,0.96,,,none,,0,0,0,,unreviewed,,,Why did all of them sign up for this one?,clips_v1\clip_119_movie_dialogue.mp4
-120,1024.833,1031.875,6976.353,6983.353,narration,closing_wrap,0.32,Sebastian Stan and Eliza Scanlen complete a cast built on damaged certainty.,1024.833,none,,0,0,0,,clear,,,Why did all of them sign up for this one?,clips_v1\clip_120_narration.mp4
-121,1031.875,1040.625,6983.353,6992.029,movie_dialogue,closing_wrap,0.96,,,none,,0,0,0,,unreviewed,,,Why did all of them sign up for this one?,clips_v1\clip_121_movie_dialogue.mp4
+1,0.0,8.167,1597.668,1605.833,narration,cold_open_prayer_log,0.32,"At this blood-darkened cross, Willard turns prayer into an order.",0.0,none,,0,0,0,,strong_dialogue,,,What is this prayer trying to hold back?,clips_v1\clip_001_narration.mp4
+2,8.167,19.209,1605.833,1616.875,movie_dialogue,cold_open_prayer_log,0.96,,,none,,0,0,0,,unreviewed,,,What is this prayer trying to hold back?,clips_v1\clip_002_movie_dialogue.mp4
+3,19.209,27.0,1616.875,1624.666,narration,cold_open_prayer_log,0.32,The ritual binds Arvin to a fear he cannot yet understand.,19.209,none,,0,0,0,,strong_dialogue,,,What is this prayer trying to hold back?,clips_v1\clip_003_narration.mp4
+4,27.0,37.25,1624.666,1634.916,movie_dialogue,cold_open_prayer_log,0.96,,,none,,0,0,0,,unreviewed,,,What is this prayer trying to hold back?,clips_v1\clip_004_movie_dialogue.mp4
+5,37.25,44.25,1634.916,1641.916,narration,cold_open_prayer_log,0.32,,,none,,0,0,0,,strong_dialogue,,,What is this prayer trying to hold back?,clips_v1\clip_005_narration.mp4
+6,44.25,46.375,1641.916,1644.0,movie_dialogue,cold_open_prayer_log,0.96,,,none,,0,0,0,,unreviewed,,,What is this prayer trying to hold back?,clips_v1\clip_006_movie_dialogue.mp4
+7,46.375,53.375,225.0,232.0,narration,willard_war_and_charlotte,0.32,"Years earlier, one crucified Marine gave Willard's faith its permanent shape.",46.375,none,,0,0,0,,horror_payoff,,,What does that leave in him?,clips_v1\clip_007_narration.mp4
+8,53.375,61.75,232.0,240.335,movie_dialogue,willard_war_and_charlotte,0.96,,,none,,0,0,0,,unreviewed,,,What does that leave in him?,clips_v1\clip_008_movie_dialogue.mp4
+9,61.75,68.75,240.335,247.335,narration,willard_war_and_charlotte,0.32,The sight turns survival itself into something cruel and unbearable.,61.75,none,,0,0,0,,horror_payoff,,,What does that leave in him?,clips_v1\clip_009_narration.mp4
+10,68.75,77.125,247.335,255.671,movie_dialogue,willard_war_and_charlotte,0.96,,,none,,0,0,0,,unreviewed,,,What does that leave in him?,clips_v1\clip_010_movie_dialogue.mp4
+11,77.125,84.125,255.671,262.671,narration,willard_war_and_charlotte,0.32,"With the Marine beyond saving, mercy becomes another kind of violence.",77.125,none,,0,0,0,,horror_payoff,,,What does that leave in him?,clips_v1\clip_011_narration.mp4
+12,84.125,92.5,262.671,271.006,movie_dialogue,willard_war_and_charlotte,0.96,,,none,,0,0,0,,unreviewed,,,What does that leave in him?,clips_v1\clip_012_movie_dialogue.mp4
+13,92.5,105.5,373.501,386.501,movie_dialogue,willard_war_and_charlotte,0.96,,,none,,0,0,0,,unreviewed,,,Will he come back for her?,clips_v1\clip_013_movie_dialogue.mp4
+14,105.5,115.167,592.418,602.083,narration,willard_war_and_charlotte,0.32,"Back home, Willard's silence lets his mother arrange the next chapter.",105.5,none,,0,0,0,,strong_dialogue,,,Which woman does he choose?,clips_v1\clip_014_narration.mp4
+15,115.167,123.0,602.083,609.916,movie_dialogue,willard_war_and_charlotte,0.96,,,none,,0,0,0,,unreviewed,,,Which woman does he choose?,clips_v1\clip_015_movie_dialogue.mp4
+16,123.0,130.459,609.916,617.333,narration,willard_war_and_charlotte,0.32,Helen enters before Willard has even settled back into civilian life.,123.0,none,,0,0,0,,strong_dialogue,,,Which woman does he choose?,clips_v1\clip_016_narration.mp4
+17,130.459,139.209,617.333,626.083,movie_dialogue,willard_war_and_charlotte,0.96,,,none,,0,0,0,,unreviewed,,,Which woman does he choose?,clips_v1\clip_017_movie_dialogue.mp4
+18,139.209,146.709,626.083,633.583,narration,willard_war_and_charlotte,0.32,Emma sees two wounded young people and mistakes proximity for providence.,139.209,none,,0,0,0,,strong_dialogue,,,Which woman does he choose?,clips_v1\clip_018_narration.mp4
+19,146.709,149.501,633.583,636.375,movie_dialogue,willard_war_and_charlotte,0.96,,,none,,0,0,0,,unreviewed,,,Which woman does he choose?,clips_v1\clip_019_movie_dialogue.mp4
+20,149.501,162.501,1225.168,1238.168,movie_dialogue,arvin_boyhood,0.96,,,none,,0,0,0,,unreviewed,,,How does his father step in?,clips_v1\clip_020_movie_dialogue.mp4
+21,162.501,173.667,1416.335,1427.5,movie_dialogue,arvin_boyhood,0.96,,,none,,0,0,0,,unreviewed,,,When does Arvin use it?,clips_v1\clip_021_movie_dialogue.mp4
+22,173.667,180.667,1427.5,1434.5,narration,arvin_boyhood,0.32,,,none,,0,0,0,,active_combat,,,When does Arvin use it?,clips_v1\clip_022_narration.mp4
+23,180.667,188.084,1434.5,1441.909,movie_dialogue,arvin_boyhood,0.96,,,none,,0,0,0,,unreviewed,,,When does Arvin use it?,clips_v1\clip_023_movie_dialogue.mp4
+24,188.084,196.667,1441.909,1450.458,narration,arvin_boyhood,0.32,Willard makes Arvin study the wreckage before explaining the lesson.,188.084,none,,0,0,0,,clear,,,When does Arvin use it?,clips_v1\clip_024_narration.mp4
+25,196.667,205.001,1450.458,1458.791,movie_dialogue,arvin_boyhood,0.96,,,none,,0,0,0,,unreviewed,,,When does Arvin use it?,clips_v1\clip_025_movie_dialogue.mp4
+26,205.001,212.001,1458.791,1465.791,narration,arvin_boyhood,0.32,,,none,,0,0,0,,strong_dialogue,,,When does Arvin use it?,clips_v1\clip_026_narration.mp4
+27,212.001,220.001,1465.791,1473.791,movie_dialogue,arvin_boyhood,0.96,,,none,,0,0,0,,unreviewed,,,When does Arvin use it?,clips_v1\clip_027_movie_dialogue.mp4
+28,220.001,227.001,1483.376,1490.376,narration,arvin_boyhood,0.32,One ordinary afternoon ends the moment Charlotte cannot answer her son.,220.001,none,,0,0,0,,discovery_payoff,,,How far will Willard go to fix it?,clips_v1\clip_028_narration.mp4
+29,227.001,235.376,1490.376,1498.711,movie_dialogue,arvin_boyhood,0.96,,,none,,0,0,0,,unreviewed,,,How far will Willard go to fix it?,clips_v1\clip_029_movie_dialogue.mp4
+30,235.376,243.126,1498.711,1506.461,movie_dialogue,arvin_boyhood,0.96,,,none,,0,0,0,,unreviewed,,,How far will Willard go to fix it?,clips_v1\clip_030_movie_dialogue.mp4
+31,243.126,250.126,1506.461,1513.461,narration,arvin_boyhood,0.32,,,none,,0,0,0,,discovery_payoff,,,How far will Willard go to fix it?,clips_v1\clip_031_narration.mp4
+32,250.126,260.459,1513.461,1523.791,movie_dialogue,arvin_boyhood,0.96,,,none,,0,0,0,,unreviewed,,,How far will Willard go to fix it?,clips_v1\clip_032_movie_dialogue.mp4
+33,260.459,267.917,1523.791,1531.208,narration,arvin_boyhood,0.32,The diagnosis leaves medicine managing pain while Willard searches beyond it.,260.459,none,,0,0,0,,strong_dialogue,,,How far will Willard go to fix it?,clips_v1\clip_033_narration.mp4
+34,267.917,276.292,1531.208,1539.543,movie_dialogue,arvin_boyhood,0.96,,,none,,0,0,0,,unreviewed,,,How far will Willard go to fix it?,clips_v1\clip_034_movie_dialogue.mp4
+35,276.292,284.751,1539.543,1548.0,narration,arvin_boyhood,0.32,"When the doctors give up, Willard turns to the only power he trusts.",276.292,none,,0,0,0,,strong_dialogue,,,How far will Willard go to fix it?,clips_v1\clip_035_narration.mp4
+36,284.751,287.751,1548.0,1551.0,movie_dialogue,arvin_boyhood,0.96,,,none,,0,0,0,,unreviewed,,,How far will Willard go to fix it?,clips_v1\clip_036_movie_dialogue.mp4
+37,287.751,294.751,1743.0,1750.0,narration,arvin_boyhood,0.32,,,none,,0,0,0,,horror_payoff,,,What is left for the boy?,clips_v1\clip_037_narration.mp4
+38,294.751,304.667,1750.0,1759.916,movie_dialogue,arvin_boyhood,0.96,,,none,,0,0,0,,unreviewed,,,What is left for the boy?,clips_v1\clip_038_movie_dialogue.mp4
+39,304.667,311.667,1759.916,1766.916,narration,arvin_boyhood,0.32,Willard offers what Arvin loves most as payment for Charlotte's life.,304.667,none,,0,0,0,,death_grief,,,What is left for the boy?,clips_v1\clip_039_narration.mp4
+40,311.667,320.042,1766.916,1775.251,movie_dialogue,arvin_boyhood,0.96,,,none,,0,0,0,,unreviewed,,,What is left for the boy?,clips_v1\clip_040_movie_dialogue.mp4
+41,320.042,327.042,1775.251,1782.251,narration,arvin_boyhood,0.32,His promise comforts nobody because Arvin has seen what faith now demands.,320.042,none,,0,0,0,,death_grief,,,What is left for the boy?,clips_v1\clip_041_narration.mp4
+42,327.042,335.417,1782.251,1790.587,movie_dialogue,arvin_boyhood,0.96,,,none,,0,0,0,,unreviewed,,,What is left for the boy?,clips_v1\clip_042_movie_dialogue.mp4
+43,335.417,351.459,798.376,814.406,movie_dialogue,roy_and_helen_parallel,0.96,,,none,,0,0,0,,unreviewed,,,What kind of person falls for this man?,clips_v1\clip_043_movie_dialogue.mp4
+44,351.459,359.126,907.168,914.833,narration,roy_and_helen_parallel,0.32,Helen reads Roy's spectacle as proof that her loneliness has ended.,351.459,none,,0,0,0,,strong_dialogue,,,How does this marriage end?,clips_v1\clip_044_narration.mp4
+45,359.126,368.751,914.833,924.428,movie_dialogue,roy_and_helen_parallel,0.96,,,none,,0,0,0,,unreviewed,,,How does this marriage end?,clips_v1\clip_045_movie_dialogue.mp4
+46,368.751,375.751,2256.0,2263.0,narration,roy_ends,0.32,,,none,,0,0,0,,death_grief,,,How far does he get?,clips_v1\clip_046_narration.mp4
+47,375.751,385.376,2263.0,2272.595,movie_dialogue,roy_ends,0.96,,,none,,0,0,0,,unreviewed,,,How far does he get?,clips_v1\clip_047_movie_dialogue.mp4
+48,385.376,392.417,2272.595,2279.595,narration,roy_ends,0.32,"Roy stays beside Helen, expecting belief to undo what belief caused.",385.376,none,,0,0,0,,death_grief,,,How far does he get?,clips_v1\clip_048_narration.mp4
+49,392.417,402.084,2279.595,2289.19,movie_dialogue,roy_ends,0.96,,,none,,0,0,0,,unreviewed,,,How far does he get?,clips_v1\clip_049_movie_dialogue.mp4
+50,402.084,409.084,2451.0,2458.0,narration,roy_ends,0.32,A waiting camera makes this generous pickup feel carefully staged.,402.441,curiosity_sting,402.084,0.357,0.557,0.2,0.495,clear,The visible camera turns an ordinary roadside pickup into a suspicious encounter.,0.85,Why does this couple pick people up?,clips_v1\clip_050_narration.mp4
+51,409.084,418.709,2458.0,2467.595,movie_dialogue,roy_ends,0.96,,,none,,0,0,0,,unreviewed,,,Why does this couple pick people up?,clips_v1\clip_051_movie_dialogue.mp4
+52,418.709,425.751,2467.595,2474.595,narration,roy_ends,0.32,Sandy keeps calling Roy's name while Carl quietly controls the route.,418.709,none,,0,0,0,,strong_dialogue,,,Why does this couple pick people up?,clips_v1\clip_052_narration.mp4
+53,425.751,436.709,2474.595,2485.5,movie_dialogue,roy_ends,0.96,,,none,,0,0,0,,unreviewed,,,Why does this couple pick people up?,clips_v1\clip_053_movie_dialogue.mp4
+54,436.709,445.792,2952.0,2961.083,narration,arvin_and_lenora_grow,0.32,Arvin protects Lenora with the exact timing his father taught him.,436.709,none,,0,0,0,,active_combat,,,What are these two to each other?,clips_v1\clip_054_narration.mp4
+55,445.792,460.001,2961.083,2975.291,movie_dialogue,arvin_and_lenora_grow,0.96,,,none,,0,0,0,,unreviewed,,,What are these two to each other?,clips_v1\clip_055_movie_dialogue.mp4
+56,460.001,467.001,2804.543,2811.543,narration,arvin_and_lenora_grow,0.32,The birthday gift puts Willard's old weapon back into Arvin's hands.,460.001,none,,0,0,0,,strong_dialogue,,,Who does that gun end up pointed at?,clips_v1\clip_056_narration.mp4
+57,467.001,480.542,2811.543,2825.083,movie_dialogue,arvin_and_lenora_grow,0.96,,,none,,0,0,0,,unreviewed,,,Who does that gun end up pointed at?,clips_v1\clip_057_movie_dialogue.mp4
+58,480.542,487.542,3255.0,3262.0,narration,preacher_arrives,0.32,A polished stranger arrives to lead the same church that raised Lenora.,480.999,neutral_transition,480.542,0.457,0.657,0.2,1.287,clear,The restrained transition marks the arrival of a new preacher and story thread.,0.85,What kind of man is he?,clips_v1\clip_058_narration.mp4
+59,487.542,497.126,3262.0,3271.583,movie_dialogue,preacher_arrives,0.96,,,none,,0,0,0,,unreviewed,,,What kind of man is he?,clips_v1\clip_059_movie_dialogue.mp4
+60,497.126,520.209,3336.0,3359.083,movie_dialogue,preacher_arrives,0.96,,,none,,0,0,0,,unreviewed,,,Who does that voice get turned on?,clips_v1\clip_060_movie_dialogue.mp4
+61,520.209,527.209,3828.0,3835.0,narration,preacher_arrives,0.32,"Lenora hears private attention as spiritual guidance, exactly as Preston intends.",520.209,none,,0,0,0,,strong_dialogue,,,What does she think is happening?,clips_v1\clip_061_narration.mp4
+62,527.209,538.959,3835.0,3846.715,movie_dialogue,preacher_arrives,0.96,,,none,,0,0,0,,unreviewed,,,What does she think is happening?,clips_v1\clip_062_movie_dialogue.mp4
+63,538.959,544.209,2563.543,2568.793,movie_dialogue,predators_established,0.96,,,none,,0,0,0,,unreviewed,,,Who is next?,clips_v1\clip_063_movie_dialogue.mp4
+64,544.209,552.042,2568.793,2576.625,narration,predators_established,0.32,"Carl packages control as crude humor, keeping Sandy inside the performance.",544.209,none,,0,0,0,,strong_dialogue,,,Who is next?,clips_v1\clip_064_narration.mp4
+65,552.042,559.876,2576.625,2584.435,movie_dialogue,predators_established,0.96,,,none,,0,0,0,,unreviewed,,,Who is next?,clips_v1\clip_065_movie_dialogue.mp4
+66,559.876,568.084,4264.251,4272.458,narration,predators_established,0.32,Bodecker questions his own sister with the patience of a threat.,559.876,none,,0,0,0,,strong_dialogue,,,"If Arvin gets in trouble, who comes for him?",clips_v1\clip_066_narration.mp4
+67,568.084,579.834,4272.458,4284.173,movie_dialogue,predators_established,0.96,,,none,,0,0,0,,unreviewed,,,"If Arvin gets in trouble, who comes for him?",clips_v1\clip_067_movie_dialogue.mp4
+68,579.834,585.584,5215.251,5221.001,movie_dialogue,lenora_breaks,0.96,,,none,,0,0,0,,unreviewed,,,What is left open to her?,clips_v1\clip_068_movie_dialogue.mp4
+69,585.584,592.584,5221.001,5228.001,narration,lenora_breaks,0.32,Preston uses sacred language to make Lenora distrust her own memory.,585.584,none,,0,0,0,,strong_dialogue,,,What is left open to her?,clips_v1\clip_069_narration.mp4
+70,592.584,606.167,5228.001,5241.583,movie_dialogue,lenora_breaks,0.96,,,none,,0,0,0,,unreviewed,,,What is left open to her?,clips_v1\clip_070_movie_dialogue.mp4
+71,606.167,613.417,5345.085,5352.335,movie_dialogue,lenora_breaks,0.96,,,none,,0,0,0,,unreviewed,,,How does Arvin learn the truth?,clips_v1\clip_071_movie_dialogue.mp4
+72,613.417,620.417,5352.335,5359.335,narration,lenora_breaks,0.32,,,none,,0,0,0,,death_grief,,,How does Arvin learn the truth?,clips_v1\clip_072_narration.mp4
+73,620.417,632.626,5359.335,5371.541,movie_dialogue,lenora_breaks,0.96,,,none,,0,0,0,,unreviewed,,,How does Arvin learn the truth?,clips_v1\clip_073_movie_dialogue.mp4
+74,632.626,639.126,5376.543,5383.043,movie_dialogue,lenora_breaks,0.96,,,none,,0,0,0,,unreviewed,,,What does Arvin decide?,clips_v1\clip_074_movie_dialogue.mp4
+75,639.126,646.126,5383.043,5390.043,narration,lenora_breaks,0.32,"Even in mourning, the family asks the same faith for mercy.",639.126,none,,0,0,0,,death_grief,,,What does Arvin decide?,clips_v1\clip_075_narration.mp4
+76,646.126,657.876,5390.043,5401.758,movie_dialogue,lenora_breaks,0.96,,,none,,0,0,0,,unreviewed,,,What does Arvin decide?,clips_v1\clip_076_movie_dialogue.mp4
+77,657.876,683.042,5760.0,5785.163,movie_dialogue,arvin_acts,0.96,,,none,,0,0,0,,unreviewed,,,What does the preacher admit?,clips_v1\clip_077_movie_dialogue.mp4
+78,683.042,690.042,5976.46,5983.46,narration,arvin_acts,0.32,"Arvin frames the confrontation around Lenora, refusing to let Preston redirect it.",683.042,none,,0,0,0,,strong_dialogue,,,Who starts hunting him now?,clips_v1\clip_078_narration.mp4
+79,690.042,698.709,5983.46,5992.102,movie_dialogue,arvin_acts,0.96,,,none,,0,0,0,,unreviewed,,,Who starts hunting him now?,clips_v1\clip_079_movie_dialogue.mp4
+80,698.709,709.501,5992.102,6002.833,movie_dialogue,arvin_acts,0.96,,,none,,0,0,0,,unreviewed,,,Who starts hunting him now?,clips_v1\clip_080_movie_dialogue.mp4
+81,709.501,716.501,6002.833,6009.833,narration,arvin_acts,0.32,Only after being exposed does Preston start speaking like a peacemaker.,709.501,none,,0,0,0,,strong_dialogue,,,Who starts hunting him now?,clips_v1\clip_081_narration.mp4
+82,716.501,726.293,6009.833,6019.625,movie_dialogue,arvin_acts,0.96,,,none,,0,0,0,,unreviewed,,,Who starts hunting him now?,clips_v1\clip_082_movie_dialogue.mp4
+83,726.293,733.293,6019.625,6026.625,narration,arvin_acts,0.32,,,none,,0,0,0,,confession,,,Who starts hunting him now?,clips_v1\clip_083_narration.mp4
+84,733.293,741.959,6026.625,6035.267,movie_dialogue,arvin_acts,0.96,,,none,,0,0,0,,unreviewed,,,Who starts hunting him now?,clips_v1\clip_084_movie_dialogue.mp4
+85,741.959,747.209,6384.0,6389.25,movie_dialogue,roads_converge,0.96,,,none,,0,0,0,,unreviewed,,,Who moves first?,clips_v1\clip_085_movie_dialogue.mp4
+86,747.209,755.793,6389.25,6397.833,narration,roads_converge,0.32,"Carl recognizes a lone traveler, while Sandy recognizes the broken rule.",747.209,none,,0,0,0,,strong_dialogue,,,Who moves first?,clips_v1\clip_086_narration.mp4
+87,755.793,764.459,6397.833,6406.475,movie_dialogue,roads_converge,0.96,,,none,,0,0,0,,unreviewed,,,Who moves first?,clips_v1\clip_087_movie_dialogue.mp4
+88,764.459,772.376,6406.475,6414.333,narration,roads_converge,0.32,Sandy's warning confirms that Arvin falls outside their usual hunting pattern.,764.459,none,,0,0,0,,strong_dialogue,,,Who moves first?,clips_v1\clip_088_narration.mp4
+89,772.376,781.501,6414.333,6423.458,movie_dialogue,roads_converge,0.96,,,none,,0,0,0,,unreviewed,,,Who moves first?,clips_v1\clip_089_movie_dialogue.mp4
+90,781.501,788.501,6423.458,6430.458,narration,roads_converge,0.32,Arvin answers plainly because their practiced friendliness gives him no warning.,781.501,none,,0,0,0,,strong_dialogue,,,Who moves first?,clips_v1\clip_090_narration.mp4
+91,788.501,798.959,6430.458,6440.916,movie_dialogue,roads_converge,0.96,,,none,,0,0,0,,unreviewed,,,Who moves first?,clips_v1\clip_091_movie_dialogue.mp4
+92,798.959,824.959,6564.0,6590.0,movie_dialogue,roads_converge,0.96,,,none,,0,0,0,,unreviewed,,,Whose family does this land on?,clips_v1\clip_092_movie_dialogue.mp4
+93,824.959,831.959,6771.0,6778.0,narration,roads_converge,0.32,A double-homicide call sends Bodecker toward the county road.,825.459,bass_omen,824.959,0.5,0.7,0.2,2.745,clear,The low omen marks the homicide call as the start of a personal pursuit.,0.85,Where will he look for Arvin?,clips_v1\clip_093_narration.mp4
+94,831.959,840.626,6778.0,6786.642,movie_dialogue,roads_converge,0.96,,,none,,0,0,0,,unreviewed,,,Where will he look for Arvin?,clips_v1\clip_094_movie_dialogue.mp4
+95,840.626,848.043,6786.642,6794.0,narration,roads_converge,0.32,Two measured wounds tell Bodecker this was no random roadside panic.,840.626,none,,0,0,0,,discovery_payoff,,,Where will he look for Arvin?,clips_v1\clip_095_narration.mp4
+96,848.043,857.876,6794.0,6803.833,movie_dialogue,roads_converge,0.96,,,none,,0,0,0,,unreviewed,,,Where will he look for Arvin?,clips_v1\clip_096_movie_dialogue.mp4
+97,857.876,864.876,6803.833,6810.833,narration,roads_converge,0.32,The blank in Sandy's gun turns Carl's arrangement into a betrayal.,857.876,none,,0,0,0,,reversal_reveal,,,Where will he look for Arvin?,clips_v1\clip_097_narration.mp4
+98,864.876,874.334,6810.833,6820.291,movie_dialogue,roads_converge,0.96,,,none,,0,0,0,,unreviewed,,,Where will he look for Arvin?,clips_v1\clip_098_movie_dialogue.mp4
+99,874.334,881.334,7020.0,7027.0,narration,cornered,0.32,Arvin returns to Mitchell Flats because every road began on this hill.,874.334,none,,0,0,0,,strong_dialogue,,,Why here?,clips_v1\clip_099_narration.mp4
+100,881.334,892.709,7027.0,7038.375,movie_dialogue,cornered,0.96,,,none,,0,0,0,,unreviewed,,,Why here?,clips_v1\clip_100_movie_dialogue.mp4
+101,892.709,899.709,7038.375,7045.375,narration,cornered,0.32,The burned house leaves Arvin with memory instead of shelter.,892.709,none,,0,0,0,,strong_dialogue,,,Why here?,clips_v1\clip_101_narration.mp4
+102,899.709,908.376,7045.375,7054.017,movie_dialogue,cornered,0.96,,,none,,0,0,0,,unreviewed,,,Why here?,clips_v1\clip_102_movie_dialogue.mp4
+103,908.376,913.668,7054.017,7059.267,movie_dialogue,cornered,0.96,,,none,,0,0,0,,unreviewed,,,Why here?,clips_v1\clip_103_movie_dialogue.mp4
+104,913.668,920.709,7059.267,7066.267,narration,cornered,0.32,He keeps walking because the prayer ground matters more than the house.,913.668,none,,0,0,0,,strong_dialogue,,,Why here?,clips_v1\clip_104_narration.mp4
+105,920.709,930.959,7066.267,7076.458,movie_dialogue,cornered,0.96,,,none,,0,0,0,,unreviewed,,,Why here?,clips_v1\clip_105_movie_dialogue.mp4
+106,930.959,938.168,7338.0,7345.208,movie_dialogue,cornered,0.96,,,none,,0,0,0,,unreviewed,,,Where does that leave him?,clips_v1\clip_106_movie_dialogue.mp4
+107,938.168,945.376,7345.208,7352.416,narration,cornered,0.32,"For once, Arvin remembers Willard's desperation before judging his violence.",938.168,none,,0,0,0,,strong_dialogue,,,Where does that leave him?,clips_v1\clip_107_narration.mp4
+108,945.376,955.209,7352.416,7362.208,movie_dialogue,cornered,0.96,,,none,,0,0,0,,unreviewed,,,Where does that leave him?,clips_v1\clip_108_movie_dialogue.mp4
+109,955.209,961.959,7362.208,7368.958,movie_dialogue,cornered,0.96,,,none,,0,0,0,,unreviewed,,,Where does that leave him?,clips_v1\clip_109_movie_dialogue.mp4
+110,961.959,968.959,7368.958,7375.958,narration,cornered,0.32,Understanding the motive does not erase what that devotion cost Arvin.,961.959,none,,0,0,0,,strong_dialogue,,,Where does that leave him?,clips_v1\clip_110_narration.mp4
+111,968.959,977.626,7375.958,7384.6,movie_dialogue,cornered,0.96,,,none,,0,0,0,,unreviewed,,,Where does that leave him?,clips_v1\clip_111_movie_dialogue.mp4
+112,977.626,984.668,7384.6,7391.6,narration,cornered,0.32,"At the ruined altar, anger finally makes room for understanding.",977.626,none,,0,0,0,,clear,,,Where does that leave him?,clips_v1\clip_112_narration.mp4
+113,984.668,991.668,7404.0,7411.0,narration,cornered,0.32,Bodecker's voice turns Arvin's childhood woods into a hunting ground.,984.668,none,,0,0,0,,strong_dialogue,,,Does Arvin come out?,clips_v1\clip_113_narration.mp4
+114,991.668,1001.209,7411.0,7420.541,movie_dialogue,cornered,0.96,,,none,,0,0,0,,unreviewed,,,Does Arvin come out?,clips_v1\clip_114_movie_dialogue.mp4
+115,1001.209,1008.209,7420.541,7427.541,narration,cornered,0.32,The sheriff controls the clearing with noise while Arvin stays hidden.,1001.209,none,,0,0,0,,strong_dialogue,,,Does Arvin come out?,clips_v1\clip_115_narration.mp4
+116,1008.209,1016.876,7427.541,7436.183,movie_dialogue,cornered,0.96,,,none,,0,0,0,,unreviewed,,,Does Arvin come out?,clips_v1\clip_116_movie_dialogue.mp4
+117,1016.876,1023.918,7436.183,7443.183,narration,cornered,0.32,His claim of peaceful intent only sharpens the threat in his hand.,1016.876,none,,0,0,0,,strong_dialogue,,,Does Arvin come out?,clips_v1\clip_117_narration.mp4
+118,1023.918,1033.084,7443.183,7452.291,movie_dialogue,cornered,0.96,,,none,,0,0,0,,unreviewed,,,Does Arvin come out?,clips_v1\clip_118_movie_dialogue.mp4
+119,1033.084,1059.084,7543.0,7569.0,movie_dialogue,cornered,0.96,,,none,,0,0,0,,unreviewed,,,Who fires first?,clips_v1\clip_119_movie_dialogue.mp4
+120,1059.084,1066.834,1809.418,1817.166,narration,closing_wrap,0.32,"Every adult calls his choice necessary, while the children inherit its cost.",1059.084,none,,0,0,0,,strong_dialogue,,,Where do choices like that end?,clips_v1\clip_120_narration.mp4
+121,1066.834,1075.543,1817.166,1825.842,movie_dialogue,closing_wrap,0.96,,,none,,0,0,0,,unreviewed,,,Where do choices like that end?,clips_v1\clip_121_movie_dialogue.mp4
+122,1075.543,1081.084,1825.842,1831.342,movie_dialogue,closing_wrap,0.96,,,none,,0,0,0,,unreviewed,,,Where do choices like that end?,clips_v1\clip_122_movie_dialogue.mp4
+123,1081.084,1088.126,1831.342,1838.342,narration,closing_wrap,0.32,Arvin's story begins with adults choosing a future on his behalf.,1081.084,none,,0,0,0,,strong_dialogue,,,Where do choices like that end?,clips_v1\clip_123_narration.mp4
+124,1088.126,1096.876,1838.342,1847.019,movie_dialogue,closing_wrap,0.96,,,none,,0,0,0,,unreviewed,,,Where do choices like that end?,clips_v1\clip_124_movie_dialogue.mp4
+125,1096.876,1104.293,1847.019,1854.375,narration,closing_wrap,0.32,What remains compelling is how Arvin resists becoming his father's copy.,1096.876,none,,0,0,0,,clear,,,Where do choices like that end?,clips_v1\clip_125_narration.mp4
+126,1104.293,1108.376,1854.375,1858.458,movie_dialogue,closing_wrap,0.96,,,none,,0,0,0,,unreviewed,,,Where do choices like that end?,clips_v1\clip_126_movie_dialogue.mp4
+127,1108.376,1115.376,6945.0,6952.0,narration,closing_wrap,0.32,That weight lands because Tom Holland plays Arvin without easy innocence.,1108.376,none,,0,0,0,,strong_dialogue,,,Why did all of them sign up for this one?,clips_v1\clip_127_narration.mp4
+128,1115.376,1125.709,6952.0,6962.333,movie_dialogue,closing_wrap,0.96,,,none,,0,0,0,,unreviewed,,,Why did all of them sign up for this one?,clips_v1\clip_128_movie_dialogue.mp4
+129,1125.709,1132.709,6962.333,6969.333,narration,closing_wrap,0.32,Robert Pattinson makes Preston's charm feel practiced long before it turns cruel.,1125.709,none,,0,0,0,,strong_dialogue,,,Why did all of them sign up for this one?,clips_v1\clip_129_narration.mp4
+130,1132.709,1141.418,6969.333,6978.009,movie_dialogue,closing_wrap,0.96,,,none,,0,0,0,,unreviewed,,,Why did all of them sign up for this one?,clips_v1\clip_130_movie_dialogue.mp4
+131,1141.418,1148.459,6978.009,6985.009,narration,closing_wrap,0.32,Sebastian Stan and Eliza Scanlen complete a cast built on damaged certainty.,1141.418,none,,0,0,0,,clear,,,Why did all of them sign up for this one?,clips_v1\clip_131_narration.mp4
+132,1148.459,1157.209,6985.009,6993.686,movie_dialogue,closing_wrap,0.96,,,none,,0,0,0,,unreviewed,,,Why did all of them sign up for this one?,clips_v1\clip_132_movie_dialogue.mp4

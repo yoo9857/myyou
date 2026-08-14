@@ -1,0 +1,292 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1920
+PlayResY: 1080
+WrapStyle: 2
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Narration,Noto Sans KR,59,&H00AFE8FF,&H000000FF,&H000A0805,&H80080604,-1,0,0,0,100,100,0.2,0,1,3.6,2.2,2,160,160,272,1
+Style: Dialogue,Noto Sans KR,50,&H00F8FAFA,&H000000FF,&H00000000,&H78000000,-1,0,0,0,100,100,0,0,1,4.2,2.0,2,160,160,188,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.00,0:00:03.82,Narration,,0,0,0,,At this blood-darkened cross, Willard turns prayer into an order.
+Dialogue: 0,0:00:03.94,0:00:04.71,Dialogue,,0,0,0,,Pray, God dammit.
+Dialogue: 0,0:00:05.59,0:00:08.04,Dialogue,,0,0,0,,-You want your mama to die? -No, sir.
+Dialogue: 0,0:00:08.17,0:00:09.09,Dialogue,,0,0,0,,Then pray!
+Dialogue: 0,0:00:11.88,0:00:14.76,Dialogue,,0,0,0,,Lord, please save my mama!
+Dialogue: 0,0:00:15.26,0:00:19.09,Dialogue,,0,0,0,,-Clean the cancer inside of her! -We need your help!
+Dialogue: 0,0:00:19.21,0:00:22.73,Narration,,0,0,0,,The ritual binds Arvin to a fear he cannot yet understand.
+Dialogue: 0,0:00:22.85,0:00:24.17,Dialogue,,0,0,0,,Now you pray, now! You hear me?
+Dialogue: 0,0:00:24.25,0:00:25.30,Dialogue,,0,0,0,,Yes, Lord!
+Dialogue: 0,0:00:25.38,0:00:26.88,Dialogue,,0,0,0,,Save my mama, Lord!
+Dialogue: 0,0:00:27.38,0:00:29.59,Dialogue,,0,0,0,,Please clean the cancer inside of her!
+Dialogue: 0,0:00:30.80,0:00:33.59,Dialogue,,0,0,0,,And don't be crying, you hear? Don't be crying!
+Dialogue: 0,0:00:33.67,0:00:37.13,Dialogue,,0,0,0,,-Pray like you mean it! Lord!
+Dialogue: 0,0:00:37.25,0:00:38.21,Dialogue,,0,0,0,,Spare my wife!
+Dialogue: 0,0:00:40.13,0:00:41.80,Dialogue,,0,0,0,,Don't take her from me.
+Dialogue: 0,0:00:46.38,0:00:51.28,Narration,,0,0,0,,Years earlier, one crucified Marine gave Willard's faith its permanent shape.
+Dialogue: 0,0:00:55.05,0:00:56.88,Dialogue,,0,0,0,,Fuck.
+Dialogue: 0,0:01:01.75,0:01:05.85,Narration,,0,0,0,,The sight turns survival itself into something cruel and unbearable.
+Dialogue: 0,0:01:06.30,0:01:07.96,Dialogue,,0,0,0,,-Fuck!
+Dialogue: 0,0:01:09.67,0:01:12.84,Dialogue,,0,0,0,,We gotta do something. The Japs just left him up there.
+Dialogue: 0,0:01:17.12,0:01:21.00,Narration,,0,0,0,,With the Marine beyond saving, mercy becomes another kind of violence.
+Dialogue: 0,0:01:28.58,0:01:30.58,Dialogue,,0,0,0,,Next stop, Meade, Ohio.
+Dialogue: 0,0:01:32.50,0:01:34.92,Dialogue,,0,0,0,,Next time, the cops will drag you out.
+Dialogue: 0,0:01:35.00,0:01:36.59,Dialogue,,0,0,0,,-Excuse me. -Get out!
+Dialogue: 0,0:01:36.67,0:01:38.67,Dialogue,,0,0,0,,I'm just gonna take my break outside.
+Dialogue: 0,0:01:38.75,0:01:40.38,Dialogue,,0,0,0,,All right.
+Dialogue: 0,0:01:41.00,0:01:42.63,Dialogue,,0,0,0,,-All right!
+Dialogue: 0,0:01:45.50,0:01:49.12,Narration,,0,0,0,,Back home, Willard's silence lets his mother arrange the next chapter.
+Dialogue: 0,0:01:49.75,0:01:52.17,Dialogue,,0,0,0,,-Welcome. - Willard.
+Dialogue: 0,0:01:52.25,0:01:55.05,Dialogue,,0,0,0,,Willard, I've asked Helen to sit with us. Go on, Helen.
+Dialogue: 0,0:01:55.17,0:01:57.38,Dialogue,,0,0,0,,-Nice to meet you. -Hi, how are you?
+Dialogue: 0,0:01:59.80,0:02:01.50,Dialogue,,0,0,0,,Willard just got back, Helen.
+Dialogue: 0,0:02:01.59,0:02:02.88,Dialogue,,0,0,0,,-You-- -Welcome home.
+Dialogue: 0,0:02:03.00,0:02:06.61,Narration,,0,0,0,,Helen enters before Willard has even settled back into civilian life.
+Dialogue: 0,0:02:06.73,0:02:07.38,Dialogue,,0,0,0,,It's been four days.
+Dialogue: 0,0:02:07.46,0:02:10.30,Dialogue,,0,0,0,,Willard didn't know that Emma had promised God
+Dialogue: 0,0:02:10.46,0:02:12.84,Dialogue,,0,0,0,,that in exchange for bringing him home safe,
+Dialogue: 0,0:02:12.92,0:02:15.38,Dialogue,,0,0,0,,she'd make sure he married Helen Hatton.
+Dialogue: 0,0:02:16.05,0:02:19.09,Dialogue,,0,0,0,,The girl's family burned up in a house fire
+Dialogue: 0,0:02:19.21,0:02:23.54,Narration,,0,0,0,,Emma sees two wounded young people and mistakes proximity for providence.
+Dialogue: 0,0:02:23.66,0:02:24.38,Dialogue,,0,0,0,,It's hot, ain't it?
+Dialogue: 0,0:02:24.46,0:02:26.59,Dialogue,,0,0,0,,-Amen. -It's bound to get hotter.
+Dialogue: 0,0:02:26.71,0:02:29.38,Dialogue,,0,0,0,,Right now, we got two boys from over in Topperville
+Dialogue: 0,0:02:29.50,0:02:30.71,Dialogue,,0,0,0,,You understand?
+Dialogue: 0,0:02:30.80,0:02:31.88,Dialogue,,0,0,0,,Yes, sir.
+Dialogue: 0,0:02:39.96,0:02:41.88,Dialogue,,0,0,0,,Now, you pray on what happened today.
+Dialogue: 0,0:02:44.46,0:02:46.50,Dialogue,,0,0,0,,-God!
+Dialogue: 0,0:02:46.59,0:02:49.34,Dialogue,,0,0,0,,-Stubbs! -Stubbs, get out here, man!
+Dialogue: 0,0:02:50.09,0:02:52.05,Dialogue,,0,0,0,,-Get out of here! -Come on, give me a hand.
+Dialogue: 0,0:02:52.13,0:02:53.55,Dialogue,,0,0,0,,Get the fuck out of here!
+Dialogue: 0,0:03:05.67,0:03:07.38,Dialogue,,0,0,0,,Now you remember what I told you?
+Dialogue: 0,0:03:08.08,0:03:11.15,Narration,,0,0,0,,Willard makes Arvin study the wreckage before explaining the lesson.
+Dialogue: 0,0:03:11.97,0:03:13.22,Dialogue,,0,0,0,,That's what I meant.
+Dialogue: 0,0:03:14.26,0:03:16.51,Dialogue,,0,0,0,,Just gotta pick the right time.
+Dialogue: 0,0:03:17.42,0:03:18.38,Dialogue,,0,0,0,,Yes, sir.
+Dialogue: 0,0:03:19.05,0:03:21.17,Dialogue,,0,0,0,,There's a lot of no good sons of bitches out there.
+Dialogue: 0,0:03:22.55,0:03:24.88,Dialogue,,0,0,0,,-More than a hundred?
+Dialogue: 0,0:03:26.97,0:03:28.55,Dialogue,,0,0,0,,Yeah, at least that many.
+Dialogue: 0,0:03:33.59,0:03:35.55,Dialogue,,0,0,0,,How about I buy you a candy bar, huh?
+Dialogue: 0,0:03:37.34,0:03:39.88,Dialogue,,0,0,0,,We gotta get some sugar for Mama too.
+Dialogue: 0,0:03:40.00,0:03:43.92,Narration,,0,0,0,,One ordinary afternoon ends the moment Charlotte cannot answer her son.
+Dialogue: 0,0:03:44.04,0:03:44.46,Dialogue,,0,0,0,,Mama?
+Dialogue: 0,0:03:45.63,0:03:46.55,Dialogue,,0,0,0,,Mama?
+Dialogue: 0,0:03:47.63,0:03:48.59,Dialogue,,0,0,0,,Mama?
+Dialogue: 0,0:03:50.50,0:03:53.63,Dialogue,,0,0,0,,-Mama?
+Dialogue: 0,0:03:53.71,0:03:54.71,Dialogue,,0,0,0,,Dad!
+Dialogue: 0,0:03:55.38,0:03:56.30,Dialogue,,0,0,0,,-Mama!
+Dialogue: 0,0:03:57.09,0:03:59.71,Dialogue,,0,0,0,,No! Charlotte!
+Dialogue: 0,0:04:00.21,0:04:02.96,Dialogue,,0,0,0,,Listen to me. Charlotte!
+Dialogue: 0,0:04:10.96,0:04:14.34,Dialogue,,0,0,0,,-What are you saying? -The test results aren't good.
+Dialogue: 0,0:04:15.09,0:04:17.67,Dialogue,,0,0,0,,The morphine will continue to dampen the pain but...
+Dialogue: 0,0:04:18.21,0:04:20.34,Dialogue,,0,0,0,,there's no way we can destroy that cancer.
+Dialogue: 0,0:04:20.46,0:04:25.14,Narration,,0,0,0,,The diagnosis leaves medicine managing pain while Willard searches beyond it.
+Dialogue: 0,0:04:26.13,0:04:27.76,Dialogue,,0,0,0,,Let's talk downstairs.
+Dialogue: 0,0:04:36.29,0:04:40.00,Narration,,0,0,0,,When the doctors give up, Willard turns to the only power he trusts.
+Dialogue: 0,0:04:41.13,0:04:44.63,Dialogue,,0,0,0,,Now... them doctors can't do your mom any good.
+Dialogue: 0,0:04:53.13,0:04:54.75,Dialogue,,0,0,0,,Dad, no!
+Dialogue: 0,0:04:55.63,0:04:59.84,Dialogue,,0,0,0,,Dad, no!
+Dialogue: 0,0:04:59.92,0:05:00.88,Dialogue,,0,0,0,,Dad!
+Dialogue: 0,0:05:00.96,0:05:04.55,Dialogue,,0,0,0,,Lord, this here is my boy's dog.
+Dialogue: 0,0:05:04.67,0:05:08.22,Narration,,0,0,0,,Willard offers what Arvin loves most as payment for Charlotte's life.
+Dialogue: 0,0:05:14.34,0:05:15.76,Dialogue,,0,0,0,,Now you take him!
+Dialogue: 0,0:05:15.84,0:05:17.30,Dialogue,,0,0,0,,Bring him back!
+Dialogue: 0,0:05:17.38,0:05:18.80,Dialogue,,0,0,0,,You save Charlotte!
+Dialogue: 0,0:05:20.04,0:05:24.94,Narration,,0,0,0,,His promise comforts nobody because Arvin has seen what faith now demands.
+Dialogue: 0,0:05:37.71,0:05:39.63,Dialogue,,0,0,0,,Before I found the Holy Ghost...
+Dialogue: 0,0:05:42.50,0:05:45.17,Dialogue,,0,0,0,,I was scared plumb to death of spiders.
+Dialogue: 0,0:05:47.17,0:05:49.55,Dialogue,,0,0,0,,-Ain't that right, Theodore? -Mm-hmm.
+Dialogue: 0,0:05:49.63,0:05:51.34,Dialogue,,0,0,0,,-Mm? -Hmm.
+Dialogue: 0,0:05:51.46,0:05:54.94,Narration,,0,0,0,,Helen reads Roy's spectacle as proof that her loneliness has ended.
+Dialogue: 0,0:05:55.06,0:05:57.30,Dialogue,,0,0,0,,Helen did, in fact, meet the man she would marry that afternoon.
+Dialogue: 0,0:05:57.38,0:05:59.00,Dialogue,,0,0,0,,Bless me, Reverend.
+Dialogue: 0,0:05:59.13,0:06:00.26,Dialogue,,0,0,0,,Bless me.
+Dialogue: 0,0:06:02.80,0:06:05.55,Dialogue,,0,0,0,,And Willard's mind was already hundreds of miles away.
+Dialogue: 0,0:06:19.13,0:06:20.05,Dialogue,,0,0,0,,Lenora...
+Dialogue: 0,0:06:25.38,0:06:29.57,Narration,,0,0,0,,Roy stays beside Helen, expecting belief to undo what belief caused.
+Dialogue: 0,0:06:42.44,0:06:46.09,Narration,,0,0,0,,A waiting camera makes this generous pickup feel carefully staged.
+Dialogue: 0,0:06:49.71,0:06:50.59,Dialogue,,0,0,0,,Roy?
+Dialogue: 0,0:06:58.71,0:07:02.32,Narration,,0,0,0,,Sandy keeps calling Roy's name while Carl quietly controls the route.
+Dialogue: 0,0:07:03.20,0:07:04.04,Dialogue,,0,0,0,,Roy?
+Dialogue: 0,0:07:08.54,0:07:09.54,Dialogue,,0,0,0,,Where about?
+Dialogue: 0,0:07:10.62,0:07:12.12,Dialogue,,0,0,0,,C-Coal Creek, West Virginia.
+Dialogue: 0,0:07:12.20,0:07:13.95,Dialogue,,0,0,0,,We'll get you close enough, son.
+Dialogue: 0,0:07:14.66,0:07:16.54,Dialogue,,0,0,0,,I'm Carl, by the way, this here's Sandy.
+Dialogue: 0,0:07:16.71,0:07:19.78,Narration,,0,0,0,,Arvin protects Lenora with the exact timing his father taught him.
+Dialogue: 0,0:07:19.90,0:07:22.42,Dialogue,,0,0,0,,-Sister fucker. -He would do anything to protect her.
+Dialogue: 0,0:07:23.55,0:07:25.67,Dialogue,,0,0,0,,No matter what the weather was,
+Dialogue: 0,0:07:25.79,0:07:28.46,Dialogue,,0,0,0,,Lenora would visit her mother's grave after school.
+Dialogue: 0,0:07:29.42,0:07:31.92,Dialogue,,0,0,0,,Some days she'd even read the Bible out loud,
+Dialogue: 0,0:07:32.00,0:07:33.88,Dialogue,,0,0,0,,and imagine her mother was listening.
+Dialogue: 0,0:07:34.96,0:07:36.80,Dialogue,,0,0,0,,Though he wasn't one for praying
+Dialogue: 0,0:07:37.38,0:07:39.88,Dialogue,,0,0,0,,Arvin would often drive her and keep her company.
+Dialogue: 0,0:07:40.00,0:07:43.49,Narration,,0,0,0,,The birthday gift puts Willard's old weapon back into Arvin's hands.
+Dialogue: 0,0:07:48.80,0:07:50.75,Dialogue,,0,0,0,,Happy birthday.
+Dialogue: 0,0:07:54.88,0:07:55.80,Dialogue,,0,0,0,,All right.
+Dialogue: 0,0:07:57.84,0:08:00.42,Dialogue,,0,0,0,,Make a wish before that candle burns out.
+Dialogue: 0,0:08:01.00,0:08:04.59,Narration,,0,0,0,,A polished stranger arrives to lead the same church that raised Lenora.
+Dialogue: 0,0:08:10.42,0:08:11.30,Dialogue,,0,0,0,,Hello there.
+Dialogue: 0,0:08:11.38,0:08:13.25,Dialogue,,0,0,0,,Pleased to meet you, Reverend.
+Dialogue: 0,0:08:13.34,0:08:14.38,Dialogue,,0,0,0,,Emma Russell.
+Dialogue: 0,0:08:14.46,0:08:17.00,Dialogue,,0,0,0,,Nice to meet you too. What you got there?
+Dialogue: 0,0:08:19.26,0:08:20.51,Dialogue,,0,0,0,,there's no doubt...
+Dialogue: 0,0:08:22.09,0:08:25.59,Dialogue,,0,0,0,,we're all humble people gathered here.
+Dialogue: 0,0:08:25.67,0:08:27.05,Dialogue,,0,0,0,,-Amen. -Amen.
+Dialogue: 0,0:08:27.55,0:08:29.38,Dialogue,,0,0,0,,Y'all have been awful nice to me
+Dialogue: 0,0:08:30.01,0:08:32.67,Dialogue,,0,0,0,,and I thank you from the bottom of my heart for the welcome.
+Dialogue: 0,0:08:32.76,0:08:34.71,Dialogue,,0,0,0,,-Yes.
+Dialogue: 0,0:08:35.30,0:08:36.30,Dialogue,,0,0,0,,But friends...
+Dialogue: 0,0:08:38.80,0:08:40.09,Dialogue,,0,0,0,,the poor soul...
+Dialogue: 0,0:08:40.21,0:08:44.96,Narration,,0,0,0,,Lenora hears private attention as spiritual guidance, exactly as Preston intends.
+Dialogue: 0,0:08:45.84,0:08:46.67,Dialogue,,0,0,0,,Lenora...
+Dialogue: 0,0:08:49.09,0:08:51.80,Dialogue,,0,0,0,,have you truly opened yourself to the Lord with...
+Dialogue: 0,0:08:52.75,0:08:54.63,Dialogue,,0,0,0,,Preacher Sykes or...
+Dialogue: 0,0:08:55.71,0:08:56.88,Dialogue,,0,0,0,,any other preacher?
+Dialogue: 0,0:09:00.05,0:09:03.67,Dialogue,,0,0,0,,Come on, she likes lanky old studs like yourself. Come on.
+Dialogue: 0,0:09:04.21,0:09:08.80,Narration,,0,0,0,,Carl packages control as crude humor, keeping Sandy inside the performance.
+Dialogue: 0,0:09:08.92,0:09:09.38,Dialogue,,0,0,0,,What's going on here, mister?
+Dialogue: 0,0:09:09.46,0:09:11.92,Dialogue,,0,0,0,,Oh, come on, Jesus Christ, huh?
+Dialogue: 0,0:09:13.25,0:09:16.17,Dialogue,,0,0,0,,Pay attention. It's like I said, you're gonna fuck my wife
+Dialogue: 0,0:09:16.25,0:09:18.55,Dialogue,,0,0,0,,and I'm gonna take some pictures, that's all.
+Dialogue: 0,0:09:19.88,0:09:22.91,Narration,,0,0,0,,Bodecker questions his own sister with the patience of a threat.
+Dialogue: 0,0:09:25.88,0:09:27.96,Dialogue,,0,0,0,,I got another election coming up, Sandy.
+Dialogue: 0,0:09:29.21,0:09:32.84,Dialogue,,0,0,0,,Ol' Matthew's out there doing anything he can to try to make me look bad.
+Dialogue: 0,0:09:35.01,0:09:37.63,Dialogue,,0,0,0,,Is Carl the one pimping you? That fat son of a bitch?
+Dialogue: 0,0:09:37.71,0:09:39.80,Dialogue,,0,0,0,,No, he's working, making deliveries.
+Dialogue: 0,0:09:39.84,0:09:43.09,Dialogue,,0,0,0,,for some wrong done to you by another person.
+Dialogue: 0,0:09:43.17,0:09:44.25,Dialogue,,0,0,0,,That's true.
+Dialogue: 0,0:09:45.58,0:09:49.61,Narration,,0,0,0,,Preston uses sacred language to make Lenora distrust her own memory.
+Dialogue: 0,0:09:49.73,0:09:52.42,Dialogue,,0,0,0,,remember all the things we did in your car?
+Dialogue: 0,0:09:56.09,0:09:57.75,Dialogue,,0,0,0,,I'm saying you must be crazy.
+Dialogue: 0,0:09:57.84,0:10:01.34,Dialogue,,0,0,0,,Coming in the Lord's house and talking all this trash.
+Dialogue: 0,0:10:04.05,0:10:06.05,Dialogue,,0,0,0,,Look, my advice to you, girl...
+Dialogue: 0,0:10:06.17,0:10:07.34,Dialogue,,0,0,0,,Grandma!
+Dialogue: 0,0:10:08.09,0:10:09.25,Dialogue,,0,0,0,,Grandma!
+Dialogue: 0,0:10:09.42,0:10:11.29,Dialogue,,0,0,0,,No, no, no!
+Dialogue: 0,0:10:14.34,0:10:15.54,Dialogue,,0,0,0,,Grandma!
+Dialogue: 0,0:10:20.59,0:10:22.04,Dialogue,,0,0,0,,Grandma!
+Dialogue: 0,0:10:24.46,0:10:27.25,Dialogue,,0,0,0,,No one would know she wasn't a suicide
+Dialogue: 0,0:10:27.63,0:10:30.96,Dialogue,,0,0,0,,and that in the end, she was all right with her maker.
+Dialogue: 0,0:10:31.42,0:10:32.50,Dialogue,,0,0,0,,Oh, Lord.
+Dialogue: 0,0:10:36.38,0:10:38.42,Dialogue,,0,0,0,,But you take her into your arms.
+Dialogue: 0,0:10:39.13,0:10:42.67,Narration,,0,0,0,,Even in mourning, the family asks the same faith for mercy.
+Dialogue: 0,0:10:46.17,0:10:47.46,Dialogue,,0,0,0,,Uh, ain't somebody...
+Dialogue: 0,0:10:48.96,0:10:50.34,Dialogue,,0,0,0,,saying prayers or...
+Dialogue: 0,0:11:16.96,0:11:18.01,Dialogue,,0,0,0,,Excuse me.
+Dialogue: 0,0:11:22.01,0:11:23.01,Dialogue,,0,0,0,,Excuse me.
+Dialogue: 0,0:11:23.04,0:11:27.43,Narration,,0,0,0,,Arvin frames the confrontation around Lenora, refusing to let Preston redirect it.
+Dialogue: 0,0:11:30.25,0:11:31.21,Dialogue,,0,0,0,,So...
+Dialogue: 0,0:11:32.29,0:11:33.38,Dialogue,,0,0,0,,Mrs. Russell's boy?
+Dialogue: 0,0:11:36.63,0:11:37.63,Dialogue,,0,0,0,,All right.
+Dialogue: 0,0:11:41.57,0:11:43.65,Dialogue,,0,0,0,,Don't do anything you'll regret, son.
+Dialogue: 0,0:11:44.32,0:11:46.82,Dialogue,,0,0,0,,Why don't you put the gun down and...
+Dialogue: 0,0:11:47.74,0:11:49.32,Dialogue,,0,0,0,,we can talk all about it.
+Dialogue: 0,0:11:49.50,0:11:53.35,Narration,,0,0,0,,Only after being exposed does Preston start speaking like a peacemaker.
+Dialogue: 0,0:11:57.09,0:11:58.51,Dialogue,,0,0,0,,It wasn't my fault.
+Dialogue: 0,0:12:01.42,0:12:03.13,Dialogue,,0,0,0,,And Lenora...
+Dialogue: 0,0:12:04.92,0:12:06.17,Dialogue,,0,0,0,,was just like this...
+Dialogue: 0,0:12:07.51,0:12:08.67,Dialogue,,0,0,0,,this Reaster girl.
+Dialogue: 0,0:12:10.13,0:12:11.46,Dialogue,,0,0,0,,She wouldn't let me be.
+Dialogue: 0,0:12:13.42,0:12:16.55,Dialogue,,0,0,0,,But I want you to know that I--
+Dialogue: 0,0:12:17.21,0:12:20.01,Dialogue,,0,0,0,,I pray for that girl's soul
+Dialogue: 0,0:12:20.09,0:12:21.76,Dialogue,,0,0,0,,every night.
+Dialogue: 0,0:12:24.05,0:12:25.13,Dialogue,,0,0,0,,Carl?
+Dialogue: 0,0:12:26.05,0:12:27.05,Dialogue,,0,0,0,,I see him.
+Dialogue: 0,0:12:27.21,0:12:31.67,Narration,,0,0,0,,Carl recognizes a lone traveler, while Sandy recognizes the broken rule.
+Dialogue: 0,0:12:33.05,0:12:35.67,Dialogue,,0,0,0,,-We don't even know where he's going. -Carl?
+Dialogue: 0,0:12:35.79,0:12:37.72,Dialogue,,0,0,0,,-Just-- -God dammit, Carl.
+Dialogue: 0,0:12:37.80,0:12:39.26,Dialogue,,0,0,0,,He's going to Ohio.
+Dialogue: 0,0:12:39.34,0:12:41.34,Dialogue,,0,0,0,,No one from home. That's your rule.
+Dialogue: 0,0:12:44.46,0:12:48.57,Narration,,0,0,0,,Sandy's warning confirms that Arvin falls outside their usual hunting pattern.
+Dialogue: 0,0:12:51.32,0:12:52.20,Dialogue,,0,0,0,,Morning.
+Dialogue: 0,0:12:53.01,0:12:53.96,Dialogue,,0,0,0,,Where you headed?
+Dialogue: 0,0:12:54.46,0:12:56.09,Dialogue,,0,0,0,,Meade, Ohio. You heard of it?
+Dialogue: 0,0:12:58.71,0:13:00.17,Dialogue,,0,0,0,,The paper-mill town, right?
+Dialogue: 0,0:13:00.26,0:13:01.38,Dialogue,,0,0,0,,Yeah, that's right.
+Dialogue: 0,0:13:01.50,0:13:05.17,Narration,,0,0,0,,Arvin answers plainly because their practiced friendliness gives him no warning.
+Dialogue: 0,0:13:05.29,0:13:06.84,Dialogue,,0,0,0,,We're passing right through it.
+Dialogue: 0,0:13:09.76,0:13:11.42,Dialogue,,0,0,0,,What you going to Meade for?
+Dialogue: 0,0:13:11.96,0:13:14.09,Dialogue,,0,0,0,,-Just visiting. -Got family there?
+Dialogue: 0,0:13:16.17,0:13:18.84,Dialogue,,0,0,0,,No, I used to live there a long time ago.
+Dialogue: 0,0:13:20.88,0:13:23.42,Dialogue,,0,0,0,,Damn. That's gonna be one fine sunset.
+Dialogue: 0,0:13:24.09,0:13:27.46,Dialogue,,0,0,0,,You have to be patient with me while I get a few shots off.
+Dialogue: 0,0:13:28.80,0:13:29.88,Dialogue,,0,0,0,,Hon, give me the key.
+Dialogue: 0,0:13:30.96,0:13:33.55,Dialogue,,0,0,0,,Don't you worry none. We've got some hooch in the back and...
+Dialogue: 0,0:13:34.84,0:13:36.84,Dialogue,,0,0,0,,Well, Sandy's good company.
+Dialogue: 0,0:13:45.46,0:13:48.79,Narration,,0,0,0,,A double-homicide call sends Bodecker toward the county road.
+Dialogue: 0,0:13:53.09,0:13:54.80,Dialogue,,0,0,0,,I'm sorry, Lee. This is fucked up.
+Dialogue: 0,0:13:55.30,0:13:56.25,Dialogue,,0,0,0,,What do you mean?
+Dialogue: 0,0:13:56.84,0:13:58.25,Dialogue,,0,0,0,,It's your sister and her husband.
+Dialogue: 0,0:14:00.63,0:14:04.48,Narration,,0,0,0,,Two measured wounds tell Bodecker this was no random roadside panic.
+Dialogue: 0,0:14:04.60,0:14:06.03,Dialogue,,0,0,0,,Carl was shot twice.
+Dialogue: 0,0:14:06.78,0:14:07.86,Dialogue,,0,0,0,,Sandy once.
+Dialogue: 0,0:14:11.55,0:14:13.38,Dialogue,,0,0,0,,It looks like it was a nine millimeter.
+Dialogue: 0,0:14:13.46,0:14:15.13,Dialogue,,0,0,0,,Sandy got one shot off but...
+Dialogue: 0,0:14:16.17,0:14:17.76,Dialogue,,0,0,0,,her gun was loaded with blanks.
+Dialogue: 0,0:14:17.88,0:14:21.37,Narration,,0,0,0,,The blank in Sandy's gun turns Carl's arrangement into a betrayal.
+Dialogue: 0,0:14:25.42,0:14:27.63,Dialogue,,0,0,0,,-Jesus Christ. -Lee?
+Dialogue: 0,0:14:32.01,0:14:34.21,Dialogue,,0,0,0,,Give me a couple minutes here alone with her.
+Dialogue: 0,0:14:34.33,0:14:38.15,Narration,,0,0,0,,Arvin returns to Mitchell Flats because every road began on this hill.
+Dialogue: 0,0:14:38.27,0:14:39.00,Dialogue,,0,0,0,,Still there?
+Dialogue: 0,0:14:41.34,0:14:42.63,Dialogue,,0,0,0,,Well, I'll be damned.
+Dialogue: 0,0:14:43.80,0:14:45.38,Dialogue,,0,0,0,,You're that Russell boy, ain't you?
+Dialogue: 0,0:14:48.92,0:14:52.59,Dialogue,,0,0,0,,I just thought, seeing as I was this way, I'd stop by and see the old place again.
+Dialogue: 0,0:14:52.71,0:14:55.58,Narration,,0,0,0,,The burned house leaves Arvin with memory instead of shelter.
+Dialogue: 0,0:14:55.70,0:14:59.59,Dialogue,,0,0,0,,Son, I hate to tell you this, but that place burned some years ago.
+Dialogue: 0,0:14:59.71,0:15:01.34,Dialogue,,0,0,0,,They think some kids did it.
+Dialogue: 0,0:15:01.84,0:15:04.75,Dialogue,,0,0,0,,Wasn't nobody ever living there since you and your folks.
+Dialogue: 0,0:15:05.30,0:15:08.34,Dialogue,,0,0,0,,Well, heck, I come all this way, I may as well walk up there anyways.
+Dialogue: 0,0:15:08.45,0:15:12.20,Dialogue,,0,0,0,,Sure, just cut across Clarence's pasture.
+Dialogue: 0,0:15:12.28,0:15:13.53,Dialogue,,0,0,0,,He won't say nothing.
+Dialogue: 0,0:15:13.67,0:15:18.11,Narration,,0,0,0,,He keeps walking because the prayer ground matters more than the house.
+Dialogue: 0,0:15:22.36,0:15:24.99,Dialogue,,0,0,0,,I never did thank you for the night my dad died.
+Dialogue: 0,0:15:26.78,0:15:28.11,Dialogue,,0,0,0,,You were awful kind of me,
+Dialogue: 0,0:15:28.20,0:15:30.78,Dialogue,,0,0,0,,and I just want you to know that I ain't never forgot it.
+Dialogue: 0,0:15:31.50,0:15:35.17,Dialogue,,0,0,0,,Arvin thought about the days leading up to his mother's death,
+Dialogue: 0,0:15:35.25,0:15:38.05,Dialogue,,0,0,0,,how Willard wanted so much for her to live.
+Dialogue: 0,0:15:38.17,0:15:42.32,Narration,,0,0,0,,For once, Arvin remembers Willard's desperation before judging his violence.
+Dialogue: 0,0:15:42.44,0:15:45.26,Dialogue,,0,0,0,,Fuck the blood and stink, the heat and the insects.
+Dialogue: 0,0:15:45.80,0:15:46.76,Dialogue,,0,0,0,,Anything.
+Dialogue: 0,0:15:47.26,0:15:49.22,Dialogue,,0,0,0,,Arvin said to himself.
+Dialogue: 0,0:15:51.05,0:15:55.05,Dialogue,,0,0,0,,And suddenly he realized, standing in his father's church,
+Dialogue: 0,0:15:55.59,0:15:57.55,Dialogue,,0,0,0,,that he'd had no other choice,
+Dialogue: 0,0:15:58.46,0:16:01.80,Dialogue,,0,0,0,,that Willard had needed to go wherever Charlotte went.
+Dialogue: 0,0:16:01.96,0:16:05.99,Narration,,0,0,0,,Understanding the motive does not erase what that devotion cost Arvin.
+Dialogue: 0,0:16:17.63,0:16:21.46,Narration,,0,0,0,,At the ruined altar, anger finally makes room for understanding.
+Dialogue: 0,0:16:24.67,0:16:28.11,Narration,,0,0,0,,Bodecker's voice turns Arvin's childhood woods into a hunting ground.
+Dialogue: 0,0:16:29.51,0:16:30.96,Dialogue,,0,0,0,,Arvin Russell!
+Dialogue: 0,0:16:32.80,0:16:34.34,Dialogue,,0,0,0,,I know you're down there somewhere!
+Dialogue: 0,0:16:35.88,0:16:37.80,Dialogue,,0,0,0,,It's Sheriff Bodecker, son!
+Dialogue: 0,0:16:39.55,0:16:41.09,Dialogue,,0,0,0,,Got some questions to ask you!
+Dialogue: 0,0:16:41.21,0:16:44.68,Narration,,0,0,0,,The sheriff controls the clearing with noise while Arvin stays hidden.
+Dialogue: 0,0:16:51.55,0:16:52.84,Dialogue,,0,0,0,,Sorry about that!
+Dialogue: 0,0:16:55.09,0:16:56.85,Dialogue,,0,0,0,,Goddamn bird scared me.
+Dialogue: 0,0:16:56.88,0:16:59.89,Narration,,0,0,0,,His claim of peaceful intent only sharpens the threat in his hand.
+Dialogue: 0,0:17:01.32,0:17:02.78,Dialogue,,0,0,0,,I ain't here to hurt you!
+Dialogue: 0,0:17:06.20,0:17:08.74,Dialogue,,0,0,0,,And I know that you don't wanna hurt me!
+Dialogue: 0,0:17:10.74,0:17:12.91,Dialogue,,0,0,0,,Come on out so we can have us a talk!
+Dialogue: 0,0:17:13.13,0:17:14.17,Dialogue,,0,0,0,,I had no choice!
+Dialogue: 0,0:17:24.63,0:17:27.80,Dialogue,,0,0,0,,I hate to be the one to tell you this, Sheriff, but your sister...
+Dialogue: 0,0:17:28.38,0:17:30.38,Dialogue,,0,0,0,,and her husband, they weren't no good neither!
+Dialogue: 0,0:17:30.46,0:17:33.92,Dialogue,,0,0,0,,I got a snapshot in my pocket here of her hugging on some dead guy.
+Dialogue: 0,0:17:34.01,0:17:35.88,Dialogue,,0,0,0,,You let loose that gun and I'll show it to you!
+Dialogue: 0,0:17:39.08,0:17:43.47,Narration,,0,0,0,,Every adult calls his choice necessary, while the children inherit its cost.
+Dialogue: 0,0:17:44.71,0:17:46.71,Dialogue,,0,0,0,,And that girl that's living with them...
+Dialogue: 0,0:17:47.55,0:17:49.42,Dialogue,,0,0,0,,She's just a little younger than you.
+Dialogue: 0,0:17:49.51,0:17:51.76,Dialogue,,0,0,0,,Maybe we'll stay for a while.
+Dialogue: 0,0:17:59.83,0:18:00.91,Dialogue,,0,0,0,,Arvin.
+Dialogue: 0,0:18:01.08,0:18:04.47,Narration,,0,0,0,,Arvin's story begins with adults choosing a future on his behalf.
+Dialogue: 0,0:18:16.88,0:18:20.71,Narration,,0,0,0,,What remains compelling is how Arvin resists becoming his father's copy.
+Dialogue: 0,0:18:22.74,0:18:24.11,Dialogue,,0,0,0,,When Dad goes to sleep...
+Dialogue: 0,0:18:25.38,0:18:28.26,Dialogue,,0,0,0,,I'm going to bring you down and give you a proper burial.
+Dialogue: 0,0:18:28.38,0:18:32.85,Narration,,0,0,0,,That weight lands because Tom Holland plays Arvin without easy innocence.
+Dialogue: 0,0:18:33.55,0:18:35.17,Dialogue,,0,0,0,,Durham, North Carolina.
+Dialogue: 0,0:18:35.88,0:18:39.30,Dialogue,,0,0,0,,Though the poor fucker had been completely worthless as a model,
+Dialogue: 0,0:18:39.84,0:18:42.13,Dialogue,,0,0,0,,Carl was insistent on keeping a record
+Dialogue: 0,0:18:42.34,0:18:45.59,Dialogue,,0,0,0,,of both his successes and his failures.
+Dialogue: 0,0:18:45.71,0:18:50.22,Narration,,0,0,0,,Robert Pattinson makes Preston's charm feel practiced long before it turns cruel.
+Dialogue: 0,0:19:01.42,0:19:05.90,Narration,,0,0,0,,Sebastian Stan and Eliza Scanlen complete a cast built on damaged certainty.

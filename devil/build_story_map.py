@@ -24,10 +24,33 @@ Source timings come from the film's embedded English subtitle track, read scene 
 from __future__ import annotations
 
 import json
+import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
 OUT = ROOT / "story_map.v1.json"
+
+sys.path.insert(0, str(ROOT.parent))
+import pipeline  # noqa: E402  - for the subtitle parser only
+
+# The edit plan refuses to open a clip in the middle of a spoken line, so an event window
+# that starts inside one is trimmed forward and the first second or two of the promised
+# footage never gets used - three beats came back at 82 to 83 percent against the 85 the
+# coverage gate wants. Applying the same rule here means the window, the promise and the
+# clip all begin at the same place. The shift is a fraction of a second onto the end of a
+# line, so the frame-verified position still shows the scene it was checked against.
+_config = json.loads((ROOT / "config.json").read_text(encoding="utf-8"))
+_subtitle = ROOT / str(_config.get("subtitle", ""))
+DIALOGUE = pipeline.parse_srt(_subtitle) if _subtitle.exists() else []
+
+
+def off_speech(second: float) -> float:
+    for cue in DIALOGUE:
+        if cue.start + 0.05 < second < cue.end - 0.05:
+            return cue.end + 0.08
+        if cue.start > second:
+            break
+    return second
 
 # The cut lands on the last line before the shooting. Bodecker calls Arvin out at 7408,
 # both men draw, and the film's subtitles stop at 7563.92 - "You let loose that gun and
@@ -55,12 +78,24 @@ def ev(eid, start, end, summary, visible, stake, opened, *, causes=(), chars=(),
     # anchored to the cutoff so the review stops on the last line before the shooting, so
     # the promise sits at the tail. Left at the head it pointed at footage nothing used, and
     # the coverage gate read 0 percent.
-    core = 9.0 if role == "none" else min(max((end - start) * 0.3, 12.0), 14.0)
+    # Coverage is covered/promised, and the plan loses a second or two off the front of a
+    # window whenever it has to start after a spoken line. A fixed loss hurts a small
+    # promise more than a large one, so the sizes are set against the block each beat
+    # actually gets: a beat carried by the film's own dialogue may only get a 9.6-second
+    # block in the setup groups, so DIALOGUE_BLOCK_MIN was raised to 13 to leave room for
+    # a 10-second promise plus the second or two lost off the front; a narrated beat gets
+    # 7 seconds of narration plus the film run after it, so it can promise 16.
+    core = 10.0 if role == "none" else min(max((end - start) * 0.3, 16.0), 18.0)
     window_end = min(end, SPOILER_CUTOFF)
     if window_end >= SPOILER_CUTOFF - 2.0:
         default_interval = [max(start, window_end - core), window_end]
     else:
-        default_interval = [start, min(start + core, end)]
+        # Anchor the promise where the plan will actually open the clip - after any line the
+        # window starts inside - not at the window's nominal start. Shifting source_start
+        # itself would do it too, but that changes the tiling and cost a narration block,
+        # and a block with no recorded line means spending voice credits.
+        anchor = min(off_speech(start), max(start, end - core))
+        default_interval = [anchor, min(anchor + core, end)]
     interval_list = [list(i) for i in (intervals or [default_interval])]
     return {
         "id": eid,

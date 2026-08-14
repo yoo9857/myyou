@@ -1,0 +1,167 @@
+"""Style the two caption tracks the way the previous reviews looked, and burn them in.
+
+The pipeline delivers plain SRT for CapCut, which carries no styling, so the mp4 that comes
+out of a render is unstyled - a different look from the finished Constantine review, where
+narration sat in warm yellow above the film's own dialogue in white.
+
+The proportions come from that project's ASS: authored against a 384x288 script resolution
+at sizes 21 and 18, which is 7.3 and 6.3 percent of frame height. Those percentages are what
+carries over, so the same design lands correctly at 1080p instead of being scaled by libass
+from a resolution nothing here uses.
+
+    python scripts/build_caption_design.py devil/config.json          styled ASS + burned mp4
+    python scripts/build_caption_design.py devil/config.json --ass-only
+
+The burned file sits beside the master rather than replacing it: CapCut still imports the
+clean master plus the SRTs, and the burned copy is the one that can be watched as it is.
+"""
+from __future__ import annotations
+
+import argparse
+import json
+import re
+import subprocess
+import sys
+from pathlib import Path
+
+CODE_ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(CODE_ROOT))
+
+REFERENCE_HEIGHT = 288.0
+NARRATION_SIZE = 21.0 / REFERENCE_HEIGHT      # warm yellow, above the dialogue line
+DIALOGUE_SIZE = 18.0 / REFERENCE_HEIGHT
+NARRATION_MARGIN = 48.0 / REFERENCE_HEIGHT
+DIALOGUE_MARGIN = 18.0 / REFERENCE_HEIGHT
+
+HEADER = """[Script Info]
+ScriptType: v4.00+
+PlayResX: {width}
+PlayResY: {height}
+WrapStyle: 2
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Narration,{font},{n_size},&H00AFE8FF,&H000000FF,&H000A0805,&H80080604,-1,0,0,0,100,100,0.2,0,1,{n_outline},{n_shadow},2,{side},{side},{n_margin},1
+Style: Dialogue,{font},{d_size},&H00F8FAFA,&H000000FF,&H00000000,&H78000000,-1,0,0,0,100,100,0,0,1,{d_outline},{d_shadow},2,{side},{side},{d_margin},1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+"""
+
+
+CROP = re.compile(r"crop=(\d+):(\d+):(\d+):(\d+)")
+
+
+def pipeline_picture_area(video: Path, fraction: float) -> tuple[int, int] | None:
+    """Measure the lit picture inside the frame, sampled where the shot is not dark.
+
+    cropdetect reports the bright region, so one dark frame reads as a tiny picture. The
+    caller takes the largest of several samples for the same reason the delivery gate does.
+    """
+    total = float(subprocess.check_output(
+        ["ffprobe", "-v", "error", "-show_entries", "format=duration",
+         "-of", "default=nw=1:nk=1", str(video)], text=True).strip())
+    result = subprocess.run(
+        ["ffmpeg", "-hide_banner", "-ss", f"{total * fraction:.2f}", "-t", "2",
+         "-i", str(video), "-vf", "cropdetect=24:2:0", "-f", "null", "-"],
+        capture_output=True, text=True)
+    found = CROP.findall(result.stderr)
+    return (int(found[-1][0]), int(found[-1][1])) if found else None
+
+
+def stamp(seconds: float) -> str:
+    seconds = max(0.0, seconds)
+    hours, rest = divmod(seconds, 3600)
+    minutes, secs = divmod(rest, 60)
+    return f"{int(hours)}:{int(minutes):02d}:{secs:05.2f}"
+
+
+def escape(text: str) -> str:
+    text = re.sub(r"<[^>]+>", "", text)
+    return text.replace("{", "(").replace("}", ")").replace("\n", r"\N").strip()
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("config", type=Path)
+    parser.add_argument("--ass-only", action="store_true")
+    parser.add_argument("--font", default="Noto Sans KR")
+    args = parser.parse_args()
+
+    import pipeline
+
+    config_path = args.config.resolve()
+    config = json.loads(config_path.read_text(encoding="utf-8"))
+    root = config_path.parent
+    package = root / "output" / "capcut_import"
+    width = int(config.get("render_width", 1920))
+    height = int(config.get("render_height", 1080))
+    master = root / "output" / str(config.get("output_video", "rough_cut.mp4"))
+
+    # Sizes and margins are proportions of the picture, not of the frame. This source is
+    # 2.39:1 inside a 16:9 render, so 138 pixels top and bottom are black bars - a margin
+    # measured from the frame edge put the film's own dialogue into the bar below the image.
+    picture_height, bar = height, 0
+    if master.exists():
+        area = None
+        for fraction in (0.2, 0.4, 0.6, 0.8):
+            found = pipeline_picture_area(master, fraction)
+            if found and (area is None or found[1] > area[1]):
+                area = found
+        if area:
+            picture_height = area[1]
+            bar = max(0, (height - picture_height) // 2)
+
+    tracks = [("Narration", package / "narration.srt"),
+              ("Dialogue", package / "movie_captions.srt")]
+    lines = []
+    for style, path in tracks:
+        if not path.exists():
+            raise SystemExit(f"자막 트랙이 없습니다: {path}")
+        for cue in pipeline.parse_srt(path):
+            if cue.text.strip():
+                lines.append(f"Dialogue: 0,{stamp(cue.start)},{stamp(cue.end)},"
+                             f"{style},,0,0,0,,{escape(cue.text)}")
+    lines.sort(key=lambda entry: entry.split(",")[1])
+
+    header = HEADER.format(
+        width=width, height=height, font=args.font,
+        n_size=round(NARRATION_SIZE * picture_height),
+        d_size=round(DIALOGUE_SIZE * picture_height),
+        n_outline=round(1.3 / REFERENCE_HEIGHT * picture_height, 1),
+        n_shadow=round(0.8 / REFERENCE_HEIGHT * picture_height, 1),
+        d_outline=round(1.5 / REFERENCE_HEIGHT * picture_height, 1),
+        d_shadow=round(0.7 / REFERENCE_HEIGHT * picture_height, 1),
+        n_margin=bar + round(NARRATION_MARGIN * picture_height),
+        d_margin=bar + round(DIALOGUE_MARGIN * picture_height),
+        side=round(32.0 / 384.0 * width),
+    )
+    ass_path = package / "captions_styled.ass"
+    ass_path.write_text(header + "\n".join(lines) + "\n", encoding="utf-8")
+    print(f"  스타일 자막 {len(lines)}줄 -> {ass_path.relative_to(root)}")
+    print(f"  해설 {round(NARRATION_SIZE * picture_height)}px / "
+          f"대사 {round(DIALOGUE_SIZE * picture_height)}px, "
+          f"그림 {width}x{picture_height} (레터박스 {bar}px)")
+    if args.ass_only:
+        return 0
+
+    if not master.exists():
+        raise SystemExit(f"최종본이 없습니다: {master}")
+    burned = master.with_name(master.stem + "_captioned.mp4")
+    # Relative name with cwd, because a Windows drive letter's colon is read as a filter
+    # option separator. Audio is copied: this pass is picture only.
+    subprocess.run(
+        ["ffmpeg", "-hide_banner", "-loglevel", "error", "-i", str(master),
+         "-vf", f"subtitles={ass_path.name}",
+         "-c:v", "libx264", "-preset", str(config.get("render_preset", "medium")),
+         "-crf", str(config.get("render_crf", 19)), "-c:a", "copy",
+         "-movflags", "+faststart", "-y", str(burned)],
+        check=True, cwd=package,
+    )
+    print(f"  자막 입힘 -> {burned.relative_to(root)}")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

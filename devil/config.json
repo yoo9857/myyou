@@ -21,7 +21,7 @@
   "narration_sfx_tail_min_sec": 0.1,
   "narration_sfx_tail_max_sec": 0.3,
   "narration_sfx_max_peak_dbfs": -14.0,
-  "render_bake_sfx_preroll": false,
+  "render_bake_sfx_preroll": true,
   "audio_limiter": 0.891251,
   "narration_preprocessing": {
     "passes": [

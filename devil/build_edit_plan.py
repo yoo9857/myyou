@@ -20,11 +20,96 @@ the actual lines; this file only decides where a line belongs and how long it ma
 from __future__ import annotations
 
 import json
+import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
 STORY_MAP = ROOT / "story_map.v1.json"
 OUT = ROOT / "output" / "edit_plan.json"
+CONFIG = ROOT / "config.json"
+
+sys.path.insert(0, str(ROOT.parent))
+import pipeline  # noqa: E402  - for the subtitle parser only
+
+# Where the film speaks. A narration block placed without consulting this lands the narrator
+# on top of the characters: 33 of 49 lines overlapped the film's dialogue, most of them by
+# 84 to 98 percent of the spoken line. The block slides forward into the nearest quiet pocket
+# instead, which the film provides readily - events run 40 to 160 seconds and a block is 7.
+_config = json.loads(CONFIG.read_text(encoding="utf-8"))
+_subtitle = ROOT / str(_config.get("subtitle", ""))
+DIALOGUE = pipeline.parse_srt(_subtitle) if _subtitle.exists() else []
+SLIDE_STEP = 0.25
+# Only the first few seconds of a block carry the voice, so that is what has to stay clear.
+# Measured on the finished lines: 2.7 to 5.2 seconds, so 5 covers all of them.
+SPOKEN_SECONDS = 5.0
+# How far a block may slide. Every second skipped becomes film footage, so a long
+# reach buys quiet at the cost of runtime and narration share: 45 s produced 21.1
+# minutes at 29 percent narrated, both outside the approved range.
+MAX_SLIDE = 10.0
+
+
+def dialogue_overlap(start: float, end: float) -> float:
+    return sum(max(0.0, min(cue.end, end) - max(cue.start, start))
+               for cue in DIALOGUE if cue.start < end and cue.end > start)
+
+
+# A beat's window is an authored approximation; the spoiler cut is not. So a line is allowed
+# to finish just past the window rather than be chopped - two were, one of them losing 1.34
+# seconds of "give you a proper burial" - but never past the cut.
+WINDOW_GRACE = 1.6
+
+
+def snap_to_speech(start: float, end: float, hard_limit: float) -> float:
+    """Move a cut off the middle of a spoken line.
+
+    A boundary placed by budget alone lands wherever the arithmetic put it, and several
+    landed inside a line - the scene changed with a character halfway through a word. Where
+    the line can be allowed to finish inside the beat's own window it is; where it cannot,
+    the cut retreats to just before the line starts so it is never heard beginning.
+    """
+    for cue in DIALOGUE:
+        if cue.start + 0.05 < end < cue.end - 0.05:
+            finish = cue.end + 0.12
+            if finish <= hard_limit and finish - start <= MAX_CLIP:
+                return finish
+            retreat = cue.start - 0.05
+            return retreat if retreat - start >= 2.0 else end
+        if cue.start > end:
+            break
+    return end
+
+
+def snap_off_speech(start: float, hard_limit: float) -> float:
+    """Move a cut off the middle of a line it would otherwise open on.
+
+    Entering a scene with a character already mid-word reads as a mistake the same way
+    leaving one does. The clip starts after the line finishes instead; it cannot start
+    earlier, because the previous block may already own that footage and a plan may not use
+    the same source twice.
+    """
+    for cue in DIALOGUE:
+        if cue.start + 0.05 < start < cue.end - 0.05:
+            resume = cue.end + 0.08
+            return resume if resume < hard_limit - 2.0 else start
+        if cue.start > start:
+            break
+    return start
+
+
+def quietest_start(earliest: float, latest: float, block: float) -> float:
+    """Slide a block between two bounds and return the start with least dialogue over the voice."""
+    if latest <= earliest:
+        return earliest
+    best, best_overlap = earliest, None
+    offset = earliest
+    while offset <= latest + 1e-9:
+        overlap = dialogue_overlap(offset, offset + min(SPOKEN_SECONDS, block))
+        if best_overlap is None or overlap < best_overlap - 1e-9:
+            best, best_overlap = offset, overlap
+            if overlap <= 0.0:
+                break
+        offset += SLIDE_STEP
+    return best
 
 # Budgeted 6 percent over the 18:00 the reference runs, because tiling always lands under
 # budget: a group stops emitting when the event window runs out or when the last narration
@@ -37,8 +122,9 @@ NARRATION_BLOCK = 7.0       # approved: blocks near 6 s, 7 keeps the count under
 # anything shorter than this cannot hold one and is dropped rather than truncated.
 MIN_NARRATION_BLOCK = 5.0
 MIN_FILM_RUN = 5.0          # never cut back to narration faster than this
-MAX_CLIP = 26.0             # under the validator's 30 s ceiling
-DIALOGUE_BLOCK_MIN = 9.0
+MAX_CLIP = 26.0            # under the validator's 30 s ceiling
+DIALOGUE_BLOCK_MIN = 13.0   # long enough to cover a 10 s must-show promise after the
+# start has been pushed off a spoken line; at 9 the two setup dialogue beats covered 80.
 
 GROUPS = {
     "setup": (0.289, ["cold_open_prayer_log", "willard_war_and_charlotte", "arvin_boyhood"]),
@@ -94,7 +180,19 @@ for group, (share, section_ids) in GROUPS.items():
 
     def emit(kind: str, start: float, end: float, sid: str, event: dict, text: str = "") -> float:
         global order
-        end = min(end, cutoff, float(event["source_end"]))
+        hard_limit = min(cutoff, float(event["source_end"]))
+        # Snapping the start forward keeps the block's requested length rather than eating
+        # into it, and is skipped when there is no room left for the whole block. Shortening
+        # instead cost a block outright: the Luger handover sits in a stretch of almost
+        # continuous speech, its start kept being pushed, and the beat vanished from the
+        # review along with the line already recorded for it.
+        requested = max(0.0, min(end, hard_limit) - start)
+        shifted = snap_off_speech(start, hard_limit)
+        if shifted > start and shifted + requested <= hard_limit:
+            start, end = shifted, shifted + requested
+        grace_limit = min(hard_limit + WINDOW_GRACE, cutoff)
+        end = snap_to_speech(start, min(max(end, start), hard_limit), grace_limit)
+        end = min(end, grace_limit)
         # A narration block is a place for one spoken sentence. Clamping it to whatever is
         # left of the event window produced a 2.72-second block, and the voice line written
         # for it came back 2.815 seconds and failed the length gate. Below the floor the
@@ -116,6 +214,10 @@ for group, (share, section_ids) in GROUPS.items():
             "audio_level": 0.32 if kind == "narration" else 0.96,
             "transition": event["transition_in"],
         })
+        # Where the block actually ended, so the caller can resume from there. Advancing the
+        # cursor by the block's length instead would land inside a block that had been shifted
+        # forward, and a plan may not use the same source footage twice.
+        emit.last_end = end
         return end - start
 
     # One pass in the story map's own order. Emitting all the kept beats first and the
@@ -152,16 +254,31 @@ for group, (share, section_ids) in GROUPS.items():
             if cursor >= limit - 2.0:
                 break
             text = event["summary"] if index == 0 else event["visible_action"]
+            # Slide the block forward into the quietest pocket and let the footage it skipped
+            # become the film run before it. Capped at one film run's length the search was
+            # too short to escape a dialogue-heavy stretch - 11 lines still sat under the
+            # characters at over 60 percent - so it reaches up to 45 seconds, minus whatever
+            # the blocks after this one still need. Reserving that space is what keeps the
+            # block count fixed, and the count is what lets the recorded voice be reused.
+            reserve = (blocks - index - 1) * (NARRATION_BLOCK + MIN_FILM_RUN)
+            latest = min(cursor + MAX_SLIDE, limit - NARRATION_BLOCK - reserve)
+            speak_at = quietest_start(cursor, latest, NARRATION_BLOCK)
+            if speak_at > cursor + MIN_FILM_RUN:
+                lead = emit("movie_dialogue", cursor, speak_at, sid, event)
+                if lead:
+                    cursor = emit.last_end
+                    spent += lead
             used = emit("narration", cursor, cursor + NARRATION_BLOCK, sid, event, text)
             if not used:
                 break
-            cursor += used
+            cursor = emit.last_end
             spent += used
             if cursor < limit - 2.0 and index < blocks - 1 or (
                     index == blocks - 1 and gap >= MIN_FILM_RUN):
                 used = emit("movie_dialogue", cursor, cursor + gap, sid, event)
-                cursor += used
-                spent += used
+                if used:
+                    cursor = emit.last_end
+                    spent += used
 
     report.append((group, group_budget, spent))
 

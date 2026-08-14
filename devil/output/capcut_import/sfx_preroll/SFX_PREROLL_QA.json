@@ -1,16 +1,16 @@
 {
   "status": "pass",
   "use_count": 3,
-  "timeline_duration_seconds": 1040.625015,
-  "measured_stem_duration_seconds": 1040.625021,
+  "timeline_duration_seconds": 1157.209336,
+  "measured_stem_duration_seconds": 1157.209333,
   "measured_stem_peak_dbfs": -16.4,
   "maximum_allowed_peak_dbfs": -14.0,
   "mix_gain_linear": 0.85,
   "mix_gain_db": -1.41,
-  "minimum_spacing_seconds": 70.834,
+  "minimum_spacing_seconds": 78.458,
   "movie_dialogue_overlap_count": 0,
   "tail_overlap_min_seconds": 0.2,
   "tail_overlap_max_seconds": 0.2,
   "stem": "output/capcut_import/sfx_preroll/sfx_preroll_stem.m4a",
-  "render_bake_sfx_preroll": false
+  "render_bake_sfx_preroll": true
 }

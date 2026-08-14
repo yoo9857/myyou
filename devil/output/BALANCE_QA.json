@@ -3,11 +3,11 @@
   "method": "The narration is baked into each clip, so the film bed under it was rebuilt from the source with the render's downmix and ducked level, and the voice measured from the mp3 the review uses. No stem was available to subtract, and nothing here is estimated from one.",
   "measured": {
     "programme_lufs": -18.0,
-    "programme_true_peak_dbtp": -1.1,
+    "programme_true_peak_dbtp": -1.2,
     "narration_cues": 49,
-    "lead_db_min": 12.0,
-    "lead_db_median": 20.2,
-    "lead_db_max": 50.2
+    "lead_db_min": 11.6,
+    "lead_db_median": 22.5,
+    "lead_db_max": 52.4
   },
   "changes": {
     "duck": {
@@ -15,345 +15,345 @@
         {
           "cue": 1,
           "timeline_start": 0.0,
-          "film_lufs": -39.8,
+          "film_lufs": -33.1,
           "narration_lufs": -17.0,
-          "resulting_lead_db": 22.8
+          "resulting_lead_db": 16.1
         },
         {
           "cue": 3,
-          "timeline_start": 14.417,
-          "film_lufs": -32.1,
+          "timeline_start": 19.209,
+          "film_lufs": -30.5,
           "narration_lufs": -17.0,
-          "resulting_lead_db": 15.1
+          "resulting_lead_db": 13.5
         },
         {
           "cue": 7,
-          "timeline_start": 43.25,
+          "timeline_start": 46.375,
           "film_lufs": -48.0,
           "narration_lufs": -17.5,
           "resulting_lead_db": 30.5
         },
         {
           "cue": 9,
-          "timeline_start": 58.625,
+          "timeline_start": 61.75,
           "film_lufs": -31.3,
           "narration_lufs": -17.2,
           "resulting_lead_db": 14.1
         },
         {
           "cue": 11,
-          "timeline_start": 74.0,
+          "timeline_start": 77.125,
           "film_lufs": -32.7,
           "narration_lufs": -17.1,
           "resulting_lead_db": 15.6
         },
         {
           "cue": 14,
-          "timeline_start": 99.0,
-          "film_lufs": -39.9,
+          "timeline_start": 105.5,
+          "film_lufs": -38.5,
           "narration_lufs": -17.1,
-          "resulting_lead_db": 22.8
+          "resulting_lead_db": 21.4
         },
         {
           "cue": 16,
-          "timeline_start": 113.417,
-          "film_lufs": -40.7,
+          "timeline_start": 123.0,
+          "film_lufs": -35.2,
           "narration_lufs": -17.7,
-          "resulting_lead_db": 23.0
+          "resulting_lead_db": 17.5
         },
         {
           "cue": 18,
-          "timeline_start": 127.833,
-          "film_lufs": -36.5,
+          "timeline_start": 139.209,
+          "film_lufs": -32.9,
           "narration_lufs": -17.8,
-          "resulting_lead_db": 18.7
+          "resulting_lead_db": 15.1
         },
         {
-          "cue": 23,
-          "timeline_start": 166.292,
-          "film_lufs": -32.5,
+          "cue": 24,
+          "timeline_start": 188.084,
+          "film_lufs": -37.5,
           "narration_lufs": -17.1,
-          "resulting_lead_db": 15.4
+          "resulting_lead_db": 20.4
         },
         {
-          "cue": 27,
-          "timeline_start": 195.125,
-          "film_lufs": -42.2,
+          "cue": 28,
+          "timeline_start": 220.001,
+          "film_lufs": -41.0,
           "narration_lufs": -17.9,
-          "resulting_lead_db": 24.3
-        },
-        {
-          "cue": 31,
-          "timeline_start": 225.875,
-          "film_lufs": -41.4,
-          "narration_lufs": -17.0,
-          "resulting_lead_db": 24.4
+          "resulting_lead_db": 23.1
         },
         {
           "cue": 33,
-          "timeline_start": 241.25,
-          "film_lufs": -49.5,
-          "narration_lufs": -17.3,
-          "resulting_lead_db": 32.2
+          "timeline_start": 260.459,
+          "film_lufs": -51.5,
+          "narration_lufs": -17.0,
+          "resulting_lead_db": 34.5
         },
         {
-          "cue": 37,
-          "timeline_start": 272.083,
-          "film_lufs": -34.1,
-          "narration_lufs": -17.5,
-          "resulting_lead_db": 16.6
+          "cue": 35,
+          "timeline_start": 276.292,
+          "film_lufs": -37.7,
+          "narration_lufs": -17.3,
+          "resulting_lead_db": 20.4
         },
         {
           "cue": 39,
-          "timeline_start": 287.458,
-          "film_lufs": -37.9,
+          "timeline_start": 304.667,
+          "film_lufs": -33.6,
+          "narration_lufs": -17.5,
+          "resulting_lead_db": 16.1
+        },
+        {
+          "cue": 41,
+          "timeline_start": 320.042,
+          "film_lufs": -37.3,
           "narration_lufs": -17.7,
-          "resulting_lead_db": 20.2
+          "resulting_lead_db": 19.6
         },
         {
-          "cue": 42,
-          "timeline_start": 318.875,
-          "film_lufs": -34.8,
+          "cue": 44,
+          "timeline_start": 351.459,
+          "film_lufs": -35.3,
           "narration_lufs": -17.4,
-          "resulting_lead_db": 17.4
+          "resulting_lead_db": 17.9
         },
         {
-          "cue": 46,
-          "timeline_start": 352.125,
+          "cue": 48,
+          "timeline_start": 385.376,
           "film_lufs": -57.9,
           "narration_lufs": -17.5,
           "resulting_lead_db": 40.4
         },
         {
-          "cue": 48,
-          "timeline_start": 368.833,
+          "cue": 50,
+          "timeline_start": 402.084,
           "film_lufs": -49.1,
           "narration_lufs": -17.2,
           "resulting_lead_db": 31.9
         },
         {
-          "cue": 50,
-          "timeline_start": 385.458,
+          "cue": 52,
+          "timeline_start": 418.709,
           "film_lufs": -36.3,
           "narration_lufs": -18.0,
           "resulting_lead_db": 18.3
         },
         {
-          "cue": 52,
-          "timeline_start": 402.167,
-          "film_lufs": -36.5,
-          "narration_lufs": -18.8,
-          "resulting_lead_db": 17.7
-        },
-        {
           "cue": 54,
-          "timeline_start": 420.917,
-          "film_lufs": -39.2,
-          "narration_lufs": -17.6,
-          "resulting_lead_db": 21.6
+          "timeline_start": 436.709,
+          "film_lufs": -35.7,
+          "narration_lufs": -18.8,
+          "resulting_lead_db": 16.9
         },
         {
           "cue": 56,
-          "timeline_start": 439.667,
+          "timeline_start": 460.001,
+          "film_lufs": -42.5,
+          "narration_lufs": -17.6,
+          "resulting_lead_db": 24.9
+        },
+        {
+          "cue": 58,
+          "timeline_start": 480.542,
           "film_lufs": -39.5,
           "narration_lufs": -17.0,
           "resulting_lead_db": 22.5
         },
         {
-          "cue": 59,
-          "timeline_start": 476.958,
+          "cue": 61,
+          "timeline_start": 520.209,
           "film_lufs": -47.6,
           "narration_lufs": -17.7,
           "resulting_lead_db": 29.9
         },
         {
-          "cue": 61,
-          "timeline_start": 495.708,
-          "film_lufs": -36.5,
+          "cue": 64,
+          "timeline_start": 544.209,
+          "film_lufs": -37.1,
           "narration_lufs": -17.5,
-          "resulting_lead_db": 19.0
+          "resulting_lead_db": 19.6
         },
         {
-          "cue": 63,
-          "timeline_start": 510.542,
-          "film_lufs": -43.1,
+          "cue": 66,
+          "timeline_start": 559.876,
+          "film_lufs": -46.5,
           "narration_lufs": -17.8,
-          "resulting_lead_db": 25.3
-        },
-        {
-          "cue": 65,
-          "timeline_start": 529.292,
-          "film_lufs": -37.3,
-          "narration_lufs": -17.1,
-          "resulting_lead_db": 20.2
+          "resulting_lead_db": 28.7
         },
         {
           "cue": 69,
-          "timeline_start": 566.792,
-          "film_lufs": -42.5,
+          "timeline_start": 585.584,
+          "film_lufs": -37.5,
           "narration_lufs": -17.1,
-          "resulting_lead_db": 25.4
+          "resulting_lead_db": 20.4
         },
         {
-          "cue": 72,
-          "timeline_start": 611.542,
-          "film_lufs": -32.1,
-          "narration_lufs": -17.7,
-          "resulting_lead_db": 14.4
-        },
-        {
-          "cue": 74,
-          "timeline_start": 627.208,
-          "film_lufs": -38.1,
-          "narration_lufs": -18.0,
-          "resulting_lead_db": 20.1
+          "cue": 75,
+          "timeline_start": 639.126,
+          "film_lufs": -50.0,
+          "narration_lufs": -17.1,
+          "resulting_lead_db": 32.9
         },
         {
           "cue": 78,
-          "timeline_start": 658.625,
-          "film_lufs": -42.3,
+          "timeline_start": 683.042,
+          "film_lufs": -31.9,
           "narration_lufs": -17.7,
+          "resulting_lead_db": 14.2
+        },
+        {
+          "cue": 81,
+          "timeline_start": 709.501,
+          "film_lufs": -41.3,
+          "narration_lufs": -18.0,
+          "resulting_lead_db": 23.3
+        },
+        {
+          "cue": 86,
+          "timeline_start": 747.209,
+          "film_lufs": -40.7,
+          "narration_lufs": -17.7,
+          "resulting_lead_db": 23.0
+        },
+        {
+          "cue": 88,
+          "timeline_start": 764.459,
+          "film_lufs": -42.2,
+          "narration_lufs": -17.6,
           "resulting_lead_db": 24.6
         },
         {
-          "cue": 80,
-          "timeline_start": 674.292,
-          "film_lufs": -36.9,
-          "narration_lufs": -17.6,
-          "resulting_lead_db": 19.3
-        },
-        {
-          "cue": 82,
-          "timeline_start": 690.042,
-          "film_lufs": -34.8,
+          "cue": 90,
+          "timeline_start": 781.501,
+          "film_lufs": -44.6,
           "narration_lufs": -17.7,
-          "resulting_lead_db": 17.1
+          "resulting_lead_db": 26.9
         },
         {
-          "cue": 85,
-          "timeline_start": 731.708,
+          "cue": 93,
+          "timeline_start": 824.959,
           "film_lufs": -35.6,
           "narration_lufs": -16.5,
           "resulting_lead_db": 19.1
         },
         {
-          "cue": 87,
-          "timeline_start": 747.375,
-          "film_lufs": -35.5,
+          "cue": 95,
+          "timeline_start": 840.626,
+          "film_lufs": -35.7,
           "narration_lufs": -17.9,
-          "resulting_lead_db": 17.6
+          "resulting_lead_db": 17.8
         },
         {
-          "cue": 89,
-          "timeline_start": 763.125,
-          "film_lufs": -47.0,
+          "cue": 97,
+          "timeline_start": 857.876,
+          "film_lufs": -49.4,
           "narration_lufs": -17.2,
-          "resulting_lead_db": 29.8
+          "resulting_lead_db": 32.2
         },
         {
-          "cue": 91,
-          "timeline_start": 778.792,
+          "cue": 99,
+          "timeline_start": 874.334,
           "film_lufs": -40.6,
           "narration_lufs": -17.6,
           "resulting_lead_db": 23.0
         },
         {
-          "cue": 93,
-          "timeline_start": 794.458,
-          "film_lufs": -36.2,
-          "narration_lufs": -17.8,
-          "resulting_lead_db": 18.4
-        },
-        {
-          "cue": 95,
-          "timeline_start": 810.208,
-          "film_lufs": -36.7,
-          "narration_lufs": -17.7,
-          "resulting_lead_db": 19.0
-        },
-        {
-          "cue": 97,
-          "timeline_start": 825.875,
-          "film_lufs": -36.6,
-          "narration_lufs": -17.5,
-          "resulting_lead_db": 19.1
-        },
-        {
-          "cue": 99,
-          "timeline_start": 841.542,
-          "film_lufs": -36.4,
-          "narration_lufs": -17.9,
-          "resulting_lead_db": 18.5
-        },
-        {
           "cue": 101,
-          "timeline_start": 857.292,
-          "film_lufs": -67.2,
-          "narration_lufs": -17.0,
-          "resulting_lead_db": 50.2
+          "timeline_start": 892.709,
+          "film_lufs": -37.5,
+          "narration_lufs": -17.8,
+          "resulting_lead_db": 19.7
         },
         {
-          "cue": 103,
-          "timeline_start": 872.958,
+          "cue": 104,
+          "timeline_start": 913.668,
+          "film_lufs": -54.0,
+          "narration_lufs": -17.7,
+          "resulting_lead_db": 36.3
+        },
+        {
+          "cue": 107,
+          "timeline_start": 938.168,
+          "film_lufs": -38.5,
+          "narration_lufs": -17.5,
+          "resulting_lead_db": 21.0
+        },
+        {
+          "cue": 110,
+          "timeline_start": 961.959,
+          "film_lufs": -66.7,
+          "narration_lufs": -17.9,
+          "resulting_lead_db": 48.8
+        },
+        {
+          "cue": 112,
+          "timeline_start": 977.626,
+          "film_lufs": -69.4,
+          "narration_lufs": -17.0,
+          "resulting_lead_db": 52.4
+        },
+        {
+          "cue": 113,
+          "timeline_start": 984.668,
           "film_lufs": -33.9,
           "narration_lufs": -17.5,
           "resulting_lead_db": 16.4
         },
         {
-          "cue": 105,
-          "timeline_start": 888.625,
-          "film_lufs": -53.3,
+          "cue": 115,
+          "timeline_start": 1001.209,
+          "film_lufs": -53.8,
           "narration_lufs": -17.0,
+          "resulting_lead_db": 36.8
+        },
+        {
+          "cue": 117,
+          "timeline_start": 1016.876,
+          "film_lufs": -29.0,
+          "narration_lufs": -17.4,
+          "resulting_lead_db": 11.6
+        },
+        {
+          "cue": 120,
+          "timeline_start": 1059.084,
+          "film_lufs": -41.7,
+          "narration_lufs": -17.6,
+          "resulting_lead_db": 24.1
+        },
+        {
+          "cue": 123,
+          "timeline_start": 1081.084,
+          "film_lufs": -53.5,
+          "narration_lufs": -17.2,
           "resulting_lead_db": 36.3
         },
         {
-          "cue": 107,
-          "timeline_start": 904.375,
-          "film_lufs": -29.4,
-          "narration_lufs": -17.4,
-          "resulting_lead_db": 12.0
-        },
-        {
-          "cue": 110,
-          "timeline_start": 946.042,
-          "film_lufs": -41.1,
+          "cue": 125,
+          "timeline_start": 1096.876,
+          "film_lufs": -45.3,
           "narration_lufs": -17.6,
-          "resulting_lead_db": 23.5
+          "resulting_lead_db": 27.7
         },
         {
-          "cue": 112,
-          "timeline_start": 961.75,
-          "film_lufs": -51.7,
-          "narration_lufs": -17.2,
-          "resulting_lead_db": 34.5
-        },
-        {
-          "cue": 114,
-          "timeline_start": 977.542,
-          "film_lufs": -53.1,
-          "narration_lufs": -17.6,
-          "resulting_lead_db": 35.5
-        },
-        {
-          "cue": 116,
-          "timeline_start": 993.333,
+          "cue": 127,
+          "timeline_start": 1108.376,
           "film_lufs": -37.5,
           "narration_lufs": -17.7,
           "resulting_lead_db": 19.8
         },
         {
-          "cue": 118,
-          "timeline_start": 1009.042,
-          "film_lufs": -38.9,
+          "cue": 129,
+          "timeline_start": 1125.709,
+          "film_lufs": -55.6,
           "narration_lufs": -17.9,
-          "resulting_lead_db": 21.0
+          "resulting_lead_db": 37.7
         },
         {
-          "cue": 120,
-          "timeline_start": 1024.833,
-          "film_lufs": -50.8,
+          "cue": 131,
+          "timeline_start": 1141.418,
+          "film_lufs": -49.4,
           "narration_lufs": -17.6,
-          "resulting_lead_db": 33.2
+          "resulting_lead_db": 31.8
         }
       ]
     }
