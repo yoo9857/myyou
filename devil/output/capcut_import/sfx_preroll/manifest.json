@@ -1,0 +1,92 @@
+{
+  "version": 1,
+  "purpose": "Low-level sound-design cues placed immediately before selected reviewer narration lines.",
+  "global_rules": {
+    "max_uses_per_19_25_min_review": 8,
+    "minimum_seconds_between_any_sfx": 25,
+    "minimum_seconds_before_reusing_same_sfx": 90,
+    "tail_under_narration_min_seconds": 0.10,
+    "tail_under_narration_max_seconds": 0.30,
+    "default_mix_gain_linear": 0.85,
+    "target_peak_dbfs": "-16 to -14",
+    "relative_mix": "Keep the SFX tail 10-14 dB below narration and do not duck strong movie dialogue for it.",
+    "placement": "Start at the beginning of a verified dialogue-free narration gap; let only the quiet tail overlap the first 0.10-0.30 seconds of narration.",
+    "protected_scenes": [
+      "death",
+      "grief",
+      "confession",
+      "discovery payoff",
+      "reversal reveal",
+      "horror payoff",
+      "active combat",
+      "strong original dialogue"
+    ]
+  },
+  "assets": {
+    "danger_knife": {
+      "processed_path": "assets/sfx/narration_preroll/danger_knife_low.wav",
+      "source_path": "0340-칼꺼내는소리 소리낮춰서.mp3",
+      "source_sha256": "EB5565F105A0FDFDFD56F3431A1802B9C8B6B4940F0DF9FFE8BCB35E8DDC74D9",
+      "processed_sha256": "897B020A2B0CDF901B4B27275DDDB099D94F3E062B12ED01A211EE0EC2A6B9A7",
+      "duration_seconds": 1.129,
+      "processed_gain_db": -8,
+      "measured_peak_dbfs": -15.3,
+      "default_lead_seconds": 0.85,
+      "max_uses_per_review": 1,
+      "use_for": ["weapon threat", "predator reveal", "danger escalation"],
+      "avoid_for": ["neutral transition", "comedy", "emotional dialogue"]
+    },
+    "short_whoosh": {
+      "processed_path": "assets/sfx/narration_preroll/short_whoosh_low.wav",
+      "source_path": "0349-후욱 짧은소리.mp3",
+      "source_sha256": "4760468A3C2E277496A2798DAE9011CDF0E6EAA3C09DEE3730D721D298B7DE53",
+      "processed_sha256": "5D4FCF43D44512B36DF71D95E449F2A9F7C92A069A7F132A0F8D2F53E48BB0B0",
+      "duration_seconds": 0.375,
+      "processed_gain_db": -5,
+      "measured_peak_dbfs": -15.0,
+      "default_lead_seconds": 0.22,
+      "max_uses_per_review": 2,
+      "use_for": ["fast opening turn", "sudden scene handoff", "urgent narration pickup"],
+      "avoid_for": ["somber reflection", "slow suspense", "strong dialogue"]
+    },
+    "bass_omen": {
+      "processed_path": "assets/sfx/narration_preroll/bass_omen_0700ms_low.wav",
+      "source_path": "베이스0.7초만.mp3",
+      "source_sha256": "2058DC59C523A3C77E1F6BB5441DD69C9BF1B9B1F7B01FE77B65A79330D2E6B9",
+      "processed_sha256": "9ED58A3AA7E67AE687C1DE85B132B5F3BC2AC8EDFF40516728FB94F17242504B",
+      "duration_seconds": 0.7,
+      "processed_gain_db": -14,
+      "measured_peak_dbfs": -15.3,
+      "default_lead_seconds": 0.5,
+      "max_uses_per_review": 2,
+      "use_for": ["ominous setup", "act turn", "stakes increase", "pre-climax warning"],
+      "avoid_for": ["minor information", "comic beat", "dialogue-heavy scene"]
+    },
+    "neutral_transition": {
+      "processed_path": "assets/sfx/narration_preroll/neutral_transition_low.wav",
+      "source_path": "평범한 중간 나레이션넘김.mp3",
+      "source_sha256": "371D3D604F16684B8C47FBDAFFB542E8E586D062862F83CFC41F78135917F5C6",
+      "processed_sha256": "7321842E2E4BFBDFA7F8A4007F2D394E8896C1A4E8CDEFBE038EB4CF671AF703",
+      "duration_seconds": 0.657,
+      "processed_gain_db": -10,
+      "measured_peak_dbfs": -15.0,
+      "default_lead_seconds": 0.4,
+      "max_uses_per_review": 3,
+      "use_for": ["time jump", "location change", "ordinary causal bridge"],
+      "avoid_for": ["reveal", "death", "action payoff", "back-to-back narration"]
+    },
+    "curiosity_sting": {
+      "processed_path": "assets/sfx/narration_preroll/curiosity_sting_low.wav",
+      "source_path": "궁굼할때.wav",
+      "source_sha256": "84E5A883FEAB08E1C059F65BEC951FF91395B734103AFB020759EE3831D52CB5",
+      "processed_sha256": "BA7BB6D9A937992FA16E3FFB7618B9C0A3CF3D6EF51F91E9CAFF3FB84549938D",
+      "duration_seconds": 0.557,
+      "processed_gain_db": -5,
+      "measured_peak_dbfs": -15.6,
+      "default_lead_seconds": 0.35,
+      "max_uses_per_review": 2,
+      "use_for": ["clue", "unanswered question", "suspicious object", "mystery bridge"],
+      "avoid_for": ["confirmed answer", "emotional payoff", "active combat"]
+    }
+  }
+}

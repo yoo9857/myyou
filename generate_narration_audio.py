@@ -45,7 +45,11 @@ def main() -> int:
         raise RuntimeError("ELEVENLABS_API_KEY is not available in this process.")
 
     config = json.loads((ROOT / "config.json").read_text(encoding="utf-8"))
+    # The approved profile is shared: it was locked once and every review since has used it.
+    # A project keeps its own copy only if it deliberately differs.
     profile_path = ROOT / str(config["elevenlabs_voice_profile"])
+    if not profile_path.exists():
+        profile_path = CODE_ROOT / str(config["elevenlabs_voice_profile"])
     profile = json.loads(profile_path.read_text(encoding="utf-8"))
     profile_hash = hashlib.sha256(
         json.dumps(profile, sort_keys=True, separators=(",", ":")).encode("utf-8")

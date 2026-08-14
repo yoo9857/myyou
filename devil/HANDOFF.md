@@ -21,6 +21,35 @@
 1. `MOVIE_REVIEW_ROOT=devil python narration_pass.py generate` — `codex` CLI 필요
 2. `pipeline.py render` → 음성 → 믹스 → 자막 → `scripts/delivery_gates.py`
 
+## 지금 상태 — 대본과 음성은 동결됨
+
+**ElevenLabs 잔여 크레딧이 적고, codex 대본 생성은 네 번 돌려 비용이 누적됐다.
+그래서 대본 49줄과 음성 49개는 여기서 동결한다.**
+
+- 음성 사본: `devil/output/narration_audio_locked/` (49개 + manifest)
+- 대본 사본: `devil/output/narration_script_v5.locked.json`
+
+### 다시 생성하지 않고 고치는 방법
+
+대본에 규칙 위반이 한두 곳 있으면 `narration_script_v5.json`을 직접 고치고
+`narration_pass.py apply`만 다시 돌린다. `generate`는 codex를 호출하므로 쓰지 않는다.
+이번에 그렇게 고친 것 두 건 — 성찰 나레이션에 붙은 효과음 제거(order 23),
+5.1초 예산을 넘긴 14단어 문장을 10단어로 축약(order 33).
+
+### 편집표를 바꾸면 음성을 다시 뽑아야 한다
+
+세그먼트 수가 바뀌면 order가 밀리고, order별 문장이 달라지면
+`generate_narration_audio.py`의 재사용 조건(order+문장 일치)이 깨져 전량 재생성된다.
+**편집표 구조를 건드리는 변경은 음성 크레딧을 쓰는 변경이다.** 렌더만 다시 하는 것은
+API 비용이 들지 않으니 자유롭게 해도 된다.
+
+## 남은 개선 후보 (음성 재생성이 필요하므로 보류)
+
+마지막 8초가 무음 영상이고 화면은 불타는 차다. 캐스팅 해설은 그 앞
+17분 08초 보데커 얼굴에서 끝난다. 규칙 위반은 아니지만 마무리 이미지로는 약하다.
+고치려면 `closing_cast_hook` 구간을 옮겨야 하고, 그러면 세그먼트가 밀려 음성을
+다시 뽑아야 한다. 크레딧이 확보되면 그때 손댄다.
+
 ## 타임코드는 어떻게 고쳤나
 
 33개 중 12개가 틀리고 11개가 미확인이었다. 전부 프레임으로 확인해 **24개를 재조정**했다.

@@ -1,0 +1,11 @@
+{
+  "root": ".",
+  "render_config": "config.json",
+  "final_video": "output/devil_review_v1.mp4",
+  "movie_caption_srt": "output/capcut_import/movie_captions.srt",
+  "narration_srt": "output/capcut_import/narration.srt",
+  "picture_probe_sec": 60,
+  "check_optical_size": false,
+  "note": "This pipeline bakes the narration into each clip at render time, so there is no separate bed or narration stem for the stem-vs-dialogue gate. The per-cue lead is measured instead by scripts/measure_balance.py, which rebuilds the ducked film bed from the source with the render's own filter and compares it against the voice file the review actually uses.",
+  "balance_qa": "output/BALANCE_QA.json"
+}

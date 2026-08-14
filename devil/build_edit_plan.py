@@ -33,6 +33,9 @@ TARGET = 1145.0             # budgets for 19:05, lands near 18:00
 NARRATION_SHARE = 0.40      # approved
 KEPT_DIALOGUE_SHARE = 0.14  # the beats where the film speaks for itself
 NARRATION_BLOCK = 7.0       # approved: blocks near 6 s, 7 keeps the count under the cap
+# A sentence of 9 to 14 words runs about 3 to 4 seconds through the approved voice, so
+# anything shorter than this cannot hold one and is dropped rather than truncated.
+MIN_NARRATION_BLOCK = 5.0
 MIN_FILM_RUN = 5.0          # never cut back to narration faster than this
 MAX_CLIP = 26.0             # under the validator's 30 s ceiling
 DIALOGUE_BLOCK_MIN = 9.0
@@ -44,6 +47,19 @@ GROUPS = {
                              "predators_established", "lenora_breaks"]),
     "confrontation": (0.338, ["arvin_acts", "roads_converge", "cornered"]),
     "closing": (0.085, ["closing_wrap"]),
+}
+
+# save_dialogue_for_confrontations asks for the film's own dialogue in about ten ten-second
+# blocks, concentrated where characters face each other. Splitting the kept budget by each
+# group's runtime share instead gave setup 46 seconds against the confrontation's 54 - all
+# but even, which is the opposite of concentrated. These weights put most of it at the
+# clashes and leave the setup beats a single block each.
+KEPT_WEIGHTS = {
+    "setup": 0.12,
+    "roy_helen": 0.10,
+    "arvin_lenora": 0.14,
+    "confrontation": 0.60,
+    "closing": 0.04,
 }
 
 story = json.loads(STORY_MAP.read_text(encoding="utf-8"))
@@ -67,7 +83,7 @@ for group, (share, section_ids) in GROUPS.items():
     narrated = [(sid, e) for sid, e in events if e["narration_role"] != "none"]
 
     group_budget = TARGET * share
-    kept_budget = TARGET * KEPT_DIALOGUE_SHARE * share / sum(g[0] for g in GROUPS.values())
+    kept_budget = TARGET * KEPT_DIALOGUE_SHARE * KEPT_WEIGHTS[group]
     kept_budget = min(kept_budget, group_budget * 0.5) if kept else 0.0
     narration_budget = (group_budget - kept_budget) * (
         NARRATION_SHARE / (1.0 - KEPT_DIALOGUE_SHARE))
@@ -79,7 +95,12 @@ for group, (share, section_ids) in GROUPS.items():
     def emit(kind: str, start: float, end: float, sid: str, event: dict, text: str = "") -> float:
         global order
         end = min(end, cutoff, float(event["source_end"]))
-        if end - start < 2.0:
+        # A narration block is a place for one spoken sentence. Clamping it to whatever is
+        # left of the event window produced a 2.72-second block, and the voice line written
+        # for it came back 2.815 seconds and failed the length gate. Below the floor the
+        # block is not shortened, it is not emitted, and the film simply runs on.
+        floor = MIN_NARRATION_BLOCK if kind == "narration" else 2.0
+        if end - start < floor:
             return 0.0
         order += 1
         segments.append({
@@ -97,13 +118,27 @@ for group, (share, section_ids) in GROUPS.items():
         })
         return end - start
 
-    for sid, event in kept:
-        allotted = kept_budget / len(kept)
-        src = float(event["source_start"])
-        length = max(DIALOGUE_BLOCK_MIN, min(allotted, MAX_CLIP))
-        spent += emit("movie_dialogue", src, src + length, sid, event)
+    # One pass in the story map's own order. Emitting all the kept beats first and the
+    # narrated ones after put every group's dialogue beats at its front: the review opened on
+    # a diner and a schoolyard instead of the cold open that is flagged as the entry point,
+    # and the standoff - the beat the whole ending is built to stop on - played at 10:38,
+    # before the preacher it comes after. The treatment differs per beat; the order does not.
+    for sid, event in events:
+        if event["narration_role"] == "none":
+            allotted = kept_budget / len(kept)
+            window_end = min(float(event["source_end"]), cutoff)
+            length = max(DIALOGUE_BLOCK_MIN, min(allotted, MAX_CLIP))
+            # ending_cut_at_the_draw wants the confrontation played out and the review
+            # stopped on the last line before the shooting. A block anchored to the start of
+            # the standoff ended at 125:12 and dropped the final plea at 126:04 - a minute of
+            # the one beat the ending rests on. A beat that runs up to the cutoff ends there.
+            if window_end >= cutoff - 2.0:
+                src = max(float(event["source_start"]), window_end - min(allotted, MAX_CLIP))
+            else:
+                src = float(event["source_start"])
+            spent += emit("movie_dialogue", src, src + length, sid, event)
+            continue
 
-    for sid, event in narrated:
         w = weight(event) / total_w
         narration_secs = narration_budget * w
         film_secs = film_budget * w

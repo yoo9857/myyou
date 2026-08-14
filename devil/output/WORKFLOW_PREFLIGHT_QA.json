@@ -1,0 +1,21 @@
+{
+  "status": "pass",
+  "video": "C:\\cineyoutube\\devil\\..\\The.Devil.All.The.Time.2020.2160p\\The.Devil.All.The.Time.2020.2160p.NF.WEBRip.3999MB.DDP5.1.x264-GalaxyRG.mkv",
+  "subtitle": "C:\\cineyoutube\\devil\\..\\The.Devil.All.The.Time.2020.2160p\\devil_english.srt",
+  "source_duration_seconds": 8332.384,
+  "segment_count": 121,
+  "reference_learning": {
+    "status": "pass",
+    "references": 3,
+    "rules": 11,
+    "approved_rules": 11
+  },
+  "voice_profile": {
+    "profile": "C:\\cineyoutube\\voice_profiles\\colony_original_normal.json",
+    "profile_id": "colony-vuo-original-normal-v1",
+    "voice_id": "Vuo6zmtjWmlDbzqgIDos",
+    "model_id": "eleven_v3"
+  },
+  "story_map_required": true,
+  "narration_rhythm_gate": true
+}

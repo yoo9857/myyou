@@ -119,7 +119,7 @@
           "selected_intervals": [
             [
               372.0,
-              386.0
+              381.0
             ]
           ],
           "narration_role": "none",
@@ -192,7 +192,7 @@
           "selected_intervals": [
             [
               798.0,
-              812.0
+              807.0
             ]
           ],
           "narration_role": "none",
@@ -262,7 +262,7 @@
           "selected_intervals": [
             [
               1224.0,
-              1238.0
+              1233.0
             ]
           ],
           "narration_role": "none",
@@ -565,7 +565,7 @@
           "selected_intervals": [
             [
               3336.0,
-              3350.0
+              3345.0
             ]
           ],
           "narration_role": "none",
@@ -805,7 +805,7 @@
           "selected_intervals": [
             [
               5760.0,
-              5774.0
+              5769.0
             ]
           ],
           "narration_role": "none",
@@ -910,7 +910,7 @@
           "selected_intervals": [
             [
               6564.0,
-              6578.0
+              6573.0
             ]
           ],
           "narration_role": "none",
@@ -1074,8 +1074,8 @@
           "must_show": true,
           "selected_intervals": [
             [
-              7494.0,
-              7508.0
+              7560.0,
+              7569.0
             ]
           ],
           "narration_role": "none",
@@ -1095,7 +1095,7 @@
       "events": [
         {
           "id": "closing_theme",
-          "source_start": 1818.0,
+          "source_start": 1809.0,
           "source_end": 1857.0,
           "summary": "One line of theme over a boy walking up to an empty house",
           "cause_ids": [
@@ -1110,23 +1110,23 @@
           "emotional_stake": "Every choice made for good reasons leaves blood behind it, and that is the film",
           "question_opened": "Where do choices like that end?",
           "question_answered": null,
-          "reveal_time": 1818.0,
+          "reveal_time": 1809.0,
           "must_show": false,
           "selected_intervals": [
             [
-              1818.0,
-              1830.0
+              1809.0,
+              1823.0
             ]
           ],
           "narration_role": "reflection",
-          "narration_start_time": 1825.8,
-          "narration_evidence_time": 1818.0,
+          "narration_start_time": 1818.6,
+          "narration_evidence_time": 1809.0,
           "transition_in": "bridge",
           "needs_visual_review": false
         },
         {
           "id": "closing_cast_hook",
-          "source_start": 6972.0,
+          "source_start": 6945.0,
           "source_end": 7002.0,
           "summary": "The cast promised in the title, finally named",
           "cause_ids": [
@@ -1140,17 +1140,17 @@
           "emotional_stake": "Tom Holland, Robert Pattinson, Sebastian Stan and Eliza Scanlen in one small film is the hook",
           "question_opened": "Why did all of them sign up for this one?",
           "question_answered": null,
-          "reveal_time": 6972.0,
+          "reveal_time": 6945.0,
           "must_show": false,
           "selected_intervals": [
             [
-              6972.0,
-              6984.0
+              6945.0,
+              6959.0
             ]
           ],
           "narration_role": "reflection",
-          "narration_start_time": 6978.0,
-          "narration_evidence_time": 6972.0,
+          "narration_start_time": 6956.4,
+          "narration_evidence_time": 6945.0,
           "transition_in": "bridge",
           "needs_visual_review": false
         }

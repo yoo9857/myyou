@@ -176,7 +176,15 @@ def gate_video(g: Gates, cfg: dict, root: Path) -> None:
     w, h = int(dims[0]), int(dims[1])
     g.check("영상", "최종본 해상도", w >= MIN_WIDTH and h >= MIN_HEIGHT, f"{w}x{h}")
 
-    area = picture_area(final, float(cfg.get("picture_probe_sec", 60)))
+    # cropdetect reports the bright region, so one dark frame reads as a tiny picture: at
+    # 60 s this review measured 346x452 while every other point measured 1920x804. Sample
+    # several places across the runtime and keep the widest, because letterboxing is a
+    # property of the encode and shows up wherever the picture is actually lit.
+    duration = float(probe(final, "format=duration")[0])
+    probes = [float(cfg.get("picture_probe_sec", 60))]
+    probes += [duration * fraction for fraction in (0.2, 0.4, 0.6, 0.8)]
+    found = [a for a in (picture_area(final, at) for at in probes) if a]
+    area = max(found, key=lambda a: a[0]) if found else None
     if area is None:
         g.skip("영상", "실제 그림 영역", "cropdetect 실패")
     else:

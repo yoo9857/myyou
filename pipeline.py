@@ -137,7 +137,11 @@ def validate_voice_profile_gate(config: dict[str, Any]) -> dict[str, Any] | None
         return None
     profile_path = Path(str(value))
     if not profile_path.is_absolute():
-        profile_path = ROOT / profile_path
+        # The approved profile is shared across projects - it was locked once and every
+        # review since has used it - so a project only holds its own copy if it deliberately
+        # differs. Same fallback as the learning registry and the preroll library.
+        project_copy = ROOT / profile_path
+        profile_path = project_copy if project_copy.exists() else CODE_ROOT / profile_path
     if not profile_path.exists():
         raise FileNotFoundError(f"승인 보이스 프로필이 없습니다: {profile_path}")
     profile = json.loads(profile_path.read_text(encoding="utf-8"))
@@ -883,6 +887,48 @@ def build_caption_tracks(config: dict[str, Any], plan: dict[str, Any]) -> None:
     )
 
 
+def master_audio(config: dict[str, Any], video: Path) -> None:
+    """Bring the concatenated master to a delivery loudness without touching the picture.
+
+    Per-clip mixing sets the balance between narration and film, and it holds: measured on
+    The Devil All The Time, narration blocks sat 7.1 dB above film blocks, which is the
+    target. What per-clip mixing cannot set is the loudness of the whole, and the first
+    master came out at -20.37 LUFS - below the delivery floor of -20 with 3.3 dB of peak
+    headroom going unused.
+
+    Two passes, and `linear=true` so the correction is one static gain across the programme.
+    Dynamic normalisation would re-balance quiet passages against loud ones and undo the
+    ducking. `lra` is set above the measured range for the same reason: loudnorm silently
+    drops out of linear mode when the programme is wider than the target.
+    """
+    target = config.get("master_loudness_lufs")
+    if target is None:
+        return
+    target = float(target)
+    peak_ceiling = float(config.get("master_true_peak_dbtp", -1.5))
+    measured = subprocess.run(
+        ["ffmpeg", "-hide_banner", "-nostats", "-i", str(video),
+         "-af", f"loudnorm=I={target}:TP={peak_ceiling}:LRA=25:print_format=json",
+         "-f", "null", "-"],
+        capture_output=True, text=True, check=True,
+    ).stderr
+    stats = json.loads(measured[measured.rindex("{"):measured.rindex("}") + 1])
+    second_pass = (
+        f"loudnorm=I={target}:TP={peak_ceiling}:LRA=25:linear=true"
+        f":measured_I={stats['input_i']}:measured_TP={stats['input_tp']}"
+        f":measured_LRA={stats['input_lra']}:measured_thresh={stats['input_thresh']}"
+        f":offset={stats['target_offset']}"
+    )
+    mastered = video.with_name(video.stem + ".mastered.mp4")
+    run(["ffmpeg", "-hide_banner", "-loglevel", "error", "-i", str(video),
+         "-map", "0:v:0", "-map", "0:a:0", "-c:v", "copy", "-af", second_pass,
+         "-c:a", "aac", "-b:a", "192k", "-ar", "48000", "-ac", "2",
+         "-movflags", "+faststart", "-y", str(mastered)])
+    mastered.replace(video)
+    print(f"마스터링: {stats['input_i']} -> {target} LUFS, 트루피크 한계 {peak_ceiling} dBTP",
+          flush=True)
+
+
 def render(config: dict[str, Any]) -> None:
     preflight(config)
     video = ROOT / config["video"]
@@ -976,7 +1022,14 @@ def render(config: dict[str, Any]) -> None:
                 "aresample=48000"
             )
         else:
-            unducked_level = float(config.get("post_narration_audio_level", 0.96)) if text else level
+            # A narration block whose line was dropped has nothing to duck under, so it
+            # plays at the film's own level. Falling back to the block's ducked level held
+            # the film 9.5 dB down for seven seconds with silence over it - 63 seconds of
+            # this review, four blocks of it consecutive across the preacher's confession,
+            # which is the one stretch the film is supposed to carry alone.
+            open_level = float(config.get("post_narration_audio_level", 0.96))
+            narration_block = str(seg.get("kind", "")) == "narration"
+            unducked_level = open_level if (text or narration_block) else level
             audio_filter = f"volume={unducked_level:.3f},aresample=48000"
         # Optional explicit downmix, applied before anything else touches the bed.
         # ffmpeg's default 5.1 -> stereo drops the centre channel by 3 dB and folds the
@@ -1051,6 +1104,7 @@ def render(config: dict[str, Any]) -> None:
     concat_file.write_text("\n".join(concat_lines) + "\n", encoding="utf-8")
     output_video = str(config.get("output_video", "rough_cut.mp4"))
     run(["ffmpeg", "-hide_banner", "-loglevel", "error", "-f", "concat", "-safe", "0", "-i", str(concat_file), "-c", "copy", "-movflags", "+faststart", "-y", str(OUTPUT / output_video)])
+    master_audio(config, OUTPUT / output_video)
     shutil.copy2(OUTPUT / "edit_plan.json", CAPCUT / "edit_plan.json")
     build_caption_tracks(config, plan)
     (CAPCUT / "IMPORT_README.txt").write_text(

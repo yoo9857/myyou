@@ -1,0 +1,35 @@
+{
+  "voice_id": "Vuo6zmtjWmlDbzqgIDos",
+  "model": "eleven_v3",
+  "language_code": "ko",
+  "profile_id": "colony-vuo-original-normal-v1",
+  "profile_sha256": "95c8237230996ee8f2886670fdabc21fbc218c7e995080b83469faf9fd90715e",
+  "postprocess": "silenceremove=start_periods=1:start_duration=0.04:start_threshold=-50dB,areverse,silenceremove=start_periods=1:start_duration=0.08:start_threshold=-50dB,areverse,loudnorm=I=-16.5:TP=-1.5:LRA=7",
+  "note": "Same approved profile and post-process as COLONY and Constantine; only language_code changes to ko. Listen before the project commits to it.",
+  "samples": [
+    {
+      "name": "01_cold_open",
+      "text": "미국 시골 마을의 윌러드는 하루도 빠짐없이 뒷산 십자가 앞에서 기도를 올립니다.",
+      "chars": 44,
+      "duration_sec": 5.43,
+      "chars_per_sec": 8.1,
+      "file": "devil/output/voice_samples_ko/01_cold_open.mp3"
+    },
+    {
+      "name": "02_rule_clarify",
+      "text": "아버지는 아빈에게 때를 기다려 되갚는 법을 가르쳤습니다.",
+      "chars": 31,
+      "duration_sec": 4.04,
+      "chars_per_sec": 7.67,
+      "file": "devil/output/voice_samples_ko/02_rule_clarify.mp3"
+    },
+    {
+      "name": "03_standoff",
+      "text": "두 사람은 서로에게 총을 겨눈 채, 아빈은 주머니 속 사진을 증거로 내밉니다.",
+      "chars": 43,
+      "duration_sec": 4.68,
+      "chars_per_sec": 9.19,
+      "file": "devil/output/voice_samples_ko/03_standoff.mp3"
+    }
+  ]
+}

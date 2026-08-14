@@ -43,13 +43,25 @@ M = 60.0
 def ev(eid, start, end, summary, visible, stake, opened, *, causes=(), chars=(),
        role="none", narration_at=None, evidence_at=None, intervals=None,
        must_show=True, answered=None, entry=False, transition="cut", reveal=None):
-    # The promised footage is the head of the scene, not the whole of it. Twelve seconds
-    # is the least a beat gets - one narration block over the establishing shot, then the
-    # film running under it - so a promise that size is one the plan can actually keep.
-    # The 14-second ceiling comes from measurement: at 18 the two thinnest beats,
-    # teagardin_arrives and carl_method, covered only 81 percent of what they promised.
-    core = min(max((end - start) * 0.3, 12.0), 14.0)
-    interval_list = [list(i) for i in (intervals or [[start, min(start + core, end)]])]
+    # The promise has to match what the plan will actually cut, in size and in position.
+    #
+    # Size: a narrated beat gets a 7-second narration block plus the film run after it, so
+    # 12 to 14 seconds is a promise it can keep - measured, because an 18-second promise
+    # left the two thinnest beats covering only 81 percent. A beat carried by the film's own
+    # dialogue gets one block with a 9-second floor, so promising 14 there fails at 69.
+    #
+    # Position: normally the head of the scene, which is where the tiler starts. The
+    # exception is a beat that runs up to the spoiler cutoff - the standoff. Its block is
+    # anchored to the cutoff so the review stops on the last line before the shooting, so
+    # the promise sits at the tail. Left at the head it pointed at footage nothing used, and
+    # the coverage gate read 0 percent.
+    core = 9.0 if role == "none" else min(max((end - start) * 0.3, 12.0), 14.0)
+    window_end = min(end, SPOILER_CUTOFF)
+    if window_end >= SPOILER_CUTOFF - 2.0:
+        default_interval = [max(start, window_end - core), window_end]
+    else:
+        default_interval = [start, min(start + core, end)]
+    interval_list = [list(i) for i in (intervals or [default_interval])]
     return {
         "id": eid,
         "source_start": round(start, 3),
@@ -423,22 +435,22 @@ CLOSING = {
 # adjacent to scenes already shown rather than the exact same frames, because an edit plan
 # may not reuse a source interval twice.
 CLOSING["events"] = [
-    ev("closing_theme", 30.3 * M, 30.95 * M,  # 'There used to be a house and a barn up on the hill' 116.90m
+    ev("closing_theme", 30.15 * M, 30.95 * M,  # 'There used to be a house and a barn up on the hill' 116.90m
        "One line of theme over a boy walking up to an empty house",
        "A pickup outside the house, and a small figure coming up the road alone",
        "Every choice made for good reasons leaves blood behind it, and that is the film",
        "Where do choices like that end?",
        causes=["standoff"], chars=["Arvin", "Willard"], role="reflection",
-       narration_at=30.43 * M, evidence_at=30.3 * M,
+       narration_at=30.31 * M, evidence_at=30.15 * M,
        must_show=False, transition="bridge"),
-    ev("closing_cast_hook", 116.2 * M, 116.7 * M,  # Arvin travelling alone, before 'Howdy' 116.70m
+    ev("closing_cast_hook", 115.75 * M, 116.7 * M,  # Arvin travelling alone, before 'Howdy' 116.70m
        "The cast promised in the title, finally named",
        "Bodecker alone in his office, the face the poster sells",
        "Tom Holland, Robert Pattinson, Sebastian Stan and Eliza Scanlen in one small film "
        "is the hook",
        "Why did all of them sign up for this one?",
        causes=["closing_theme"], chars=["Arvin"], role="reflection",
-       narration_at=116.3 * M, evidence_at=116.2 * M,
+       narration_at=115.94 * M, evidence_at=115.75 * M,
        must_show=False, transition="bridge"),
 ]
 sections.append(CLOSING)

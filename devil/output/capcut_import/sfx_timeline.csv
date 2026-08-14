@@ -1,0 +1,4 @@
+﻿order,sfx_preroll,sfx_start,narration_start,sfx_lead_seconds,sfx_duration_seconds,tail_under_narration_seconds,dialogue_clearance_seconds,scene_protection,sfx_rationale,mix_gain_linear,purpose
+48,curiosity_sting,368.833,369.19,0.357,0.557,0.2,0.495,clear,The visible camera turns an ordinary roadside pickup into a suspicious encounter.,0.85,Why does this couple pick people up?
+56,neutral_transition,439.667,440.124,0.457,0.657,0.2,1.287,clear,The restrained transition marks the arrival of a new preacher and story thread.,0.85,What kind of man is he?
+85,bass_omen,731.708,732.208,0.5,0.7,0.2,2.745,clear,The low omen marks the homicide call as the start of a personal pursuit.,0.85,Where will he look for Arvin?
