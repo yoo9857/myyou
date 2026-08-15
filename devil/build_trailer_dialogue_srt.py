@@ -21,6 +21,18 @@ MIN_ON_SCREEN = 0.9      # shorter than this and it flashes rather than reads
 NARRATION_CLEAR = 0.15   # gap either side of a narration caption
 
 
+# Subtitle tracks mark a change of speaker with a leading dash on each part, and the parser
+# joins the cue's lines into one string, so "-Get out. -Come on, now." arrives as a single
+# run with the dashes still in it. On screen it should be two lines and no dashes: the line
+# break is what says a second person is talking.
+SPEAKER_SPLIT = re.compile(r"(?:^|\s+)-\s*(?=\S)")
+
+
+def split_speakers(text: str) -> str:
+    parts = [p.strip() for p in SPEAKER_SPLIT.split(text) if p.strip()]
+    return "\n".join(parts) if len(parts) > 1 else text.lstrip("- ").strip()
+
+
 def stamp(seconds: float) -> str:
     hours, rest = divmod(max(0.0, seconds), 3600)
     minutes, secs = divmod(rest, 60)
@@ -57,7 +69,8 @@ def main() -> int:
             room = overlap_end - overlap_start
             if continues:
                 room = max(room, min(cue.end - overlap_start, 2.6))
-            entries.append([at, at + room, re.sub(r"<[^>]+>", "", cue.text).strip()])
+            entries.append([at, at + room,
+                            split_speakers(re.sub(r"<[^>]+>", "", cue.text).strip())])
 
     entries.sort(key=lambda e: e[0])
     merged: list[list] = []

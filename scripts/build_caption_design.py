@@ -70,6 +70,31 @@ def pipeline_picture_area(video: Path, fraction: float) -> tuple[int, int] | Non
     return (int(found[-1][0]), int(found[-1][1])) if found else None
 
 
+STAMP = re.compile(r"(\d\d):(\d\d):(\d\d),(\d{3}) --> (\d\d):(\d\d):(\d\d),(\d{3})")
+
+
+def read_srt(path):
+    """Read cues keeping their line breaks.
+
+    pipeline.parse_srt joins a cue's lines with a space, which is right nearly everywhere and
+    wrong here: a break between two speakers is the thing that says a second person started
+    talking, and joining it put both halves on one line.
+    """
+    cues = []
+    for block in re.split(r"\n\s*\n", path.read_text(encoding="utf-8-sig").strip()):
+        rows = [r for r in block.splitlines() if r.strip()]
+        if len(rows) < 3:
+            continue
+        found = STAMP.search(rows[1])
+        if not found:
+            continue
+        g = [int(x) for x in found.groups()]
+        cues.append((g[0] * 3600 + g[1] * 60 + g[2] + g[3] / 1000,
+                     g[4] * 3600 + g[5] * 60 + g[6] + g[7] / 1000,
+                     "\n".join(rows[2:])))
+    return cues
+
+
 def stamp(seconds: float) -> str:
     seconds = max(0.0, seconds)
     hours, rest = divmod(seconds, 3600)
@@ -129,10 +154,10 @@ def main() -> int:
             # A cut may legitimately have only one of the two tracks.
             print(f"  건너뜀: {path.name} 없음")
             continue
-        for cue in pipeline.parse_srt(path):
-            if cue.text.strip():
-                lines.append(f"Dialogue: 0,{stamp(cue.start)},{stamp(cue.end)},"
-                             f"{style},,0,0,0,,{escape(cue.text)}")
+        for start, end, text in read_srt(path):
+            if text.strip():
+                lines.append(f"Dialogue: 0,{stamp(start)},{stamp(end)},"
+                             f"{style},,0,0,0,,{escape(text)}")
     lines.sort(key=lambda entry: entry.split(",")[1])
 
     header = HEADER.format(

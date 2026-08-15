@@ -34,6 +34,31 @@ MIRRORS = {"draft_content.json", "template-2.tmp"}
 MICRO = 1_000_000
 
 
+STAMP = re.compile(r"(\d\d):(\d\d):(\d\d),(\d{3}) --> (\d\d):(\d\d):(\d\d),(\d{3})")
+
+
+def read_srt(path):
+    """Read cues keeping their line breaks.
+
+    pipeline.parse_srt joins a cue's lines with a space, which is right nearly everywhere and
+    wrong here: a break between two speakers is the thing that says a second person started
+    talking, and joining it put both halves on one line.
+    """
+    cues = []
+    for block in re.split(r"\n\s*\n", path.read_text(encoding="utf-8-sig").strip()):
+        rows = [r for r in block.splitlines() if r.strip()]
+        if len(rows) < 3:
+            continue
+        found = STAMP.search(rows[1])
+        if not found:
+            continue
+        g = [int(x) for x in found.groups()]
+        cues.append((g[0] * 3600 + g[1] * 60 + g[2] + g[3] / 1000,
+                     g[4] * 3600 + g[5] * 60 + g[6] + g[7] / 1000,
+                     "\n".join(rows[2:])))
+    return cues
+
+
 def new_id() -> str:
     return str(uuid.uuid4()).upper()
 
@@ -128,6 +153,9 @@ def main() -> int:
     parser.add_argument("--dialogue-srt", default="movie_captions.srt")
     # Named stems land on their own audio tracks so levels stay the editor's to set. Given
     # these, the video is muted: the film's sound arrives on its own track instead.
+    parser.add_argument("--caption-style", type=Path,
+                        default=CODE_ROOT / "assets" / "subtitle-style" / "channel-captions-v6.json",
+                        help="Caption design captured from an approved project.")
     parser.add_argument("--audio-track", action="append", default=[],
                         metavar="NAME=PATH", help="e.g. FILM=.../trailer_film.m4a")
     args = parser.parse_args()
@@ -254,29 +282,51 @@ def main() -> int:
             track["segments"] = []
             written[track["name"]] = ([], 0)
             continue
-        cues = pipeline.parse_srt(srt_path)
+        cues = read_srt(srt_path)
         segments, made = [], []
-        for cue in cues:
-            material = text_material(template_material, cue.text.strip())
+        for start, end, text in cues:
+            material = text_material(template_material, text.strip())
             made.append(material)
-            segments.append(text_segment(template_segment, material["id"], cue.start, cue.end))
+            segments.append(text_segment(template_segment, material["id"], start, end))
         track["segments"] = segments
         written[track["name"]] = (made, len(cues))
 
     materials["texts"] = [m for m in materials["texts"] if m["id"] in keep_texts]
+    # A design set by hand in CapCut is a decision, so it is applied verbatim and the
+    # auto-fit is skipped: re-fitting would quietly undo the size that was chosen.
+    design = {}
+    if args.caption_style and args.caption_style.exists():
+        design = json.loads(args.caption_style.read_text(encoding="utf-8")).get("tracks", {})
+    for label, (made, _) in written.items():
+        spec = design.get(label)
+        if not spec or not made:
+            continue
+        for material in made:
+            content = json.loads(material["content"])
+            content["styles"] = [{**spec["style"], "range": [0, len(content["text"])]}]
+            material.update({k: v for k, v in spec["material"].items()})
+            material["content"] = json.dumps(content, ensure_ascii=False)
+        for track in source["tracks"]:
+            if track.get("name") == label:
+                for segment in track["segments"]:
+                    segment["clip"]["transform"]["y"] = spec["transform_y"]
+
     fitted = {}
     for label, (made, _) in written.items():
         if not made:
             continue
-        size = fit_font_size(made, (width, height))
-        if size is not None and size < float(made[0].get("font_size", 7.0)):
-            for material in made:
-                material["font_size"] = size
-                content = json.loads(material["content"])
-                for style in content.get("styles", []):
-                    style["size"] = size
-                material["content"] = json.dumps(content, ensure_ascii=False)
-            fitted[label] = size
+        # Registering the materials is not optional: skipping it for styled tracks left their
+        # segments pointing at materials that were never added, and the captions vanished.
+        if label not in design:
+            size = fit_font_size(made, (width, height))
+            if size is not None and size < float(made[0].get("font_size", 7.0)):
+                for material in made:
+                    material["font_size"] = size
+                    content = json.loads(material["content"])
+                    for style in content.get("styles", []):
+                        style["size"] = size
+                    material["content"] = json.dumps(content, ensure_ascii=False)
+                fitted[label] = size
         materials["texts"].extend(made)
 
     source["duration"] = total
@@ -343,7 +393,8 @@ def main() -> int:
     print(f"  목록 등록: {len(index['all_draft_store'])}개 중 첫 번째")
     print(f"  영상 {asset.name}  {width}x{height}  {duration/60:.2f}분")
     for label, (_, count) in written.items():
-        note = f", 글자 크기 {fitted[label]}로 축소 (3줄 방지)" if label in fitted else ""
+        note = (f", 글자 크기 {fitted[label]}로 축소 (3줄 방지)" if label in fitted
+                else (", 저장된 디자인 적용" if label in design else ""))
         print(f"  {label:16} 자막 {count}개{note}")
     print(f"  미러 파일 {len(mirrors)}개 동일 기록")
     print(f"  위치: {target}")

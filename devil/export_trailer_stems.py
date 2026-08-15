@@ -36,8 +36,11 @@ def duration(path: Path) -> float:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--source", default="devil_trailer_v2.mp4",
-                        help="Cut carrying the film audio, before the end card.")
+    # Must be the cut *before* the narration was mixed in. Pointing this at the narrated
+    # version put the voice inside the film stem, so REVIEW_VOICE beside it played every line
+    # twice - which is the whole reason the stems exist.
+    parser.add_argument("--source", default="devil_trailer_cut.mp4",
+                        help="Cut carrying the film audio only, before narration or end card.")
     parser.add_argument("--final", default="devil_trailer_final.mp4",
                         help="Cut with the end card, for the total length.")
     parser.add_argument("--music", type=Path, default=None)
