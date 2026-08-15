@@ -321,7 +321,7 @@
 - `5:16` **해설** — Arvin returns to Mitchell Flats because every road began on this hill.
   - 아빈은 미첼 플랫츠로 돌아간다. 모든 길이 이 언덕에서 시작됐으니까.
 - `5:17` 대사 — and I just want you to know that I ain't never forgot it.
-  - (번역 없음)
+  - 제가 그걸 한 번도 잊은 적 없다는 걸 알아주셨으면 해서요.
 - `5:19` 대사 — He ain't the lawman that I expected.
   - 내가 기대하던 그런 보안관은 아니지.
 - `5:20` 대사 — Arvin thought about the days leading up to his mother's death,
