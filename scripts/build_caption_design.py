@@ -42,8 +42,8 @@ ScaledBorderAndShadow: yes
 
 [V4+ Styles]
 Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
-Style: Narration,{font},{n_size},&H00AFE8FF,&H000000FF,&H000A0805,&H80080604,-1,0,0,0,100,100,0.2,0,1,{n_outline},{n_shadow},2,{side},{side},{n_margin},1
-Style: Dialogue,{font},{d_size},&H00F8FAFA,&H000000FF,&H00000000,&H78000000,-1,0,0,0,100,100,0,0,1,{d_outline},{d_shadow},2,{side},{side},{d_margin},1
+Style: Narration,{n_font},{n_size},&H00D2EBF6,&H000000FF,&H000A0805,&H80080604,0,0,0,0,100,100,0.2,0,1,{n_outline},{n_shadow},2,{side},{side},{n_margin},1
+Style: Dialogue,{d_font},{d_size},&H00FFFFFF,&H000000FF,&H00000000,&H78000000,0,0,0,0,100,100,0,0,1,{d_outline},{d_shadow},2,{side},{side},{d_margin},1
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
@@ -86,7 +86,15 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("config", type=Path)
     parser.add_argument("--ass-only", action="store_true")
-    parser.add_argument("--font", default="Noto Sans KR")
+    parser.add_argument("--narration-font", default="Cormorant Garamond")
+    parser.add_argument("--dialogue-font", default="Pretendard Medium")
+    parser.add_argument("--watermark", default=None,
+                        help="PNG laid top-right, the way the channel's projects place it.")
+    # A trailer cut has its own master and its own caption track, so both are nameable.
+    parser.add_argument("--video", default=None, help="Video to burn into, under output/.")
+    parser.add_argument("--narration-srt", default="narration.srt")
+    parser.add_argument("--dialogue-srt", default="movie_captions.srt")
+    parser.add_argument("--ass", default="captions_styled.ass")
     args = parser.parse_args()
 
     import pipeline
@@ -97,7 +105,7 @@ def main() -> int:
     package = root / "output" / "capcut_import"
     width = int(config.get("render_width", 1920))
     height = int(config.get("render_height", 1080))
-    master = root / "output" / str(config.get("output_video", "rough_cut.mp4"))
+    master = root / "output" / (args.video or str(config.get("output_video", "rough_cut.mp4")))
 
     # Sizes and margins are proportions of the picture, not of the frame. This source is
     # 2.39:1 inside a 16:9 render, so 138 pixels top and bottom are black bars - a margin
@@ -113,12 +121,14 @@ def main() -> int:
             picture_height = area[1]
             bar = max(0, (height - picture_height) // 2)
 
-    tracks = [("Narration", package / "narration.srt"),
-              ("Dialogue", package / "movie_captions.srt")]
+    tracks = [("Narration", package / args.narration_srt),
+              ("Dialogue", package / args.dialogue_srt)]
     lines = []
     for style, path in tracks:
         if not path.exists():
-            raise SystemExit(f"자막 트랙이 없습니다: {path}")
+            # A cut may legitimately have only one of the two tracks.
+            print(f"  건너뜀: {path.name} 없음")
+            continue
         for cue in pipeline.parse_srt(path):
             if cue.text.strip():
                 lines.append(f"Dialogue: 0,{stamp(cue.start)},{stamp(cue.end)},"
@@ -126,20 +136,22 @@ def main() -> int:
     lines.sort(key=lambda entry: entry.split(",")[1])
 
     header = HEADER.format(
-        width=width, height=height, font=args.font,
+        width=width, height=height,
+        n_font=args.narration_font, d_font=args.dialogue_font,
         n_size=round(NARRATION_SIZE * picture_height),
         d_size=round(DIALOGUE_SIZE * picture_height),
         n_outline=round(1.3 / REFERENCE_HEIGHT * picture_height, 1),
         n_shadow=round(0.8 / REFERENCE_HEIGHT * picture_height, 1),
         d_outline=round(1.5 / REFERENCE_HEIGHT * picture_height, 1),
         d_shadow=round(0.7 / REFERENCE_HEIGHT * picture_height, 1),
-        n_margin=bar + round(NARRATION_MARGIN * picture_height),
-        d_margin=bar + round(DIALOGUE_MARGIN * picture_height),
+        n_margin=round(height / 2 * (1 - 0.575) - NARRATION_SIZE * picture_height),
+        d_margin=round(height / 2 * (1 - 0.780) - DIALOGUE_SIZE * picture_height),
         side=round(32.0 / 384.0 * width),
     )
-    ass_path = package / "captions_styled.ass"
+    ass_path = package / args.ass
     ass_path.write_text(header + "\n".join(lines) + "\n", encoding="utf-8")
     print(f"  스타일 자막 {len(lines)}줄 -> {ass_path.relative_to(root)}")
+    print(f"  글꼴 해설 {args.narration_font} / 대사 {args.dialogue_font}")
     print(f"  해설 {round(NARRATION_SIZE * picture_height)}px / "
           f"대사 {round(DIALOGUE_SIZE * picture_height)}px, "
           f"그림 {width}x{picture_height} (레터박스 {bar}px)")
@@ -151,9 +163,22 @@ def main() -> int:
     burned = master.with_name(master.stem + "_captioned.mp4")
     # Relative name with cwd, because a Windows drive letter's colon is read as a filter
     # option separator. Audio is copied: this pass is picture only.
+    mark = Path(args.watermark).resolve() if args.watermark else None
+    if mark and mark.exists():
+        # Same corner and size the channel's CapCut projects use: scale 0.0983 of a canvas-fitted
+        # 1024 square, centred at 0.927/0.868 of the half-frame from the middle.
+        side_px = round(0.0983 * height)
+        x = round(width / 2 + 0.9267 * (width / 2) - side_px / 2)
+        y = round(height / 2 - 0.8682 * (height / 2) - side_px / 2)
+        chain = (f"[1:v]scale={side_px}:{side_px}[wm];"
+                 f"[0:v][wm]overlay={x}:{y}[marked];[marked]subtitles={ass_path.name}[v]")
+        command = ["ffmpeg", "-hide_banner", "-loglevel", "error", "-i", str(master),
+                   "-i", str(mark), "-filter_complex", chain, "-map", "[v]", "-map", "0:a?"]
+    else:
+        command = ["ffmpeg", "-hide_banner", "-loglevel", "error", "-i", str(master),
+                   "-vf", f"subtitles={ass_path.name}"]
     subprocess.run(
-        ["ffmpeg", "-hide_banner", "-loglevel", "error", "-i", str(master),
-         "-vf", f"subtitles={ass_path.name}",
+        [*command,
          "-c:v", "libx264", "-preset", str(config.get("render_preset", "medium")),
          "-crf", str(config.get("render_crf", 19)), "-c:a", "copy",
          "-movflags", "+faststart", "-y", str(burned)],

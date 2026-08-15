@@ -1,0 +1,1136 @@
+{
+  "project_title": "THE DEVIL ALL THE TIME REVIEW — TRAILER CUT",
+  "note": "Trailer pacing over the review's own beats. The film's audio rides with the picture; add_trailer_narration.py ducks it under the recorded lines.",
+  "spoiler_cutoff_source_sec": 7570.0,
+  "black_between_acts_sec": 0.7,
+  "shots": [
+    {
+      "act": "establish",
+      "event": "prayer_log_present",
+      "hold": 5.2,
+      "source_start": 1596.0,
+      "source_end": 1601.2,
+      "timeline_start": 0.0
+    },
+    {
+      "act": "establish",
+      "event": "prayer_log_present",
+      "hold": 5.2,
+      "source_start": 1610.267,
+      "source_end": 1615.467,
+      "timeline_start": 5.2
+    },
+    {
+      "act": "establish",
+      "event": "prayer_log_present",
+      "hold": 5.2,
+      "source_start": 1624.533,
+      "source_end": 1629.733,
+      "timeline_start": 10.4
+    },
+    {
+      "act": "establish",
+      "event": "crucified_soldier",
+      "hold": 5.2,
+      "source_start": 225.0,
+      "source_end": 230.2,
+      "timeline_start": 15.6
+    },
+    {
+      "act": "establish",
+      "event": "crucified_soldier",
+      "hold": 5.2,
+      "source_start": 240.267,
+      "source_end": 245.467,
+      "timeline_start": 20.8
+    },
+    {
+      "act": "establish",
+      "event": "crucified_soldier",
+      "hold": 5.2,
+      "source_start": 255.533,
+      "source_end": 260.733,
+      "timeline_start": 26.0
+    },
+    {
+      "act": "establish",
+      "event": "meets_charlotte",
+      "hold": 5.2,
+      "source_start": 372.0,
+      "source_end": 377.2,
+      "timeline_start": 31.2
+    },
+    {
+      "act": "establish",
+      "event": "meets_charlotte",
+      "hold": 5.2,
+      "source_start": 403.267,
+      "source_end": 408.467,
+      "timeline_start": 36.4
+    },
+    {
+      "act": "establish",
+      "event": "meets_charlotte",
+      "hold": 5.2,
+      "source_start": 434.533,
+      "source_end": 439.733,
+      "timeline_start": 41.6
+    },
+    {
+      "act": "establish",
+      "event": "emma_matchmaking",
+      "hold": 5.2,
+      "source_start": 591.0,
+      "source_end": 596.2,
+      "timeline_start": 46.8
+    },
+    {
+      "act": "establish",
+      "event": "emma_matchmaking",
+      "hold": 5.2,
+      "source_start": 604.267,
+      "source_end": 609.467,
+      "timeline_start": 52.0
+    },
+    {
+      "act": "establish",
+      "event": "emma_matchmaking",
+      "hold": 5.2,
+      "source_start": 617.533,
+      "source_end": 622.733,
+      "timeline_start": 57.2
+    },
+    {
+      "act": "establish",
+      "event": "arvin_bullied",
+      "hold": 5.2,
+      "source_start": 1224.0,
+      "source_end": 1229.2,
+      "timeline_start": 62.4
+    },
+    {
+      "act": "establish",
+      "event": "arvin_bullied",
+      "hold": 5.2,
+      "source_start": 1246.267,
+      "source_end": 1251.467,
+      "timeline_start": 67.6
+    },
+    {
+      "act": "establish",
+      "event": "arvin_bullied",
+      "hold": 5.2,
+      "source_start": 1268.533,
+      "source_end": 1273.733,
+      "timeline_start": 72.8
+    },
+    {
+      "act": "establish",
+      "event": "willard_teaches_revenge",
+      "hold": 5.2,
+      "source_start": 1416.0,
+      "source_end": 1421.2,
+      "timeline_start": 78.0
+    },
+    {
+      "act": "establish",
+      "event": "willard_teaches_revenge",
+      "hold": 5.2,
+      "source_start": 1437.267,
+      "source_end": 1442.467,
+      "timeline_start": 83.2
+    },
+    {
+      "act": "descend",
+      "event": "charlotte_illness",
+      "hold": 3.4,
+      "source_start": 1482.0,
+      "source_end": 1485.4,
+      "timeline_start": 89.1
+    },
+    {
+      "act": "descend",
+      "event": "charlotte_illness",
+      "hold": 3.4,
+      "source_start": 1498.4,
+      "source_end": 1501.8,
+      "timeline_start": 92.5
+    },
+    {
+      "act": "descend",
+      "event": "charlotte_illness",
+      "hold": 3.4,
+      "source_start": 1514.8,
+      "source_end": 1518.2,
+      "timeline_start": 95.9
+    },
+    {
+      "act": "descend",
+      "event": "charlotte_illness",
+      "hold": 3.4,
+      "source_start": 1531.2,
+      "source_end": 1534.6,
+      "timeline_start": 99.3
+    },
+    {
+      "act": "descend",
+      "event": "jack_sacrifice",
+      "hold": 3.4,
+      "source_start": 1743.0,
+      "source_end": 1746.4,
+      "timeline_start": 102.7
+    },
+    {
+      "act": "descend",
+      "event": "jack_sacrifice",
+      "hold": 3.4,
+      "source_start": 1754.15,
+      "source_end": 1757.55,
+      "timeline_start": 106.1
+    },
+    {
+      "act": "descend",
+      "event": "jack_sacrifice",
+      "hold": 3.4,
+      "source_start": 1765.3,
+      "source_end": 1768.7,
+      "timeline_start": 109.5
+    },
+    {
+      "act": "descend",
+      "event": "jack_sacrifice",
+      "hold": 3.4,
+      "source_start": 1776.45,
+      "source_end": 1779.85,
+      "timeline_start": 112.9
+    },
+    {
+      "act": "descend",
+      "event": "roy_spider_sermon",
+      "hold": 3.4,
+      "source_start": 798.0,
+      "source_end": 801.4,
+      "timeline_start": 116.3
+    },
+    {
+      "act": "descend",
+      "event": "roy_spider_sermon",
+      "hold": 3.4,
+      "source_start": 819.65,
+      "source_end": 823.05,
+      "timeline_start": 119.7
+    },
+    {
+      "act": "descend",
+      "event": "roy_spider_sermon",
+      "hold": 3.4,
+      "source_start": 841.3,
+      "source_end": 844.7,
+      "timeline_start": 123.1
+    },
+    {
+      "act": "descend",
+      "event": "roy_spider_sermon",
+      "hold": 3.4,
+      "source_start": 862.95,
+      "source_end": 866.35,
+      "timeline_start": 126.5
+    },
+    {
+      "act": "descend",
+      "event": "helen_chooses_roy",
+      "hold": 3.4,
+      "source_start": 906.0,
+      "source_end": 909.4,
+      "timeline_start": 129.9
+    },
+    {
+      "act": "descend",
+      "event": "helen_chooses_roy",
+      "hold": 3.4,
+      "source_start": 909.95,
+      "source_end": 913.35,
+      "timeline_start": 133.3
+    },
+    {
+      "act": "descend",
+      "event": "helen_chooses_roy",
+      "hold": 3.4,
+      "source_start": 913.9,
+      "source_end": 917.3,
+      "timeline_start": 136.7
+    },
+    {
+      "act": "descend",
+      "event": "helen_chooses_roy",
+      "hold": 3.4,
+      "source_start": 917.85,
+      "source_end": 921.25,
+      "timeline_start": 140.1
+    },
+    {
+      "act": "descend",
+      "event": "roy_kills_helen",
+      "hold": 3.4,
+      "source_start": 2256.0,
+      "source_end": 2259.4,
+      "timeline_start": 143.5
+    },
+    {
+      "act": "descend",
+      "event": "roy_kills_helen",
+      "hold": 3.4,
+      "source_start": 2285.9,
+      "source_end": 2289.3,
+      "timeline_start": 146.9
+    },
+    {
+      "act": "descend",
+      "event": "roy_kills_helen",
+      "hold": 3.4,
+      "source_start": 2315.8,
+      "source_end": 2319.2,
+      "timeline_start": 150.3
+    },
+    {
+      "act": "descend",
+      "event": "roy_kills_helen",
+      "hold": 3.4,
+      "source_start": 2345.7,
+      "source_end": 2349.1,
+      "timeline_start": 153.7
+    },
+    {
+      "act": "descend",
+      "event": "roy_meets_carl",
+      "hold": 3.4,
+      "source_start": 2451.0,
+      "source_end": 2454.4,
+      "timeline_start": 157.1
+    },
+    {
+      "act": "descend",
+      "event": "roy_meets_carl",
+      "hold": 3.4,
+      "source_start": 2468.9,
+      "source_end": 2472.3,
+      "timeline_start": 160.5
+    },
+    {
+      "act": "descend",
+      "event": "roy_meets_carl",
+      "hold": 3.4,
+      "source_start": 2486.8,
+      "source_end": 2490.2,
+      "timeline_start": 163.9
+    },
+    {
+      "act": "descend",
+      "event": "roy_meets_carl",
+      "hold": 3.4,
+      "source_start": 2504.7,
+      "source_end": 2508.1,
+      "timeline_start": 167.3
+    },
+    {
+      "act": "descend",
+      "event": "lenora_and_arvin",
+      "hold": 3.4,
+      "source_start": 2952.0,
+      "source_end": 2955.4,
+      "timeline_start": 170.7
+    },
+    {
+      "act": "descend",
+      "event": "lenora_and_arvin",
+      "hold": 3.4,
+      "source_start": 2969.15,
+      "source_end": 2972.55,
+      "timeline_start": 174.1
+    },
+    {
+      "act": "descend",
+      "event": "lenora_and_arvin",
+      "hold": 3.4,
+      "source_start": 2986.3,
+      "source_end": 2989.7,
+      "timeline_start": 177.5
+    },
+    {
+      "act": "descend",
+      "event": "lenora_and_arvin",
+      "hold": 3.4,
+      "source_start": 3003.45,
+      "source_end": 3006.85,
+      "timeline_start": 180.9
+    },
+    {
+      "act": "descend",
+      "event": "earskell_gives_pistol",
+      "hold": 3.4,
+      "source_start": 2802.0,
+      "source_end": 2805.4,
+      "timeline_start": 184.3
+    },
+    {
+      "act": "descend",
+      "event": "earskell_gives_pistol",
+      "hold": 3.4,
+      "source_start": 2826.65,
+      "source_end": 2830.05,
+      "timeline_start": 187.7
+    },
+    {
+      "act": "close_in",
+      "event": "teagardin_arrives",
+      "hold": 2.2,
+      "source_start": 3255.0,
+      "source_end": 3257.2,
+      "timeline_start": 191.8
+    },
+    {
+      "act": "close_in",
+      "event": "teagardin_arrives",
+      "hold": 2.2,
+      "source_start": 3267.16,
+      "source_end": 3269.36,
+      "timeline_start": 194.0
+    },
+    {
+      "act": "close_in",
+      "event": "teagardin_arrives",
+      "hold": 2.2,
+      "source_start": 3279.32,
+      "source_end": 3281.52,
+      "timeline_start": 196.2
+    },
+    {
+      "act": "close_in",
+      "event": "teagardin_arrives",
+      "hold": 2.2,
+      "source_start": 3291.48,
+      "source_end": 3293.68,
+      "timeline_start": 198.4
+    },
+    {
+      "act": "close_in",
+      "event": "teagardin_arrives",
+      "hold": 2.2,
+      "source_start": 3303.64,
+      "source_end": 3305.84,
+      "timeline_start": 200.6
+    },
+    {
+      "act": "close_in",
+      "event": "teagardin_sermon",
+      "hold": 2.2,
+      "source_start": 3336.0,
+      "source_end": 3338.2,
+      "timeline_start": 202.8
+    },
+    {
+      "act": "close_in",
+      "event": "teagardin_sermon",
+      "hold": 2.2,
+      "source_start": 3354.16,
+      "source_end": 3356.36,
+      "timeline_start": 205.0
+    },
+    {
+      "act": "close_in",
+      "event": "teagardin_sermon",
+      "hold": 2.2,
+      "source_start": 3372.32,
+      "source_end": 3374.52,
+      "timeline_start": 207.2
+    },
+    {
+      "act": "close_in",
+      "event": "teagardin_sermon",
+      "hold": 2.2,
+      "source_start": 3390.48,
+      "source_end": 3392.68,
+      "timeline_start": 209.4
+    },
+    {
+      "act": "close_in",
+      "event": "teagardin_sermon",
+      "hold": 2.2,
+      "source_start": 3408.64,
+      "source_end": 3410.84,
+      "timeline_start": 211.6
+    },
+    {
+      "act": "close_in",
+      "event": "lenora_groomed",
+      "hold": 2.2,
+      "source_start": 3828.0,
+      "source_end": 3830.2,
+      "timeline_start": 213.8
+    },
+    {
+      "act": "close_in",
+      "event": "lenora_groomed",
+      "hold": 2.2,
+      "source_start": 3849.16,
+      "source_end": 3851.36,
+      "timeline_start": 216.0
+    },
+    {
+      "act": "close_in",
+      "event": "lenora_groomed",
+      "hold": 2.2,
+      "source_start": 3870.32,
+      "source_end": 3872.52,
+      "timeline_start": 218.2
+    },
+    {
+      "act": "close_in",
+      "event": "lenora_groomed",
+      "hold": 2.2,
+      "source_start": 3891.48,
+      "source_end": 3893.68,
+      "timeline_start": 220.4
+    },
+    {
+      "act": "close_in",
+      "event": "lenora_groomed",
+      "hold": 2.2,
+      "source_start": 3912.64,
+      "source_end": 3914.84,
+      "timeline_start": 222.6
+    },
+    {
+      "act": "close_in",
+      "event": "carl_method",
+      "hold": 2.2,
+      "source_start": 2562.0,
+      "source_end": 2564.2,
+      "timeline_start": 224.8
+    },
+    {
+      "act": "close_in",
+      "event": "carl_method",
+      "hold": 2.2,
+      "source_start": 2581.96,
+      "source_end": 2584.16,
+      "timeline_start": 227.0
+    },
+    {
+      "act": "close_in",
+      "event": "carl_method",
+      "hold": 2.2,
+      "source_start": 2601.92,
+      "source_end": 2604.12,
+      "timeline_start": 229.2
+    },
+    {
+      "act": "close_in",
+      "event": "carl_method",
+      "hold": 2.2,
+      "source_start": 2621.88,
+      "source_end": 2624.08,
+      "timeline_start": 231.4
+    },
+    {
+      "act": "close_in",
+      "event": "carl_method",
+      "hold": 2.2,
+      "source_start": 2641.84,
+      "source_end": 2644.04,
+      "timeline_start": 233.6
+    },
+    {
+      "act": "close_in",
+      "event": "bodecker_corruption",
+      "hold": 2.2,
+      "source_start": 4263.0,
+      "source_end": 4265.2,
+      "timeline_start": 235.8
+    },
+    {
+      "act": "close_in",
+      "event": "bodecker_corruption",
+      "hold": 2.2,
+      "source_start": 4281.16,
+      "source_end": 4283.36,
+      "timeline_start": 238.0
+    },
+    {
+      "act": "close_in",
+      "event": "bodecker_corruption",
+      "hold": 2.2,
+      "source_start": 4299.32,
+      "source_end": 4301.52,
+      "timeline_start": 240.2
+    },
+    {
+      "act": "close_in",
+      "event": "bodecker_corruption",
+      "hold": 2.2,
+      "source_start": 4317.48,
+      "source_end": 4319.68,
+      "timeline_start": 242.4
+    },
+    {
+      "act": "close_in",
+      "event": "bodecker_corruption",
+      "hold": 2.2,
+      "source_start": 4335.64,
+      "source_end": 4337.84,
+      "timeline_start": 244.6
+    },
+    {
+      "act": "close_in",
+      "event": "lenora_pregnant",
+      "hold": 2.2,
+      "source_start": 5214.0,
+      "source_end": 5216.2,
+      "timeline_start": 246.8
+    },
+    {
+      "act": "close_in",
+      "event": "lenora_pregnant",
+      "hold": 2.2,
+      "source_start": 5227.96,
+      "source_end": 5230.16,
+      "timeline_start": 249.0
+    },
+    {
+      "act": "close_in",
+      "event": "lenora_pregnant",
+      "hold": 2.2,
+      "source_start": 5241.92,
+      "source_end": 5244.12,
+      "timeline_start": 251.2
+    },
+    {
+      "act": "close_in",
+      "event": "lenora_pregnant",
+      "hold": 2.2,
+      "source_start": 5255.88,
+      "source_end": 5258.08,
+      "timeline_start": 253.4
+    },
+    {
+      "act": "close_in",
+      "event": "lenora_pregnant",
+      "hold": 2.2,
+      "source_start": 5269.84,
+      "source_end": 5272.04,
+      "timeline_start": 255.6
+    },
+    {
+      "act": "close_in",
+      "event": "lenora_dies",
+      "hold": 2.2,
+      "source_start": 5343.0,
+      "source_end": 5345.2,
+      "timeline_start": 257.8
+    },
+    {
+      "act": "close_in",
+      "event": "lenora_dies",
+      "hold": 2.2,
+      "source_start": 5348.92,
+      "source_end": 5351.12,
+      "timeline_start": 260.0
+    },
+    {
+      "act": "close_in",
+      "event": "lenora_dies",
+      "hold": 2.2,
+      "source_start": 5354.84,
+      "source_end": 5357.04,
+      "timeline_start": 262.2
+    },
+    {
+      "act": "close_in",
+      "event": "lenora_dies",
+      "hold": 2.2,
+      "source_start": 5360.76,
+      "source_end": 5362.96,
+      "timeline_start": 264.4
+    },
+    {
+      "act": "close_in",
+      "event": "lenora_dies",
+      "hold": 2.2,
+      "source_start": 5366.68,
+      "source_end": 5368.88,
+      "timeline_start": 266.6
+    },
+    {
+      "act": "close_in",
+      "event": "suicide_burial_refused",
+      "hold": 2.2,
+      "source_start": 5376.0,
+      "source_end": 5378.2,
+      "timeline_start": 268.8
+    },
+    {
+      "act": "close_in",
+      "event": "suicide_burial_refused",
+      "hold": 2.2,
+      "source_start": 5387.56,
+      "source_end": 5389.76,
+      "timeline_start": 271.0
+    },
+    {
+      "act": "close_in",
+      "event": "suicide_burial_refused",
+      "hold": 2.2,
+      "source_start": 5399.12,
+      "source_end": 5401.32,
+      "timeline_start": 273.2
+    },
+    {
+      "act": "close_in",
+      "event": "suicide_burial_refused",
+      "hold": 2.2,
+      "source_start": 5410.68,
+      "source_end": 5412.88,
+      "timeline_start": 275.4
+    },
+    {
+      "act": "close_in",
+      "event": "suicide_burial_refused",
+      "hold": 2.2,
+      "source_start": 5422.24,
+      "source_end": 5424.44,
+      "timeline_start": 277.6
+    },
+    {
+      "act": "break",
+      "event": "arvin_confronts_preacher",
+      "hold": 1.1,
+      "source_start": 5760.0,
+      "source_end": 5761.1,
+      "timeline_start": 280.5
+    },
+    {
+      "act": "break",
+      "event": "arvin_confronts_preacher",
+      "hold": 1.1,
+      "source_start": 5785.817,
+      "source_end": 5786.917,
+      "timeline_start": 281.6
+    },
+    {
+      "act": "break",
+      "event": "arvin_confronts_preacher",
+      "hold": 1.1,
+      "source_start": 5811.633,
+      "source_end": 5812.733,
+      "timeline_start": 282.7
+    },
+    {
+      "act": "break",
+      "event": "arvin_confronts_preacher",
+      "hold": 1.1,
+      "source_start": 5837.45,
+      "source_end": 5838.55,
+      "timeline_start": 283.8
+    },
+    {
+      "act": "break",
+      "event": "arvin_confronts_preacher",
+      "hold": 1.1,
+      "source_start": 5863.267,
+      "source_end": 5864.367,
+      "timeline_start": 284.9
+    },
+    {
+      "act": "break",
+      "event": "arvin_confronts_preacher",
+      "hold": 1.1,
+      "source_start": 5889.083,
+      "source_end": 5890.183,
+      "timeline_start": 286.0
+    },
+    {
+      "act": "break",
+      "event": "preacher_dies",
+      "hold": 1.1,
+      "source_start": 5976.0,
+      "source_end": 5977.1,
+      "timeline_start": 287.1
+    },
+    {
+      "act": "break",
+      "event": "preacher_dies",
+      "hold": 1.1,
+      "source_start": 5989.817,
+      "source_end": 5990.917,
+      "timeline_start": 288.2
+    },
+    {
+      "act": "break",
+      "event": "preacher_dies",
+      "hold": 1.1,
+      "source_start": 6003.633,
+      "source_end": 6004.733,
+      "timeline_start": 289.3
+    },
+    {
+      "act": "break",
+      "event": "preacher_dies",
+      "hold": 1.1,
+      "source_start": 6017.45,
+      "source_end": 6018.55,
+      "timeline_start": 290.4
+    },
+    {
+      "act": "break",
+      "event": "preacher_dies",
+      "hold": 1.1,
+      "source_start": 6031.267,
+      "source_end": 6032.367,
+      "timeline_start": 291.5
+    },
+    {
+      "act": "break",
+      "event": "preacher_dies",
+      "hold": 1.1,
+      "source_start": 6045.083,
+      "source_end": 6046.183,
+      "timeline_start": 292.6
+    },
+    {
+      "act": "break",
+      "event": "arvin_rides_with_carl",
+      "hold": 1.1,
+      "source_start": 6384.0,
+      "source_end": 6385.1,
+      "timeline_start": 293.7
+    },
+    {
+      "act": "break",
+      "event": "arvin_rides_with_carl",
+      "hold": 1.1,
+      "source_start": 6405.817,
+      "source_end": 6406.917,
+      "timeline_start": 294.8
+    },
+    {
+      "act": "break",
+      "event": "arvin_rides_with_carl",
+      "hold": 1.1,
+      "source_start": 6427.633,
+      "source_end": 6428.733,
+      "timeline_start": 295.9
+    },
+    {
+      "act": "break",
+      "event": "arvin_rides_with_carl",
+      "hold": 1.1,
+      "source_start": 6449.45,
+      "source_end": 6450.55,
+      "timeline_start": 297.0
+    },
+    {
+      "act": "break",
+      "event": "arvin_rides_with_carl",
+      "hold": 1.1,
+      "source_start": 6471.267,
+      "source_end": 6472.367,
+      "timeline_start": 298.1
+    },
+    {
+      "act": "break",
+      "event": "arvin_rides_with_carl",
+      "hold": 1.1,
+      "source_start": 6493.083,
+      "source_end": 6494.183,
+      "timeline_start": 299.2
+    },
+    {
+      "act": "break",
+      "event": "woods_shootout",
+      "hold": 1.1,
+      "source_start": 6564.0,
+      "source_end": 6565.1,
+      "timeline_start": 300.3
+    },
+    {
+      "act": "break",
+      "event": "woods_shootout",
+      "hold": 1.1,
+      "source_start": 6583.817,
+      "source_end": 6584.917,
+      "timeline_start": 301.4
+    },
+    {
+      "act": "break",
+      "event": "woods_shootout",
+      "hold": 1.1,
+      "source_start": 6603.633,
+      "source_end": 6604.733,
+      "timeline_start": 302.5
+    },
+    {
+      "act": "break",
+      "event": "woods_shootout",
+      "hold": 1.1,
+      "source_start": 6623.45,
+      "source_end": 6624.55,
+      "timeline_start": 303.6
+    },
+    {
+      "act": "break",
+      "event": "woods_shootout",
+      "hold": 1.1,
+      "source_start": 6643.267,
+      "source_end": 6644.367,
+      "timeline_start": 304.7
+    },
+    {
+      "act": "break",
+      "event": "woods_shootout",
+      "hold": 1.1,
+      "source_start": 6663.083,
+      "source_end": 6664.183,
+      "timeline_start": 305.8
+    },
+    {
+      "act": "break",
+      "event": "bodecker_learns",
+      "hold": 1.1,
+      "source_start": 6771.0,
+      "source_end": 6772.1,
+      "timeline_start": 306.9
+    },
+    {
+      "act": "break",
+      "event": "bodecker_learns",
+      "hold": 1.1,
+      "source_start": 6782.317,
+      "source_end": 6783.417,
+      "timeline_start": 308.0
+    },
+    {
+      "act": "break",
+      "event": "bodecker_learns",
+      "hold": 1.1,
+      "source_start": 6793.633,
+      "source_end": 6794.733,
+      "timeline_start": 309.1
+    },
+    {
+      "act": "break",
+      "event": "bodecker_learns",
+      "hold": 1.1,
+      "source_start": 6804.95,
+      "source_end": 6806.05,
+      "timeline_start": 310.2
+    },
+    {
+      "act": "break",
+      "event": "bodecker_learns",
+      "hold": 1.1,
+      "source_start": 6816.267,
+      "source_end": 6817.367,
+      "timeline_start": 311.3
+    },
+    {
+      "act": "break",
+      "event": "bodecker_learns",
+      "hold": 1.1,
+      "source_start": 6827.583,
+      "source_end": 6828.683,
+      "timeline_start": 312.4
+    },
+    {
+      "act": "break",
+      "event": "arvin_returns_home",
+      "hold": 1.1,
+      "source_start": 7020.0,
+      "source_end": 7021.1,
+      "timeline_start": 313.5
+    },
+    {
+      "act": "break",
+      "event": "arvin_returns_home",
+      "hold": 1.1,
+      "source_start": 7033.817,
+      "source_end": 7034.917,
+      "timeline_start": 314.6
+    },
+    {
+      "act": "break",
+      "event": "arvin_returns_home",
+      "hold": 1.1,
+      "source_start": 7047.633,
+      "source_end": 7048.733,
+      "timeline_start": 315.7
+    },
+    {
+      "act": "break",
+      "event": "arvin_returns_home",
+      "hold": 1.1,
+      "source_start": 7061.45,
+      "source_end": 7062.55,
+      "timeline_start": 316.8
+    },
+    {
+      "act": "break",
+      "event": "arvin_returns_home",
+      "hold": 1.1,
+      "source_start": 7075.267,
+      "source_end": 7076.367,
+      "timeline_start": 317.9
+    },
+    {
+      "act": "break",
+      "event": "arvin_returns_home",
+      "hold": 1.1,
+      "source_start": 7089.083,
+      "source_end": 7090.183,
+      "timeline_start": 319.0
+    },
+    {
+      "act": "break",
+      "event": "arvin_understands_father",
+      "hold": 1.1,
+      "source_start": 7338.0,
+      "source_end": 7339.1,
+      "timeline_start": 320.1
+    },
+    {
+      "act": "break",
+      "event": "arvin_understands_father",
+      "hold": 1.1,
+      "source_start": 7346.817,
+      "source_end": 7347.917,
+      "timeline_start": 321.2
+    },
+    {
+      "act": "break",
+      "event": "arvin_understands_father",
+      "hold": 1.1,
+      "source_start": 7355.633,
+      "source_end": 7356.733,
+      "timeline_start": 322.3
+    },
+    {
+      "act": "break",
+      "event": "arvin_understands_father",
+      "hold": 1.1,
+      "source_start": 7364.45,
+      "source_end": 7365.55,
+      "timeline_start": 323.4
+    },
+    {
+      "act": "break",
+      "event": "arvin_understands_father",
+      "hold": 1.1,
+      "source_start": 7373.267,
+      "source_end": 7374.367,
+      "timeline_start": 324.5
+    },
+    {
+      "act": "break",
+      "event": "arvin_understands_father",
+      "hold": 1.1,
+      "source_start": 7382.083,
+      "source_end": 7383.183,
+      "timeline_start": 325.6
+    },
+    {
+      "act": "break",
+      "event": "bodecker_calls_him_out",
+      "hold": 1.1,
+      "source_start": 7404.0,
+      "source_end": 7405.1,
+      "timeline_start": 326.7
+    },
+    {
+      "act": "break",
+      "event": "bodecker_calls_him_out",
+      "hold": 1.1,
+      "source_start": 7415.817,
+      "source_end": 7416.917,
+      "timeline_start": 327.8
+    },
+    {
+      "act": "break",
+      "event": "bodecker_calls_him_out",
+      "hold": 1.1,
+      "source_start": 7427.633,
+      "source_end": 7428.733,
+      "timeline_start": 328.9
+    },
+    {
+      "act": "break",
+      "event": "bodecker_calls_him_out",
+      "hold": 1.1,
+      "source_start": 7439.45,
+      "source_end": 7440.55,
+      "timeline_start": 330.0
+    },
+    {
+      "act": "break",
+      "event": "bodecker_calls_him_out",
+      "hold": 1.1,
+      "source_start": 7451.267,
+      "source_end": 7452.367,
+      "timeline_start": 331.1
+    },
+    {
+      "act": "break",
+      "event": "bodecker_calls_him_out",
+      "hold": 1.1,
+      "source_start": 7463.083,
+      "source_end": 7464.183,
+      "timeline_start": 332.2
+    },
+    {
+      "act": "break",
+      "event": "standoff",
+      "hold": 1.1,
+      "source_start": 7494.0,
+      "source_end": 7495.1,
+      "timeline_start": 333.3
+    },
+    {
+      "act": "break",
+      "event": "standoff",
+      "hold": 1.1,
+      "source_start": 7506.317,
+      "source_end": 7507.417,
+      "timeline_start": 334.4
+    },
+    {
+      "act": "break",
+      "event": "standoff",
+      "hold": 1.1,
+      "source_start": 7518.633,
+      "source_end": 7519.733,
+      "timeline_start": 335.5
+    },
+    {
+      "act": "break",
+      "event": "standoff",
+      "hold": 1.1,
+      "source_start": 7530.95,
+      "source_end": 7532.05,
+      "timeline_start": 336.6
+    },
+    {
+      "act": "break",
+      "event": "standoff",
+      "hold": 1.1,
+      "source_start": 7543.267,
+      "source_end": 7544.367,
+      "timeline_start": 337.7
+    },
+    {
+      "act": "break",
+      "event": "standoff",
+      "hold": 1.1,
+      "source_start": 7555.583,
+      "source_end": 7556.683,
+      "timeline_start": 338.8
+    }
+  ]
+}

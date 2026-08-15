@@ -1,0 +1,354 @@
+# The Devil All the Time — 예고편 컷 대본
+
+*악마는 사라지지 않는다* (2020, 넷플릭스) · 5분 54초 · 해설 33줄 / 영화 대사 131줄
+
+해설은 우리가 쓴 문장이고, 대사는 영화 원본입니다. 한국어는 의미 전달용 번역입니다.
+
+
+## 1막 — 확립
+
+- `0:00` 대사 — Please Lord, please.
+  - 주님, 제발요, 제발.
+- `0:05` **해설** — At this blood-darkened cross, Willard turns prayer into an order.
+  - 피에 젖은 십자가 앞에서, 윌러드의 기도는 명령이 된다.
+- `0:05` 대사 — Lord, please save my mama!
+  - 주님, 우리 엄마 좀 살려주세요!
+- `0:07` 대사 — -Clean the cancer inside of her! -We need your help!
+  - — 엄마 안의 암을 씻어주세요! — 도와주셔야 해요!
+- `0:10` **해설** — The ritual binds Arvin to a fear he cannot yet understand.
+  - 이 의식은 아빈을 아직 이해하지 못할 공포에 묶어둔다.
+- `0:10` 대사 — Please clean the cancer inside of her!
+  - 제발 엄마 안의 암을 씻어주세요!
+- `0:14` 대사 — And don't be crying, you hear? Don't be crying!
+  - 울지 마, 알았어? 울지 말라고!
+- `0:15` **해설** — Years earlier, one crucified Marine gave Willard's faith its permanent shape.
+  - 몇 해 전, 십자가에 못 박힌 해병 하나가 윌러드의 신앙을 영원히 결정했다.
+- `0:21` 대사 — What's it say?
+  - 뭐라고 적혀 있어?
+- `0:23` 대사 — Miller Jones.
+  - 밀러 존스.
+- `0:25` 대사 — -Fuck!
+  - — 젠장!
+- `0:26` **해설** — The sight turns survival itself into something cruel and unbearable.
+  - 그 광경은 살아남는다는 것 자체를 잔인하고 견딜 수 없는 일로 만든다.
+- `0:31` 대사 — -Get out. I told you last time. -Come on, now.
+  - — 나가. 지난번에 말했잖아. — 왜 이래.
+- `0:32` 대사 — Next time, the cops will drag you out.
+  - 다음엔 경찰이 끌어낼 거야.
+- `0:35` 대사 — -Excuse me. -Get out!
+  - — 저기요. — 나가!
+- `0:39` 대사 — Did you need anything else?
+  - 더 필요한 거 있으세요?
+- `0:41` 대사 — Nah, I'm just passing through.
+  - 아뇨, 그냥 지나가는 길입니다.
+- `0:43` 대사 — On my way to West Virginia.
+  - 웨스트버지니아로 가는 중이에요.
+- `0:46` 대사 — My people are from Coal Creek.
+  - 우리 집안이 콜크리크 사람이라서요.
+- `0:46` **해설** — Back home, Willard's silence lets his mother arrange the next chapter.
+  - 집에 돌아온 윌러드의 침묵이, 어머니에게 다음 장을 짜게 만든다.
+- `0:46` 대사 — without thinking of Miller Jones,
+  - 밀러 존스를 떠올리지 않고서는,
+- `0:48` 대사 — he never told anyone about the crucified Marine.
+  - 그는 십자가에 못 박힌 해병 이야기를 누구에게도 하지 않았다.
+- `0:52` **해설** — Helen enters before Willard has even settled back into civilian life.
+  - 윌러드가 민간인의 삶에 적응하기도 전에 헬렌이 들어온다.
+- `0:54` 대사 — Willard just got back, Helen.
+  - 윌러드가 막 돌아왔어, 헬렌.
+- `0:56` 대사 — -You-- -Welcome home.
+  - — 당신… — 돌아온 걸 환영해요.
+- `0:57` **해설** — Emma sees two wounded young people and mistakes proximity for providence.
+  - 엠마는 상처 입은 두 젊은이를 보고, 가까움을 섭리로 착각한다.
+- `0:57` 대사 — that in exchange for bringing him home safe,
+  - 아들을 무사히 돌려보내 주신다면,
+- `0:59` 대사 — she'd make sure he married Helen Hatton.
+  - 헬렌 해튼과 결혼시키겠다고 약속했다.
+- `1:02` 대사 — I want you to finish it.
+  - 네가 끝내라.
+- `1:03` 대사 — You understand?
+  - 알아들었어?
+- `1:04` 대사 — Yes, sir.
+  - 네, 아버지.
+- `1:13` 대사 — Hell, they having a little revival meetin'.
+  - 이야, 부흥회라도 하는 모양이네.
+- `1:17` 대사 — Shit, I'm thinking now'd be a good time to pay his old lady a visit.
+  - 지금이 저 놈 마누라한테 인사하러 갈 좋은 때 같은데.
+- `1:18` **해설** — Willard makes Arvin study the wreckage before explaining the lesson.
+  - 윌러드는 교훈을 말하기 전에, 아빈에게 그 참상을 먼저 보게 한다.
+- `1:20` 대사 — -God!
+  - — 세상에!
+- `1:22` 대사 — -Stubbs! -Stubbs, get out here, man!
+  - — 스텁스! — 스텁스, 나와 봐!
+- `1:25` 대사 — Now you remember what I told you?
+  - 내가 한 말 기억하지?
+- `1:29` **해설** — One ordinary afternoon ends the moment Charlotte cannot answer her son.
+  - 평범한 오후는 샬럿이 아들에게 답하지 못하는 순간 끝난다.
+
+## 2막 — 추락
+
+- `1:29` 대사 — So what kind of candy bar you gonna get, huh?
+  - 그래, 무슨 초콜릿 살 거야?
+- `1:30` 대사 — Um... a Charleston Chew, yeah.
+  - 음… 찰스턴 츄로 할래요.
+- `1:32` 대사 — -Mama!
+  - — 엄마!
+- `1:34` 대사 — No! Charlotte!
+  - 안 돼! 샬럿!
+- `1:35` **해설** — The diagnosis leaves medicine managing pain while Willard searches beyond it.
+  - 진단이 내려지고, 의술은 통증만 다루고 윌러드는 그 너머를 찾는다.
+- `1:35` 대사 — -What are you saying? -The test results aren't good.
+  - — 무슨 말씀이세요? — 검사 결과가 좋지 않습니다.
+- `1:42` **해설** — Willard offers what Arvin loves most as payment for Charlotte's life.
+  - 윌러드는 아빈이 가장 사랑하는 것을, 샬럿의 목숨값으로 바친다.
+- `1:46` 대사 — Dad, no!
+  - 아빠, 안 돼요!
+- `1:47` 대사 — Dad!
+  - 아빠!
+- `1:48` 대사 — Lord, this here is my boy's dog.
+  - 주님, 이건 제 아들의 개입니다.
+- `1:49` **해설** — His promise comforts nobody because Arvin has seen what faith now demands.
+  - 그 약속은 누구도 위로하지 못한다. 아빈은 신앙이 무엇을 요구하는지 이미 봤다.
+- `1:52` 대사 — It's gonna be all right, Arvin.
+  - 괜찮아질 거야, 아빈.
+- `1:54` 대사 — It's gonna be all right.
+  - 다 괜찮아질 거야.
+- `1:58` 대사 — Before I found the Holy Ghost...
+  - 제가 성령을 만나기 전에는…
+- `1:59` 대사 — hiding under my mother's long skirts,
+  - 어머니 치맛자락 밑에 숨어서,
+- `2:02` 대사 — spiders crawling through my dreams...
+  - 꿈속으로 거미가 기어들어 왔습니다…
+- `2:03` 대사 — Now, that's what hell is like, brothers and sisters!
+  - 형제자매 여러분, 지옥이란 게 바로 그겁니다!
+- `2:04` 대사 — Praise the Lord.
+  - 주님을 찬양합니다.
+- `2:06` 대사 — The Lord looks out for me now!
+  - 이제는 주님이 저를 지켜보십니다!
+- `2:09` **해설** — Helen reads Roy's spectacle as proof that her loneliness has ended.
+  - 헬렌은 로이의 광경을, 자신의 외로움이 끝났다는 증거로 읽는다.
+- `2:09` 대사 — if she couldn't keep her promise to God.
+  - 하나님과의 약속을 지키지 못한다면.
+- `2:13` 대사 — Helen did, in fact, meet the man she would marry that afternoon.
+  - 헬렌은 실제로 그날 오후, 결혼하게 될 남자를 만났다.
+- `2:16` 대사 — Bless me, Reverend.
+  - 축복해 주세요, 목사님.
+- `2:17` 대사 — Bless me.
+  - 축복해 주세요.
+- `2:20` 대사 — And Willard's mind was already hundreds of miles away.
+  - 그리고 윌러드의 마음은 이미 수백 마일 밖에 있었다.
+- `2:23` **해설** — Roy stays beside Helen, expecting belief to undo what belief caused.
+  - 로이는 헬렌 곁을 지킨다. 믿음이 부른 일을 믿음이 되돌려주길 바라며.
+- `2:32` 대사 — I've heard your word.
+  - 당신의 말씀을 들었습니다.
+- `2:33` 대사 — Return!
+  - 돌아와라!
+- `2:37` **해설** — A waiting camera makes this generous pickup feel carefully staged.
+  - 기다리고 있던 카메라가, 이 선의의 동승을 잘 짜인 무대처럼 보이게 한다.
+- `2:43` **해설** — Sandy keeps calling Roy's name while Carl quietly controls the route.
+  - 샌디가 로이의 이름을 부르는 동안, 칼은 조용히 길을 정한다.
+- `2:43` 대사 — Huh? Ain't she somethin'?
+  - 어때? 대단하지 않아?
+- `2:46` 대사 — Mister, I do appreciate this.
+  - 선생님, 정말 감사합니다.
+- `2:50` 대사 — What's your name, sweetie?
+  - 이름이 뭐니, 얘야?
+- `2:50` **해설** — Arvin protects Lenora with the exact timing his father taught him.
+  - 아빈은 아버지가 가르친 그 타이밍 그대로 리노라를 지킨다.
+- `2:51` 대사 — Arvin loved her like his own sister.
+  - 아빈은 그 애를 친누이처럼 아꼈다.
+- `2:53` 대사 — -Sister fucker. -He would do anything to protect her.
+  - — 누나랑 붙어먹는 놈. — 그는 그 애를 지키기 위해 뭐든 했다.
+- `2:55` 대사 — Though he wasn't one for praying
+  - 기도하는 성격은 아니었지만
+- `2:57` 대사 — It was a sight you didn't end up in the hospital.
+  - 너 병원 안 실려 간 게 볼만했다.
+- `2:59` 대사 — Yeah, well, there's a lot of no good sons of bitches out there.
+  - 세상엔 못돼먹은 놈들이 많아.
+- `3:00` 대사 — Maybe you should try praying for 'em then. Would that hurt none?
+  - 그럼 그 사람들을 위해 기도해 보지 그래요? 손해 볼 것도 없잖아요.
+- `3:02` 대사 — You already do enough for all of us, and where's it doing you much good, huh?
+  - 당신은 이미 우리 모두를 위해 충분히 하잖아. 그게 당신한테 무슨 득이 됐는데?
+- `3:04` **해설** — The birthday gift puts Willard's old weapon back into Arvin's hands.
+  - 생일 선물은 아버지의 낡은 총을 다시 아빈의 손에 쥐어준다.
+- `3:04` 대사 — -Happy birthday, Arvin. -Happy birthday, honey.
+  - — 생일 축하한다, 아빈. — 생일 축하해, 얘야.
+- `3:06` 대사 — -Happy birthday! -Oh, no.
+  - — 생일 축하해! — 어이쿠.
+- `3:07` 대사 — It looks like a dandy cake.
+  - 케이크 참 멋지구나.
+- `3:11` **해설** — A polished stranger arrives to lead the same church that raised Lenora.
+  - 말끔한 낯선 남자가, 리노라를 키운 그 교회의 강단에 선다.
+
+## 3막 — 조여옴
+
+- `3:14` 대사 — Pleased to meet you, Reverend.
+  - 반갑습니다, 목사님.
+- `3:14` 대사 — Emma Russell.
+  - 엠마 러셀입니다.
+- `3:15` 대사 — Nice to meet you too. What you got there?
+  - 저도 반갑습니다. 그건 뭔가요?
+- `3:16` 대사 — As Preston Teagardin swished the juice
+  - 프레스턴 티가딘이 그 국물을 입안에서 굴리는 동안
+- `3:18` 대사 — and thirst...
+  - 그리고 갈증은…
+- `3:21` 대사 — Preston loved the way people listened to him
+  - 프레스턴은 사람들이 자기 말에 귀 기울이는 방식을 사랑했다
+- `3:25` 대사 — But friends...
+  - 하지만 여러분…
+- `3:27` 대사 — some of us are better off than others.
+  - 우리 중 누군가는 남보다 형편이 낫습니다.
+- `3:29` 대사 — But poor people...
+  - 그러나 가난한 이들은…
+- `3:31` 대사 — got to bring what they can afford.
+  - 형편껏 가져올 수밖에 없지요.
+- `3:31` 대사 — sacrifice myself.
+  - 제 자신을 바치는 것.
+- `3:33` **해설** — Lenora hears private attention as spiritual guidance, exactly as Preston intends.
+  - 리노라는 그 사적인 관심을 영적 인도로 듣는다. 프레스턴이 노린 그대로.
+- `3:37` 대사 — Reverend Sykes wept with me.
+  - 사이크스 목사님도 저와 함께 우셨습니다.
+- `3:39` 대사 — To show yourself
+  - 네 자신을 드러내는 것
+- `3:40` 대사 — Meaning I take off my clothes?
+  - 옷을 벗으라는 말씀인가요?
+- `3:44` **해설** — Carl packages control as crude humor, keeping Sandy inside the performance.
+  - 칼은 통제를 저속한 농담으로 포장해, 샌디를 계속 그 연기 안에 둔다.
+- `3:44` 대사 — I wanna get some shots of your ugly old mug sitting next to a pretty lady.
+  - 네 못생긴 낯짝이 예쁜 여자 옆에 앉은 걸 좀 찍고 싶어서.
+- `3:47` 대사 — and I'm gonna take some pictures, that's all.
+  - 사진 몇 장 찍는 거야, 그게 다야.
+- `3:49` 대사 — Do you really want these hands touching you?
+  - 정말 이 손이 널 만지길 바라니?
+- `3:53` 대사 — Oh, forget it. Jesus.
+  - 됐어, 관두자.
+- `3:54` 대사 — -I'm cold, Carl. -I know it's cold
+  - — 추워, 칼. — 추운 거 알아
+- `3:55` **해설** — Bodecker questions his own sister with the patience of a threat.
+  - 보데커는 협박에 가까운 인내심으로 자기 여동생을 심문한다.
+- `3:55` 대사 — They even mentioned your name a couple times.
+  - 네 이름도 몇 번 나왔어.
+- `3:57` 대사 — That's horseshit.
+  - 말도 안 되는 소리야.
+- `3:58` 대사 — Is Carl the one pimping you? That fat son of a bitch?
+  - 칼이 널 팔아먹는 거야? 그 뚱뚱한 자식이?
+- `3:58` 대사 — No, he's working, making deliveries.
+  - 아니, 일하고 있어. 배달 중이야.
+- `4:01` 대사 — Is it Leroy?
+  - 리로이야?
+- `4:04` 대사 — Don't act like you do nothing wrong.
+  - 오빠는 잘못 하나 없는 척하지 마.
+- `4:05` 대사 — I'm the law around here, little sister.
+  - 여긴 내가 법이야, 동생아.
+- `4:06` **해설** — Preston uses sacred language to make Lenora distrust her own memory.
+  - 프레스턴은 성스러운 말로 리노라가 제 기억을 의심하게 만든다.
+- `4:06` 대사 — Blaspheming the Lord in your mind and in your heart
+  - 네 마음과 생각으로 주님을 모독하는 것은
+- `4:08` 대사 — for some wrong done to you by another person.
+  - 남이 네게 저지른 잘못 때문에.
+- `4:12` 대사 — is you figure some way to get rid of it.
+  - 네가 그걸 없앨 방법을 찾는 거야.
+- `4:13` 대사 — and her little bastard child running around,
+  - 그 사생아까지 뛰어다니게 두고,
+- `4:14` 대사 — living in that poor old woman's house who raised you.
+  - 널 키운 그 가엾은 노인의 집에 얹혀살면서.
+- `4:17` 대사 — No! No! No!
+  - 안 돼! 안 돼! 안 돼!
+- `4:20` 대사 — No, no, no!
+  - 안 돼, 안 돼!
+- `4:26` 대사 — and that in the end, she was all right with her maker.
+  - 그리고 끝내 그 애는 창조주와 화해했다고.
+- `4:28` **해설** — Even in mourning, the family asks the same faith for mercy.
+  - 애도 중에도 가족은 같은 신앙에 자비를 구한다.
+- `4:28` 대사 — There's just some things we can't understand.
+  - 우리가 이해할 수 없는 일이 있는 법이지.
+
+## 4막 — 파열
+
+- `4:41` 대사 — Preacher?
+  - 목사님?
+- `4:42` 대사 — lustful acts.
+  - 음란한 행실.
+- `4:44` 대사 — Well, when you say anything,
+  - 글쎄, 무슨 말이든 하려면,
+- `4:44` 대사 — She ever puke on you?
+  - 그 애가 네 앞에서 토한 적 있어?
+- `4:47` **해설** — Arvin frames the confrontation around Lenora, refusing to let Preston redirect it.
+  - 아빈은 대화의 축을 리노라에게 두고, 프레스턴이 화제를 돌리지 못하게 한다.
+- `4:47` 대사 — You can't get enough of that Reaster girl, can you?
+  - 리스터네 딸한테서 손을 못 떼겠지?
+- `4:47` 대사 — Is that how you did my Lenora too?
+  - 우리 리노라한테도 그런 식이었나?
+- `4:48` 대사 — All right.
+  - 알았다.
+- `4:49` 대사 — Go ahead and talk.
+  - 어디 말해 봐.
+- `4:51` 대사 — I pray for that girl's soul
+  - 그 애의 영혼을 위해 기도한다
+- `4:52` **해설** — Only after being exposed does Preston start speaking like a peacemaker.
+  - 들통난 뒤에야 프레스턴은 중재자처럼 말하기 시작한다.
+- `4:52` 대사 — -saying she got that way from a boy-- -Don't fuckin' lie to me!
+  - — 어떤 남자애 때문에 그렇게 됐다고… — 거짓말하지 마!
+- `4:55` 대사 — We're passing right through it.
+  - 우리 그쪽으로 바로 지나가.
+- `4:57` 대사 — Where is it y'all live?
+  - 너희는 어디 사는데?
+- `4:58` **해설** — Carl recognizes a lone traveler, while Sandy recognizes the broken rule.
+  - 칼은 혼자인 여행자를 알아보고, 샌디는 깨진 규칙을 알아본다.
+- `4:58` 대사 — I'm gonna have to...
+  - 아무래도 나는…
+- `5:02` 대사 — He was young, but that didn't mean she couldn't make it work.
+  - 어렸지만, 그렇다고 안 될 것도 없었다.
+- `5:04` 대사 — Shit!
+  - 젠장!
+- `5:04` 대사 — Carl, you want sandals or heels?
+  - 칼, 샌들이야 힐이야?
+- `5:05` 대사 — and Carl thought it'd be better if he was the only one with a loaded weapon.
+  - 그리고 칼은 실탄을 가진 사람이 자기 하나면 낫겠다고 생각했다.
+- `5:06` **해설** — A double-homicide call sends Bodecker toward the county road.
+  - 이중 살인 신고가 보데커를 시골 도로로 향하게 한다.
+- `5:08` 대사 — It's your sister and her husband.
+  - 자네 여동생하고 그 남편이야.
+- `5:11` **해설** — Two measured wounds tell Bodecker this was no random roadside panic.
+  - 정확히 겨눈 두 발이, 이것이 우발적 공포가 아니었음을 말한다.
+- `5:12` 대사 — She'd always been sort of fucked up,
+  - 그 애는 늘 어딘가 망가져 있었지만,
+- `5:12` 대사 — but Lee blamed Carl for the way she'd gone downhill.
+  - 리는 동생이 무너진 걸 칼 탓으로 돌렸다.
+- `5:14` 대사 — Up in the Mitchell Flats.
+  - 미첼 플랫츠 위쪽이요.
+- `5:15` 대사 — Wasn't nobody ever living there since you and your folks.
+  - 자네랑 자네 식구들 뒤로는 아무도 안 살았어.
+- `5:16` **해설** — Arvin returns to Mitchell Flats because every road began on this hill.
+  - 아빈은 미첼 플랫츠로 돌아간다. 모든 길이 이 언덕에서 시작됐으니까.
+- `5:17` 대사 — and I just want you to know that I ain't never forgot it.
+  - 제가 그걸 한 번도 잊은 적 없다는 걸 알아주셨으면 해서요.
+- `5:19` 대사 — He ain't the lawman that I expected.
+  - 내가 기대하던 그런 보안관은 아니지.
+- `5:20` 대사 — Arvin thought about the days leading up to his mother's death,
+  - 아빈은 어머니가 죽기까지의 나날을 떠올렸다,
+- `5:21` 대사 — His father would have done anything to save her.
+  - 아버지는 어머니를 살리기 위해서라면 무엇이든 했을 것이다.
+- `5:22` **해설** — For once, Arvin remembers Willard's desperation before judging his violence.
+  - 이번만은, 아빈이 아버지의 폭력을 판단하기 전에 그 절박함을 먼저 떠올린다.
+- `5:22` 대사 — Arvin said to himself.
+  - 아빈은 속으로 되뇌었다.
+- `5:27` **해설** — Bodecker's voice turns Arvin's childhood woods into a hunting ground.
+  - 보데커의 목소리가 아빈의 어린 시절 숲을 사냥터로 바꾼다.
+- `5:27` 대사 — It's Sheriff Bodecker, son!
+  - 보데커 보안관이다, 얘야!
+- `5:31` 대사 — Come on out so we can have us a talk!
+  - 나와라, 얘기 좀 하자!
+- `5:32` **해설** — The sheriff controls the clearing with noise while Arvin stays hidden.
+  - 보안관은 소리로 공터를 장악하고, 아빈은 숨은 채로 있다.
+- `5:37` 대사 — I had no choice!
+  - 나도 어쩔 수 없었어!
+- `5:38` 대사 — I hate to be the one to tell you this, Sheriff, but your sister...
+  - 이런 말 전하기 싫지만, 보안관님, 여동생분이…
+
+## 엔딩 카드
+
+- `5:45` **THE DEVIL ALL THE TIME**
+- `5:45` TOM HOLLAND   ROBERT PATTINSON   SEBASTIAN STAN
+- `5:45` Watch it, then decide who was right
+  - 보고 나서, 누가 옳았는지 직접 정하세요
+

@@ -121,6 +121,11 @@ def main() -> int:
     parser.add_argument("config", type=Path)
     parser.add_argument("--name", default=None, help="Draft folder name shown in CapCut.")
     parser.add_argument("--template", default="CONSTANTINE_STORY_REVIEW_V5")
+    # A project may be built from a cut other than the config's main output - a trailer, for
+    # instance - and that cut has its own caption tracks.
+    parser.add_argument("--video", default=None)
+    parser.add_argument("--narration-srt", default="narration.srt")
+    parser.add_argument("--dialogue-srt", default="movie_captions.srt")
     args = parser.parse_args()
 
     import pipeline
@@ -134,7 +139,7 @@ def main() -> int:
     config = json.loads(config_path.read_text(encoding="utf-8"))
     root = config_path.parent
     package = root / "output" / "capcut_import"
-    master = root / "output" / str(config.get("output_video", "rough_cut.mp4"))
+    master = root / "output" / (args.video or str(config.get("output_video", "rough_cut.mp4")))
     if not master.exists():
         raise SystemExit(f"최종본이 없습니다: {master}")
 
@@ -186,8 +191,8 @@ def main() -> int:
                 if segment["material_id"] == video_material["id"]:
                     segment["source_timerange"] = {"start": 0, "duration": total}
 
-    caption_tracks = {"MOVIE_DIALOGUE": package / "movie_captions.srt",
-                      "REVIEW_NARRATION": package / "narration.srt"}
+    caption_tracks = {"MOVIE_DIALOGUE": package / args.dialogue_srt,
+                      "REVIEW_NARRATION": package / args.narration_srt}
     keep_texts = []
     for track in source["tracks"]:
         if track["type"] != "text" or track.get("name") not in caption_tracks:
@@ -199,7 +204,14 @@ def main() -> int:
         template_segment = track["segments"][0]
         template_id = template_segment["material_id"]
         template_material = next(m for m in materials["texts"] if m["id"] == template_id)
-        cues = pipeline.parse_srt(caption_tracks[track["name"]])
+        srt_path = caption_tracks[track["name"]]
+        if not srt_path.exists():
+            # A cut may carry only one of the two tracks; the other track is emptied rather
+            # than left holding the template's captions.
+            track["segments"] = []
+            written[track["name"]] = ([], 0)
+            continue
+        cues = pipeline.parse_srt(srt_path)
         segments, made = [], []
         for cue in cues:
             material = text_material(template_material, cue.text.strip())
@@ -211,6 +223,8 @@ def main() -> int:
     materials["texts"] = [m for m in materials["texts"] if m["id"] in keep_texts]
     fitted = {}
     for label, (made, _) in written.items():
+        if not made:
+            continue
         size = fit_font_size(made, (width, height))
         if size is not None and size < float(made[0].get("font_size", 7.0)):
             for material in made:
