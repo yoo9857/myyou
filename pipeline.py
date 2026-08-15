@@ -1045,7 +1045,12 @@ def render(config: dict[str, Any]) -> None:
         mix_tail = f",alimiter=limit={limiter:.6f}:level=false{audio_fade_filter}[a]"
         if text and tts_audio.exists():
             voice_delay_ms = int(round(narration_lead * 1000))
-            voice_filter = "[1:a:0]aresample=48000,volume=1.0"
+            # The voice went in at unity, which put the narration 5.4 dB above the film's own
+            # dialogue and 9.7 dB above the film blocks as a whole - loud enough that every
+            # narration block read as a jump in level. The gain is configurable so it can be
+            # set against measurement rather than by re-encoding to taste.
+            voice_gain = float(config.get("narration_voice_gain", 1.0))
+            voice_filter = f"[1:a:0]aresample=48000,volume={voice_gain:.4f}"
             if voice_delay_ms:
                 voice_filter += f",adelay={voice_delay_ms}:all=1"
             voice_filter += "[vo];"

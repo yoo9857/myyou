@@ -59,6 +59,7 @@ def main(argv: list[str]) -> int:
 
     downmix = str(config.get("source_audio_downmix", "")).strip()
     quiet = float(config.get("narration_audio_level", 0.32))
+    voice_gain = float(config.get("narration_voice_gain", 1.0))
     loud_level = float(config.get("dialogue_audio_level", 0.96))
 
     per_line, film_levels = [], []
@@ -81,7 +82,10 @@ def main(argv: list[str]) -> int:
         voice_file = root / "output" / "capcut_import" / "narration_audio" / f"clip_{order:03d}.mp3"
         if bed is None or not voice_file.exists():
             continue
-        voice = measure(["-i", str(voice_file)])
+        # The render applies narration_voice_gain to the voice; measuring the raw mp3 reported
+        # a lead 4 dB better than the mix actually has.
+        voice = measure(["-i", str(voice_file)],
+                        f"volume={voice_gain:.4f},aresample=48000" if voice_gain != 1.0 else "")
         if voice is None:
             continue
         film_lufs, voice_lufs = bed[0], voice[0]
