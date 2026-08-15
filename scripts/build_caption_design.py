@@ -42,12 +42,46 @@ ScaledBorderAndShadow: yes
 
 [V4+ Styles]
 Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
-Style: Narration,{n_font},{n_size},&H00D2EBF6,&H000000FF,&H000A0805,&H80080604,0,0,0,0,100,100,0.2,0,1,{n_outline},{n_shadow},2,{side},{side},{n_margin},1
-Style: Dialogue,{d_font},{d_size},&H00FFFFFF,&H000000FF,&H00000000,&H78000000,0,0,0,0,100,100,0,0,1,{d_outline},{d_shadow},2,{side},{side},{d_margin},1
+{styles}
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
 """
+
+
+def ass_colour(rgb, alpha=1.0):
+    """CapCut stores colour as 0-1 RGB; ASS wants &HAABBGGRR with AA as transparency."""
+    red, green, blue = (max(0, min(255, round(c * 255))) for c in (rgb + [0, 0, 0])[:3])
+    return f"&H{round((1 - alpha) * 255):02X}{blue:02X}{green:02X}{red:02X}"
+
+
+def style_line(name, spec, frame_height, picture_height, side, fallback_font, fallback_ratio):
+    """Turn one saved CapCut caption style into an ASS style line.
+
+    CapCut's font_size is a percentage of frame height and its vertical transform runs from
+    the centre, so both resolve against the picture rather than the frame. A background alpha
+    above zero means a box, which in ASS is BorderStyle 3 rather than an outline.
+    """
+    material = spec.get("material", {}) if spec else {}
+    style = spec.get("style", {}) if spec else {}
+    font = material.get("font_name") or fallback_font
+    ratio = float(material.get("font_size", fallback_ratio * 100)) / 100
+    size = max(12, round(ratio * picture_height))
+    colour = style.get("fill", {}).get("content", {}).get("solid", {}).get("color", [1, 1, 1])
+    alpha = float(material.get("background_alpha", 0.0) or 0.0)
+    boxed = alpha > 0.01
+    back = ass_colour([0, 0, 0], alpha) if boxed else "&H78000000"
+    border_style = 3 if boxed else 1
+    outline = 0.0 if boxed else round(0.0055 * picture_height, 1)
+    shadow = 0.0 if boxed else round(0.0028 * picture_height, 1)
+    # CapCut centres the text at transform_y, measured from the middle of the *frame* as a
+    # fraction of half its height, negative downward. ASS MarginV is the gap from the frame
+    # bottom to the bottom of the text. Measuring against the picture instead of the frame put
+    # the narration on the edge of the image and the dialogue into the letterbox bar.
+    y = float(spec.get("transform_y", -0.7)) if spec else -0.7
+    margin = max(8, round(frame_height / 2 * (1 + y) - size / 2))
+    return (f"Style: {name},{font},{size},{ass_colour(colour)},&H000000FF,&H000A0805,{back},"
+            f"0,0,0,0,100,100,0,0,{border_style},{outline},{shadow},2,{side},{side},{margin},1")
 
 
 CROP = re.compile(r"crop=(\d+):(\d+):(\d+):(\d+)")
@@ -113,6 +147,9 @@ def main() -> int:
     parser.add_argument("--ass-only", action="store_true")
     parser.add_argument("--narration-font", default="Cormorant Garamond")
     parser.add_argument("--dialogue-font", default="Pretendard Medium")
+    parser.add_argument("--caption-style", default=str(
+        CODE_ROOT / "assets" / "subtitle-style" / "channel-captions-v6.json"),
+        help="Design captured from an approved CapCut project; one place the look lives.")
     parser.add_argument("--watermark", default=None,
                         help="PNG laid top-right, the way the channel's projects place it.")
     # A trailer cut has its own master and its own caption track, so both are nameable.
@@ -160,26 +197,32 @@ def main() -> int:
                              f"{style},,0,0,0,,{escape(text)}")
     lines.sort(key=lambda entry: entry.split(",")[1])
 
+    design = {}
+    if args.caption_style and Path(args.caption_style).exists():
+        design = json.loads(Path(args.caption_style).read_text(encoding="utf-8")).get("tracks", {})
+    side = round(32.0 / 384.0 * width)
     header = HEADER.format(
         width=width, height=height,
-        n_font=args.narration_font, d_font=args.dialogue_font,
-        n_size=round(NARRATION_SIZE * picture_height),
-        d_size=round(DIALOGUE_SIZE * picture_height),
-        n_outline=round(1.3 / REFERENCE_HEIGHT * picture_height, 1),
-        n_shadow=round(0.8 / REFERENCE_HEIGHT * picture_height, 1),
-        d_outline=round(1.5 / REFERENCE_HEIGHT * picture_height, 1),
-        d_shadow=round(0.7 / REFERENCE_HEIGHT * picture_height, 1),
-        n_margin=round(height / 2 * (1 - 0.575) - NARRATION_SIZE * picture_height),
-        d_margin=round(height / 2 * (1 - 0.780) - DIALOGUE_SIZE * picture_height),
-        side=round(32.0 / 384.0 * width),
-    )
+        styles="\n".join([
+            style_line("Narration", design.get("REVIEW_NARRATION"), height, picture_height,
+                       side, args.narration_font, NARRATION_SIZE),
+            style_line("Dialogue", design.get("MOVIE_DIALOGUE"), height, picture_height,
+                       side, args.dialogue_font, DIALOGUE_SIZE),
+        ]))
     ass_path = package / args.ass
     ass_path.write_text(header + "\n".join(lines) + "\n", encoding="utf-8")
     print(f"  스타일 자막 {len(lines)}줄 -> {ass_path.relative_to(root)}")
-    print(f"  글꼴 해설 {args.narration_font} / 대사 {args.dialogue_font}")
-    print(f"  해설 {round(NARRATION_SIZE * picture_height)}px / "
-          f"대사 {round(DIALOGUE_SIZE * picture_height)}px, "
-          f"그림 {width}x{picture_height} (레터박스 {bar}px)")
+    for label, name in (("REVIEW_NARRATION", "해설"), ("MOVIE_DIALOGUE", "대사")):
+        spec = design.get(label)
+        if spec:
+            material = spec["material"]
+            box = float(material.get("background_alpha", 0) or 0)
+            print(f"  {name} {material['font_name']} "
+                  f"{round(float(material['font_size']) / 100 * picture_height)}px"
+                  + (f", 배경 {box:.0%}" if box > 0.01 else ""))
+        else:
+            print(f"  {name} 저장된 디자인 없음 — 기본값 사용")
+    print(f"  그림 {width}x{picture_height} (레터박스 {bar}px)")
     if args.ass_only:
         return 0
 

@@ -7,8 +7,8 @@ ScaledBorderAndShadow: yes
 
 [V4+ Styles]
 Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
-Style: Narration,Cormorant Garamond,59,&H00D2EBF6,&H000000FF,&H000A0805,&H80080604,0,0,0,0,100,100,0.2,0,1,3.6,2.2,2,160,160,171,1
-Style: Dialogue,Pretendard Medium,50,&H00FFFFFF,&H000000FF,&H00000000,&H78000000,0,0,0,0,100,100,0,0,1,4.2,2.0,2,160,160,69,1
+Style: Narration,Cormorant Garamond,50,&H00B0ECEC,&H000000FF,&H000A0805,&H00000000,0,0,0,0,100,100,0,0,3,0.0,0.0,2,160,160,205,1
+Style: Dialogue,Pretendard Medium,56,&H00FFFFFF,&H000000FF,&H000A0805,&H76000000,0,0,0,0,100,100,0,0,3,0.0,0.0,2,160,160,91,1
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text

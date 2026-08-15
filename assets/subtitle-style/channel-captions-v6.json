@@ -1,5 +1,5 @@
 {
-  "note": "Taken from the DEVIL_TRAILER draft after the captions were set by hand in CapCut. This is the channel's current caption design; build_capcut_project.py applies it so a rebuild does not undo the styling.",
+  "note": "Captured from the DEVIL_TRAILER draft after the captions were set by hand in CapCut. This is the channel's current caption design. build_capcut_project.py applies it on rebuild and build_caption_design.py derives the burned ASS from it, so there is one place the design lives.",
   "source_project": "DEVIL_TRAILER",
   "tracks": {
     "REVIEW_NARRATION": {
@@ -218,22 +218,22 @@
         "text_typesetting_paths_file": "",
         "text_typesetting_path_index": 0,
         "line_spacing": 0.075,
-        "has_shadow": true,
+        "has_shadow": false,
         "shadow_color": "#000000",
-        "shadow_alpha": 0.55,
-        "shadow_smoothing": 0.7,
-        "shadow_distance": 1.6,
+        "shadow_alpha": 0.8999999761581421,
+        "shadow_smoothing": 0.45000001788139343,
+        "shadow_distance": 5.0,
         "shadow_point": {
-          "x": 0.0,
-          "y": 0.0
+          "x": 0.6363961030678928,
+          "y": -0.6363961030678928
         },
         "shadow_angle": -45.0,
         "shadow_thickness_projection_enable": false,
         "shadow_thickness_projection_angle": 0.0,
         "shadow_thickness_projection_distance": 0.0,
         "border_alpha": 1.0,
-        "border_color": "#050608",
-        "border_width": 0.055,
+        "border_color": "#000000",
+        "border_width": 0.07999999821186066,
         "border_mode": 0,
         "style_name": "MOBILE_DIALOGUE_V5",
         "text_color": "#FFFFFF",
@@ -241,9 +241,9 @@
         "font_name": "Pretendard Medium",
         "font_title": "none",
         "font_size": 7.0,
-        "font_path": "C:/Users/hanbi/AppData/Local/Microsoft/Windows/Fonts/Pretendard-Medium.ttf",
+        "font_path": "C:/Users/hanbi/AppData/Local/CapCut/User Data/Cache/effect/7533520397891865873/2c8d5a6ed0321cb5e4cd03367b864549/font.ttf",
         "font_id": "",
-        "font_resource_id": "",
+        "font_resource_id": "7533520397891865873",
         "initial_scale": 0.0,
         "font_url": "",
         "typesetting": 0,
@@ -261,22 +261,37 @@
         "underline_width": 0.05,
         "underline_offset": 0.22,
         "sub_type": 0,
-        "check_flag": 7,
+        "check_flag": 19,
         "text_size": 31,
         "font_category_name": "",
-        "font_source_platform": 0,
+        "font_source_platform": 1,
         "font_third_resource_id": "",
         "font_category_id": "",
         "add_type": 0,
         "operation_type": 0,
         "recognize_type": 0,
-        "fonts": [],
+        "fonts": [
+          {
+            "id": "B2393210-0DF4-4a01-B4DD-DB4DDC89963E",
+            "resource_id": "7533520397891865873",
+            "third_resource_id": "",
+            "category_id": "preset",
+            "category_name": "사전 설정",
+            "source_platform": 1,
+            "path": "C:/Users/hanbi/AppData/Local/CapCut/User Data/Cache/effect/7533520397891865873/2c8d5a6ed0321cb5e4cd03367b864549/font.ttf",
+            "effect_id": "7533520397891865873",
+            "title": "Poppins-Bd",
+            "team_id": "",
+            "file_uri": "",
+            "request_id": "202608151125524293B47B9973ADE42531"
+          }
+        ],
         "background_color": "#000000",
-        "background_alpha": 0.0,
-        "background_style": 0,
-        "background_round_radius": 0.0,
-        "background_width": 0.14,
-        "background_height": 0.14,
+        "background_alpha": 0.535796766743649,
+        "background_style": 1,
+        "background_round_radius": 0.23094688221709006,
+        "background_width": 0.17695150115473468,
+        "background_height": 0.0,
         "background_vertical_offset": 0.0,
         "background_horizontal_offset": 0.0,
         "background_fill": "",
@@ -333,21 +348,23 @@
         "translate_original_text": ""
       },
       "style": {
-        "size": 7.0,
         "fill": {
-          "alpha": 1.0,
           "content": {
             "render_type": "solid",
             "solid": {
-              "alpha": 1.0,
               "color": [
-                1.0,
-                1.0,
-                1.0
+                1,
+                1,
+                1
               ]
             }
           }
-        }
+        },
+        "font": {
+          "path": "C:/Users/hanbi/AppData/Local/CapCut/User Data/Cache/effect/7533520397891865873/2c8d5a6ed0321cb5e4cd03367b864549/font.ttf",
+          "id": "7533520397891865873"
+        },
+        "size": 7
       },
       "transform_y": -0.78,
       "scale": 1.0
