@@ -17,7 +17,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent
 sys.path.insert(0, str(ROOT.parent))
 
-MIN_ON_SCREEN = 0.7      # shorter than this and it flashes rather than reads
+MIN_ON_SCREEN = 0.9      # shorter than this and it flashes rather than reads
 NARRATION_CLEAR = 0.15   # gap either side of a narration caption
 
 
@@ -38,19 +38,26 @@ def main() -> int:
     narration = [(c.start, c.end) for c in
                  pipeline.parse_srt(package / "trailer_narration.srt")]
 
+    shots = plan["shots"]
     entries = []
-    for shot in plan["shots"]:
+    for index, shot in enumerate(shots):
         start, end = float(shot["source_start"]), float(shot["source_end"])
         base = float(shot["timeline_start"])
+        # A caption may only outlive its shot if the next shot continues the same moment of
+        # the film. Trailer shots jump - consecutive ones here sit 17 seconds apart in the
+        # source - so a line allowed to run on was appearing over footage where nobody was
+        # saying it. Visible from about 2:54.
+        following = shots[index + 1] if index + 1 < len(shots) else None
+        continues = bool(following and abs(float(following["source_start"]) - end) < 0.5)
         for cue in cues:
             overlap_start, overlap_end = max(cue.start, start), min(cue.end, end)
             if overlap_end - overlap_start < 0.2 or not cue.text.strip():
                 continue
             at = base + (overlap_start - start)
-            # A cue clipped by a one-second shot would flash, so it is allowed to run past the
-            # cut it started in - the line is still being spoken over the following shots.
-            until = at + max(overlap_end - overlap_start, min(cue.end - overlap_start, 2.6))
-            entries.append([at, until, re.sub(r"<[^>]+>", "", cue.text).strip()])
+            room = overlap_end - overlap_start
+            if continues:
+                room = max(room, min(cue.end - overlap_start, 2.6))
+            entries.append([at, at + room, re.sub(r"<[^>]+>", "", cue.text).strip()])
 
     entries.sort(key=lambda e: e[0])
     merged: list[list] = []

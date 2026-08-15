@@ -126,6 +126,10 @@ def main() -> int:
     parser.add_argument("--video", default=None)
     parser.add_argument("--narration-srt", default="narration.srt")
     parser.add_argument("--dialogue-srt", default="movie_captions.srt")
+    # Named stems land on their own audio tracks so levels stay the editor's to set. Given
+    # these, the video is muted: the film's sound arrives on its own track instead.
+    parser.add_argument("--audio-track", action="append", default=[],
+                        metavar="NAME=PATH", help="e.g. FILM=.../trailer_film.m4a")
     args = parser.parse_args()
 
     import pipeline
@@ -179,10 +183,49 @@ def main() -> int:
         "path": str(asset), "material_name": asset.name, "duration": total,
         "width": width, "height": height,
     })
-    # The stems belong to the previous review, and this master already carries its narration
-    # and its effects. Leaving them in would play someone else's voice over this film.
+    # The stems belong to the previous review, and a master that already carries its narration
+    # and effects needs none. Leaving them in would play someone else's voice over this film.
+    audio_template = next((t for t in source["tracks"] if t["type"] == "audio"), None)
+    segment_template = audio_template["segments"][0] if audio_template else None
+    material_template = materials["audios"][0] if materials["audios"] else None
     materials["audios"] = []
     source["tracks"] = [t for t in source["tracks"] if t["type"] != "audio"]
+
+    audio_assets = Path(target) / "assets" / "audio"
+    for spec in args.audio_track:
+        label, _, given = spec.partition("=")
+        stem_path = Path(given)
+        if not stem_path.exists() or segment_template is None:
+            raise SystemExit(f"오디오 스템을 쓸 수 없습니다: {spec}")
+        audio_assets.mkdir(parents=True, exist_ok=True)
+        copied = audio_assets / stem_path.name
+        shutil.copy2(stem_path, copied)
+        length = micros(float(probe(copied, "format=duration")[0]))
+        material = json.loads(json.dumps(material_template))
+        material.update({"id": new_id(), "path": str(copied), "name": copied.name,
+                         "duration": length})
+        materials["audios"].append(material)
+        segment = json.loads(json.dumps(segment_template))
+        # Unity, not whatever the donor track was mixed at. These stems carry no level of
+        # their own, so the editor starts from the raw balance and moves from there.
+        segment.update({"id": new_id(), "raw_segment_id": new_id(),
+                        "material_id": material["id"], "volume": 1.0,
+                        "last_nonzero_volume": 1.0,
+                        "source_timerange": {"start": 0, "duration": length},
+                        "target_timerange": {"start": 0, "duration": length}})
+        source["tracks"].append({**{k: v for k, v in audio_template.items()
+                                    if k not in ("id", "name", "segments")},
+                                 "id": new_id(), "name": label.upper(),
+                                 "segments": [segment]})
+
+    if args.audio_track:
+        # With the sound on its own tracks, the picture must not also play the mix baked into
+        # it, or everything is heard twice.
+        for track in source["tracks"]:
+            if track["type"] == "video":
+                for segment in track["segments"]:
+                    segment["volume"] = 0.0
+                    segment["last_nonzero_volume"] = 0.0
 
     for track in source["tracks"]:
         for segment in track["segments"]:
